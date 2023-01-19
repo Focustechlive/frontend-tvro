@@ -22,10 +22,7 @@ const FormSchema = yup.object().shape({
     .min(15, 'Telefone inválido')
     .max(15, 'Telefone inválido')
     .required('Telefone é obrigátorio'),
-  email: yup
-    .string()
-    .email('E-mail inválido')
-    .required('E-mail é obrigátorio'),
+  email: yup.string().email('E-mail inválido'),
   have_whatsapp: yup.string().required('Campo obrigátorio'),
   agree_to_be_contacted: yup.string().required('Campo obrigátorio'),
   zipcode: yup
@@ -109,10 +106,12 @@ export default function Home() {
             onSubmit={(values, actions) => {
               const {
                 name,
+                phone,
                 email,
                 cpf,
                 family_code,
                 district,
+                address,
                 address_number,
                 address_complement,
                 reference_point,
@@ -131,12 +130,14 @@ export default function Home() {
                 try {
                   await api.post('/contacts', {
                     name,
+                    phone,
                     email,
                     cpf,
                     family_code,
                     district,
                     city,
                     state,
+                    address,
                     house_number: address_number,
                     complement: address_complement,
                     reference_point,
@@ -149,6 +150,8 @@ export default function Home() {
                   })
 
                   await api.post('/tickets/installation', {
+                    name,
+                    phone,
                     email,
                     zipcode,
                     ibge_code,
@@ -161,6 +164,7 @@ export default function Home() {
                   return (window.location.href = '/finalizar-atendimento')
                 } catch {
                   alertEventEmitter({
+                    type: 'error',
                     title: 'Atenção',
                     text: 'Ocorreu um erro ao tentar registrar seus dados. Tente novamente mais tarde'
                   })

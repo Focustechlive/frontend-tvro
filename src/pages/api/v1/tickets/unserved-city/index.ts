@@ -6,14 +6,16 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'POST') {
-    const { email } = req.body
+    const { name, phone, email } = req.body
 
     try {
       const response = await axios.post(
         'https://sigaantenado.freshdesk.com/api/v2/tickets',
         {
           description: 'Cidade não atendida',
-          email,
+          name,
+          email: email || null,
+          phone,
           priority: 1,
           status: 5,
           subject: 'Cidade não atendida',

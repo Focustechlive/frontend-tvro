@@ -7,6 +7,8 @@ export default async function handler(
 ) {
   if (req.method === 'POST') {
     const {
+      name,
+      phone,
       email,
       zipcode,
       ibge_code,
@@ -19,7 +21,9 @@ export default async function handler(
         'https://sigaantenado.freshdesk.com/api/v2/tickets',
         {
           description: 'Solicita Agendamento - Parabolica desativada',
-          email,
+          name,
+          phone,
+          email: email || null,
           priority: 1,
           status: 5,
           subject: 'Solicita Agendamento - Parabolica desativada',

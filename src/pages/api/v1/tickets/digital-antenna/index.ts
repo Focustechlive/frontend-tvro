@@ -6,14 +6,16 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'POST') {
-    const { email, antenna, zipcode, ibge_code } = req.body
+    const { name, phone, email, antenna, zipcode, ibge_code } = req.body
 
     try {
       await axios.post(
         'https://sigaantenado.freshdesk.com/api/v2/tickets',
         {
           description: 'Antena é DIGITAL',
-          email,
+          name,
+          phone,
+          email: email || null,
           priority: 1,
           status: 5,
           subject: 'Antena é DIGITAL',

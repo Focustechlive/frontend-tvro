@@ -8,6 +8,7 @@ export default async function handler(
   if (req.method === 'POST') {
     const {
       name,
+      phone,
       email,
       cpf,
       family_code,
@@ -15,6 +16,7 @@ export default async function handler(
       complement,
       district,
       city,
+      address,
       state,
       zip_code,
       ibge_code,
@@ -29,19 +31,21 @@ export default async function handler(
         'https://sigaantenado.freshdesk.com/api/v2/contacts',
         {
           name,
-          email,
+          phone,
+          email: email || null,
+          address,
           custom_fields: {
             cpf,
-            cdigo_da_famlia: family_code ?? '',
-            numero_da_residencia: house_number ?? '',
-            complemento: complement ?? '',
+            cdigo_da_famlia: family_code || null,
+            numero_da_residencia: house_number || null,
+            complemento: complement || null,
             bairro: district,
             cidade: city,
             estado: state,
-            ponto_de_referencia: reference_point ?? '',
+            ponto_de_referencia: reference_point || null,
             cep: zip_code,
-            cep_igual_ao_do_cadunico: same_zip_code ?? '',
-            codigo_ibge: ibge_code ?? '',
+            cep_igual_ao_do_cadunico: same_zip_code || null,
+            codigo_ibge: ibge_code || null,
             celular_tem_whatsapp: have_whatsapp,
             concorda_em_ser_contatado_por_esse_nmero_ou_email:
               agree_to_be_contacted

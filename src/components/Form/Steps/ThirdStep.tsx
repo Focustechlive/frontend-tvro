@@ -66,6 +66,7 @@ export function ThirdStep({
 
       const {
         name,
+        phone,
         cpf,
         email,
         have_whatsapp,
@@ -76,10 +77,11 @@ export function ThirdStep({
 
       await api.post('/contacts', {
         name,
-        email,
+        phone,
         cpf,
         family_code,
         district,
+        address: street,
         city,
         state,
         zip_code: value,
@@ -90,6 +92,8 @@ export function ThirdStep({
       })
 
       await api.post('/tickets/unserved-city', {
+        name,
+        phone,
         email: email
       })
 
@@ -99,11 +103,13 @@ export function ThirdStep({
       setValues(initialValues)
 
       return alertEventEmitter({
+        type: 'warning',
         title: 'Atenção',
         text: 'Sua cidade ainda não começou o processo de instalação dos kits gratuitos para beneficiários de programas socias na sua cidade. Mas não se preocupe, sua vez ainda vai chegar! Logo que o processo se iniciar na sua cidade, você será avisado pelos meios de comunicação.'
       })
     } catch {
       return alertEventEmitter({
+        type: 'error',
         title: 'Atenção',
         text: 'CEP não existe, por favor tente novamente'
       })

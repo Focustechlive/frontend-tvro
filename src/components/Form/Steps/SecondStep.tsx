@@ -57,7 +57,6 @@ export function SecondStep() {
 
         <GridItem>
           <FormControl
-            isRequired
             isInvalid={!!emailMeta.touched && !!emailMeta.error}
           >
             <FormLabel>E-mail</FormLabel>

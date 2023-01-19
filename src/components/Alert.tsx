@@ -5,10 +5,14 @@ import {
   AlertDialogCloseButton,
   AlertDialogContent,
   AlertDialogHeader,
-  AlertDialogOverlay
+  AlertDialogOverlay,
+  Box,
+  Heading,
+  Text
 } from '@chakra-ui/react'
 
 export type AlertMessage = {
+  type: 'success' | 'error' | 'warning'
   title: string
   text: string
 }
@@ -24,9 +28,10 @@ export function Alert() {
 
   useEffect(() => {
     function handleAddAlert(event: CustomEvent<AlertMessage>) {
-      const { title, text } = event.detail
+      const { type, title, text } = event.detail
 
       setMessage({
+        type,
         title,
         text
       })
@@ -55,9 +60,45 @@ export function Alert() {
       <AlertDialogContent>
         <AlertDialogCloseButton />
 
-        <AlertDialogHeader>{message.title}</AlertDialogHeader>
+        <AlertDialogHeader>
+          <Heading fontSize="2xl">{message.title}</Heading>
+        </AlertDialogHeader>
 
-        <AlertDialogBody pb="6">{message.text}</AlertDialogBody>
+        <AlertDialogBody pb="6">
+          <Box
+            bg={
+              message.type === 'error'
+                ? 'red.100'
+                : message.type === 'success'
+                ? 'green.100'
+                : 'yellow.100'
+            }
+            borderColor={
+              message.type === 'error'
+                ? 'red.200'
+                : message.type === 'success'
+                ? 'green.200'
+                : 'yellow.200'
+            }
+            borderStyle="solid"
+            borderWidth="thin"
+            borderRadius="md"
+            p="6"
+          >
+            <Text
+              fontSize="1.2rem"
+              color={
+                message.type === 'error'
+                  ? 'red.800'
+                  : message.type === 'success'
+                  ? 'green.800'
+                  : 'yellow.800'
+              }
+            >
+              {message.text}
+            </Text>
+          </Box>
+        </AlertDialogBody>
       </AlertDialogContent>
     </AlertDialog>
   ) : null

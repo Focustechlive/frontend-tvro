@@ -45,12 +45,14 @@ export function FourthStep() {
     }
 
     alertEventEmitter({
+      type: 'success',
       title: 'Atenção',
       text: 'Boa notícia! Você já possui uma antena digital que oferece mais qualidade de som e imagem. Se quiser saber mais detalhes, acesse www.sigaantenado.com.br'
     })
 
     const {
       name,
+      phone,
       cpf,
       email,
       have_whatsapp,
@@ -60,6 +62,7 @@ export function FourthStep() {
       city,
       state,
       zipcode,
+      address,
       ibge_code,
       cadunico_zipcode,
       address_complement,
@@ -69,12 +72,14 @@ export function FourthStep() {
 
     await api.post('/contacts', {
       name,
+      phone,
       email,
       cpf,
       family_code,
       district,
       city,
       state,
+      address,
       zip_code: zipcode,
       ibge_code,
       house_number: address_number,
@@ -86,6 +91,8 @@ export function FourthStep() {
     })
 
     await api.post('/tickets/digital-antenna', {
+      name,
+      phone,
       email: email,
       zipcode,
       antenna: value,
@@ -109,12 +116,14 @@ export function FourthStep() {
     }
 
     alertEventEmitter({
+      type: 'warning',
       title: 'Atenção',
       text: 'Para que o kit gratuito seja instalado, é necessário que a residência tenha uma parabólica tradicional/convencional instalado e funcionando. Podemos voltar em outra data a ser reagendada, caso você opte por corrigir ou consertar a instalação da sua parabólica antiga.'
     })
 
     const {
       name,
+      phone,
       cpf,
       email,
       have_whatsapp,
@@ -126,6 +135,7 @@ export function FourthStep() {
       zipcode,
       ibge_code,
       cadunico_zipcode,
+      address,
       address_number,
       address_complement,
       reference_point
@@ -133,12 +143,14 @@ export function FourthStep() {
 
     await api.post('/contacts', {
       name,
+      phone,
       email,
       cpf,
       family_code,
       district,
       city,
       state,
+      address,
       zip_code: zipcode,
       ibge_code,
       house_number: address_number,
@@ -150,6 +162,8 @@ export function FourthStep() {
     })
 
     await api.post('/tickets/disabled-antenna', {
+      name,
+      phone,
       email,
       zip_code: zipcode,
       ibge_code,
