@@ -35,8 +35,8 @@ export function Form() {
     cpfOrNisIsValid &&
     !emailMeta.error &&
     !phoneMeta.error &&
-    values.have_whatsapp &&
-    values.agree_to_be_contacted
+    values.have_whatsapp === 'Sim' &&
+    values.agree_to_be_contacted === 'Sim'
 
   const shouldRenderFourthStep =
     shouldRenderThirdStep &&
