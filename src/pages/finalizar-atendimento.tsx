@@ -14,19 +14,7 @@ export default function FinalizarAtendimento() {
 
       <Script id="freshchat" type="text/javascript">
         {`
-        function initFreshChat() {
-          window.fcWidget.init({
-            token: "71760711-ffb7-4517-891b-bc33d9854c0f",
-            host: "https://sigaantenado.freshchat.com",
-            open: true
-          });
-        }
-        function initialize(i,t){var e;i.getElementById(t)?
-        initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,
-        e.src="https://sigaantenado.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}
-        function initiateCall(){initialize(document,"Freshchat-js-sdk")}
-        window.addEventListener?window.addEventListener("load",initiateCall,!1):
-        window.attachEvent("load",initiateCall,!1);
+         (function (d, w, c) { if(!d.getElementById("spd-busns-spt")) { var n = d.getElementsByTagName('script')[0], s = d.createElement('script'); var loaded = false; s.id = "spd-busns-spt"; s.async = "async"; s.setAttribute("data-self-init", "false"); s.setAttribute("data-init-type", "opt"); s.src = 'https://cdn.freshbots.ai/assets/share/js/freshbots.min.js'; s.setAttribute("data-client", "8d5d03264074648c2469dee6168f444bf5602a0f"); s.setAttribute("data-bot-hash", "9f5e967001b19386d260722806c27b1d88a6f70f"); s.setAttribute("data-env", "prod"); s.setAttribute("data-region", "us"); if (c) { s.onreadystatechange = s.onload = function () { if (!loaded) { c(); } loaded = true; }; } n.parentNode.insertBefore(s, n); } }) (document, window, function () { Freshbots.initiateWidget({ autoInitChat: false, getClientParams: function () { return ; } }, function(successResponse) { }, function(errorResponse) { }); });
         `}
       </Script>
 
