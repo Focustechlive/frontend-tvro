@@ -201,12 +201,11 @@ export function ThirdStep({
             <GridItem>
               <FormControl
                 isRequired
-                isDisabled
                 isInvalid={!!addressMeta.touched && !!addressMeta.error}
               >
                 <FormLabel>Endereço</FormLabel>
 
-                <Field as={Input} name="address" variant="filled" />
+                <Field as={Input} name="address" />
 
                 <ErrorMessage
                   name="address"

@@ -17,6 +17,7 @@ export function Form() {
   const [, phoneMeta] = useField('phone')
   const [, emailMeta] = useField('email')
   const [, zipCodeMeta] = useField('zipcode')
+  const [, addressMeta] = useField('address')
   const [, addressNumberMeta] = useField('address_number')
   const [, referencePointMeta] = useField('reference_point')
 
@@ -42,6 +43,7 @@ export function Form() {
     shouldRenderThirdStep &&
     zipCodeIsValid &&
     !zipCodeMeta.error &&
+    !addressMeta.error &&
     !addressNumberMeta.error &&
     !referencePointMeta.error
 
