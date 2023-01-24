@@ -8,8 +8,7 @@ export default async function handler(
   const { document } = req.query
 
   try {
-    const API_URL =
-      'https://dev-eaf-function-cadunico.azurewebsites.net/api/user_validation?code=E8-xKmXoohkNp1N0k4qm4JDTpZLpxkDUMDq9PNm3WOPkAzFuwO66zQ=='
+    const API_URL = process.env.CADUNICO_API_URL as string
 
     const [cpfResponse, nisResponse] = await Promise.all([
       axios.post(API_URL, {
