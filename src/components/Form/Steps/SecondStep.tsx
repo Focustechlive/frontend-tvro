@@ -129,7 +129,8 @@ export function SecondStep() {
             return (
               <FormControl id="agree_to_be_contacted" isRequired>
                 <FormLabel htmlFor="agree_to_be_contacted">
-                  Concorda em continuar atendimento pelo Whatsapp?
+                  Autorizo continuar o atendimento pelo E-mail ou número de
+                  telefone
                 </FormLabel>
                 <RadioGroup
                   {...rest}
