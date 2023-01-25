@@ -75,7 +75,7 @@ export function ThirdStep({
         cadunico_zipcode
       } = values
 
-      await api.post('/contacts', {
+      const contact = {
         name,
         phone,
         cpf,
@@ -89,15 +89,17 @@ export function ThirdStep({
         same_zip_code: cadunico_zipcode === value ? 'Sim' : 'Não',
         have_whatsapp: have_whatsapp,
         agree_to_be_contacted
-      })
+      }
 
-      await api.post('/tickets/unserved-city', {
+      const ticket = {
         name,
         phone,
-        email: email
-      })
+        email
+      }
 
-      setSearchingZipCode(false)
+      await api.post('/contacts', contact)
+
+      await api.post('/tickets/unserved-city', ticket)
 
       resetForm()
       setValues(initialValues)
