@@ -70,7 +70,7 @@ export function FourthStep() {
       address_number
     } = values
 
-    await api.post('/contacts', {
+    const contact = {
       name,
       phone,
       email,
@@ -88,16 +88,20 @@ export function FourthStep() {
       same_zip_code: cadunico_zipcode === value ? 'Sim' : 'Não',
       have_whatsapp,
       agree_to_be_contacted
-    })
+    }
 
-    await api.post('/tickets/digital-antenna', {
+    const ticket = {
       name,
       phone,
-      email: email,
+      email,
       zipcode,
       antenna: value,
       ibge_code
-    })
+    }
+
+    await api.post('/contacts', contact)
+
+    await api.post('/tickets/digital-antenna', ticket)
 
     resetForm()
     setValues(initialValues)
@@ -141,7 +145,7 @@ export function FourthStep() {
       reference_point
     } = values
 
-    await api.post('/contacts', {
+    const contact = {
       name,
       phone,
       email,
@@ -159,9 +163,9 @@ export function FourthStep() {
       same_zip_code: cadunico_zipcode === value ? 'Sim' : 'Não',
       have_whatsapp,
       agree_to_be_contacted
-    })
+    }
 
-    await api.post('/tickets/disabled-antenna', {
+    const ticket = {
       name,
       phone,
       email,
@@ -169,7 +173,11 @@ export function FourthStep() {
       ibge_code,
       user_watch_channels: canTheUserWatchChannels ? 'Sim' : 'Não',
       working_antenna: value
-    })
+    }
+
+    await api.post('/contacts', contact)
+
+    await api.post('/tickets/disabled-antenna', ticket)
 
     resetForm()
     setValues(initialValues)

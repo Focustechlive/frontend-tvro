@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 
 export default async function handler(
   req: NextApiRequest,
@@ -8,19 +8,21 @@ export default async function handler(
   if (req.method === 'POST') {
     const { name, phone, email } = req.body
 
+    const ticket = {
+      description: 'Cidade não atendida',
+      name,
+      email: email || null,
+      phone: phone.replace(/\D/g, ''),
+      priority: 1,
+      status: 5,
+      subject: 'Cidade não atendida',
+      type: 'Cidade não atendida'
+    }
+
     try {
       const response = await axios.post(
         'https://sigaantenado.freshdesk.com/api/v2/tickets',
-        {
-          description: 'Cidade não atendida',
-          name,
-          email: email || null,
-          phone,
-          priority: 1,
-          status: 5,
-          subject: 'Cidade não atendida',
-          type: 'Cidade não atendida'
-        },
+        ticket,
         {
           auth: {
             username: process.env.FRESHDESK_USERNAME as string,
@@ -29,14 +31,13 @@ export default async function handler(
         }
       )
 
-      return res.status(201).json(response.data)
-    } catch {
-      return res.status(400).end({
-        error: 'Ticket já cadastrado'
-      })
+      return res.status(response.status).json(response.data)
+    } catch (error) {
+      if (error instanceof AxiosError && error?.response?.data) {
+        return res.status(error.response.status).json(error.response.data)
+      }
     }
   } else {
-    res.setHeader('Allow', 'POST')
-    res.status(405).end('Method not allowed')
+    return res.status(405).end('Method not allowed')
   }
 }

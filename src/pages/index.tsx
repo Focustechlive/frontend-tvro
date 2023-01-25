@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Head from 'next/head'
 import { Formik } from 'formik'
 import { Box } from '@chakra-ui/react'
@@ -103,7 +104,7 @@ export default function Home() {
               working_antenna: ''
             }}
             validationSchema={FormSchema}
-            onSubmit={(values, actions) => {
+            onSubmit={async (values, actions) => {
               const {
                 name,
                 phone,
@@ -126,52 +127,54 @@ export default function Home() {
                 working_antenna
               } = values
 
-              ;(async () => {
-                try {
-                  await api.post('/contacts', {
-                    name,
-                    phone,
-                    email,
-                    cpf,
-                    family_code,
-                    district,
-                    city,
-                    state,
-                    address,
-                    house_number: address_number,
-                    complement: address_complement,
-                    reference_point,
-                    zip_code: zipcode,
-                    ibge_code,
-                    same_zip_code:
-                      cadunico_zipcode === zipcode ? 'Sim' : 'Não',
-                    have_whatsapp: have_whatsapp,
-                    agree_to_be_contacted
-                  })
+              const contact = {
+                name,
+                phone,
+                email,
+                cpf,
+                family_code,
+                district,
+                city,
+                state,
+                address,
+                house_number: address_number,
+                complement: address_complement,
+                reference_point,
+                zip_code: zipcode,
+                ibge_code,
+                same_zip_code:
+                  cadunico_zipcode === zipcode ? 'Sim' : 'Não',
+                have_whatsapp: have_whatsapp,
+                agree_to_be_contacted
+              }
 
-                  await api.post('/tickets/installation', {
-                    name,
-                    phone,
-                    email,
-                    zipcode,
-                    ibge_code,
-                    user_watch_channels,
-                    working_antenna
-                  })
+              const ticket = {
+                name,
+                phone,
+                email,
+                zipcode,
+                ibge_code,
+                user_watch_channels,
+                working_antenna
+              }
 
-                  actions.resetForm()
+              try {
+                await api.post('/contacts', contact)
 
-                  return (window.location.href = '/finalizar-atendimento')
-                } catch {
-                  alertEventEmitter({
-                    type: 'error',
-                    title: 'Atenção',
-                    text: 'Ocorreu um erro ao tentar registrar seus dados. Tente novamente mais tarde'
-                  })
-                } finally {
-                  actions.setSubmitting(false)
-                }
-              })()
+                await api.post('/tickets/installation', ticket)
+
+                actions.resetForm()
+
+                return (window.location.href = '/finalizar-atendimento')
+              } catch {
+                return alertEventEmitter({
+                  type: 'error',
+                  title: 'Atenção',
+                  text: 'Ocorreu um erro ao tentar registrar seus dados. Tente novamente mais tarde'
+                })
+              } finally {
+                actions.setSubmitting(false)
+              }
             }}
           >
             {({ handleSubmit }) => (

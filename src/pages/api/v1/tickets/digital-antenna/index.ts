@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 
 export default async function handler(
   req: NextApiRequest,
@@ -8,24 +8,26 @@ export default async function handler(
   if (req.method === 'POST') {
     const { name, phone, email, antenna, zipcode, ibge_code } = req.body
 
+    const ticket = {
+      description: 'Antena é DIGITAL',
+      name,
+      phone: phone.replace(/\D/g, ''),
+      email: email || null,
+      priority: 1,
+      status: 5,
+      subject: 'Antena é DIGITAL',
+      type: 'Antena é DIGITAL',
+      custom_fields: {
+        cf_cep: zipcode,
+        cf_cdigo_ibge: ibge_code || null,
+        cf_modelo_da_antena: antenna
+      }
+    }
+
     try {
-      await axios.post(
+      const response = await axios.post(
         'https://sigaantenado.freshdesk.com/api/v2/tickets',
-        {
-          description: 'Antena é DIGITAL',
-          name,
-          phone,
-          email: email || null,
-          priority: 1,
-          status: 5,
-          subject: 'Antena é DIGITAL',
-          type: 'Antena é DIGITAL',
-          custom_fields: {
-            cf_cep: zipcode,
-            cf_cdigo_ibge: ibge_code ?? '',
-            cf_modelo_da_antena: antenna
-          }
-        },
+        ticket,
         {
           auth: {
             username: process.env.FRESHDESK_USERNAME as string,
@@ -34,14 +36,13 @@ export default async function handler(
         }
       )
 
-      return res.status(201).end()
-    } catch {
-      return res.status(400).end({
-        error: 'Ticket já cadastrado'
-      })
+      return res.status(response.status).json(response.data)
+    } catch (error) {
+      if (error instanceof AxiosError && error?.response?.data) {
+        return res.status(error.response.status).json(error.response.data)
+      }
     }
   } else {
-    res.setHeader('Allow', 'POST')
-    res.status(405).end('Method not allowed')
+    return res.status(405).end('Method not allowed')
   }
 }
