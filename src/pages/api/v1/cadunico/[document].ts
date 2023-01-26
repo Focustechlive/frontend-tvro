@@ -29,17 +29,19 @@ export default async function handler(
     }
 
     return res.status(200).json({
-      name: cpfResponse.data.no_pessoa || nisResponse.data.no_pessoa,
+      name: cpfResponse.data?.no_pessoa ?? nisResponse.data?.no_pessoa,
       cpf:
-        cpfResponse.data.nu_cpf_pessoa || nisResponse.data.nu_cpf_pessoa,
+        cpfResponse?.data?.nu_cpf_pessoa?.padStart(11, '0') ??
+        nisResponse?.data?.nu_cpf_pessoa?.padStart(11, '0'),
       nis:
-        cpfResponse.data.nu_nis_pessoa || nisResponse.data.nu_nis_pessoa,
+        cpfResponse.data?.nu_nis_pessoa?.padStart(11, '0') ??
+        nisResponse.data?.nu_nis_pessoa?.padStart(11, '0'),
       zip_code:
-        cpfResponse.data.nu_cep_logradouro_fam ||
-        nisResponse.data.nu_cep_logradouro_fam,
+        cpfResponse.data?.nu_cep_logradouro_fam ??
+        nisResponse.data?.nu_cep_logradouro_fam,
       family_code:
-        cpfResponse.data.co_familiar_fam ||
-        nisResponse.data.co_familiar_fam
+        cpfResponse.data?.co_familiar_fam ??
+        nisResponse.data?.co_familiar_fam
     })
   } catch {
     return res.status(500).end('Internal server error')
