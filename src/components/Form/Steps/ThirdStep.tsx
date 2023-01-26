@@ -257,12 +257,11 @@ export function ThirdStep({
             <GridItem>
               <FormControl
                 isRequired
-                isDisabled
                 isInvalid={!!districtMeta.touched && !!districtMeta.error}
               >
                 <FormLabel>Bairro</FormLabel>
 
-                <Field as={Input} name="district" variant="filled" />
+                <Field as={Input} name="district" />
 
                 <ErrorMessage
                   name="district"

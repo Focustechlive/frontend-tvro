@@ -17,6 +17,7 @@ export function Form() {
   const [, phoneMeta] = useField('phone')
   const [, emailMeta] = useField('email')
   const [, zipCodeMeta] = useField('zipcode')
+  const [, districtMeta] = useField('district')
   const [, addressMeta] = useField('address')
   const [, addressNumberMeta] = useField('address_number')
   const [, referencePointMeta] = useField('reference_point')
@@ -45,6 +46,7 @@ export function Form() {
     !zipCodeMeta.error &&
     !addressMeta.error &&
     !addressNumberMeta.error &&
+    !districtMeta.error &&
     !referencePointMeta.error
 
   return (
