@@ -5,6 +5,50 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  if (req.method === 'GET') {
+    const { phone } = req.query
+
+    if (phone) {
+      try {
+        const response = await axios.get(
+          `https://sigaantenado.freshdesk.com/api/v2/search/contacts?query="phone:${phone}"`,
+          {
+            auth: {
+              username: process.env.FRESHDESK_USERNAME as string,
+              password: process.env.FRESHDESK_PASSWORD as string
+            }
+          }
+        )
+
+        return res.json(response.data.results)
+      } catch (error) {
+        if (error instanceof AxiosError && error?.response?.data) {
+          return res
+            .status(error.response.status)
+            .json(error.response.data)
+        }
+      }
+    }
+
+    try {
+      const response = await axios.get(
+        'https://sigaantenado.freshdesk.com/api/v2/contacts',
+        {
+          auth: {
+            username: process.env.FRESHDESK_USERNAME as string,
+            password: process.env.FRESHDESK_PASSWORD as string
+          }
+        }
+      )
+
+      return res.status(response.status).json(response.data)
+    } catch (error) {
+      if (error instanceof AxiosError && error?.response?.data) {
+        return res.status(error.response.status).json(error.response.data)
+      }
+    }
+  }
+
   if (req.method === 'POST') {
     const {
       name,
@@ -26,30 +70,47 @@ export default async function handler(
       agree_to_be_contacted
     } = req.body
 
-    const contact = {
-      name,
-      phone: phone.replace(/\D/g, ''),
-      email: email || null,
-      address,
-      custom_fields: {
-        cpf,
-        cdigo_da_famlia: family_code,
-        numero_da_residencia: house_number,
-        complemento: complement || null,
-        bairro: district,
-        cidade: city,
-        estado: state,
-        ponto_de_referencia: reference_point,
-        cep: zip_code,
-        cep_igual_ao_do_cadunico: same_zip_code,
-        codigo_ibge: ibge_code,
-        celular_tem_whatsapp: have_whatsapp,
-        concorda_em_ser_contatado_por_esse_nmero_ou_email:
-          agree_to_be_contacted
-      }
-    }
-
     try {
+      const { data } = await axios.get(
+        `https://sigaantenado.freshdesk.com/api/v2/search/contacts?query="phone:${phone.replace(
+          /\D/g,
+          ''
+        )}"`,
+        {
+          auth: {
+            username: process.env.FRESHDESK_USERNAME as string,
+            password: process.env.FRESHDESK_PASSWORD as string
+          }
+        }
+      )
+
+      if (data.results.length > 0) {
+        return res.status(201).json(data.results[0])
+      }
+
+      const contact = {
+        name,
+        phone: phone.replace(/\D/g, ''),
+        email: email || null,
+        address,
+        custom_fields: {
+          cpf,
+          cdigo_da_famlia: family_code,
+          numero_da_residencia: house_number,
+          complemento: complement || null,
+          bairro: district,
+          cidade: city,
+          estado: state,
+          ponto_de_referencia: reference_point,
+          cep: zip_code,
+          cep_igual_ao_do_cadunico: same_zip_code,
+          codigo_ibge: ibge_code,
+          celular_tem_whatsapp: have_whatsapp,
+          concorda_em_ser_contatado_por_esse_nmero_ou_email:
+            agree_to_be_contacted
+        }
+      }
+
       const response = await axios.post(
         'https://sigaantenado.freshdesk.com/api/v2/contacts',
         contact,
@@ -67,7 +128,7 @@ export default async function handler(
         return res.status(error.response.status).json(error.response.data)
       }
     }
-  } else {
-    return res.status(405).end('Method not allowed')
   }
+
+  return res.status(405).end('Method not allowed')
 }
