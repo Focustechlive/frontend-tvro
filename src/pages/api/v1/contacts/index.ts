@@ -84,10 +84,6 @@ export default async function handler(
         }
       )
 
-      if (data.results.length > 0) {
-        return res.status(201).json(data.results[0])
-      }
-
       const contact = {
         name,
         phone: phone.replace(/\D/g, ''),
@@ -109,6 +105,23 @@ export default async function handler(
           concorda_em_ser_contatado_por_esse_nmero_ou_email:
             agree_to_be_contacted
         }
+      }
+
+      if (data.results.length > 0) {
+        const contactId = data.results[0].id
+
+        const response = await axios.put(
+          `https://sigaantenado.freshdesk.com/api/v2/contacts/${contactId}`,
+          contact,
+          {
+            auth: {
+              username: process.env.FRESHDESK_USERNAME as string,
+              password: process.env.FRESHDESK_PASSWORD as string
+            }
+          }
+        )
+
+        return res.status(response.status).json(response.data)
       }
 
       const response = await axios.post(

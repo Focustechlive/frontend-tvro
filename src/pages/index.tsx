@@ -20,7 +20,7 @@ const FormSchema = yup.object().shape({
     .required('CPF ou NIS é obrigátorio'),
   phone: yup
     .string()
-    .min(15, 'Telefone inválido')
+    .min(14, 'Telefone inválido')
     .max(15, 'Telefone inválido')
     .required('Telefone é obrigátorio'),
   email: yup.string().email('E-mail inválido'),
