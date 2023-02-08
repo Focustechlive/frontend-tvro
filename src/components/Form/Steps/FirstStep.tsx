@@ -76,12 +76,12 @@ export function FirstStep({ onCpfOrNisIsValid }: FirstStepProps) {
       isInvalid={!!meta.touched && !!meta.error}
       isDisabled={validatingDocument}
     >
-      <FormLabel>ATENÇÃO.</FormLabel>
+      <FormLabel>ATENÇÃO</FormLabel>
 
       <Box position="relative">
 
         <div className="App">
-          <h1>Está página está passando por ajustes momentâneos. Para fazer seu agendamento, ligue agora mesmo para 0800 729 2404.</h1>
+          <h1>Está página está passando por ajustes momentâneos.Para fazer seu agendamento, ligue agora mesmo para 0800 729 2404.</h1>
         </div>
       </Box>
 
