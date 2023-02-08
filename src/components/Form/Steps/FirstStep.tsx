@@ -83,22 +83,6 @@ export function FirstStep({ onCpfOrNisIsValid }: FirstStepProps) {
         <div className="App">
           <h1>Está página está passando por ajustes momentâneos. Para fazer seu agendamento, ligue agora mesmo para 0800 729 2404.</h1>
         </div>
-
-        {/*<Field*/}
-        {/*  as={Input}*/}
-        {/*  name="cpfOrNis"*/}
-        {/*  placeholder="Informe CPF ou NIS do responsável familiar"*/}
-        {/*  maxLength={CPF_OR_NIS_MAX_LENGTH}*/}
-        {/*  onChange={handleCpfOrNisChange}*/}
-        {/*/>*/}
-        {/*{validatingDocument && (*/}
-        {/*  <Spinner*/}
-        {/*    position="absolute"*/}
-        {/*    right="4"*/}
-        {/*    top="2"*/}
-        {/*    color="gray.500"*/}
-        {/*  />*/}
-        {/*)}*/}
       </Box>
 
       <ErrorMessage name="cpfOrNis" component={FormErrorMessage} />
