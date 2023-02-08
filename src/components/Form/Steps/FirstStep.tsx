@@ -5,6 +5,7 @@ import {
   FormControl,
   FormErrorMessage,
   FormLabel,
+  Text,
   Input,
   Spinner
 } from '@chakra-ui/react'
@@ -59,7 +60,6 @@ export function FirstStep({ onCpfOrNisIsValid }: FirstStepProps) {
 
   function handleCpfOrNisChange(event: ChangeEvent<HTMLInputElement>) {
     const value = event.target.value.replace(/[^0-9]/g, '')
-
     cpfOrNisField.onChange(event)
     cpfOrNisHelper.setValue(value)
 
@@ -71,21 +71,15 @@ export function FirstStep({ onCpfOrNisIsValid }: FirstStepProps) {
   }
 
   return (
-    <FormControl
-      isRequired
-      isInvalid={!!meta.touched && !!meta.error}
-      isDisabled={validatingDocument}
-    >
-      <FormLabel>ATENÇÃO</FormLabel>
+    <>
+      <Text textAlign="center" margin="2">
+        ATENÇÃO
+      </Text>
 
-      <Box position="relative">
-
-        <div className="App">
-          <h1>Está página está passando por ajustes momentâneos.Para fazer seu agendamento, ligue agora mesmo para 0800 729 2404</h1>
-        </div>
-      </Box>
-
-      <ErrorMessage name="cpfOrNis" component={FormErrorMessage} />
-    </FormControl>
+      <Text textAlign="center" margin="2">
+        Está página está passando por ajustes momentâneos. Para fazer seu
+        agendamento, ligue agora mesmo para 0800 729 2404.
+      </Text>
+    </>
   )
 }
