@@ -30,6 +30,7 @@ export default async function handler(
       served: true
     })
   } catch {
-    return res.status(500).end('Internal server error')
-  }
+    return res.status(200).json({
+      served: true
+  })}
 }
