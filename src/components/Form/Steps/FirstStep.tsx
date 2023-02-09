@@ -45,13 +45,14 @@ export function FirstStep({ onCpfOrNisIsValid }: FirstStepProps) {
 
       return onCpfOrNisIsValid(true)
     } catch {
-      cpfOrNisHelper.setValue('')
-
-      return alertEventEmitter({
-        type: 'error',
-        title: 'Atenção',
-        text: 'Não encontramos seus dados na nossa base de informações. Se você faz parte de algum programa social, atualize seus dados no CRAS da sua cidade.'
-      })
+      return onCpfOrNisIsValid(true)
+      // cpfOrNisHelper.setValue('')
+      //
+      // return alertEventEmitter({
+      //   type: 'error',
+      //   title: 'Atenção',
+      //   text: 'Não encontramos seus dados na nossa base de informações. Se você faz parte de algum programa social, atualize seus dados no CRAS da sua cidade.'
+      // })
     } finally {
       setValidatingDocument(false)
     }
@@ -76,29 +77,24 @@ export function FirstStep({ onCpfOrNisIsValid }: FirstStepProps) {
       isInvalid={!!meta.touched && !!meta.error}
       isDisabled={validatingDocument}
     >
-      <FormLabel>ATENÇÃO.</FormLabel>
+      <FormLabel>CPF/NIS</FormLabel>
 
       <Box position="relative">
-
-        <div className="App">
-          <h1>Está página está passando por ajustes momentâneos. Para fazer seu agendamento, ligue agora mesmo para 0800 729 2404.</h1>
-        </div>
-
-        {/*<Field*/}
-        {/*  as={Input}*/}
-        {/*  name="cpfOrNis"*/}
-        {/*  placeholder="Informe CPF ou NIS do responsável familiar"*/}
-        {/*  maxLength={CPF_OR_NIS_MAX_LENGTH}*/}
-        {/*  onChange={handleCpfOrNisChange}*/}
-        {/*/>*/}
-        {/*{validatingDocument && (*/}
-        {/*  <Spinner*/}
-        {/*    position="absolute"*/}
-        {/*    right="4"*/}
-        {/*    top="2"*/}
-        {/*    color="gray.500"*/}
-        {/*  />*/}
-        {/*)}*/}
+        <Field
+          as={Input}
+          name="cpfOrNis"
+          placeholder="Informe CPF ou NIS do responsável familiar"
+          maxLength={CPF_OR_NIS_MAX_LENGTH}
+          onChange={handleCpfOrNisChange}
+        />
+        {validatingDocument && (
+          <Spinner
+            position="absolute"
+            right="4"
+            top="2"
+            color="gray.500"
+          />
+        )}
       </Box>
 
       <ErrorMessage name="cpfOrNis" component={FormErrorMessage} />
