@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
-import {any} from "prop-types";
 
 export default async function handler(
   req: NextApiRequest,
@@ -17,5593 +16,5609 @@ export default async function handler(
       })
     }
 
-    var listIbge = new Map();
-    listIbge.set("RO-Alta Floresta D'Oeste","1100015");
-    listIbge.set("RO-Alto Alegre dos Parecis","1100379");
-    listIbge.set("RO-Alto Paraíso","1100403");
-    listIbge.set("RO-Alvorada D'Oeste","1100346");
-    listIbge.set("RO-Ariquemes","1100023");
-    listIbge.set("RO-Buritis","1100452");
-    listIbge.set("RO-Cabixi","1100031");
-    listIbge.set("RO-Cacaulândia","1100601");
-    listIbge.set("RO-Cacoal","1100049");
-    listIbge.set("RO-Campo Novo de Rondônia","1100700");
-    listIbge.set("RO-Candeias do Jamari","1100809");
-    listIbge.set("RO-Castanheiras","1100908");
-    listIbge.set("RO-Cerejeiras","1100056");
-    listIbge.set("RO-Chupinguaia","1100924");
-    listIbge.set("RO-Colorado do Oeste","1100064");
-    listIbge.set("RO-Corumbiara","1100072");
-    listIbge.set("RO-Costa Marques","1100080");
-    listIbge.set("RO-Cujubim","1100940");
-    listIbge.set("RO-Espigão D'Oeste","1100098");
-    listIbge.set("RO-Governador Jorge Teixeira","1101005");
-    listIbge.set("RO-Guajará-Mirim","1100106");
-    listIbge.set("RO-Itapuã do Oeste","1101104");
-    listIbge.set("RO-Jaru","1100114");
-    listIbge.set("RO-Ji-Paraná","1100122");
-    listIbge.set("RO-Machadinho D'Oeste","1100130");
-    listIbge.set("RO-Ministro Andreazza","1101203");
-    listIbge.set("RO-Mirante da Serra","1101302");
-    listIbge.set("RO-Monte Negro","1101401");
-    listIbge.set("RO-Nova Brasilândia D'Oeste","1100148");
-    listIbge.set("RO-Nova Mamoré","1100338");
-    listIbge.set("RO-Nova União","1101435");
-    listIbge.set("RO-Novo Horizonte do Oeste","1100502");
-    listIbge.set("RO-Ouro Preto do Oeste","1100155");
-    listIbge.set("RO-Parecis","1101450");
-    listIbge.set("RO-Pimenta Bueno","1100189");
-    listIbge.set("RO-Pimenteiras do Oeste","1101468");
-    listIbge.set("RO-Porto Velho","1100205");
-    listIbge.set("RO-Presidente Médici","1100254");
-    listIbge.set("RO-Primavera de Rondônia","1101476");
-    listIbge.set("RO-Rio Crespo","1100262");
-    listIbge.set("RO-Rolim de Moura","1100288");
-    listIbge.set("RO-Santa Luzia D'Oeste","1100296");
-    listIbge.set("RO-São Felipe D'Oeste","1101484");
-    listIbge.set("RO-São Francisco do Guaporé","1101492");
-    listIbge.set("RO-São Miguel do Guaporé","1100320");
-    listIbge.set("RO-Seringueiras","1101500");
-    listIbge.set("RO-Teixeirópolis","1101559");
-    listIbge.set("RO-Theobroma","1101609");
-    listIbge.set("RO-Urupá","1101708");
-    listIbge.set("RO-Vale do Anari","1101757");
-    listIbge.set("RO-Vale do Paraíso","1101807");
-    listIbge.set("RO-Vilhena","1100304");
-    listIbge.set("AC-Acrelândia","1200013");
-    listIbge.set("AC-Assis Brasil","1200054");
-    listIbge.set("AC-Brasiléia","1200104");
-    listIbge.set("AC-Bujari","1200138");
-    listIbge.set("AC-Capixaba","1200179");
-    listIbge.set("AC-Cruzeiro do Sul","1200203");
-    listIbge.set("AC-Epitaciolândia","1200252");
-    listIbge.set("AC-Feijó","1200302");
-    listIbge.set("AC-Jordão","1200328");
-    listIbge.set("AC-Mâncio Lima","1200336");
-    listIbge.set("AC-Manoel Urbano","1200344");
-    listIbge.set("AC-Marechal Thaumaturgo","1200351");
-    listIbge.set("AC-Plácido de Castro","1200385");
-    listIbge.set("AC-Porto Acre","1200807");
-    listIbge.set("AC-Porto Walter","1200393");
-    listIbge.set("AC-Rio Branco","1200401");
-    listIbge.set("AC-Rodrigues Alves","1200427");
-    listIbge.set("AC-Santa Rosa do Purus","1200435");
-    listIbge.set("AC-Sena Madureira","1200500");
-    listIbge.set("AC-Senador Guiomard","1200450");
-    listIbge.set("AC-Tarauacá","1200609");
-    listIbge.set("AC-Xapuri","1200708");
-    listIbge.set("AM-Alvarães","1300029");
-    listIbge.set("AM-Amaturá","1300060");
-    listIbge.set("AM-Anamã","1300086");
-    listIbge.set("AM-Anori","1300102");
-    listIbge.set("AM-Apuí","1300144");
-    listIbge.set("AM-Atalaia do Norte","1300201");
-    listIbge.set("AM-Autazes","1300300");
-    listIbge.set("AM-Barcelos","1300409");
-    listIbge.set("AM-Barreirinha","1300508");
-    listIbge.set("AM-Benjamin Constant","1300607");
-    listIbge.set("AM-Beruri","1300631");
-    listIbge.set("AM-Boa Vista do Ramos","1300680");
-    listIbge.set("AM-Boca do Acre","1300706");
-    listIbge.set("AM-Borba","1300805");
-    listIbge.set("AM-Caapiranga","1300839");
-    listIbge.set("AM-Canutama","1300904");
-    listIbge.set("AM-Carauari","1301001");
-    listIbge.set("AM-Careiro","1301100");
-    listIbge.set("AM-Careiro da Várzea","1301159");
-    listIbge.set("AM-Coari","1301209");
-    listIbge.set("AM-Codajás","1301308");
-    listIbge.set("AM-Eirunepé","1301407");
-    listIbge.set("AM-Envira","1301506");
-    listIbge.set("AM-Fonte Boa","1301605");
-    listIbge.set("AM-Guajará","1301654");
-    listIbge.set("AM-Humaitá","1301704");
-    listIbge.set("AM-Ipixuna","1301803");
-    listIbge.set("AM-Iranduba","1301852");
-    listIbge.set("AM-Itacoatiara","1301902");
-    listIbge.set("AM-Itamarati","1301951");
-    listIbge.set("AM-Itapiranga","1302009");
-    listIbge.set("AM-Japurá","1302108");
-    listIbge.set("AM-Juruá","1302207");
-    listIbge.set("AM-Jutaí","1302306");
-    listIbge.set("AM-Lábrea","1302405");
-    listIbge.set("AM-Manacapuru","1302504");
-    listIbge.set("AM-Manaquiri","1302553");
-    listIbge.set("AM-Manaus","1302603");
-    listIbge.set("AM-Manicoré","1302702");
-    listIbge.set("AM-Maraã","1302801");
-    listIbge.set("AM-Maués","1302900");
-    listIbge.set("AM-Nhamundá","1303007");
-    listIbge.set("AM-Nova Olinda do Norte","1303106");
-    listIbge.set("AM-Novo Airão","1303205");
-    listIbge.set("AM-Novo Aripuanã","1303304");
-    listIbge.set("AM-Parintins","1303403");
-    listIbge.set("AM-Pauini","1303502");
-    listIbge.set("AM-Presidente Figueiredo","1303536");
-    listIbge.set("AM-Rio Preto da Eva","1303569");
-    listIbge.set("AM-Santa Isabel do Rio Negro","1303601");
-    listIbge.set("AM-Santo Antônio do Içá","1303700");
-    listIbge.set("AM-São Gabriel da Cachoeira","1303809");
-    listIbge.set("AM-São Paulo de Olivença","1303908");
-    listIbge.set("AM-São Sebastião do Uatumã","1303957");
-    listIbge.set("AM-Silves","1304005");
-    listIbge.set("AM-Tabatinga","1304062");
-    listIbge.set("AM-Tapauá","1304104");
-    listIbge.set("AM-Tefé","1304203");
-    listIbge.set("AM-Tonantins","1304237");
-    listIbge.set("AM-Uarini","1304260");
-    listIbge.set("AM-Urucará","1304302");
-    listIbge.set("AM-Urucurituba","1304401");
-    listIbge.set("RR-Alto Alegre","1400050");
-    listIbge.set("RR-Amajari","1400027");
-    listIbge.set("RR-Boa Vista","1400100");
-    listIbge.set("RR-Bonfim","1400159");
-    listIbge.set("RR-Cantá","1400175");
-    listIbge.set("RR-Caracaraí","1400209");
-    listIbge.set("RR-Caroebe","1400233");
-    listIbge.set("RR-Iracema","1400282");
-    listIbge.set("RR-Mucajaí","1400308");
-    listIbge.set("RR-Normandia","1400407");
-    listIbge.set("RR-Pacaraima","1400456");
-    listIbge.set("RR-Rorainópolis","1400472");
-    listIbge.set("RR-São João da Baliza","1400506");
-    listIbge.set("RR-São Luiz","1400605");
-    listIbge.set("RR-Uiramutã","1400704");
-    listIbge.set("PA-Abaetetuba","1500107");
-    listIbge.set("PA-Abel Figueiredo","1500131");
-    listIbge.set("PA-Acará","1500206");
-    listIbge.set("PA-Afuá","1500305");
-    listIbge.set("PA-Água Azul do Norte","1500347");
-    listIbge.set("PA-Alenquer","1500404");
-    listIbge.set("PA-Almeirim","1500503");
-    listIbge.set("PA-Altamira","1500602");
-    listIbge.set("PA-Anajás","1500701");
-    listIbge.set("PA-Ananindeua","1500800");
-    listIbge.set("PA-Anapu","1500859");
-    listIbge.set("PA-Augusto Corrêa","1500909");
-    listIbge.set("PA-Aurora do Pará","1500958");
-    listIbge.set("PA-Aveiro","1501006");
-    listIbge.set("PA-Bagre","1501105");
-    listIbge.set("PA-Baião","1501204");
-    listIbge.set("PA-Bannach","1501253");
-    listIbge.set("PA-Barcarena","1501303");
-    listIbge.set("PA-Belém","1501402");
-    listIbge.set("PA-Belterra","1501451");
-    listIbge.set("PA-Benevides","1501501");
-    listIbge.set("PA-Bom Jesus do Tocantins","1501576");
-    listIbge.set("PA-Bonito","1501600");
-    listIbge.set("PA-Bragança","1501709");
-    listIbge.set("PA-Brasil Novo","1501725");
-    listIbge.set("PA-Brejo Grande do Araguaia","1501758");
-    listIbge.set("PA-Breu Branco","1501782");
-    listIbge.set("PA-Breves","1501808");
-    listIbge.set("PA-Bujaru","1501907");
-    listIbge.set("PA-Cachoeira do Arari","1502004");
-    listIbge.set("PA-Cachoeira do Piriá","1501956");
-    listIbge.set("PA-Cametá","1502103");
-    listIbge.set("PA-Canaã dos Carajás","1502152");
-    listIbge.set("PA-Capanema","1502202");
-    listIbge.set("PA-Capitão Poço","1502301");
-    listIbge.set("PA-Castanhal","1502400");
-    listIbge.set("PA-Chaves","1502509");
-    listIbge.set("PA-Colares","1502608");
-    listIbge.set("PA-Conceição do Araguaia","1502707");
-    listIbge.set("PA-Concórdia do Pará","1502756");
-    listIbge.set("PA-Cumaru do Norte","1502764");
-    listIbge.set("PA-Curionópolis","1502772");
-    listIbge.set("PA-Curralinho","1502806");
-    listIbge.set("PA-Curuá","1502855");
-    listIbge.set("PA-Curuçá","1502905");
-    listIbge.set("PA-Dom Eliseu","1502939");
-    listIbge.set("PA-Eldorado do Carajás","1502954");
-    listIbge.set("PA-Faro","1503002");
-    listIbge.set("PA-Floresta do Araguaia","1503044");
-    listIbge.set("PA-Garrafão do Norte","1503077");
-    listIbge.set("PA-Goianésia do Pará","1503093");
-    listIbge.set("PA-Gurupá","1503101");
-    listIbge.set("PA-Igarapé-Açu","1503200");
-    listIbge.set("PA-Igarapé-Miri","1503309");
-    listIbge.set("PA-Inhangapi","1503408");
-    listIbge.set("PA-Ipixuna do Pará","1503457");
-    listIbge.set("PA-Irituia","1503507");
-    listIbge.set("PA-Itaituba","1503606");
-    listIbge.set("PA-Itupiranga","1503705");
-    listIbge.set("PA-Jacareacanga","1503754");
-    listIbge.set("PA-Jacundá","1503804");
-    listIbge.set("PA-Juruti","1503903");
-    listIbge.set("PA-Limoeiro do Ajuru","1504000");
-    listIbge.set("PA-Mãe do Rio","1504059");
-    listIbge.set("PA-Magalhães Barata","1504109");
-    listIbge.set("PA-Marabá","1504208");
-    listIbge.set("PA-Maracanã","1504307");
-    listIbge.set("PA-Marapanim","1504406");
-    listIbge.set("PA-Marituba","1504422");
-    listIbge.set("PA-Medicilândia","1504455");
-    listIbge.set("PA-Melgaço","1504505");
-    listIbge.set("PA-Mocajuba","1504604");
-    listIbge.set("PA-Moju","1504703");
-    listIbge.set("PA-Mojuí dos Campos","1504752");
-    listIbge.set("PA-Monte Alegre","1504802");
-    listIbge.set("PA-Muaná","1504901");
-    listIbge.set("PA-Nova Esperança do Piriá","1504950");
-    listIbge.set("PA-Nova Ipixuna","1504976");
-    listIbge.set("PA-Nova Timboteua","1505007");
-    listIbge.set("PA-Novo Progresso","1505031");
-    listIbge.set("PA-Novo Repartimento","1505064");
-    listIbge.set("PA-Óbidos","1505106");
-    listIbge.set("PA-Oeiras do Pará","1505205");
-    listIbge.set("PA-Oriximiná","1505304");
-    listIbge.set("PA-Ourém","1505403");
-    listIbge.set("PA-Ourilândia do Norte","1505437");
-    listIbge.set("PA-Pacajá","1505486");
-    listIbge.set("PA-Palestina do Pará","1505494");
-    listIbge.set("PA-Paragominas","1505502");
-    listIbge.set("PA-Parauapebas","1505536");
-    listIbge.set("PA-Pau D'Arco","1505551");
-    listIbge.set("PA-Peixe-Boi","1505601");
-    listIbge.set("PA-Piçarra","1505635");
-    listIbge.set("PA-Placas","1505650");
-    listIbge.set("PA-Ponta de Pedras","1505700");
-    listIbge.set("PA-Portel","1505809");
-    listIbge.set("PA-Porto de Moz","1505908");
-    listIbge.set("PA-Prainha","1506005");
-    listIbge.set("PA-Primavera","1506104");
-    listIbge.set("PA-Quatipuru","1506112");
-    listIbge.set("PA-Redenção","1506138");
-    listIbge.set("PA-Rio Maria","1506161");
-    listIbge.set("PA-Rondon do Pará","1506187");
-    listIbge.set("PA-Rurópolis","1506195");
-    listIbge.set("PA-Salinópolis","1506203");
-    listIbge.set("PA-Salvaterra","1506302");
-    listIbge.set("PA-Santa Bárbara do Pará","1506351");
-    listIbge.set("PA-Santa Cruz do Arari","1506401");
-    listIbge.set("PA-Santa Izabel do Pará","1506500");
-    listIbge.set("PA-Santa Luzia do Pará","1506559");
-    listIbge.set("PA-Santa Maria das Barreiras","1506583");
-    listIbge.set("PA-Santa Maria do Pará","1506609");
-    listIbge.set("PA-Santana do Araguaia","1506708");
-    listIbge.set("PA-Santarém","1506807");
-    listIbge.set("PA-Santarém Novo","1506906");
-    listIbge.set("PA-Santo Antônio do Tauá","1507003");
-    listIbge.set("PA-São Caetano de Odivelas","1507102");
-    listIbge.set("PA-São Domingos do Araguaia","1507151");
-    listIbge.set("PA-São Domingos do Capim","1507201");
-    listIbge.set("PA-São Félix do Xingu","1507300");
-    listIbge.set("PA-São Francisco do Pará","1507409");
-    listIbge.set("PA-São Geraldo do Araguaia","1507458");
-    listIbge.set("PA-São João da Ponta","1507466");
-    listIbge.set("PA-São João de Pirabas","1507474");
-    listIbge.set("PA-São João do Araguaia","1507508");
-    listIbge.set("PA-São Miguel do Guamá","1507607");
-    listIbge.set("PA-São Sebastião da Boa Vista","1507706");
-    listIbge.set("PA-Sapucaia","1507755");
-    listIbge.set("PA-Senador José Porfírio","1507805");
-    listIbge.set("PA-Soure","1507904");
-    listIbge.set("PA-Tailândia","1507953");
-    listIbge.set("PA-Terra Alta","1507961");
-    listIbge.set("PA-Terra Santa","1507979");
-    listIbge.set("PA-Tomé-Açu","1508001");
-    listIbge.set("PA-Tracuateua","1508035");
-    listIbge.set("PA-Trairão","1508050");
-    listIbge.set("PA-Tucumã","1508084");
-    listIbge.set("PA-Tucuruí","1508100");
-    listIbge.set("PA-Ulianópolis","1508126");
-    listIbge.set("PA-Uruará","1508159");
-    listIbge.set("PA-Vigia","1508209");
-    listIbge.set("PA-Viseu","1508308");
-    listIbge.set("PA-Vitória do Xingu","1508357");
-    listIbge.set("PA-Xinguara","1508407");
-    listIbge.set("AP-Amapá","1600105");
-    listIbge.set("AP-Calçoene","1600204");
-    listIbge.set("AP-Cutias","1600212");
-    listIbge.set("AP-Ferreira Gomes","1600238");
-    listIbge.set("AP-Itaubal","1600253");
-    listIbge.set("AP-Laranjal do Jari","1600279");
-    listIbge.set("AP-Macapá","1600303");
-    listIbge.set("AP-Mazagão","1600402");
-    listIbge.set("AP-Oiapoque","1600501");
-    listIbge.set("AP-Pedra Branca do Amapari","1600154");
-    listIbge.set("AP-Porto Grande","1600535");
-    listIbge.set("AP-Pracuúba","1600550");
-    listIbge.set("AP-Santana","1600600");
-    listIbge.set("AP-Serra do Navio","1600055");
-    listIbge.set("AP-Tartarugalzinho","1600709");
-    listIbge.set("AP-Vitória do Jari","1600808");
-    listIbge.set("TO-Abreulândia","1700251");
-    listIbge.set("TO-Aguiarnópolis","1700301");
-    listIbge.set("TO-Aliança do Tocantins","1700350");
-    listIbge.set("TO-Almas","1700400");
-    listIbge.set("TO-Alvorada","1700707");
-    listIbge.set("TO-Ananás","1701002");
-    listIbge.set("TO-Angico","1701051");
-    listIbge.set("TO-Aparecida do Rio Negro","1701101");
-    listIbge.set("TO-Aragominas","1701309");
-    listIbge.set("TO-Araguacema","1701903");
-    listIbge.set("TO-Araguaçu","1702000");
-    listIbge.set("TO-Araguaína","1702109");
-    listIbge.set("TO-Araguanã","1702158");
-    listIbge.set("TO-Araguatins","1702208");
-    listIbge.set("TO-Arapoema","1702307");
-    listIbge.set("TO-Arraias","1702406");
-    listIbge.set("TO-Augustinópolis","1702554");
-    listIbge.set("TO-Aurora do Tocantins","1702703");
-    listIbge.set("TO-Axixá do Tocantins","1702901");
-    listIbge.set("TO-Babaçulândia","1703008");
-    listIbge.set("TO-Bandeirantes do Tocantins","1703057");
-    listIbge.set("TO-Barra do Ouro","1703073");
-    listIbge.set("TO-Barrolândia","1703107");
-    listIbge.set("TO-Bernardo Sayão","1703206");
-    listIbge.set("TO-Bom Jesus do Tocantins","1703305");
-    listIbge.set("TO-Brasilândia do Tocantins","1703602");
-    listIbge.set("TO-Brejinho de Nazaré","1703701");
-    listIbge.set("TO-Buriti do Tocantins","1703800");
-    listIbge.set("TO-Cachoeirinha","1703826");
-    listIbge.set("TO-Campos Lindos","1703842");
-    listIbge.set("TO-Cariri do Tocantins","1703867");
-    listIbge.set("TO-Carmolândia","1703883");
-    listIbge.set("TO-Carrasco Bonito","1703891");
-    listIbge.set("TO-Caseara","1703909");
-    listIbge.set("TO-Centenário","1704105");
-    listIbge.set("TO-Chapada da Natividade","1705102");
-    listIbge.set("TO-Chapada de Areia","1704600");
-    listIbge.set("TO-Colinas do Tocantins","1705508");
-    listIbge.set("TO-Colméia","1716703");
-    listIbge.set("TO-Combinado","1705557");
-    listIbge.set("TO-Conceição do Tocantins","1705607");
-    listIbge.set("TO-Couto Magalhães","1706001");
-    listIbge.set("TO-Cristalândia","1706100");
-    listIbge.set("TO-Crixás do Tocantins","1706258");
-    listIbge.set("TO-Darcinópolis","1706506");
-    listIbge.set("TO-Dianópolis","1707009");
-    listIbge.set("TO-Divinópolis do Tocantins","1707108");
-    listIbge.set("TO-Dois Irmãos do Tocantins","1707207");
-    listIbge.set("TO-Dueré","1707306");
-    listIbge.set("TO-Esperantina","1707405");
-    listIbge.set("TO-Fátima","1707553");
-    listIbge.set("TO-Figueirópolis","1707652");
-    listIbge.set("TO-Filadélfia","1707702");
-    listIbge.set("TO-Formoso do Araguaia","1708205");
-    listIbge.set("TO-Goianorte","1708304");
-    listIbge.set("TO-Goiatins","1709005");
-    listIbge.set("TO-Guaraí","1709302");
-    listIbge.set("TO-Gurupi","1709500");
-    listIbge.set("TO-Ipueiras","1709807");
-    listIbge.set("TO-Itacajá","1710508");
-    listIbge.set("TO-Itaguatins","1710706");
-    listIbge.set("TO-Itapiratins","1710904");
-    listIbge.set("TO-Itaporã do Tocantins","1711100");
-    listIbge.set("TO-Jaú do Tocantins","1711506");
-    listIbge.set("TO-Juarina","1711803");
-    listIbge.set("TO-Lagoa da Confusão","1711902");
-    listIbge.set("TO-Lagoa do Tocantins","1711951");
-    listIbge.set("TO-Lajeado","1712009");
-    listIbge.set("TO-Lavandeira","1712157");
-    listIbge.set("TO-Lizarda","1712405");
-    listIbge.set("TO-Luzinópolis","1712454");
-    listIbge.set("TO-Marianópolis do Tocantins","1712504");
-    listIbge.set("TO-Mateiros","1712702");
-    listIbge.set("TO-Maurilândia do Tocantins","1712801");
-    listIbge.set("TO-Miracema do Tocantins","1713205");
-    listIbge.set("TO-Miranorte","1713304");
-    listIbge.set("TO-Monte do Carmo","1713601");
-    listIbge.set("TO-Monte Santo do Tocantins","1713700");
-    listIbge.set("TO-Muricilândia","1713957");
-    listIbge.set("TO-Natividade","1714203");
-    listIbge.set("TO-Nazaré","1714302");
-    listIbge.set("TO-Nova Olinda","1714880");
-    listIbge.set("TO-Nova Rosalândia","1715002");
-    listIbge.set("TO-Novo Acordo","1715101");
-    listIbge.set("TO-Novo Alegre","1715150");
-    listIbge.set("TO-Novo Jardim","1715259");
-    listIbge.set("TO-Oliveira de Fátima","1715507");
-    listIbge.set("TO-Palmas","1721000");
-    listIbge.set("TO-Palmeirante","1715705");
-    listIbge.set("TO-Palmeiras do Tocantins","1713809");
-    listIbge.set("TO-Palmeirópolis","1715754");
-    listIbge.set("TO-Paraíso do Tocantins","1716109");
-    listIbge.set("TO-Paranã","1716208");
-    listIbge.set("TO-Pau D'Arco","1716307");
-    listIbge.set("TO-Pedro Afonso","1716505");
-    listIbge.set("TO-Peixe","1716604");
-    listIbge.set("TO-Pequizeiro","1716653");
-    listIbge.set("TO-Pindorama do Tocantins","1717008");
-    listIbge.set("TO-Piraquê","1717206");
-    listIbge.set("TO-Pium","1717503");
-    listIbge.set("TO-Ponte Alta do Bom Jesus","1717800");
-    listIbge.set("TO-Ponte Alta do Tocantins","1717909");
-    listIbge.set("TO-Porto Alegre do Tocantins","1718006");
-    listIbge.set("TO-Porto Nacional","1718204");
-    listIbge.set("TO-Praia Norte","1718303");
-    listIbge.set("TO-Presidente Kennedy","1718402");
-    listIbge.set("TO-Pugmil","1718451");
-    listIbge.set("TO-Recursolândia","1718501");
-    listIbge.set("TO-Riachinho","1718550");
-    listIbge.set("TO-Rio da Conceição","1718659");
-    listIbge.set("TO-Rio dos Bois","1718709");
-    listIbge.set("TO-Rio Sono","1718758");
-    listIbge.set("TO-Sampaio","1718808");
-    listIbge.set("TO-Sandolândia","1718840");
-    listIbge.set("TO-Santa Fé do Araguaia","1718865");
-    listIbge.set("TO-Santa Maria do Tocantins","1718881");
-    listIbge.set("TO-Santa Rita do Tocantins","1718899");
-    listIbge.set("TO-Santa Rosa do Tocantins","1718907");
-    listIbge.set("TO-Santa Tereza do Tocantins","1719004");
-    listIbge.set("TO-Santa Terezinha do Tocantins","1720002");
-    listIbge.set("TO-São Bento do Tocantins","1720101");
-    listIbge.set("TO-São Félix do Tocantins","1720150");
-    listIbge.set("TO-São Miguel do Tocantins","1720200");
-    listIbge.set("TO-São Salvador do Tocantins","1720259");
-    listIbge.set("TO-São Sebastião do Tocantins","1720309");
-    listIbge.set("TO-São Valério","1720499");
-    listIbge.set("TO-Silvanópolis","1720655");
-    listIbge.set("TO-Sítio Novo do Tocantins","1720804");
-    listIbge.set("TO-Sucupira","1720853");
-    listIbge.set("TO-Tabocão","1708254");
-    listIbge.set("TO-Taguatinga","1720903");
-    listIbge.set("TO-Taipas do Tocantins","1720937");
-    listIbge.set("TO-Talismã","1720978");
-    listIbge.set("TO-Tocantínia","1721109");
-    listIbge.set("TO-Tocantinópolis","1721208");
-    listIbge.set("TO-Tupirama","1721257");
-    listIbge.set("TO-Tupiratins","1721307");
-    listIbge.set("TO-Wanderlândia","1722081");
-    listIbge.set("TO-Xambioá","1722107");
-    listIbge.set("MA-Açailândia","2100055");
-    listIbge.set("MA-Afonso Cunha","2100105");
-    listIbge.set("MA-Água Doce do Maranhão","2100154");
-    listIbge.set("MA-Alcântara","2100204");
-    listIbge.set("MA-Aldeias Altas","2100303");
-    listIbge.set("MA-Altamira do Maranhão","2100402");
-    listIbge.set("MA-Alto Alegre do Maranhão","2100436");
-    listIbge.set("MA-Alto Alegre do Pindaré","2100477");
-    listIbge.set("MA-Alto Parnaíba","2100501");
-    listIbge.set("MA-Amapá do Maranhão","2100550");
-    listIbge.set("MA-Amarante do Maranhão","2100600");
-    listIbge.set("MA-Anajatuba","2100709");
-    listIbge.set("MA-Anapurus","2100808");
-    listIbge.set("MA-Apicum-Açu","2100832");
-    listIbge.set("MA-Araguanã","2100873");
-    listIbge.set("MA-Araioses","2100907");
-    listIbge.set("MA-Arame","2100956");
-    listIbge.set("MA-Arari","2101004");
-    listIbge.set("MA-Axixá","2101103");
-    listIbge.set("MA-Bacabal","2101202");
-    listIbge.set("MA-Bacabeira","2101251");
-    listIbge.set("MA-Bacuri","2101301");
-    listIbge.set("MA-Bacurituba","2101350");
-    listIbge.set("MA-Balsas","2101400");
-    listIbge.set("MA-Barão de Grajaú","2101509");
-    listIbge.set("MA-Barra do Corda","2101608");
-    listIbge.set("MA-Barreirinhas","2101707");
-    listIbge.set("MA-Bela Vista do Maranhão","2101772");
-    listIbge.set("MA-Belágua","2101731");
-    listIbge.set("MA-Benedito Leite","2101806");
-    listIbge.set("MA-Bequimão","2101905");
-    listIbge.set("MA-Bernardo do Mearim","2101939");
-    listIbge.set("MA-Boa Vista do Gurupi","2101970");
-    listIbge.set("MA-Bom Jardim","2102002");
-    listIbge.set("MA-Bom Jesus das Selvas","2102036");
-    listIbge.set("MA-Bom Lugar","2102077");
-    listIbge.set("MA-Brejo","2102101");
-    listIbge.set("MA-Brejo de Areia","2102150");
-    listIbge.set("MA-Buriti","2102200");
-    listIbge.set("MA-Buriti Bravo","2102309");
-    listIbge.set("MA-Buriticupu","2102325");
-    listIbge.set("MA-Buritirana","2102358");
-    listIbge.set("MA-Cachoeira Grande","2102374");
-    listIbge.set("MA-Cajapió","2102408");
-    listIbge.set("MA-Cajari","2102507");
-    listIbge.set("MA-Campestre do Maranhão","2102556");
-    listIbge.set("MA-Cândido Mendes","2102606");
-    listIbge.set("MA-Cantanhede","2102705");
-    listIbge.set("MA-Capinzal do Norte","2102754");
-    listIbge.set("MA-Carolina","2102804");
-    listIbge.set("MA-Carutapera","2102903");
-    listIbge.set("MA-Caxias","2103000");
-    listIbge.set("MA-Cedral","2103109");
-    listIbge.set("MA-Central do Maranhão","2103125");
-    listIbge.set("MA-Centro do Guilherme","2103158");
-    listIbge.set("MA-Centro Novo do Maranhão","2103174");
-    listIbge.set("MA-Chapadinha","2103208");
-    listIbge.set("MA-Cidelândia","2103257");
-    listIbge.set("MA-Codó","2103307");
-    listIbge.set("MA-Coelho Neto","2103406");
-    listIbge.set("MA-Colinas","2103505");
-    listIbge.set("MA-Conceição do Lago-Açu","2103554");
-    listIbge.set("MA-Coroatá","2103604");
-    listIbge.set("MA-Cururupu","2103703");
-    listIbge.set("MA-Davinópolis","2103752");
-    listIbge.set("MA-Dom Pedro","2103802");
-    listIbge.set("MA-Duque Bacelar","2103901");
-    listIbge.set("MA-Esperantinópolis","2104008");
-    listIbge.set("MA-Estreito","2104057");
-    listIbge.set("MA-Feira Nova do Maranhão","2104073");
-    listIbge.set("MA-Fernando Falcão","2104081");
-    listIbge.set("MA-Formosa da Serra Negra","2104099");
-    listIbge.set("MA-Fortaleza dos Nogueiras","2104107");
-    listIbge.set("MA-Fortuna","2104206");
-    listIbge.set("MA-Godofredo Viana","2104305");
-    listIbge.set("MA-Gonçalves Dias","2104404");
-    listIbge.set("MA-Governador Archer","2104503");
-    listIbge.set("MA-Governador Edison Lobão","2104552");
-    listIbge.set("MA-Governador Eugênio Barros","2104602");
-    listIbge.set("MA-Governador Luiz Rocha","2104628");
-    listIbge.set("MA-Governador Newton Bello","2104651");
-    listIbge.set("MA-Governador Nunes Freire","2104677");
-    listIbge.set("MA-Graça Aranha","2104701");
-    listIbge.set("MA-Grajaú","2104800");
-    listIbge.set("MA-Guimarães","2104909");
-    listIbge.set("MA-Humberto de Campos","2105005");
-    listIbge.set("MA-Icatu","2105104");
-    listIbge.set("MA-Igarapé do Meio","2105153");
-    listIbge.set("MA-Igarapé Grande","2105203");
-    listIbge.set("MA-Imperatriz","2105302");
-    listIbge.set("MA-Itaipava do Grajaú","2105351");
-    listIbge.set("MA-Itapecuru Mirim","2105401");
-    listIbge.set("MA-Itinga do Maranhão","2105427");
-    listIbge.set("MA-Jatobá","2105450");
-    listIbge.set("MA-Jenipapo dos Vieiras","2105476");
-    listIbge.set("MA-João Lisboa","2105500");
-    listIbge.set("MA-Joselândia","2105609");
-    listIbge.set("MA-Junco do Maranhão","2105658");
-    listIbge.set("MA-Lago da Pedra","2105708");
-    listIbge.set("MA-Lago do Junco","2105807");
-    listIbge.set("MA-Lago dos Rodrigues","2105948");
-    listIbge.set("MA-Lago Verde","2105906");
-    listIbge.set("MA-Lagoa do Mato","2105922");
-    listIbge.set("MA-Lagoa Grande do Maranhão","2105963");
-    listIbge.set("MA-Lajeado Novo","2105989");
-    listIbge.set("MA-Lima Campos","2106003");
-    listIbge.set("MA-Loreto","2106102");
-    listIbge.set("MA-Luís Domingues","2106201");
-    listIbge.set("MA-Magalhães de Almeida","2106300");
-    listIbge.set("MA-Maracaçumé","2106326");
-    listIbge.set("MA-Marajá do Sena","2106359");
-    listIbge.set("MA-Maranhãozinho","2106375");
-    listIbge.set("MA-Mata Roma","2106409");
-    listIbge.set("MA-Matinha","2106508");
-    listIbge.set("MA-Matões","2106607");
-    listIbge.set("MA-Matões do Norte","2106631");
-    listIbge.set("MA-Milagres do Maranhão","2106672");
-    listIbge.set("MA-Mirador","2106706");
-    listIbge.set("MA-Miranda do Norte","2106755");
-    listIbge.set("MA-Mirinzal","2106805");
-    listIbge.set("MA-Monção","2106904");
-    listIbge.set("MA-Montes Altos","2107001");
-    listIbge.set("MA-Morros","2107100");
-    listIbge.set("MA-Nina Rodrigues","2107209");
-    listIbge.set("MA-Nova Colinas","2107258");
-    listIbge.set("MA-Nova Iorque","2107308");
-    listIbge.set("MA-Nova Olinda do Maranhão","2107357");
-    listIbge.set("MA-Olho d'Água das Cunhãs","2107407");
-    listIbge.set("MA-Olinda Nova do Maranhão","2107456");
-    listIbge.set("MA-Paço do Lumiar","2107506");
-    listIbge.set("MA-Palmeirândia","2107605");
-    listIbge.set("MA-Paraibano","2107704");
-    listIbge.set("MA-Parnarama","2107803");
-    listIbge.set("MA-Passagem Franca","2107902");
-    listIbge.set("MA-Pastos Bons","2108009");
-    listIbge.set("MA-Paulino Neves","2108058");
-    listIbge.set("MA-Paulo Ramos","2108108");
-    listIbge.set("MA-Pedreiras","2108207");
-    listIbge.set("MA-Pedro do Rosário","2108256");
-    listIbge.set("MA-Penalva","2108306");
-    listIbge.set("MA-Peri Mirim","2108405");
-    listIbge.set("MA-Peritoró","2108454");
-    listIbge.set("MA-Pindaré-Mirim","2108504");
-    listIbge.set("MA-Pinheiro","2108603");
-    listIbge.set("MA-Pio XII","2108702");
-    listIbge.set("MA-Pirapemas","2108801");
-    listIbge.set("MA-Poção de Pedras","2108900");
-    listIbge.set("MA-Porto Franco","2109007");
-    listIbge.set("MA-Porto Rico do Maranhão","2109056");
-    listIbge.set("MA-Presidente Dutra","2109106");
-    listIbge.set("MA-Presidente Juscelino","2109205");
-    listIbge.set("MA-Presidente Médici","2109239");
-    listIbge.set("MA-Presidente Sarney","2109270");
-    listIbge.set("MA-Presidente Vargas","2109304");
-    listIbge.set("MA-Primeira Cruz","2109403");
-    listIbge.set("MA-Raposa","2109452");
-    listIbge.set("MA-Riachão","2109502");
-    listIbge.set("MA-Ribamar Fiquene","2109551");
-    listIbge.set("MA-Rosário","2109601");
-    listIbge.set("MA-Sambaíba","2109700");
-    listIbge.set("MA-Santa Filomena do Maranhão","2109759");
-    listIbge.set("MA-Santa Helena","2109809");
-    listIbge.set("MA-Santa Inês","2109908");
-    listIbge.set("MA-Santa Luzia","2110005");
-    listIbge.set("MA-Santa Luzia do Paruá","2110039");
-    listIbge.set("MA-Santa Quitéria do Maranhão","2110104");
-    listIbge.set("MA-Santa Rita","2110203");
-    listIbge.set("MA-Santana do Maranhão","2110237");
-    listIbge.set("MA-Santo Amaro do Maranhão","2110278");
-    listIbge.set("MA-Santo Antônio dos Lopes","2110302");
-    listIbge.set("MA-São Benedito do Rio Preto","2110401");
-    listIbge.set("MA-São Bento","2110500");
-    listIbge.set("MA-São Bernardo","2110609");
-    listIbge.set("MA-São Domingos do Azeitão","2110658");
-    listIbge.set("MA-São Domingos do Maranhão","2110708");
-    listIbge.set("MA-São Félix de Balsas","2110807");
-    listIbge.set("MA-São Francisco do Brejão","2110856");
-    listIbge.set("MA-São Francisco do Maranhão","2110906");
-    listIbge.set("MA-São João Batista","2111003");
-    listIbge.set("MA-São João do Carú","2111029");
-    listIbge.set("MA-São João do Paraíso","2111052");
-    listIbge.set("MA-São João do Soter","2111078");
-    listIbge.set("MA-São João dos Patos","2111102");
-    listIbge.set("MA-São José de Ribamar","2111201");
-    listIbge.set("MA-São José dos Basílios","2111250");
-    listIbge.set("MA-São Luís","2111300");
-    listIbge.set("MA-São Luís Gonzaga do Maranhão","2111409");
-    listIbge.set("MA-São Mateus do Maranhão","2111508");
-    listIbge.set("MA-São Pedro da Água Branca","2111532");
-    listIbge.set("MA-São Pedro dos Crentes","2111573");
-    listIbge.set("MA-São Raimundo das Mangabeiras","2111607");
-    listIbge.set("MA-São Raimundo do Doca Bezerra","2111631");
-    listIbge.set("MA-São Roberto","2111672");
-    listIbge.set("MA-São Vicente Ferrer","2111706");
-    listIbge.set("MA-Satubinha","2111722");
-    listIbge.set("MA-Senador Alexandre Costa","2111748");
-    listIbge.set("MA-Senador La Rocque","2111763");
-    listIbge.set("MA-Serrano do Maranhão","2111789");
-    listIbge.set("MA-Sítio Novo","2111805");
-    listIbge.set("MA-Sucupira do Norte","2111904");
-    listIbge.set("MA-Sucupira do Riachão","2111953");
-    listIbge.set("MA-Tasso Fragoso","2112001");
-    listIbge.set("MA-Timbiras","2112100");
-    listIbge.set("MA-Timon","2112209");
-    listIbge.set("MA-Trizidela do Vale","2112233");
-    listIbge.set("MA-Tufilândia","2112274");
-    listIbge.set("MA-Tuntum","2112308");
-    listIbge.set("MA-Turiaçu","2112407");
-    listIbge.set("MA-Turilândia","2112456");
-    listIbge.set("MA-Tutóia","2112506");
-    listIbge.set("MA-Urbano Santos","2112605");
-    listIbge.set("MA-Vargem Grande","2112704");
-    listIbge.set("MA-Viana","2112803");
-    listIbge.set("MA-Vila Nova dos Martírios","2112852");
-    listIbge.set("MA-Vitória do Mearim","2112902");
-    listIbge.set("MA-Vitorino Freire","2113009");
-    listIbge.set("MA-Zé Doca","2114007");
-    listIbge.set("PI-Acauã","2200053");
-    listIbge.set("PI-Agricolândia","2200103");
-    listIbge.set("PI-Água Branca","2200202");
-    listIbge.set("PI-Alagoinha do Piauí","2200251");
-    listIbge.set("PI-Alegrete do Piauí","2200277");
-    listIbge.set("PI-Alto Longá","2200301");
-    listIbge.set("PI-Altos","2200400");
-    listIbge.set("PI-Alvorada do Gurguéia","2200459");
-    listIbge.set("PI-Amarante","2200509");
-    listIbge.set("PI-Angical do Piauí","2200608");
-    listIbge.set("PI-Anísio de Abreu","2200707");
-    listIbge.set("PI-Antônio Almeida","2200806");
-    listIbge.set("PI-Aroazes","2200905");
-    listIbge.set("PI-Aroeiras do Itaim","2200954");
-    listIbge.set("PI-Arraial","2201002");
-    listIbge.set("PI-Assunção do Piauí","2201051");
-    listIbge.set("PI-Avelino Lopes","2201101");
-    listIbge.set("PI-Baixa Grande do Ribeiro","2201150");
-    listIbge.set("PI-Barra D'Alcântara","2201176");
-    listIbge.set("PI-Barras","2201200");
-    listIbge.set("PI-Barreiras do Piauí","2201309");
-    listIbge.set("PI-Barro Duro","2201408");
-    listIbge.set("PI-Batalha","2201507");
-    listIbge.set("PI-Bela Vista do Piauí","2201556");
-    listIbge.set("PI-Belém do Piauí","2201572");
-    listIbge.set("PI-Beneditinos","2201606");
-    listIbge.set("PI-Bertolínia","2201705");
-    listIbge.set("PI-Betânia do Piauí","2201739");
-    listIbge.set("PI-Boa Hora","2201770");
-    listIbge.set("PI-Bocaina","2201804");
-    listIbge.set("PI-Bom Jesus","2201903");
-    listIbge.set("PI-Bom Princípio do Piauí","2201919");
-    listIbge.set("PI-Bonfim do Piauí","2201929");
-    listIbge.set("PI-Boqueirão do Piauí","2201945");
-    listIbge.set("PI-Brasileira","2201960");
-    listIbge.set("PI-Brejo do Piauí","2201988");
-    listIbge.set("PI-Buriti dos Lopes","2202000");
-    listIbge.set("PI-Buriti dos Montes","2202026");
-    listIbge.set("PI-Cabeceiras do Piauí","2202059");
-    listIbge.set("PI-Cajazeiras do Piauí","2202075");
-    listIbge.set("PI-Cajueiro da Praia","2202083");
-    listIbge.set("PI-Caldeirão Grande do Piauí","2202091");
-    listIbge.set("PI-Campinas do Piauí","2202109");
-    listIbge.set("PI-Campo Alegre do Fidalgo","2202117");
-    listIbge.set("PI-Campo Grande do Piauí","2202133");
-    listIbge.set("PI-Campo Largo do Piauí","2202174");
-    listIbge.set("PI-Campo Maior","2202208");
-    listIbge.set("PI-Canavieira","2202251");
-    listIbge.set("PI-Canto do Buriti","2202307");
-    listIbge.set("PI-Capitão de Campos","2202406");
-    listIbge.set("PI-Capitão Gervásio Oliveira","2202455");
-    listIbge.set("PI-Caracol","2202505");
-    listIbge.set("PI-Caraúbas do Piauí","2202539");
-    listIbge.set("PI-Caridade do Piauí","2202554");
-    listIbge.set("PI-Castelo do Piauí","2202604");
-    listIbge.set("PI-Caxingó","2202653");
-    listIbge.set("PI-Cocal","2202703");
-    listIbge.set("PI-Cocal de Telha","2202711");
-    listIbge.set("PI-Cocal dos Alves","2202729");
-    listIbge.set("PI-Coivaras","2202737");
-    listIbge.set("PI-Colônia do Gurguéia","2202752");
-    listIbge.set("PI-Colônia do Piauí","2202778");
-    listIbge.set("PI-Conceição do Canindé","2202802");
-    listIbge.set("PI-Coronel José Dias","2202851");
-    listIbge.set("PI-Corrente","2202901");
-    listIbge.set("PI-Cristalândia do Piauí","2203008");
-    listIbge.set("PI-Cristino Castro","2203107");
-    listIbge.set("PI-Curimatá","2203206");
-    listIbge.set("PI-Currais","2203230");
-    listIbge.set("PI-Curral Novo do Piauí","2203271");
-    listIbge.set("PI-Curralinhos","2203255");
-    listIbge.set("PI-Demerval Lobão","2203305");
-    listIbge.set("PI-Dirceu Arcoverde","2203354");
-    listIbge.set("PI-Dom Expedito Lopes","2203404");
-    listIbge.set("PI-Dom Inocêncio","2203453");
-    listIbge.set("PI-Domingos Mourão","2203420");
-    listIbge.set("PI-Elesbão Veloso","2203503");
-    listIbge.set("PI-Eliseu Martins","2203602");
-    listIbge.set("PI-Esperantina","2203701");
-    listIbge.set("PI-Fartura do Piauí","2203750");
-    listIbge.set("PI-Flores do Piauí","2203800");
-    listIbge.set("PI-Floresta do Piauí","2203859");
-    listIbge.set("PI-Floriano","2203909");
-    listIbge.set("PI-Francinópolis","2204006");
-    listIbge.set("PI-Francisco Ayres","2204105");
-    listIbge.set("PI-Francisco Macedo","2204154");
-    listIbge.set("PI-Francisco Santos","2204204");
-    listIbge.set("PI-Fronteiras","2204303");
-    listIbge.set("PI-Geminiano","2204352");
-    listIbge.set("PI-Gilbués","2204402");
-    listIbge.set("PI-Guadalupe","2204501");
-    listIbge.set("PI-Guaribas","2204550");
-    listIbge.set("PI-Hugo Napoleão","2204600");
-    listIbge.set("PI-Ilha Grande","2204659");
-    listIbge.set("PI-Inhuma","2204709");
-    listIbge.set("PI-Ipiranga do Piauí","2204808");
-    listIbge.set("PI-Isaías Coelho","2204907");
-    listIbge.set("PI-Itainópolis","2205003");
-    listIbge.set("PI-Itaueira","2205102");
-    listIbge.set("PI-Jacobina do Piauí","2205151");
-    listIbge.set("PI-Jaicós","2205201");
-    listIbge.set("PI-Jardim do Mulato","2205250");
-    listIbge.set("PI-Jatobá do Piauí","2205276");
-    listIbge.set("PI-Jerumenha","2205300");
-    listIbge.set("PI-João Costa","2205359");
-    listIbge.set("PI-Joaquim Pires","2205409");
-    listIbge.set("PI-Joca Marques","2205458");
-    listIbge.set("PI-José de Freitas","2205508");
-    listIbge.set("PI-Juazeiro do Piauí","2205516");
-    listIbge.set("PI-Júlio Borges","2205524");
-    listIbge.set("PI-Jurema","2205532");
-    listIbge.set("PI-Lagoa Alegre","2205557");
-    listIbge.set("PI-Lagoa de São Francisco","2205573");
-    listIbge.set("PI-Lagoa do Barro do Piauí","2205565");
-    listIbge.set("PI-Lagoa do Piauí","2205581");
-    listIbge.set("PI-Lagoa do Sítio","2205599");
-    listIbge.set("PI-Lagoinha do Piauí","2205540");
-    listIbge.set("PI-Landri Sales","2205607");
-    listIbge.set("PI-Luís Correia","2205706");
-    listIbge.set("PI-Luzilândia","2205805");
-    listIbge.set("PI-Madeiro","2205854");
-    listIbge.set("PI-Manoel Emídio","2205904");
-    listIbge.set("PI-Marcolândia","2205953");
-    listIbge.set("PI-Marcos Parente","2206001");
-    listIbge.set("PI-Massapê do Piauí","2206050");
-    listIbge.set("PI-Matias Olímpio","2206100");
-    listIbge.set("PI-Miguel Alves","2206209");
-    listIbge.set("PI-Miguel Leão","2206308");
-    listIbge.set("PI-Milton Brandão","2206357");
-    listIbge.set("PI-Monsenhor Gil","2206407");
-    listIbge.set("PI-Monsenhor Hipólito","2206506");
-    listIbge.set("PI-Monte Alegre do Piauí","2206605");
-    listIbge.set("PI-Morro Cabeça no Tempo","2206654");
-    listIbge.set("PI-Morro do Chapéu do Piauí","2206670");
-    listIbge.set("PI-Murici dos Portelas","2206696");
-    listIbge.set("PI-Nazaré do Piauí","2206704");
-    listIbge.set("PI-Nazária","2206720");
-    listIbge.set("PI-Nossa Senhora de Nazaré","2206753");
-    listIbge.set("PI-Nossa Senhora dos Remédios","2206803");
-    listIbge.set("PI-Nova Santa Rita","2207959");
-    listIbge.set("PI-Novo Oriente do Piauí","2206902");
-    listIbge.set("PI-Novo Santo Antônio","2206951");
-    listIbge.set("PI-Oeiras","2207009");
-    listIbge.set("PI-Olho D'Água do Piauí","2207108");
-    listIbge.set("PI-Padre Marcos","2207207");
-    listIbge.set("PI-Paes Landim","2207306");
-    listIbge.set("PI-Pajeú do Piauí","2207355");
-    listIbge.set("PI-Palmeira do Piauí","2207405");
-    listIbge.set("PI-Palmeirais","2207504");
-    listIbge.set("PI-Paquetá","2207553");
-    listIbge.set("PI-Parnaguá","2207603");
-    listIbge.set("PI-Parnaíba","2207702");
-    listIbge.set("PI-Passagem Franca do Piauí","2207751");
-    listIbge.set("PI-Patos do Piauí","2207777");
-    listIbge.set("PI-Pau D'Arco do Piauí","2207793");
-    listIbge.set("PI-Paulistana","2207801");
-    listIbge.set("PI-Pavussu","2207850");
-    listIbge.set("PI-Pedro II","2207900");
-    listIbge.set("PI-Pedro Laurentino","2207934");
-    listIbge.set("PI-Picos","2208007");
-    listIbge.set("PI-Pimenteiras","2208106");
-    listIbge.set("PI-Pio IX","2208205");
-    listIbge.set("PI-Piracuruca","2208304");
-    listIbge.set("PI-Piripiri","2208403");
-    listIbge.set("PI-Porto","2208502");
-    listIbge.set("PI-Porto Alegre do Piauí","2208551");
-    listIbge.set("PI-Prata do Piauí","2208601");
-    listIbge.set("PI-Queimada Nova","2208650");
-    listIbge.set("PI-Redenção do Gurguéia","2208700");
-    listIbge.set("PI-Regeneração","2208809");
-    listIbge.set("PI-Riacho Frio","2208858");
-    listIbge.set("PI-Ribeira do Piauí","2208874");
-    listIbge.set("PI-Ribeiro Gonçalves","2208908");
-    listIbge.set("PI-Rio Grande do Piauí","2209005");
-    listIbge.set("PI-Santa Cruz do Piauí","2209104");
-    listIbge.set("PI-Santa Cruz dos Milagres","2209153");
-    listIbge.set("PI-Santa Filomena","2209203");
-    listIbge.set("PI-Santa Luz","2209302");
-    listIbge.set("PI-Santa Rosa do Piauí","2209377");
-    listIbge.set("PI-Santana do Piauí","2209351");
-    listIbge.set("PI-Santo Antônio de Lisboa","2209401");
-    listIbge.set("PI-Santo Antônio dos Milagres","2209450");
-    listIbge.set("PI-Santo Inácio do Piauí","2209500");
-    listIbge.set("PI-São Braz do Piauí","2209559");
-    listIbge.set("PI-São Félix do Piauí","2209609");
-    listIbge.set("PI-São Francisco de Assis do Piauí","2209658");
-    listIbge.set("PI-São Francisco do Piauí","2209708");
-    listIbge.set("PI-São Gonçalo do Gurguéia","2209757");
-    listIbge.set("PI-São Gonçalo do Piauí","2209807");
-    listIbge.set("PI-São João da Canabrava","2209856");
-    listIbge.set("PI-São João da Fronteira","2209872");
-    listIbge.set("PI-São João da Serra","2209906");
-    listIbge.set("PI-São João da Varjota","2209955");
-    listIbge.set("PI-São João do Arraial","2209971");
-    listIbge.set("PI-São João do Piauí","2210003");
-    listIbge.set("PI-São José do Divino","2210052");
-    listIbge.set("PI-São José do Peixe","2210102");
-    listIbge.set("PI-São José do Piauí","2210201");
-    listIbge.set("PI-São Julião","2210300");
-    listIbge.set("PI-São Lourenço do Piauí","2210359");
-    listIbge.set("PI-São Luis do Piauí","2210375");
-    listIbge.set("PI-São Miguel da Baixa Grande","2210383");
-    listIbge.set("PI-São Miguel do Fidalgo","2210391");
-    listIbge.set("PI-São Miguel do Tapuio","2210409");
-    listIbge.set("PI-São Pedro do Piauí","2210508");
-    listIbge.set("PI-São Raimundo Nonato","2210607");
-    listIbge.set("PI-Sebastião Barros","2210623");
-    listIbge.set("PI-Sebastião Leal","2210631");
-    listIbge.set("PI-Sigefredo Pacheco","2210656");
-    listIbge.set("PI-Simões","2210706");
-    listIbge.set("PI-Simplício Mendes","2210805");
-    listIbge.set("PI-Socorro do Piauí","2210904");
-    listIbge.set("PI-Sussuapara","2210938");
-    listIbge.set("PI-Tamboril do Piauí","2210953");
-    listIbge.set("PI-Tanque do Piauí","2210979");
-    listIbge.set("PI-Teresina","2211001");
-    listIbge.set("PI-União","2211100");
-    listIbge.set("PI-Uruçuí","2211209");
-    listIbge.set("PI-Valença do Piauí","2211308");
-    listIbge.set("PI-Várzea Branca","2211357");
-    listIbge.set("PI-Várzea Grande","2211407");
-    listIbge.set("PI-Vera Mendes","2211506");
-    listIbge.set("PI-Vila Nova do Piauí","2211605");
-    listIbge.set("PI-Wall Ferraz","2211704");
-    listIbge.set("CE-Abaiara","2300101");
-    listIbge.set("CE-Acarape","2300150");
-    listIbge.set("CE-Acaraú","2300200");
-    listIbge.set("CE-Acopiara","2300309");
-    listIbge.set("CE-Aiuaba","2300408");
-    listIbge.set("CE-Alcântaras","2300507");
-    listIbge.set("CE-Altaneira","2300606");
-    listIbge.set("CE-Alto Santo","2300705");
-    listIbge.set("CE-Amontada","2300754");
-    listIbge.set("CE-Antonina do Norte","2300804");
-    listIbge.set("CE-Apuiarés","2300903");
-    listIbge.set("CE-Aquiraz","2301000");
-    listIbge.set("CE-Aracati","2301109");
-    listIbge.set("CE-Aracoiaba","2301208");
-    listIbge.set("CE-Ararendá","2301257");
-    listIbge.set("CE-Araripe","2301307");
-    listIbge.set("CE-Aratuba","2301406");
-    listIbge.set("CE-Arneiroz","2301505");
-    listIbge.set("CE-Assaré","2301604");
-    listIbge.set("CE-Aurora","2301703");
-    listIbge.set("CE-Baixio","2301802");
-    listIbge.set("CE-Banabuiú","2301851");
-    listIbge.set("CE-Barbalha","2301901");
-    listIbge.set("CE-Barreira","2301950");
-    listIbge.set("CE-Barro","2302008");
-    listIbge.set("CE-Barroquinha","2302057");
-    listIbge.set("CE-Baturité","2302107");
-    listIbge.set("CE-Beberibe","2302206");
-    listIbge.set("CE-Bela Cruz","2302305");
-    listIbge.set("CE-Boa Viagem","2302404");
-    listIbge.set("CE-Brejo Santo","2302503");
-    listIbge.set("CE-Camocim","2302602");
-    listIbge.set("CE-Campos Sales","2302701");
-    listIbge.set("CE-Canindé","2302800");
-    listIbge.set("CE-Capistrano","2302909");
-    listIbge.set("CE-Caridade","2303006");
-    listIbge.set("CE-Cariré","2303105");
-    listIbge.set("CE-Caririaçu","2303204");
-    listIbge.set("CE-Cariús","2303303");
-    listIbge.set("CE-Carnaubal","2303402");
-    listIbge.set("CE-Cascavel","2303501");
-    listIbge.set("CE-Catarina","2303600");
-    listIbge.set("CE-Catunda","2303659");
-    listIbge.set("CE-Caucaia","2303709");
-    listIbge.set("CE-Cedro","2303808");
-    listIbge.set("CE-Chaval","2303907");
-    listIbge.set("CE-Choró","2303931");
-    listIbge.set("CE-Chorozinho","2303956");
-    listIbge.set("CE-Coreaú","2304004");
-    listIbge.set("CE-Crateús","2304103");
-    listIbge.set("CE-Crato","2304202");
-    listIbge.set("CE-Croatá","2304236");
-    listIbge.set("CE-Cruz","2304251");
-    listIbge.set("CE-Deputado Irapuan Pinheiro","2304269");
-    listIbge.set("CE-Ereré","2304277");
-    listIbge.set("CE-Eusébio","2304285");
-    listIbge.set("CE-Farias Brito","2304301");
-    listIbge.set("CE-Forquilha","2304350");
-    listIbge.set("CE-Fortaleza","2304400");
-    listIbge.set("CE-Fortim","2304459");
-    listIbge.set("CE-Frecheirinha","2304509");
-    listIbge.set("CE-General Sampaio","2304608");
-    listIbge.set("CE-Graça","2304657");
-    listIbge.set("CE-Granja","2304707");
-    listIbge.set("CE-Granjeiro","2304806");
-    listIbge.set("CE-Groaíras","2304905");
-    listIbge.set("CE-Guaiúba","2304954");
-    listIbge.set("CE-Guaraciaba do Norte","2305001");
-    listIbge.set("CE-Guaramiranga","2305100");
-    listIbge.set("CE-Hidrolândia","2305209");
-    listIbge.set("CE-Horizonte","2305233");
-    listIbge.set("CE-Ibaretama","2305266");
-    listIbge.set("CE-Ibiapina","2305308");
-    listIbge.set("CE-Ibicuitinga","2305332");
-    listIbge.set("CE-Icapuí","2305357");
-    listIbge.set("CE-Icó","2305407");
-    listIbge.set("CE-Iguatu","2305506");
-    listIbge.set("CE-Independência","2305605");
-    listIbge.set("CE-Ipaporanga","2305654");
-    listIbge.set("CE-Ipaumirim","2305704");
-    listIbge.set("CE-Ipu","2305803");
-    listIbge.set("CE-Ipueiras","2305902");
-    listIbge.set("CE-Iracema","2306009");
-    listIbge.set("CE-Irauçuba","2306108");
-    listIbge.set("CE-Itaiçaba","2306207");
-    listIbge.set("CE-Itaitinga","2306256");
-    listIbge.set("CE-Itapajé","2306306");
-    listIbge.set("CE-Itapipoca","2306405");
-    listIbge.set("CE-Itapiúna","2306504");
-    listIbge.set("CE-Itarema","2306553");
-    listIbge.set("CE-Itatira","2306603");
-    listIbge.set("CE-Jaguaretama","2306702");
-    listIbge.set("CE-Jaguaribara","2306801");
-    listIbge.set("CE-Jaguaribe","2306900");
-    listIbge.set("CE-Jaguaruana","2307007");
-    listIbge.set("CE-Jardim","2307106");
-    listIbge.set("CE-Jati","2307205");
-    listIbge.set("CE-Jijoca de Jericoacoara","2307254");
-    listIbge.set("CE-Juazeiro do Norte","2307304");
-    listIbge.set("CE-Jucás","2307403");
-    listIbge.set("CE-Lavras da Mangabeira","2307502");
-    listIbge.set("CE-Limoeiro do Norte","2307601");
-    listIbge.set("CE-Madalena","2307635");
-    listIbge.set("CE-Maracanaú","2307650");
-    listIbge.set("CE-Maranguape","2307700");
-    listIbge.set("CE-Marco","2307809");
-    listIbge.set("CE-Martinópole","2307908");
-    listIbge.set("CE-Massapê","2308005");
-    listIbge.set("CE-Mauriti","2308104");
-    listIbge.set("CE-Meruoca","2308203");
-    listIbge.set("CE-Milagres","2308302");
-    listIbge.set("CE-Milhã","2308351");
-    listIbge.set("CE-Miraíma","2308377");
-    listIbge.set("CE-Missão Velha","2308401");
-    listIbge.set("CE-Mombaça","2308500");
-    listIbge.set("CE-Monsenhor Tabosa","2308609");
-    listIbge.set("CE-Morada Nova","2308708");
-    listIbge.set("CE-Moraújo","2308807");
-    listIbge.set("CE-Morrinhos","2308906");
-    listIbge.set("CE-Mucambo","2309003");
-    listIbge.set("CE-Mulungu","2309102");
-    listIbge.set("CE-Nova Olinda","2309201");
-    listIbge.set("CE-Nova Russas","2309300");
-    listIbge.set("CE-Novo Oriente","2309409");
-    listIbge.set("CE-Ocara","2309458");
-    listIbge.set("CE-Orós","2309508");
-    listIbge.set("CE-Pacajus","2309607");
-    listIbge.set("CE-Pacatuba","2309706");
-    listIbge.set("CE-Pacoti","2309805");
-    listIbge.set("CE-Pacujá","2309904");
-    listIbge.set("CE-Palhano","2310001");
-    listIbge.set("CE-Palmácia","2310100");
-    listIbge.set("CE-Paracuru","2310209");
-    listIbge.set("CE-Paraipaba","2310258");
-    listIbge.set("CE-Parambu","2310308");
-    listIbge.set("CE-Paramoti","2310407");
-    listIbge.set("CE-Pedra Branca","2310506");
-    listIbge.set("CE-Penaforte","2310605");
-    listIbge.set("CE-Pentecoste","2310704");
-    listIbge.set("CE-Pereiro","2310803");
-    listIbge.set("CE-Pindoretama","2310852");
-    listIbge.set("CE-Piquet Carneiro","2310902");
-    listIbge.set("CE-Pires Ferreira","2310951");
-    listIbge.set("CE-Poranga","2311009");
-    listIbge.set("CE-Porteiras","2311108");
-    listIbge.set("CE-Potengi","2311207");
-    listIbge.set("CE-Potiretama","2311231");
-    listIbge.set("CE-Quiterianópolis","2311264");
-    listIbge.set("CE-Quixadá","2311306");
-    listIbge.set("CE-Quixelô","2311355");
-    listIbge.set("CE-Quixeramobim","2311405");
-    listIbge.set("CE-Quixeré","2311504");
-    listIbge.set("CE-Redenção","2311603");
-    listIbge.set("CE-Reriutaba","2311702");
-    listIbge.set("CE-Russas","2311801");
-    listIbge.set("CE-Saboeiro","2311900");
-    listIbge.set("CE-Salitre","2311959");
-    listIbge.set("CE-Santa Quitéria","2312205");
-    listIbge.set("CE-Santana do Acaraú","2312007");
-    listIbge.set("CE-Santana do Cariri","2312106");
-    listIbge.set("CE-São Benedito","2312304");
-    listIbge.set("CE-São Gonçalo do Amarante","2312403");
-    listIbge.set("CE-São João do Jaguaribe","2312502");
-    listIbge.set("CE-São Luís do Curu","2312601");
-    listIbge.set("CE-Senador Pompeu","2312700");
-    listIbge.set("CE-Senador Sá","2312809");
-    listIbge.set("CE-Sobral","2312908");
-    listIbge.set("CE-Solonópole","2313005");
-    listIbge.set("CE-Tabuleiro do Norte","2313104");
-    listIbge.set("CE-Tamboril","2313203");
-    listIbge.set("CE-Tarrafas","2313252");
-    listIbge.set("CE-Tauá","2313302");
-    listIbge.set("CE-Tejuçuoca","2313351");
-    listIbge.set("CE-Tianguá","2313401");
-    listIbge.set("CE-Trairi","2313500");
-    listIbge.set("CE-Tururu","2313559");
-    listIbge.set("CE-Ubajara","2313609");
-    listIbge.set("CE-Umari","2313708");
-    listIbge.set("CE-Umirim","2313757");
-    listIbge.set("CE-Uruburetama","2313807");
-    listIbge.set("CE-Uruoca","2313906");
-    listIbge.set("CE-Varjota","2313955");
-    listIbge.set("CE-Várzea Alegre","2314003");
-    listIbge.set("CE-Viçosa do Ceará","2314102");
-    listIbge.set("RN-Acari","2400109");
-    listIbge.set("RN-Açu","2400208");
-    listIbge.set("RN-Afonso Bezerra","2400307");
-    listIbge.set("RN-Água Nova","2400406");
-    listIbge.set("RN-Alexandria","2400505");
-    listIbge.set("RN-Almino Afonso","2400604");
-    listIbge.set("RN-Alto do Rodrigues","2400703");
-    listIbge.set("RN-Angicos","2400802");
-    listIbge.set("RN-Antônio Martins","2400901");
-    listIbge.set("RN-Apodi","2401008");
-    listIbge.set("RN-Areia Branca","2401107");
-    listIbge.set("RN-Arês","2401206");
-    listIbge.set("RN-Baía Formosa","2401404");
-    listIbge.set("RN-Baraúna","2401453");
-    listIbge.set("RN-Barcelona","2401503");
-    listIbge.set("RN-Bento Fernandes","2401602");
-    listIbge.set("RN-Bodó","2401651");
-    listIbge.set("RN-Bom Jesus","2401701");
-    listIbge.set("RN-Brejinho","2401800");
-    listIbge.set("RN-Caiçara do Norte","2401859");
-    listIbge.set("RN-Caiçara do Rio do Vento","2401909");
-    listIbge.set("RN-Caicó","2402006");
-    listIbge.set("RN-Campo Grande","2401305");
-    listIbge.set("RN-Campo Redondo","2402105");
-    listIbge.set("RN-Canguaretama","2402204");
-    listIbge.set("RN-Caraúbas","2402303");
-    listIbge.set("RN-Carnaúba dos Dantas","2402402");
-    listIbge.set("RN-Carnaubais","2402501");
-    listIbge.set("RN-Ceará-Mirim","2402600");
-    listIbge.set("RN-Cerro Corá","2402709");
-    listIbge.set("RN-Coronel Ezequiel","2402808");
-    listIbge.set("RN-Coronel João Pessoa","2402907");
-    listIbge.set("RN-Cruzeta","2403004");
-    listIbge.set("RN-Currais Novos","2403103");
-    listIbge.set("RN-Doutor Severiano","2403202");
-    listIbge.set("RN-Encanto","2403301");
-    listIbge.set("RN-Equador","2403400");
-    listIbge.set("RN-Espírito Santo","2403509");
-    listIbge.set("RN-Extremoz","2403608");
-    listIbge.set("RN-Felipe Guerra","2403707");
-    listIbge.set("RN-Fernando Pedroza","2403756");
-    listIbge.set("RN-Florânia","2403806");
-    listIbge.set("RN-Francisco Dantas","2403905");
-    listIbge.set("RN-Frutuoso Gomes","2404002");
-    listIbge.set("RN-Galinhos","2404101");
-    listIbge.set("RN-Goianinha","2404200");
-    listIbge.set("RN-Governador Dix-Sept Rosado","2404309");
-    listIbge.set("RN-Grossos","2404408");
-    listIbge.set("RN-Guamaré","2404507");
-    listIbge.set("RN-Ielmo Marinho","2404606");
-    listIbge.set("RN-Ipanguaçu","2404705");
-    listIbge.set("RN-Ipueira","2404804");
-    listIbge.set("RN-Itajá","2404853");
-    listIbge.set("RN-Itaú","2404903");
-    listIbge.set("RN-Jaçanã","2405009");
-    listIbge.set("RN-Jandaíra","2405108");
-    listIbge.set("RN-Janduís","2405207");
-    listIbge.set("RN-Januário Cicco","2405306");
-    listIbge.set("RN-Japi","2405405");
-    listIbge.set("RN-Jardim de Angicos","2405504");
-    listIbge.set("RN-Jardim de Piranhas","2405603");
-    listIbge.set("RN-Jardim do Seridó","2405702");
-    listIbge.set("RN-João Câmara","2405801");
-    listIbge.set("RN-João Dias","2405900");
-    listIbge.set("RN-José da Penha","2406007");
-    listIbge.set("RN-Jucurutu","2406106");
-    listIbge.set("RN-Jundiá","2406155");
-    listIbge.set("RN-Lagoa d'Anta","2406205");
-    listIbge.set("RN-Lagoa de Pedras","2406304");
-    listIbge.set("RN-Lagoa de Velhos","2406403");
-    listIbge.set("RN-Lagoa Nova","2406502");
-    listIbge.set("RN-Lagoa Salgada","2406601");
-    listIbge.set("RN-Lajes","2406700");
-    listIbge.set("RN-Lajes Pintadas","2406809");
-    listIbge.set("RN-Lucrécia","2406908");
-    listIbge.set("RN-Luís Gomes","2407005");
-    listIbge.set("RN-Macaíba","2407104");
-    listIbge.set("RN-Macau","2407203");
-    listIbge.set("RN-Major Sales","2407252");
-    listIbge.set("RN-Marcelino Vieira","2407302");
-    listIbge.set("RN-Martins","2407401");
-    listIbge.set("RN-Maxaranguape","2407500");
-    listIbge.set("RN-Messias Targino","2407609");
-    listIbge.set("RN-Montanhas","2407708");
-    listIbge.set("RN-Monte Alegre","2407807");
-    listIbge.set("RN-Monte das Gameleiras","2407906");
-    listIbge.set("RN-Mossoró","2408003");
-    listIbge.set("RN-Natal","2408102");
-    listIbge.set("RN-Nísia Floresta","2408201");
-    listIbge.set("RN-Nova Cruz","2408300");
-    listIbge.set("RN-Olho d'Água do Borges","2408409");
-    listIbge.set("RN-Ouro Branco","2408508");
-    listIbge.set("RN-Paraná","2408607");
-    listIbge.set("RN-Paraú","2408706");
-    listIbge.set("RN-Parazinho","2408805");
-    listIbge.set("RN-Parelhas","2408904");
-    listIbge.set("RN-Parnamirim","2403251");
-    listIbge.set("RN-Passa e Fica","2409100");
-    listIbge.set("RN-Passagem","2409209");
-    listIbge.set("RN-Patu","2409308");
-    listIbge.set("RN-Pau dos Ferros","2409407");
-    listIbge.set("RN-Pedra Grande","2409506");
-    listIbge.set("RN-Pedra Preta","2409605");
-    listIbge.set("RN-Pedro Avelino","2409704");
-    listIbge.set("RN-Pedro Velho","2409803");
-    listIbge.set("RN-Pendências","2409902");
-    listIbge.set("RN-Pilões","2410009");
-    listIbge.set("RN-Poço Branco","2410108");
-    listIbge.set("RN-Portalegre","2410207");
-    listIbge.set("RN-Porto do Mangue","2410256");
-    listIbge.set("RN-Pureza","2410405");
-    listIbge.set("RN-Rafael Fernandes","2410504");
-    listIbge.set("RN-Rafael Godeiro","2410603");
-    listIbge.set("RN-Riacho da Cruz","2410702");
-    listIbge.set("RN-Riacho de Santana","2410801");
-    listIbge.set("RN-Riachuelo","2410900");
-    listIbge.set("RN-Rio do Fogo","2408953");
-    listIbge.set("RN-Rodolfo Fernandes","2411007");
-    listIbge.set("RN-Ruy Barbosa","2411106");
-    listIbge.set("RN-Santa Cruz","2411205");
-    listIbge.set("RN-Santa Maria","2409332");
-    listIbge.set("RN-Santana do Matos","2411403");
-    listIbge.set("RN-Santana do Seridó","2411429");
-    listIbge.set("RN-Santo Antônio","2411502");
-    listIbge.set("RN-São Bento do Norte","2411601");
-    listIbge.set("RN-São Bento do Trairí","2411700");
-    listIbge.set("RN-São Fernando","2411809");
-    listIbge.set("RN-São Francisco do Oeste","2411908");
-    listIbge.set("RN-São Gonçalo do Amarante","2412005");
-    listIbge.set("RN-São João do Sabugi","2412104");
-    listIbge.set("RN-São José de Mipibu","2412203");
-    listIbge.set("RN-São José do Campestre","2412302");
-    listIbge.set("RN-São José do Seridó","2412401");
-    listIbge.set("RN-São Miguel","2412500");
-    listIbge.set("RN-São Miguel do Gostoso","2412559");
-    listIbge.set("RN-São Paulo do Potengi","2412609");
-    listIbge.set("RN-São Pedro","2412708");
-    listIbge.set("RN-São Rafael","2412807");
-    listIbge.set("RN-São Tomé","2412906");
-    listIbge.set("RN-São Vicente","2413003");
-    listIbge.set("RN-Senador Elói de Souza","2413102");
-    listIbge.set("RN-Senador Georgino Avelino","2413201");
-    listIbge.set("RN-Serra Caiada","2410306");
-    listIbge.set("RN-Serra de São Bento","2413300");
-    listIbge.set("RN-Serra do Mel","2413359");
-    listIbge.set("RN-Serra Negra do Norte","2413409");
-    listIbge.set("RN-Serrinha","2413508");
-    listIbge.set("RN-Serrinha dos Pintos","2413557");
-    listIbge.set("RN-Severiano Melo","2413607");
-    listIbge.set("RN-Sítio Novo","2413706");
-    listIbge.set("RN-Taboleiro Grande","2413805");
-    listIbge.set("RN-Taipu","2413904");
-    listIbge.set("RN-Tangará","2414001");
-    listIbge.set("RN-Tenente Ananias","2414100");
-    listIbge.set("RN-Tenente Laurentino Cruz","2414159");
-    listIbge.set("RN-Tibau","2411056");
-    listIbge.set("RN-Tibau do Sul","2414209");
-    listIbge.set("RN-Timbaúba dos Batistas","2414308");
-    listIbge.set("RN-Touros","2414407");
-    listIbge.set("RN-Triunfo Potiguar","2414456");
-    listIbge.set("RN-Umarizal","2414506");
-    listIbge.set("RN-Upanema","2414605");
-    listIbge.set("RN-Várzea","2414704");
-    listIbge.set("RN-Venha-Ver","2414753");
-    listIbge.set("RN-Vera Cruz","2414803");
-    listIbge.set("RN-Viçosa","2414902");
-    listIbge.set("RN-Vila Flor","2415008");
-    listIbge.set("PB-Água Branca","2500106");
-    listIbge.set("PB-Aguiar","2500205");
-    listIbge.set("PB-Alagoa Grande","2500304");
-    listIbge.set("PB-Alagoa Nova","2500403");
-    listIbge.set("PB-Alagoinha","2500502");
-    listIbge.set("PB-Alcantil","2500536");
-    listIbge.set("PB-Algodão de Jandaíra","2500577");
-    listIbge.set("PB-Alhandra","2500601");
-    listIbge.set("PB-Amparo","2500734");
-    listIbge.set("PB-Aparecida","2500775");
-    listIbge.set("PB-Araçagi","2500809");
-    listIbge.set("PB-Arara","2500908");
-    listIbge.set("PB-Araruna","2501005");
-    listIbge.set("PB-Areia","2501104");
-    listIbge.set("PB-Areia de Baraúnas","2501153");
-    listIbge.set("PB-Areial","2501203");
-    listIbge.set("PB-Aroeiras","2501302");
-    listIbge.set("PB-Assunção","2501351");
-    listIbge.set("PB-Baía da Traição","2501401");
-    listIbge.set("PB-Bananeiras","2501500");
-    listIbge.set("PB-Baraúna","2501534");
-    listIbge.set("PB-Barra de Santa Rosa","2501609");
-    listIbge.set("PB-Barra de Santana","2501575");
-    listIbge.set("PB-Barra de São Miguel","2501708");
-    listIbge.set("PB-Bayeux","2501807");
-    listIbge.set("PB-Belém","2501906");
-    listIbge.set("PB-Belém do Brejo do Cruz","2502003");
-    listIbge.set("PB-Bernardino Batista","2502052");
-    listIbge.set("PB-Boa Ventura","2502102");
-    listIbge.set("PB-Boa Vista","2502151");
-    listIbge.set("PB-Bom Jesus","2502201");
-    listIbge.set("PB-Bom Sucesso","2502300");
-    listIbge.set("PB-Bonito de Santa Fé","2502409");
-    listIbge.set("PB-Boqueirão","2502508");
-    listIbge.set("PB-Borborema","2502706");
-    listIbge.set("PB-Brejo do Cruz","2502805");
-    listIbge.set("PB-Brejo dos Santos","2502904");
-    listIbge.set("PB-Caaporã","2503001");
-    listIbge.set("PB-Cabaceiras","2503100");
-    listIbge.set("PB-Cabedelo","2503209");
-    listIbge.set("PB-Cachoeira dos Índios","2503308");
-    listIbge.set("PB-Cacimba de Areia","2503407");
-    listIbge.set("PB-Cacimba de Dentro","2503506");
-    listIbge.set("PB-Cacimbas","2503555");
-    listIbge.set("PB-Caiçara","2503605");
-    listIbge.set("PB-Cajazeiras","2503704");
-    listIbge.set("PB-Cajazeirinhas","2503753");
-    listIbge.set("PB-Caldas Brandão","2503803");
-    listIbge.set("PB-Camalaú","2503902");
-    listIbge.set("PB-Campina Grande","2504009");
-    listIbge.set("PB-Capim","2504033");
-    listIbge.set("PB-Caraúbas","2504074");
-    listIbge.set("PB-Carrapateira","2504108");
-    listIbge.set("PB-Casserengue","2504157");
-    listIbge.set("PB-Catingueira","2504207");
-    listIbge.set("PB-Catolé do Rocha","2504306");
-    listIbge.set("PB-Caturité","2504355");
-    listIbge.set("PB-Conceição","2504405");
-    listIbge.set("PB-Condado","2504504");
-    listIbge.set("PB-Conde","2504603");
-    listIbge.set("PB-Congo","2504702");
-    listIbge.set("PB-Coremas","2504801");
-    listIbge.set("PB-Coxixola","2504850");
-    listIbge.set("PB-Cruz do Espírito Santo","2504900");
-    listIbge.set("PB-Cubati","2505006");
-    listIbge.set("PB-Cuité","2505105");
-    listIbge.set("PB-Cuité de Mamanguape","2505238");
-    listIbge.set("PB-Cuitegi","2505204");
-    listIbge.set("PB-Curral de Cima","2505279");
-    listIbge.set("PB-Curral Velho","2505303");
-    listIbge.set("PB-Damião","2505352");
-    listIbge.set("PB-Desterro","2505402");
-    listIbge.set("PB-Diamante","2505600");
-    listIbge.set("PB-Dona Inês","2505709");
-    listIbge.set("PB-Duas Estradas","2505808");
-    listIbge.set("PB-Emas","2505907");
-    listIbge.set("PB-Esperança","2506004");
-    listIbge.set("PB-Fagundes","2506103");
-    listIbge.set("PB-Frei Martinho","2506202");
-    listIbge.set("PB-Gado Bravo","2506251");
-    listIbge.set("PB-Guarabira","2506301");
-    listIbge.set("PB-Gurinhém","2506400");
-    listIbge.set("PB-Gurjão","2506509");
-    listIbge.set("PB-Ibiara","2506608");
-    listIbge.set("PB-Igaracy","2502607");
-    listIbge.set("PB-Imaculada","2506707");
-    listIbge.set("PB-Ingá","2506806");
-    listIbge.set("PB-Itabaiana","2506905");
-    listIbge.set("PB-Itaporanga","2507002");
-    listIbge.set("PB-Itapororoca","2507101");
-    listIbge.set("PB-Itatuba","2507200");
-    listIbge.set("PB-Jacaraú","2507309");
-    listIbge.set("PB-Jericó","2507408");
-    listIbge.set("PB-João Pessoa","2507507");
-    listIbge.set("PB-Joca Claudino","2513653");
-    listIbge.set("PB-Juarez Távora","2507606");
-    listIbge.set("PB-Juazeirinho","2507705");
-    listIbge.set("PB-Junco do Seridó","2507804");
-    listIbge.set("PB-Juripiranga","2507903");
-    listIbge.set("PB-Juru","2508000");
-    listIbge.set("PB-Lagoa","2508109");
-    listIbge.set("PB-Lagoa de Dentro","2508208");
-    listIbge.set("PB-Lagoa Seca","2508307");
-    listIbge.set("PB-Lastro","2508406");
-    listIbge.set("PB-Livramento","2508505");
-    listIbge.set("PB-Logradouro","2508554");
-    listIbge.set("PB-Lucena","2508604");
-    listIbge.set("PB-Mãe d'Água","2508703");
-    listIbge.set("PB-Malta","2508802");
-    listIbge.set("PB-Mamanguape","2508901");
-    listIbge.set("PB-Manaíra","2509008");
-    listIbge.set("PB-Marcação","2509057");
-    listIbge.set("PB-Mari","2509107");
-    listIbge.set("PB-Marizópolis","2509156");
-    listIbge.set("PB-Massaranduba","2509206");
-    listIbge.set("PB-Mataraca","2509305");
-    listIbge.set("PB-Matinhas","2509339");
-    listIbge.set("PB-Mato Grosso","2509370");
-    listIbge.set("PB-Maturéia","2509396");
-    listIbge.set("PB-Mogeiro","2509404");
-    listIbge.set("PB-Montadas","2509503");
-    listIbge.set("PB-Monte Horebe","2509602");
-    listIbge.set("PB-Monteiro","2509701");
-    listIbge.set("PB-Mulungu","2509800");
-    listIbge.set("PB-Natuba","2509909");
-    listIbge.set("PB-Nazarezinho","2510006");
-    listIbge.set("PB-Nova Floresta","2510105");
-    listIbge.set("PB-Nova Olinda","2510204");
-    listIbge.set("PB-Nova Palmeira","2510303");
-    listIbge.set("PB-Olho d'Água","2510402");
-    listIbge.set("PB-Olivedos","2510501");
-    listIbge.set("PB-Ouro Velho","2510600");
-    listIbge.set("PB-Parari","2510659");
-    listIbge.set("PB-Passagem","2510709");
-    listIbge.set("PB-Patos","2510808");
-    listIbge.set("PB-Paulista","2510907");
-    listIbge.set("PB-Pedra Branca","2511004");
-    listIbge.set("PB-Pedra Lavrada","2511103");
-    listIbge.set("PB-Pedras de Fogo","2511202");
-    listIbge.set("PB-Pedro Régis","2512721");
-    listIbge.set("PB-Piancó","2511301");
-    listIbge.set("PB-Picuí","2511400");
-    listIbge.set("PB-Pilar","2511509");
-    listIbge.set("PB-Pilões","2511608");
-    listIbge.set("PB-Pilõezinhos","2511707");
-    listIbge.set("PB-Pirpirituba","2511806");
-    listIbge.set("PB-Pitimbu","2511905");
-    listIbge.set("PB-Pocinhos","2512002");
-    listIbge.set("PB-Poço Dantas","2512036");
-    listIbge.set("PB-Poço de José de Moura","2512077");
-    listIbge.set("PB-Pombal","2512101");
-    listIbge.set("PB-Prata","2512200");
-    listIbge.set("PB-Princesa Isabel","2512309");
-    listIbge.set("PB-Puxinanã","2512408");
-    listIbge.set("PB-Queimadas","2512507");
-    listIbge.set("PB-Quixaba","2512606");
-    listIbge.set("PB-Remígio","2512705");
-    listIbge.set("PB-Riachão","2512747");
-    listIbge.set("PB-Riachão do Bacamarte","2512754");
-    listIbge.set("PB-Riachão do Poço","2512762");
-    listIbge.set("PB-Riacho de Santo Antônio","2512788");
-    listIbge.set("PB-Riacho dos Cavalos","2512804");
-    listIbge.set("PB-Rio Tinto","2512903");
-    listIbge.set("PB-Salgadinho","2513000");
-    listIbge.set("PB-Salgado de São Félix","2513109");
-    listIbge.set("PB-Santa Cecília","2513158");
-    listIbge.set("PB-Santa Cruz","2513208");
-    listIbge.set("PB-Santa Helena","2513307");
-    listIbge.set("PB-Santa Inês","2513356");
-    listIbge.set("PB-Santa Luzia","2513406");
-    listIbge.set("PB-Santa Rita","2513703");
-    listIbge.set("PB-Santa Teresinha","2513802");
-    listIbge.set("PB-Santana de Mangueira","2513505");
-    listIbge.set("PB-Santana dos Garrotes","2513604");
-    listIbge.set("PB-Santo André","2513851");
-    listIbge.set("PB-São Bentinho","2513927");
-    listIbge.set("PB-São Bento","2513901");
-    listIbge.set("PB-São Domingos","2513968");
-    listIbge.set("PB-São Domingos do Cariri","2513943");
-    listIbge.set("PB-São Francisco","2513984");
-    listIbge.set("PB-São João do Cariri","2514008");
-    listIbge.set("PB-São João do Rio do Peixe","2500700");
-    listIbge.set("PB-São João do Tigre","2514107");
-    listIbge.set("PB-São José da Lagoa Tapada","2514206");
-    listIbge.set("PB-São José de Caiana","2514305");
-    listIbge.set("PB-São José de Espinharas","2514404");
-    listIbge.set("PB-São José de Piranhas","2514503");
-    listIbge.set("PB-São José de Princesa","2514552");
-    listIbge.set("PB-São José do Bonfim","2514602");
-    listIbge.set("PB-São José do Brejo do Cruz","2514651");
-    listIbge.set("PB-São José do Sabugi","2514701");
-    listIbge.set("PB-São José dos Cordeiros","2514800");
-    listIbge.set("PB-São José dos Ramos","2514453");
-    listIbge.set("PB-São Mamede","2514909");
-    listIbge.set("PB-São Miguel de Taipu","2515005");
-    listIbge.set("PB-São Sebastião de Lagoa de Roça","2515104");
-    listIbge.set("PB-São Sebastião do Umbuzeiro","2515203");
-    listIbge.set("PB-São Vicente do Seridó","2515401");
-    listIbge.set("PB-Sapé","2515302");
-    listIbge.set("PB-Serra Branca","2515500");
-    listIbge.set("PB-Serra da Raiz","2515609");
-    listIbge.set("PB-Serra Grande","2515708");
-    listIbge.set("PB-Serra Redonda","2515807");
-    listIbge.set("PB-Serraria","2515906");
-    listIbge.set("PB-Sertãozinho","2515930");
-    listIbge.set("PB-Sobrado","2515971");
-    listIbge.set("PB-Solânea","2516003");
-    listIbge.set("PB-Soledade","2516102");
-    listIbge.set("PB-Sossêgo","2516151");
-    listIbge.set("PB-Sousa","2516201");
-    listIbge.set("PB-Sumé","2516300");
-    listIbge.set("PB-Tacima","2516409");
-    listIbge.set("PB-Taperoá","2516508");
-    listIbge.set("PB-Tavares","2516607");
-    listIbge.set("PB-Teixeira","2516706");
-    listIbge.set("PB-Tenório","2516755");
-    listIbge.set("PB-Triunfo","2516805");
-    listIbge.set("PB-Uiraúna","2516904");
-    listIbge.set("PB-Umbuzeiro","2517001");
-    listIbge.set("PB-Várzea","2517100");
-    listIbge.set("PB-Vieirópolis","2517209");
-    listIbge.set("PB-Vista Serrana","2505501");
-    listIbge.set("PB-Zabelê","2517407");
-    listIbge.set("PE-Abreu e Lima","2600054");
-    listIbge.set("PE-Afogados da Ingazeira","2600104");
-    listIbge.set("PE-Afrânio","2600203");
-    listIbge.set("PE-Agrestina","2600302");
-    listIbge.set("PE-Água Preta","2600401");
-    listIbge.set("PE-Águas Belas","2600500");
-    listIbge.set("PE-Alagoinha","2600609");
-    listIbge.set("PE-Aliança","2600708");
-    listIbge.set("PE-Altinho","2600807");
-    listIbge.set("PE-Amaraji","2600906");
-    listIbge.set("PE-Angelim","2601003");
-    listIbge.set("PE-Araçoiaba","2601052");
-    listIbge.set("PE-Araripina","2601102");
-    listIbge.set("PE-Arcoverde","2601201");
-    listIbge.set("PE-Barra de Guabiraba","2601300");
-    listIbge.set("PE-Barreiros","2601409");
-    listIbge.set("PE-Belém de Maria","2601508");
-    listIbge.set("PE-Belém do São Francisco","2601607");
-    listIbge.set("PE-Belo Jardim","2601706");
-    listIbge.set("PE-Betânia","2601805");
-    listIbge.set("PE-Bezerros","2601904");
-    listIbge.set("PE-Bodocó","2602001");
-    listIbge.set("PE-Bom Conselho","2602100");
-    listIbge.set("PE-Bom Jardim","2602209");
-    listIbge.set("PE-Bonito","2602308");
-    listIbge.set("PE-Brejão","2602407");
-    listIbge.set("PE-Brejinho","2602506");
-    listIbge.set("PE-Brejo da Madre de Deus","2602605");
-    listIbge.set("PE-Buenos Aires","2602704");
-    listIbge.set("PE-Buíque","2602803");
-    listIbge.set("PE-Cabo de Santo Agostinho","2602902");
-    listIbge.set("PE-Cabrobó","2603009");
-    listIbge.set("PE-Cachoeirinha","2603108");
-    listIbge.set("PE-Caetés","2603207");
-    listIbge.set("PE-Calçado","2603306");
-    listIbge.set("PE-Calumbi","2603405");
-    listIbge.set("PE-Camaragibe","2603454");
-    listIbge.set("PE-Camocim de São Félix","2603504");
-    listIbge.set("PE-Camutanga","2603603");
-    listIbge.set("PE-Canhotinho","2603702");
-    listIbge.set("PE-Capoeiras","2603801");
-    listIbge.set("PE-Carnaíba","2603900");
-    listIbge.set("PE-Carnaubeira da Penha","2603926");
-    listIbge.set("PE-Carpina","2604007");
-    listIbge.set("PE-Caruaru","2604106");
-    listIbge.set("PE-Casinhas","2604155");
-    listIbge.set("PE-Catende","2604205");
-    listIbge.set("PE-Cedro","2604304");
-    listIbge.set("PE-Chã de Alegria","2604403");
-    listIbge.set("PE-Chã Grande","2604502");
-    listIbge.set("PE-Condado","2604601");
-    listIbge.set("PE-Correntes","2604700");
-    listIbge.set("PE-Cortês","2604809");
-    listIbge.set("PE-Cumaru","2604908");
-    listIbge.set("PE-Cupira","2605004");
-    listIbge.set("PE-Custódia","2605103");
-    listIbge.set("PE-Dormentes","2605152");
-    listIbge.set("PE-Escada","2605202");
-    listIbge.set("PE-Exu","2605301");
-    listIbge.set("PE-Feira Nova","2605400");
-    listIbge.set("PE-Fernando de Noronha","2605459");
-    listIbge.set("PE-Ferreiros","2605509");
-    listIbge.set("PE-Flores","2605608");
-    listIbge.set("PE-Floresta","2605707");
-    listIbge.set("PE-Frei Miguelinho","2605806");
-    listIbge.set("PE-Gameleira","2605905");
-    listIbge.set("PE-Garanhuns","2606002");
-    listIbge.set("PE-Glória do Goitá","2606101");
-    listIbge.set("PE-Goiana","2606200");
-    listIbge.set("PE-Granito","2606309");
-    listIbge.set("PE-Gravatá","2606408");
-    listIbge.set("PE-Iati","2606507");
-    listIbge.set("PE-Ibimirim","2606606");
-    listIbge.set("PE-Ibirajuba","2606705");
-    listIbge.set("PE-Igarassu","2606804");
-    listIbge.set("PE-Iguaracy","2606903");
-    listIbge.set("PE-Ilha de Itamaracá","2607604");
-    listIbge.set("PE-Inajá","2607000");
-    listIbge.set("PE-Ingazeira","2607109");
-    listIbge.set("PE-Ipojuca","2607208");
-    listIbge.set("PE-Ipubi","2607307");
-    listIbge.set("PE-Itacuruba","2607406");
-    listIbge.set("PE-Itaíba","2607505");
-    listIbge.set("PE-Itambé","2607653");
-    listIbge.set("PE-Itapetim","2607703");
-    listIbge.set("PE-Itapissuma","2607752");
-    listIbge.set("PE-Itaquitinga","2607802");
-    listIbge.set("PE-Jaboatão dos Guararapes","2607901");
-    listIbge.set("PE-Jaqueira","2607950");
-    listIbge.set("PE-Jataúba","2608008");
-    listIbge.set("PE-Jatobá","2608057");
-    listIbge.set("PE-João Alfredo","2608107");
-    listIbge.set("PE-Joaquim Nabuco","2608206");
-    listIbge.set("PE-Jucati","2608255");
-    listIbge.set("PE-Jupi","2608305");
-    listIbge.set("PE-Jurema","2608404");
-    listIbge.set("PE-Lagoa de Itaenga","2608503");
-    listIbge.set("PE-Lagoa do Carro","2608453");
-    listIbge.set("PE-Lagoa do Ouro","2608602");
-    listIbge.set("PE-Lagoa dos Gatos","2608701");
-    listIbge.set("PE-Lagoa Grande","2608750");
-    listIbge.set("PE-Lajedo","2608800");
-    listIbge.set("PE-Limoeiro","2608909");
-    listIbge.set("PE-Macaparana","2609006");
-    listIbge.set("PE-Machados","2609105");
-    listIbge.set("PE-Manari","2609154");
-    listIbge.set("PE-Maraial","2609204");
-    listIbge.set("PE-Mirandiba","2609303");
-    listIbge.set("PE-Moreilândia","2614303");
-    listIbge.set("PE-Moreno","2609402");
-    listIbge.set("PE-Nazaré da Mata","2609501");
-    listIbge.set("PE-Olinda","2609600");
-    listIbge.set("PE-Orobó","2609709");
-    listIbge.set("PE-Orocó","2609808");
-    listIbge.set("PE-Ouricuri","2609907");
-    listIbge.set("PE-Palmares","2610004");
-    listIbge.set("PE-Palmeirina","2610103");
-    listIbge.set("PE-Panelas","2610202");
-    listIbge.set("PE-Paranatama","2610301");
-    listIbge.set("PE-Parnamirim","2610400");
-    listIbge.set("PE-Passira","2610509");
-    listIbge.set("PE-Paudalho","2610608");
-    listIbge.set("PE-Paulista","2610707");
-    listIbge.set("PE-Pedra","2610806");
-    listIbge.set("PE-Pesqueira","2610905");
-    listIbge.set("PE-Petrolândia","2611002");
-    listIbge.set("PE-Petrolina","2611101");
-    listIbge.set("PE-Poção","2611200");
-    listIbge.set("PE-Pombos","2611309");
-    listIbge.set("PE-Primavera","2611408");
-    listIbge.set("PE-Quipapá","2611507");
-    listIbge.set("PE-Quixaba","2611533");
-    listIbge.set("PE-Recife","2611606");
-    listIbge.set("PE-Riacho das Almas","2611705");
-    listIbge.set("PE-Ribeirão","2611804");
-    listIbge.set("PE-Rio Formoso","2611903");
-    listIbge.set("PE-Sairé","2612000");
-    listIbge.set("PE-Salgadinho","2612109");
-    listIbge.set("PE-Salgueiro","2612208");
-    listIbge.set("PE-Saloá","2612307");
-    listIbge.set("PE-Sanharó","2612406");
-    listIbge.set("PE-Santa Cruz","2612455");
-    listIbge.set("PE-Santa Cruz da Baixa Verde","2612471");
-    listIbge.set("PE-Santa Cruz do Capibaribe","2612505");
-    listIbge.set("PE-Santa Filomena","2612554");
-    listIbge.set("PE-Santa Maria da Boa Vista","2612604");
-    listIbge.set("PE-Santa Maria do Cambucá","2612703");
-    listIbge.set("PE-Santa Terezinha","2612802");
-    listIbge.set("PE-São Benedito do Sul","2612901");
-    listIbge.set("PE-São Bento do Una","2613008");
-    listIbge.set("PE-São Caitano","2613107");
-    listIbge.set("PE-São João","2613206");
-    listIbge.set("PE-São Joaquim do Monte","2613305");
-    listIbge.set("PE-São José da Coroa Grande","2613404");
-    listIbge.set("PE-São José do Belmonte","2613503");
-    listIbge.set("PE-São José do Egito","2613602");
-    listIbge.set("PE-São Lourenço da Mata","2613701");
-    listIbge.set("PE-São Vicente Férrer","2613800");
-    listIbge.set("PE-Serra Talhada","2613909");
-    listIbge.set("PE-Serrita","2614006");
-    listIbge.set("PE-Sertânia","2614105");
-    listIbge.set("PE-Sirinhaém","2614204");
-    listIbge.set("PE-Solidão","2614402");
-    listIbge.set("PE-Surubim","2614501");
-    listIbge.set("PE-Tabira","2614600");
-    listIbge.set("PE-Tacaimbó","2614709");
-    listIbge.set("PE-Tacaratu","2614808");
-    listIbge.set("PE-Tamandaré","2614857");
-    listIbge.set("PE-Taquaritinga do Norte","2615003");
-    listIbge.set("PE-Terezinha","2615102");
-    listIbge.set("PE-Terra Nova","2615201");
-    listIbge.set("PE-Timbaúba","2615300");
-    listIbge.set("PE-Toritama","2615409");
-    listIbge.set("PE-Tracunhaém","2615508");
-    listIbge.set("PE-Trindade","2615607");
-    listIbge.set("PE-Triunfo","2615706");
-    listIbge.set("PE-Tupanatinga","2615805");
-    listIbge.set("PE-Tuparetama","2615904");
-    listIbge.set("PE-Venturosa","2616001");
-    listIbge.set("PE-Verdejante","2616100");
-    listIbge.set("PE-Vertente do Lério","2616183");
-    listIbge.set("PE-Vertentes","2616209");
-    listIbge.set("PE-Vicência","2616308");
-    listIbge.set("PE-Vitória de Santo Antão","2616407");
-    listIbge.set("PE-Xexéu","2616506");
-    listIbge.set("AL-Água Branca","2700102");
-    listIbge.set("AL-Anadia","2700201");
-    listIbge.set("AL-Arapiraca","2700300");
-    listIbge.set("AL-Atalaia","2700409");
-    listIbge.set("AL-Barra de Santo Antônio","2700508");
-    listIbge.set("AL-Barra de São Miguel","2700607");
-    listIbge.set("AL-Batalha","2700706");
-    listIbge.set("AL-Belém","2700805");
-    listIbge.set("AL-Belo Monte","2700904");
-    listIbge.set("AL-Boca da Mata","2701001");
-    listIbge.set("AL-Branquinha","2701100");
-    listIbge.set("AL-Cacimbinhas","2701209");
-    listIbge.set("AL-Cajueiro","2701308");
-    listIbge.set("AL-Campestre","2701357");
-    listIbge.set("AL-Campo Alegre","2701407");
-    listIbge.set("AL-Campo Grande","2701506");
-    listIbge.set("AL-Canapi","2701605");
-    listIbge.set("AL-Capela","2701704");
-    listIbge.set("AL-Carneiros","2701803");
-    listIbge.set("AL-Chã Preta","2701902");
-    listIbge.set("AL-Coité do Nóia","2702009");
-    listIbge.set("AL-Colônia Leopoldina","2702108");
-    listIbge.set("AL-Coqueiro Seco","2702207");
-    listIbge.set("AL-Coruripe","2702306");
-    listIbge.set("AL-Craíbas","2702355");
-    listIbge.set("AL-Delmiro Gouveia","2702405");
-    listIbge.set("AL-Dois Riachos","2702504");
-    listIbge.set("AL-Estrela de Alagoas","2702553");
-    listIbge.set("AL-Feira Grande","2702603");
-    listIbge.set("AL-Feliz Deserto","2702702");
-    listIbge.set("AL-Flexeiras","2702801");
-    listIbge.set("AL-Girau do Ponciano","2702900");
-    listIbge.set("AL-Ibateguara","2703007");
-    listIbge.set("AL-Igaci","2703106");
-    listIbge.set("AL-Igreja Nova","2703205");
-    listIbge.set("AL-Inhapi","2703304");
-    listIbge.set("AL-Jacaré dos Homens","2703403");
-    listIbge.set("AL-Jacuípe","2703502");
-    listIbge.set("AL-Japaratinga","2703601");
-    listIbge.set("AL-Jaramataia","2703700");
-    listIbge.set("AL-Jequiá da Praia","2703759");
-    listIbge.set("AL-Joaquim Gomes","2703809");
-    listIbge.set("AL-Jundiá","2703908");
-    listIbge.set("AL-Junqueiro","2704005");
-    listIbge.set("AL-Lagoa da Canoa","2704104");
-    listIbge.set("AL-Limoeiro de Anadia","2704203");
-    listIbge.set("AL-Maceió","2704302");
-    listIbge.set("AL-Major Isidoro","2704401");
-    listIbge.set("AL-Mar Vermelho","2704906");
-    listIbge.set("AL-Maragogi","2704500");
-    listIbge.set("AL-Maravilha","2704609");
-    listIbge.set("AL-Marechal Deodoro","2704708");
-    listIbge.set("AL-Maribondo","2704807");
-    listIbge.set("AL-Mata Grande","2705002");
-    listIbge.set("AL-Matriz de Camaragibe","2705101");
-    listIbge.set("AL-Messias","2705200");
-    listIbge.set("AL-Minador do Negrão","2705309");
-    listIbge.set("AL-Monteirópolis","2705408");
-    listIbge.set("AL-Murici","2705507");
-    listIbge.set("AL-Novo Lino","2705606");
-    listIbge.set("AL-Olho d'Água das Flores","2705705");
-    listIbge.set("AL-Olho d'Água do Casado","2705804");
-    listIbge.set("AL-Olho d'Água Grande","2705903");
-    listIbge.set("AL-Olivença","2706000");
-    listIbge.set("AL-Ouro Branco","2706109");
-    listIbge.set("AL-Palestina","2706208");
-    listIbge.set("AL-Palmeira dos Índios","2706307");
-    listIbge.set("AL-Pão de Açúcar","2706406");
-    listIbge.set("AL-Pariconha","2706422");
-    listIbge.set("AL-Paripueira","2706448");
-    listIbge.set("AL-Passo de Camaragibe","2706505");
-    listIbge.set("AL-Paulo Jacinto","2706604");
-    listIbge.set("AL-Penedo","2706703");
-    listIbge.set("AL-Piaçabuçu","2706802");
-    listIbge.set("AL-Pilar","2706901");
-    listIbge.set("AL-Pindoba","2707008");
-    listIbge.set("AL-Piranhas","2707107");
-    listIbge.set("AL-Poço das Trincheiras","2707206");
-    listIbge.set("AL-Porto Calvo","2707305");
-    listIbge.set("AL-Porto de Pedras","2707404");
-    listIbge.set("AL-Porto Real do Colégio","2707503");
-    listIbge.set("AL-Quebrangulo","2707602");
-    listIbge.set("AL-Rio Largo","2707701");
-    listIbge.set("AL-Roteiro","2707800");
-    listIbge.set("AL-Santa Luzia do Norte","2707909");
-    listIbge.set("AL-Santana do Ipanema","2708006");
-    listIbge.set("AL-Santana do Mundaú","2708105");
-    listIbge.set("AL-São Brás","2708204");
-    listIbge.set("AL-São José da Laje","2708303");
-    listIbge.set("AL-São José da Tapera","2708402");
-    listIbge.set("AL-São Luís do Quitunde","2708501");
-    listIbge.set("AL-São Miguel dos Campos","2708600");
-    listIbge.set("AL-São Miguel dos Milagres","2708709");
-    listIbge.set("AL-São Sebastião","2708808");
-    listIbge.set("AL-Satuba","2708907");
-    listIbge.set("AL-Senador Rui Palmeira","2708956");
-    listIbge.set("AL-Tanque d'Arca","2709004");
-    listIbge.set("AL-Taquarana","2709103");
-    listIbge.set("AL-Teotônio Vilela","2709152");
-    listIbge.set("AL-Traipu","2709202");
-    listIbge.set("AL-União dos Palmares","2709301");
-    listIbge.set("AL-Viçosa","2709400");
-    listIbge.set("SE-Amparo do São Francisco","2800100");
-    listIbge.set("SE-Aquidabã","2800209");
-    listIbge.set("SE-Aracaju","2800308");
-    listIbge.set("SE-Arauá","2800407");
-    listIbge.set("SE-Areia Branca","2800506");
-    listIbge.set("SE-Barra dos Coqueiros","2800605");
-    listIbge.set("SE-Boquim","2800670");
-    listIbge.set("SE-Brejo Grande","2800704");
-    listIbge.set("SE-Campo do Brito","2801009");
-    listIbge.set("SE-Canhoba","2801108");
-    listIbge.set("SE-Canindé de São Francisco","2801207");
-    listIbge.set("SE-Capela","2801306");
-    listIbge.set("SE-Carira","2801405");
-    listIbge.set("SE-Carmópolis","2801504");
-    listIbge.set("SE-Cedro de São João","2801603");
-    listIbge.set("SE-Cristinápolis","2801702");
-    listIbge.set("SE-Cumbe","2801900");
-    listIbge.set("SE-Divina Pastora","2802007");
-    listIbge.set("SE-Estância","2802106");
-    listIbge.set("SE-Feira Nova","2802205");
-    listIbge.set("SE-Frei Paulo","2802304");
-    listIbge.set("SE-Gararu","2802403");
-    listIbge.set("SE-General Maynard","2802502");
-    listIbge.set("SE-Gracho Cardoso","2802601");
-    listIbge.set("SE-Ilha das Flores","2802700");
-    listIbge.set("SE-Indiaroba","2802809");
-    listIbge.set("SE-Itabaiana","2802908");
-    listIbge.set("SE-Itabaianinha","2803005");
-    listIbge.set("SE-Itabi","2803104");
-    listIbge.set("SE-Itaporanga d'Ajuda","2803203");
-    listIbge.set("SE-Japaratuba","2803302");
-    listIbge.set("SE-Japoatã","2803401");
-    listIbge.set("SE-Lagarto","2803500");
-    listIbge.set("SE-Laranjeiras","2803609");
-    listIbge.set("SE-Macambira","2803708");
-    listIbge.set("SE-Malhada dos Bois","2803807");
-    listIbge.set("SE-Malhador","2803906");
-    listIbge.set("SE-Maruim","2804003");
-    listIbge.set("SE-Moita Bonita","2804102");
-    listIbge.set("SE-Monte Alegre de Sergipe","2804201");
-    listIbge.set("SE-Muribeca","2804300");
-    listIbge.set("SE-Neópolis","2804409");
-    listIbge.set("SE-Nossa Senhora Aparecida","2804458");
-    listIbge.set("SE-Nossa Senhora da Glória","2804508");
-    listIbge.set("SE-Nossa Senhora das Dores","2804607");
-    listIbge.set("SE-Nossa Senhora de Lourdes","2804706");
-    listIbge.set("SE-Nossa Senhora do Socorro","2804805");
-    listIbge.set("SE-Pacatuba","2804904");
-    listIbge.set("SE-Pedra Mole","2805000");
-    listIbge.set("SE-Pedrinhas","2805109");
-    listIbge.set("SE-Pinhão","2805208");
-    listIbge.set("SE-Pirambu","2805307");
-    listIbge.set("SE-Poço Redondo","2805406");
-    listIbge.set("SE-Poço Verde","2805505");
-    listIbge.set("SE-Porto da Folha","2805604");
-    listIbge.set("SE-Propriá","2805703");
-    listIbge.set("SE-Riachão do Dantas","2805802");
-    listIbge.set("SE-Riachuelo","2805901");
-    listIbge.set("SE-Ribeirópolis","2806008");
-    listIbge.set("SE-Rosário do Catete","2806107");
-    listIbge.set("SE-Salgado","2806206");
-    listIbge.set("SE-Santa Luzia do Itanhy","2806305");
-    listIbge.set("SE-Santa Rosa de Lima","2806503");
-    listIbge.set("SE-Santana do São Francisco","2806404");
-    listIbge.set("SE-Santo Amaro das Brotas","2806602");
-    listIbge.set("SE-São Cristóvão","2806701");
-    listIbge.set("SE-São Domingos","2806800");
-    listIbge.set("SE-São Francisco","2806909");
-    listIbge.set("SE-São Miguel do Aleixo","2807006");
-    listIbge.set("SE-Simão Dias","2807105");
-    listIbge.set("SE-Siriri","2807204");
-    listIbge.set("SE-Telha","2807303");
-    listIbge.set("SE-Tobias Barreto","2807402");
-    listIbge.set("SE-Tomar do Geru","2807501");
-    listIbge.set("SE-Umbaúba","2807600");
-    listIbge.set("BA-Abaíra","2900108");
-    listIbge.set("BA-Abaré","2900207");
-    listIbge.set("BA-Acajutiba","2900306");
-    listIbge.set("BA-Adustina","2900355");
-    listIbge.set("BA-Água Fria","2900405");
-    listIbge.set("BA-Aiquara","2900603");
-    listIbge.set("BA-Alagoinhas","2900702");
-    listIbge.set("BA-Alcobaça","2900801");
-    listIbge.set("BA-Almadina","2900900");
-    listIbge.set("BA-Amargosa","2901007");
-    listIbge.set("BA-Amélia Rodrigues","2901106");
-    listIbge.set("BA-América Dourada","2901155");
-    listIbge.set("BA-Anagé","2901205");
-    listIbge.set("BA-Andaraí","2901304");
-    listIbge.set("BA-Andorinha","2901353");
-    listIbge.set("BA-Angical","2901403");
-    listIbge.set("BA-Anguera","2901502");
-    listIbge.set("BA-Antas","2901601");
-    listIbge.set("BA-Antônio Cardoso","2901700");
-    listIbge.set("BA-Antônio Gonçalves","2901809");
-    listIbge.set("BA-Aporá","2901908");
-    listIbge.set("BA-Apuarema","2901957");
-    listIbge.set("BA-Araçás","2902054");
-    listIbge.set("BA-Aracatu","2902005");
-    listIbge.set("BA-Araci","2902104");
-    listIbge.set("BA-Aramari","2902203");
-    listIbge.set("BA-Arataca","2902252");
-    listIbge.set("BA-Aratuípe","2902302");
-    listIbge.set("BA-Aurelino Leal","2902401");
-    listIbge.set("BA-Baianópolis","2902500");
-    listIbge.set("BA-Baixa Grande","2902609");
-    listIbge.set("BA-Banzaê","2902658");
-    listIbge.set("BA-Barra","2902708");
-    listIbge.set("BA-Barra da Estiva","2902807");
-    listIbge.set("BA-Barra do Choça","2902906");
-    listIbge.set("BA-Barra do Mendes","2903003");
-    listIbge.set("BA-Barra do Rocha","2903102");
-    listIbge.set("BA-Barreiras","2903201");
-    listIbge.set("BA-Barro Alto","2903235");
-    listIbge.set("BA-Barro Preto","2903300");
-    listIbge.set("BA-Barrocas","2903276");
-    listIbge.set("BA-Belmonte","2903409");
-    listIbge.set("BA-Belo Campo","2903508");
-    listIbge.set("BA-Biritinga","2903607");
-    listIbge.set("BA-Boa Nova","2903706");
-    listIbge.set("BA-Boa Vista do Tupim","2903805");
-    listIbge.set("BA-Bom Jesus da Lapa","2903904");
-    listIbge.set("BA-Bom Jesus da Serra","2903953");
-    listIbge.set("BA-Boninal","2904001");
-    listIbge.set("BA-Bonito","2904050");
-    listIbge.set("BA-Boquira","2904100");
-    listIbge.set("BA-Botuporã","2904209");
-    listIbge.set("BA-Brejões","2904308");
-    listIbge.set("BA-Brejolândia","2904407");
-    listIbge.set("BA-Brotas de Macaúbas","2904506");
-    listIbge.set("BA-Brumado","2904605");
-    listIbge.set("BA-Buerarema","2904704");
-    listIbge.set("BA-Buritirama","2904753");
-    listIbge.set("BA-Caatiba","2904803");
-    listIbge.set("BA-Cabaceiras do Paraguaçu","2904852");
-    listIbge.set("BA-Cachoeira","2904902");
-    listIbge.set("BA-Caculé","2905008");
-    listIbge.set("BA-Caém","2905107");
-    listIbge.set("BA-Caetanos","2905156");
-    listIbge.set("BA-Caetité","2905206");
-    listIbge.set("BA-Cafarnaum","2905305");
-    listIbge.set("BA-Cairu","2905404");
-    listIbge.set("BA-Caldeirão Grande","2905503");
-    listIbge.set("BA-Camacan","2905602");
-    listIbge.set("BA-Camaçari","2905701");
-    listIbge.set("BA-Camamu","2905800");
-    listIbge.set("BA-Campo Alegre de Lourdes","2905909");
-    listIbge.set("BA-Campo Formoso","2906006");
-    listIbge.set("BA-Canápolis","2906105");
-    listIbge.set("BA-Canarana","2906204");
-    listIbge.set("BA-Canavieiras","2906303");
-    listIbge.set("BA-Candeal","2906402");
-    listIbge.set("BA-Candeias","2906501");
-    listIbge.set("BA-Candiba","2906600");
-    listIbge.set("BA-Cândido Sales","2906709");
-    listIbge.set("BA-Cansanção","2906808");
-    listIbge.set("BA-Canudos","2906824");
-    listIbge.set("BA-Capela do Alto Alegre","2906857");
-    listIbge.set("BA-Capim Grosso","2906873");
-    listIbge.set("BA-Caraíbas","2906899");
-    listIbge.set("BA-Caravelas","2906907");
-    listIbge.set("BA-Cardeal da Silva","2907004");
-    listIbge.set("BA-Carinhanha","2907103");
-    listIbge.set("BA-Casa Nova","2907202");
-    listIbge.set("BA-Castro Alves","2907301");
-    listIbge.set("BA-Catolândia","2907400");
-    listIbge.set("BA-Catu","2907509");
-    listIbge.set("BA-Caturama","2907558");
-    listIbge.set("BA-Central","2907608");
-    listIbge.set("BA-Chorrochó","2907707");
-    listIbge.set("BA-Cícero Dantas","2907806");
-    listIbge.set("BA-Cipó","2907905");
-    listIbge.set("BA-Coaraci","2908002");
-    listIbge.set("BA-Cocos","2908101");
-    listIbge.set("BA-Conceição da Feira","2908200");
-    listIbge.set("BA-Conceição do Almeida","2908309");
-    listIbge.set("BA-Conceição do Coité","2908408");
-    listIbge.set("BA-Conceição do Jacuípe","2908507");
-    listIbge.set("BA-Conde","2908606");
-    listIbge.set("BA-Condeúba","2908705");
-    listIbge.set("BA-Contendas do Sincorá","2908804");
-    listIbge.set("BA-Coração de Maria","2908903");
-    listIbge.set("BA-Cordeiros","2909000");
-    listIbge.set("BA-Coribe","2909109");
-    listIbge.set("BA-Coronel João Sá","2909208");
-    listIbge.set("BA-Correntina","2909307");
-    listIbge.set("BA-Cotegipe","2909406");
-    listIbge.set("BA-Cravolândia","2909505");
-    listIbge.set("BA-Crisópolis","2909604");
-    listIbge.set("BA-Cristópolis","2909703");
-    listIbge.set("BA-Cruz das Almas","2909802");
-    listIbge.set("BA-Curaçá","2909901");
-    listIbge.set("BA-Dário Meira","2910008");
-    listIbge.set("BA-Dias d'Ávila","2910057");
-    listIbge.set("BA-Dom Basílio","2910107");
-    listIbge.set("BA-Dom Macedo Costa","2910206");
-    listIbge.set("BA-Elísio Medrado","2910305");
-    listIbge.set("BA-Encruzilhada","2910404");
-    listIbge.set("BA-Entre Rios","2910503");
-    listIbge.set("BA-Érico Cardoso","2900504");
-    listIbge.set("BA-Esplanada","2910602");
-    listIbge.set("BA-Euclides da Cunha","2910701");
-    listIbge.set("BA-Eunápolis","2910727");
-    listIbge.set("BA-Fátima","2910750");
-    listIbge.set("BA-Feira da Mata","2910776");
-    listIbge.set("BA-Feira de Santana","2910800");
-    listIbge.set("BA-Filadélfia","2910859");
-    listIbge.set("BA-Firmino Alves","2910909");
-    listIbge.set("BA-Floresta Azul","2911006");
-    listIbge.set("BA-Formosa do Rio Preto","2911105");
-    listIbge.set("BA-Gandu","2911204");
-    listIbge.set("BA-Gavião","2911253");
-    listIbge.set("BA-Gentio do Ouro","2911303");
-    listIbge.set("BA-Glória","2911402");
-    listIbge.set("BA-Gongogi","2911501");
-    listIbge.set("BA-Governador Mangabeira","2911600");
-    listIbge.set("BA-Guajeru","2911659");
-    listIbge.set("BA-Guanambi","2911709");
-    listIbge.set("BA-Guaratinga","2911808");
-    listIbge.set("BA-Heliópolis","2911857");
-    listIbge.set("BA-Iaçu","2911907");
-    listIbge.set("BA-Ibiassucê","2912004");
-    listIbge.set("BA-Ibicaraí","2912103");
-    listIbge.set("BA-Ibicoara","2912202");
-    listIbge.set("BA-Ibicuí","2912301");
-    listIbge.set("BA-Ibipeba","2912400");
-    listIbge.set("BA-Ibipitanga","2912509");
-    listIbge.set("BA-Ibiquera","2912608");
-    listIbge.set("BA-Ibirapitanga","2912707");
-    listIbge.set("BA-Ibirapuã","2912806");
-    listIbge.set("BA-Ibirataia","2912905");
-    listIbge.set("BA-Ibitiara","2913002");
-    listIbge.set("BA-Ibititá","2913101");
-    listIbge.set("BA-Ibotirama","2913200");
-    listIbge.set("BA-Ichu","2913309");
-    listIbge.set("BA-Igaporã","2913408");
-    listIbge.set("BA-Igrapiúna","2913457");
-    listIbge.set("BA-Iguaí","2913507");
-    listIbge.set("BA-Ilhéus","2913606");
-    listIbge.set("BA-Inhambupe","2913705");
-    listIbge.set("BA-Ipecaetá","2913804");
-    listIbge.set("BA-Ipiaú","2913903");
-    listIbge.set("BA-Ipirá","2914000");
-    listIbge.set("BA-Ipupiara","2914109");
-    listIbge.set("BA-Irajuba","2914208");
-    listIbge.set("BA-Iramaia","2914307");
-    listIbge.set("BA-Iraquara","2914406");
-    listIbge.set("BA-Irará","2914505");
-    listIbge.set("BA-Irecê","2914604");
-    listIbge.set("BA-Itabela","2914653");
-    listIbge.set("BA-Itaberaba","2914703");
-    listIbge.set("BA-Itabuna","2914802");
-    listIbge.set("BA-Itacaré","2914901");
-    listIbge.set("BA-Itaeté","2915007");
-    listIbge.set("BA-Itagi","2915106");
-    listIbge.set("BA-Itagibá","2915205");
-    listIbge.set("BA-Itagimirim","2915304");
-    listIbge.set("BA-Itaguaçu da Bahia","2915353");
-    listIbge.set("BA-Itaju do Colônia","2915403");
-    listIbge.set("BA-Itajuípe","2915502");
-    listIbge.set("BA-Itamaraju","2915601");
-    listIbge.set("BA-Itamari","2915700");
-    listIbge.set("BA-Itambé","2915809");
-    listIbge.set("BA-Itanagra","2915908");
-    listIbge.set("BA-Itanhém","2916005");
-    listIbge.set("BA-Itaparica","2916104");
-    listIbge.set("BA-Itapé","2916203");
-    listIbge.set("BA-Itapebi","2916302");
-    listIbge.set("BA-Itapetinga","2916401");
-    listIbge.set("BA-Itapicuru","2916500");
-    listIbge.set("BA-Itapitanga","2916609");
-    listIbge.set("BA-Itaquara","2916708");
-    listIbge.set("BA-Itarantim","2916807");
-    listIbge.set("BA-Itatim","2916856");
-    listIbge.set("BA-Itiruçu","2916906");
-    listIbge.set("BA-Itiúba","2917003");
-    listIbge.set("BA-Itororó","2917102");
-    listIbge.set("BA-Ituaçu","2917201");
-    listIbge.set("BA-Ituberá","2917300");
-    listIbge.set("BA-Iuiu","2917334");
-    listIbge.set("BA-Jaborandi","2917359");
-    listIbge.set("BA-Jacaraci","2917409");
-    listIbge.set("BA-Jacobina","2917508");
-    listIbge.set("BA-Jaguaquara","2917607");
-    listIbge.set("BA-Jaguarari","2917706");
-    listIbge.set("BA-Jaguaripe","2917805");
-    listIbge.set("BA-Jandaíra","2917904");
-    listIbge.set("BA-Jequié","2918001");
-    listIbge.set("BA-Jeremoabo","2918100");
-    listIbge.set("BA-Jiquiriçá","2918209");
-    listIbge.set("BA-Jitaúna","2918308");
-    listIbge.set("BA-João Dourado","2918357");
-    listIbge.set("BA-Juazeiro","2918407");
-    listIbge.set("BA-Jucuruçu","2918456");
-    listIbge.set("BA-Jussara","2918506");
-    listIbge.set("BA-Jussari","2918555");
-    listIbge.set("BA-Jussiape","2918605");
-    listIbge.set("BA-Lafaiete Coutinho","2918704");
-    listIbge.set("BA-Lagoa Real","2918753");
-    listIbge.set("BA-Laje","2918803");
-    listIbge.set("BA-Lajedão","2918902");
-    listIbge.set("BA-Lajedinho","2919009");
-    listIbge.set("BA-Lajedo do Tabocal","2919058");
-    listIbge.set("BA-Lamarão","2919108");
-    listIbge.set("BA-Lapão","2919157");
-    listIbge.set("BA-Lauro de Freitas","2919207");
-    listIbge.set("BA-Lençóis","2919306");
-    listIbge.set("BA-Licínio de Almeida","2919405");
-    listIbge.set("BA-Livramento de Nossa Senhora","2919504");
-    listIbge.set("BA-Luís Eduardo Magalhães","2919553");
-    listIbge.set("BA-Macajuba","2919603");
-    listIbge.set("BA-Macarani","2919702");
-    listIbge.set("BA-Macaúbas","2919801");
-    listIbge.set("BA-Macururé","2919900");
-    listIbge.set("BA-Madre de Deus","2919926");
-    listIbge.set("BA-Maetinga","2919959");
-    listIbge.set("BA-Maiquinique","2920007");
-    listIbge.set("BA-Mairi","2920106");
-    listIbge.set("BA-Malhada","2920205");
-    listIbge.set("BA-Malhada de Pedras","2920304");
-    listIbge.set("BA-Manoel Vitorino","2920403");
-    listIbge.set("BA-Mansidão","2920452");
-    listIbge.set("BA-Maracás","2920502");
-    listIbge.set("BA-Maragogipe","2920601");
-    listIbge.set("BA-Maraú","2920700");
-    listIbge.set("BA-Marcionílio Souza","2920809");
-    listIbge.set("BA-Mascote","2920908");
-    listIbge.set("BA-Mata de São João","2921005");
-    listIbge.set("BA-Matina","2921054");
-    listIbge.set("BA-Medeiros Neto","2921104");
-    listIbge.set("BA-Miguel Calmon","2921203");
-    listIbge.set("BA-Milagres","2921302");
-    listIbge.set("BA-Mirangaba","2921401");
-    listIbge.set("BA-Mirante","2921450");
-    listIbge.set("BA-Monte Santo","2921500");
-    listIbge.set("BA-Morpará","2921609");
-    listIbge.set("BA-Morro do Chapéu","2921708");
-    listIbge.set("BA-Mortugaba","2921807");
-    listIbge.set("BA-Mucugê","2921906");
-    listIbge.set("BA-Mucuri","2922003");
-    listIbge.set("BA-Mulungu do Morro","2922052");
-    listIbge.set("BA-Mundo Novo","2922102");
-    listIbge.set("BA-Muniz Ferreira","2922201");
-    listIbge.set("BA-Muquém do São Francisco","2922250");
-    listIbge.set("BA-Muritiba","2922300");
-    listIbge.set("BA-Mutuípe","2922409");
-    listIbge.set("BA-Nazaré","2922508");
-    listIbge.set("BA-Nilo Peçanha","2922607");
-    listIbge.set("BA-Nordestina","2922656");
-    listIbge.set("BA-Nova Canaã","2922706");
-    listIbge.set("BA-Nova Fátima","2922730");
-    listIbge.set("BA-Nova Ibiá","2922755");
-    listIbge.set("BA-Nova Itarana","2922805");
-    listIbge.set("BA-Nova Redenção","2922854");
-    listIbge.set("BA-Nova Soure","2922904");
-    listIbge.set("BA-Nova Viçosa","2923001");
-    listIbge.set("BA-Novo Horizonte","2923035");
-    listIbge.set("BA-Novo Triunfo","2923050");
-    listIbge.set("BA-Olindina","2923100");
-    listIbge.set("BA-Oliveira dos Brejinhos","2923209");
-    listIbge.set("BA-Ouriçangas","2923308");
-    listIbge.set("BA-Ourolândia","2923357");
-    listIbge.set("BA-Palmas de Monte Alto","2923407");
-    listIbge.set("BA-Palmeiras","2923506");
-    listIbge.set("BA-Paramirim","2923605");
-    listIbge.set("BA-Paratinga","2923704");
-    listIbge.set("BA-Paripiranga","2923803");
-    listIbge.set("BA-Pau Brasil","2923902");
-    listIbge.set("BA-Paulo Afonso","2924009");
-    listIbge.set("BA-Pé de Serra","2924058");
-    listIbge.set("BA-Pedrão","2924108");
-    listIbge.set("BA-Pedro Alexandre","2924207");
-    listIbge.set("BA-Piatã","2924306");
-    listIbge.set("BA-Pilão Arcado","2924405");
-    listIbge.set("BA-Pindaí","2924504");
-    listIbge.set("BA-Pindobaçu","2924603");
-    listIbge.set("BA-Pintadas","2924652");
-    listIbge.set("BA-Piraí do Norte","2924678");
-    listIbge.set("BA-Piripá","2924702");
-    listIbge.set("BA-Piritiba","2924801");
-    listIbge.set("BA-Planaltino","2924900");
-    listIbge.set("BA-Planalto","2925006");
-    listIbge.set("BA-Poções","2925105");
-    listIbge.set("BA-Pojuca","2925204");
-    listIbge.set("BA-Ponto Novo","2925253");
-    listIbge.set("BA-Porto Seguro","2925303");
-    listIbge.set("BA-Potiraguá","2925402");
-    listIbge.set("BA-Prado","2925501");
-    listIbge.set("BA-Presidente Dutra","2925600");
-    listIbge.set("BA-Presidente Jânio Quadros","2925709");
-    listIbge.set("BA-Presidente Tancredo Neves","2925758");
-    listIbge.set("BA-Queimadas","2925808");
-    listIbge.set("BA-Quijingue","2925907");
-    listIbge.set("BA-Quixabeira","2925931");
-    listIbge.set("BA-Rafael Jambeiro","2925956");
-    listIbge.set("BA-Remanso","2926004");
-    listIbge.set("BA-Retirolândia","2926103");
-    listIbge.set("BA-Riachão das Neves","2926202");
-    listIbge.set("BA-Riachão do Jacuípe","2926301");
-    listIbge.set("BA-Riacho de Santana","2926400");
-    listIbge.set("BA-Ribeira do Amparo","2926509");
-    listIbge.set("BA-Ribeira do Pombal","2926608");
-    listIbge.set("BA-Ribeirão do Largo","2926657");
-    listIbge.set("BA-Rio de Contas","2926707");
-    listIbge.set("BA-Rio do Antônio","2926806");
-    listIbge.set("BA-Rio do Pires","2926905");
-    listIbge.set("BA-Rio Real","2927002");
-    listIbge.set("BA-Rodelas","2927101");
-    listIbge.set("BA-Ruy Barbosa","2927200");
-    listIbge.set("BA-Salinas da Margarida","2927309");
-    listIbge.set("BA-Salvador","2927408");
-    listIbge.set("BA-Santa Bárbara","2927507");
-    listIbge.set("BA-Santa Brígida","2927606");
-    listIbge.set("BA-Santa Cruz Cabrália","2927705");
-    listIbge.set("BA-Santa Cruz da Vitória","2927804");
-    listIbge.set("BA-Santa Inês","2927903");
-    listIbge.set("BA-Santa Luzia","2928059");
-    listIbge.set("BA-Santa Maria da Vitória","2928109");
-    listIbge.set("BA-Santa Rita de Cássia","2928406");
-    listIbge.set("BA-Santa Terezinha","2928505");
-    listIbge.set("BA-Santaluz","2928000");
-    listIbge.set("BA-Santana","2928208");
-    listIbge.set("BA-Santanópolis","2928307");
-    listIbge.set("BA-Santo Amaro","2928604");
-    listIbge.set("BA-Santo Antônio de Jesus","2928703");
-    listIbge.set("BA-Santo Estêvão","2928802");
-    listIbge.set("BA-São Desidério","2928901");
-    listIbge.set("BA-São Domingos","2928950");
-    listIbge.set("BA-São Felipe","2929107");
-    listIbge.set("BA-São Félix","2929008");
-    listIbge.set("BA-São Félix do Coribe","2929057");
-    listIbge.set("BA-São Francisco do Conde","2929206");
-    listIbge.set("BA-São Gabriel","2929255");
-    listIbge.set("BA-São Gonçalo dos Campos","2929305");
-    listIbge.set("BA-São José da Vitória","2929354");
-    listIbge.set("BA-São José do Jacuípe","2929370");
-    listIbge.set("BA-São Miguel das Matas","2929404");
-    listIbge.set("BA-São Sebastião do Passé","2929503");
-    listIbge.set("BA-Sapeaçu","2929602");
-    listIbge.set("BA-Sátiro Dias","2929701");
-    listIbge.set("BA-Saubara","2929750");
-    listIbge.set("BA-Saúde","2929800");
-    listIbge.set("BA-Seabra","2929909");
-    listIbge.set("BA-Sebastião Laranjeiras","2930006");
-    listIbge.set("BA-Senhor do Bonfim","2930105");
-    listIbge.set("BA-Sento Sé","2930204");
-    listIbge.set("BA-Serra do Ramalho","2930154");
-    listIbge.set("BA-Serra Dourada","2930303");
-    listIbge.set("BA-Serra Preta","2930402");
-    listIbge.set("BA-Serrinha","2930501");
-    listIbge.set("BA-Serrolândia","2930600");
-    listIbge.set("BA-Simões Filho","2930709");
-    listIbge.set("BA-Sítio do Mato","2930758");
-    listIbge.set("BA-Sítio do Quinto","2930766");
-    listIbge.set("BA-Sobradinho","2930774");
-    listIbge.set("BA-Souto Soares","2930808");
-    listIbge.set("BA-Tabocas do Brejo Velho","2930907");
-    listIbge.set("BA-Tanhaçu","2931004");
-    listIbge.set("BA-Tanque Novo","2931053");
-    listIbge.set("BA-Tanquinho","2931103");
-    listIbge.set("BA-Taperoá","2931202");
-    listIbge.set("BA-Tapiramutá","2931301");
-    listIbge.set("BA-Teixeira de Freitas","2931350");
-    listIbge.set("BA-Teodoro Sampaio","2931400");
-    listIbge.set("BA-Teofilândia","2931509");
-    listIbge.set("BA-Teolândia","2931608");
-    listIbge.set("BA-Terra Nova","2931707");
-    listIbge.set("BA-Tremedal","2931806");
-    listIbge.set("BA-Tucano","2931905");
-    listIbge.set("BA-Uauá","2932002");
-    listIbge.set("BA-Ubaíra","2932101");
-    listIbge.set("BA-Ubaitaba","2932200");
-    listIbge.set("BA-Ubatã","2932309");
-    listIbge.set("BA-Uibaí","2932408");
-    listIbge.set("BA-Umburanas","2932457");
-    listIbge.set("BA-Una","2932507");
-    listIbge.set("BA-Urandi","2932606");
-    listIbge.set("BA-Uruçuca","2932705");
-    listIbge.set("BA-Utinga","2932804");
-    listIbge.set("BA-Valença","2932903");
-    listIbge.set("BA-Valente","2933000");
-    listIbge.set("BA-Várzea da Roça","2933059");
-    listIbge.set("BA-Várzea do Poço","2933109");
-    listIbge.set("BA-Várzea Nova","2933158");
-    listIbge.set("BA-Varzedo","2933174");
-    listIbge.set("BA-Vera Cruz","2933208");
-    listIbge.set("BA-Vereda","2933257");
-    listIbge.set("BA-Vitória da Conquista","2933307");
-    listIbge.set("BA-Wagner","2933406");
-    listIbge.set("BA-Wanderley","2933455");
-    listIbge.set("BA-Wenceslau Guimarães","2933505");
-    listIbge.set("BA-Xique-Xique","2933604");
-    listIbge.set("MG-Abadia dos Dourados","3100104");
-    listIbge.set("MG-Abaeté","3100203");
-    listIbge.set("MG-Abre Campo","3100302");
-    listIbge.set("MG-Acaiaca","3100401");
-    listIbge.set("MG-Açucena","3100500");
-    listIbge.set("MG-Água Boa","3100609");
-    listIbge.set("MG-Água Comprida","3100708");
-    listIbge.set("MG-Aguanil","3100807");
-    listIbge.set("MG-Águas Formosas","3100906");
-    listIbge.set("MG-Águas Vermelhas","3101003");
-    listIbge.set("MG-Aimorés","3101102");
-    listIbge.set("MG-Aiuruoca","3101201");
-    listIbge.set("MG-Alagoa","3101300");
-    listIbge.set("MG-Albertina","3101409");
-    listIbge.set("MG-Além Paraíba","3101508");
-    listIbge.set("MG-Alfenas","3101607");
-    listIbge.set("MG-Alfredo Vasconcelos","3101631");
-    listIbge.set("MG-Almenara","3101706");
-    listIbge.set("MG-Alpercata","3101805");
-    listIbge.set("MG-Alpinópolis","3101904");
-    listIbge.set("MG-Alterosa","3102001");
-    listIbge.set("MG-Alto Caparaó","3102050");
-    listIbge.set("MG-Alto Jequitibá","3153509");
-    listIbge.set("MG-Alto Rio Doce","3102100");
-    listIbge.set("MG-Alvarenga","3102209");
-    listIbge.set("MG-Alvinópolis","3102308");
-    listIbge.set("MG-Alvorada de Minas","3102407");
-    listIbge.set("MG-Amparo do Serra","3102506");
-    listIbge.set("MG-Andradas","3102605");
-    listIbge.set("MG-Andrelândia","3102803");
-    listIbge.set("MG-Angelândia","3102852");
-    listIbge.set("MG-Antônio Carlos","3102902");
-    listIbge.set("MG-Antônio Dias","3103009");
-    listIbge.set("MG-Antônio Prado de Minas","3103108");
-    listIbge.set("MG-Araçaí","3103207");
-    listIbge.set("MG-Aracitaba","3103306");
-    listIbge.set("MG-Araçuaí","3103405");
-    listIbge.set("MG-Araguari","3103504");
-    listIbge.set("MG-Arantina","3103603");
-    listIbge.set("MG-Araponga","3103702");
-    listIbge.set("MG-Araporã","3103751");
-    listIbge.set("MG-Arapuá","3103801");
-    listIbge.set("MG-Araújos","3103900");
-    listIbge.set("MG-Araxá","3104007");
-    listIbge.set("MG-Arceburgo","3104106");
-    listIbge.set("MG-Arcos","3104205");
-    listIbge.set("MG-Areado","3104304");
-    listIbge.set("MG-Argirita","3104403");
-    listIbge.set("MG-Aricanduva","3104452");
-    listIbge.set("MG-Arinos","3104502");
-    listIbge.set("MG-Astolfo Dutra","3104601");
-    listIbge.set("MG-Ataléia","3104700");
-    listIbge.set("MG-Augusto de Lima","3104809");
-    listIbge.set("MG-Baependi","3104908");
-    listIbge.set("MG-Baldim","3105004");
-    listIbge.set("MG-Bambuí","3105103");
-    listIbge.set("MG-Bandeira","3105202");
-    listIbge.set("MG-Bandeira do Sul","3105301");
-    listIbge.set("MG-Barão de Cocais","3105400");
-    listIbge.set("MG-Barão de Monte Alto","3105509");
-    listIbge.set("MG-Barbacena","3105608");
-    listIbge.set("MG-Barra Longa","3105707");
-    listIbge.set("MG-Barroso","3105905");
-    listIbge.set("MG-Bela Vista de Minas","3106002");
-    listIbge.set("MG-Belmiro Braga","3106101");
-    listIbge.set("MG-Belo Horizonte","3106200");
-    listIbge.set("MG-Belo Oriente","3106309");
-    listIbge.set("MG-Belo Vale","3106408");
-    listIbge.set("MG-Berilo","3106507");
-    listIbge.set("MG-Berizal","3106655");
-    listIbge.set("MG-Bertópolis","3106606");
-    listIbge.set("MG-Betim","3106705");
-    listIbge.set("MG-Bias Fortes","3106804");
-    listIbge.set("MG-Bicas","3106903");
-    listIbge.set("MG-Biquinhas","3107000");
-    listIbge.set("MG-Boa Esperança","3107109");
-    listIbge.set("MG-Bocaina de Minas","3107208");
-    listIbge.set("MG-Bocaiúva","3107307");
-    listIbge.set("MG-Bom Despacho","3107406");
-    listIbge.set("MG-Bom Jardim de Minas","3107505");
-    listIbge.set("MG-Bom Jesus da Penha","3107604");
-    listIbge.set("MG-Bom Jesus do Amparo","3107703");
-    listIbge.set("MG-Bom Jesus do Galho","3107802");
-    listIbge.set("MG-Bom Repouso","3107901");
-    listIbge.set("MG-Bom Sucesso","3108008");
-    listIbge.set("MG-Bonfim","3108107");
-    listIbge.set("MG-Bonfinópolis de Minas","3108206");
-    listIbge.set("MG-Bonito de Minas","3108255");
-    listIbge.set("MG-Borda da Mata","3108305");
-    listIbge.set("MG-Botelhos","3108404");
-    listIbge.set("MG-Botumirim","3108503");
-    listIbge.set("MG-Brás Pires","3108701");
-    listIbge.set("MG-Brasilândia de Minas","3108552");
-    listIbge.set("MG-Brasília de Minas","3108602");
-    listIbge.set("MG-Braúnas","3108800");
-    listIbge.set("MG-Brazópolis","3108909");
-    listIbge.set("MG-Brumadinho","3109006");
-    listIbge.set("MG-Bueno Brandão","3109105");
-    listIbge.set("MG-Buenópolis","3109204");
-    listIbge.set("MG-Bugre","3109253");
-    listIbge.set("MG-Buritis","3109303");
-    listIbge.set("MG-Buritizeiro","3109402");
-    listIbge.set("MG-Cabeceira Grande","3109451");
-    listIbge.set("MG-Cabo Verde","3109501");
-    listIbge.set("MG-Cachoeira da Prata","3109600");
-    listIbge.set("MG-Cachoeira de Minas","3109709");
-    listIbge.set("MG-Cachoeira de Pajeú","3102704");
-    listIbge.set("MG-Cachoeira Dourada","3109808");
-    listIbge.set("MG-Caetanópolis","3109907");
-    listIbge.set("MG-Caeté","3110004");
-    listIbge.set("MG-Caiana","3110103");
-    listIbge.set("MG-Cajuri","3110202");
-    listIbge.set("MG-Caldas","3110301");
-    listIbge.set("MG-Camacho","3110400");
-    listIbge.set("MG-Camanducaia","3110509");
-    listIbge.set("MG-Cambuí","3110608");
-    listIbge.set("MG-Cambuquira","3110707");
-    listIbge.set("MG-Campanário","3110806");
-    listIbge.set("MG-Campanha","3110905");
-    listIbge.set("MG-Campestre","3111002");
-    listIbge.set("MG-Campina Verde","3111101");
-    listIbge.set("MG-Campo Azul","3111150");
-    listIbge.set("MG-Campo Belo","3111200");
-    listIbge.set("MG-Campo do Meio","3111309");
-    listIbge.set("MG-Campo Florido","3111408");
-    listIbge.set("MG-Campos Altos","3111507");
-    listIbge.set("MG-Campos Gerais","3111606");
-    listIbge.set("MG-Cana Verde","3111903");
-    listIbge.set("MG-Canaã","3111705");
-    listIbge.set("MG-Canápolis","3111804");
-    listIbge.set("MG-Candeias","3112000");
-    listIbge.set("MG-Cantagalo","3112059");
-    listIbge.set("MG-Caparaó","3112109");
-    listIbge.set("MG-Capela Nova","3112208");
-    listIbge.set("MG-Capelinha","3112307");
-    listIbge.set("MG-Capetinga","3112406");
-    listIbge.set("MG-Capim Branco","3112505");
-    listIbge.set("MG-Capinópolis","3112604");
-    listIbge.set("MG-Capitão Andrade","3112653");
-    listIbge.set("MG-Capitão Enéas","3112703");
-    listIbge.set("MG-Capitólio","3112802");
-    listIbge.set("MG-Caputira","3112901");
-    listIbge.set("MG-Caraí","3113008");
-    listIbge.set("MG-Caranaíba","3113107");
-    listIbge.set("MG-Carandaí","3113206");
-    listIbge.set("MG-Carangola","3113305");
-    listIbge.set("MG-Caratinga","3113404");
-    listIbge.set("MG-Carbonita","3113503");
-    listIbge.set("MG-Careaçu","3113602");
-    listIbge.set("MG-Carlos Chagas","3113701");
-    listIbge.set("MG-Carmésia","3113800");
-    listIbge.set("MG-Carmo da Cachoeira","3113909");
-    listIbge.set("MG-Carmo da Mata","3114006");
-    listIbge.set("MG-Carmo de Minas","3114105");
-    listIbge.set("MG-Carmo do Cajuru","3114204");
-    listIbge.set("MG-Carmo do Paranaíba","3114303");
-    listIbge.set("MG-Carmo do Rio Claro","3114402");
-    listIbge.set("MG-Carmópolis de Minas","3114501");
-    listIbge.set("MG-Carneirinho","3114550");
-    listIbge.set("MG-Carrancas","3114600");
-    listIbge.set("MG-Carvalhópolis","3114709");
-    listIbge.set("MG-Carvalhos","3114808");
-    listIbge.set("MG-Casa Grande","3114907");
-    listIbge.set("MG-Cascalho Rico","3115003");
-    listIbge.set("MG-Cássia","3115102");
-    listIbge.set("MG-Cataguases","3115300");
-    listIbge.set("MG-Catas Altas","3115359");
-    listIbge.set("MG-Catas Altas da Noruega","3115409");
-    listIbge.set("MG-Catuji","3115458");
-    listIbge.set("MG-Catuti","3115474");
-    listIbge.set("MG-Caxambu","3115508");
-    listIbge.set("MG-Cedro do Abaeté","3115607");
-    listIbge.set("MG-Central de Minas","3115706");
-    listIbge.set("MG-Centralina","3115805");
-    listIbge.set("MG-Chácara","3115904");
-    listIbge.set("MG-Chalé","3116001");
-    listIbge.set("MG-Chapada do Norte","3116100");
-    listIbge.set("MG-Chapada Gaúcha","3116159");
-    listIbge.set("MG-Chiador","3116209");
-    listIbge.set("MG-Cipotânea","3116308");
-    listIbge.set("MG-Claraval","3116407");
-    listIbge.set("MG-Claro dos Poções","3116506");
-    listIbge.set("MG-Cláudio","3116605");
-    listIbge.set("MG-Coimbra","3116704");
-    listIbge.set("MG-Coluna","3116803");
-    listIbge.set("MG-Comendador Gomes","3116902");
-    listIbge.set("MG-Comercinho","3117009");
-    listIbge.set("MG-Conceição da Aparecida","3117108");
-    listIbge.set("MG-Conceição da Barra de Minas","3115201");
-    listIbge.set("MG-Conceição das Alagoas","3117306");
-    listIbge.set("MG-Conceição das Pedras","3117207");
-    listIbge.set("MG-Conceição de Ipanema","3117405");
-    listIbge.set("MG-Conceição do Mato Dentro","3117504");
-    listIbge.set("MG-Conceição do Pará","3117603");
-    listIbge.set("MG-Conceição do Rio Verde","3117702");
-    listIbge.set("MG-Conceição dos Ouros","3117801");
-    listIbge.set("MG-Cônego Marinho","3117836");
-    listIbge.set("MG-Confins","3117876");
-    listIbge.set("MG-Congonhal","3117900");
-    listIbge.set("MG-Congonhas","3118007");
-    listIbge.set("MG-Congonhas do Norte","3118106");
-    listIbge.set("MG-Conquista","3118205");
-    listIbge.set("MG-Conselheiro Lafaiete","3118304");
-    listIbge.set("MG-Conselheiro Pena","3118403");
-    listIbge.set("MG-Consolação","3118502");
-    listIbge.set("MG-Contagem","3118601");
-    listIbge.set("MG-Coqueiral","3118700");
-    listIbge.set("MG-Coração de Jesus","3118809");
-    listIbge.set("MG-Cordisburgo","3118908");
-    listIbge.set("MG-Cordislândia","3119005");
-    listIbge.set("MG-Corinto","3119104");
-    listIbge.set("MG-Coroaci","3119203");
-    listIbge.set("MG-Coromandel","3119302");
-    listIbge.set("MG-Coronel Fabriciano","3119401");
-    listIbge.set("MG-Coronel Murta","3119500");
-    listIbge.set("MG-Coronel Pacheco","3119609");
-    listIbge.set("MG-Coronel Xavier Chaves","3119708");
-    listIbge.set("MG-Córrego Danta","3119807");
-    listIbge.set("MG-Córrego do Bom Jesus","3119906");
-    listIbge.set("MG-Córrego Fundo","3119955");
-    listIbge.set("MG-Córrego Novo","3120003");
-    listIbge.set("MG-Couto de Magalhães de Minas","3120102");
-    listIbge.set("MG-Crisólita","3120151");
-    listIbge.set("MG-Cristais","3120201");
-    listIbge.set("MG-Cristália","3120300");
-    listIbge.set("MG-Cristiano Otoni","3120409");
-    listIbge.set("MG-Cristina","3120508");
-    listIbge.set("MG-Crucilândia","3120607");
-    listIbge.set("MG-Cruzeiro da Fortaleza","3120706");
-    listIbge.set("MG-Cruzília","3120805");
-    listIbge.set("MG-Cuparaque","3120839");
-    listIbge.set("MG-Curral de Dentro","3120870");
-    listIbge.set("MG-Curvelo","3120904");
-    listIbge.set("MG-Datas","3121001");
-    listIbge.set("MG-Delfim Moreira","3121100");
-    listIbge.set("MG-Delfinópolis","3121209");
-    listIbge.set("MG-Delta","3121258");
-    listIbge.set("MG-Descoberto","3121308");
-    listIbge.set("MG-Desterro de Entre Rios","3121407");
-    listIbge.set("MG-Desterro do Melo","3121506");
-    listIbge.set("MG-Diamantina","3121605");
-    listIbge.set("MG-Diogo de Vasconcelos","3121704");
-    listIbge.set("MG-Dionísio","3121803");
-    listIbge.set("MG-Divinésia","3121902");
-    listIbge.set("MG-Divino","3122009");
-    listIbge.set("MG-Divino das Laranjeiras","3122108");
-    listIbge.set("MG-Divinolândia de Minas","3122207");
-    listIbge.set("MG-Divinópolis","3122306");
-    listIbge.set("MG-Divisa Alegre","3122355");
-    listIbge.set("MG-Divisa Nova","3122405");
-    listIbge.set("MG-Divisópolis","3122454");
-    listIbge.set("MG-Dom Bosco","3122470");
-    listIbge.set("MG-Dom Cavati","3122504");
-    listIbge.set("MG-Dom Joaquim","3122603");
-    listIbge.set("MG-Dom Silvério","3122702");
-    listIbge.set("MG-Dom Viçoso","3122801");
-    listIbge.set("MG-Dona Euzébia","3122900");
-    listIbge.set("MG-Dores de Campos","3123007");
-    listIbge.set("MG-Dores de Guanhães","3123106");
-    listIbge.set("MG-Dores do Indaiá","3123205");
-    listIbge.set("MG-Dores do Turvo","3123304");
-    listIbge.set("MG-Doresópolis","3123403");
-    listIbge.set("MG-Douradoquara","3123502");
-    listIbge.set("MG-Durandé","3123528");
-    listIbge.set("MG-Elói Mendes","3123601");
-    listIbge.set("MG-Engenheiro Caldas","3123700");
-    listIbge.set("MG-Engenheiro Navarro","3123809");
-    listIbge.set("MG-Entre Folhas","3123858");
-    listIbge.set("MG-Entre Rios de Minas","3123908");
-    listIbge.set("MG-Ervália","3124005");
-    listIbge.set("MG-Esmeraldas","3124104");
-    listIbge.set("MG-Espera Feliz","3124203");
-    listIbge.set("MG-Espinosa","3124302");
-    listIbge.set("MG-Espírito Santo do Dourado","3124401");
-    listIbge.set("MG-Estiva","3124500");
-    listIbge.set("MG-Estrela Dalva","3124609");
-    listIbge.set("MG-Estrela do Indaiá","3124708");
-    listIbge.set("MG-Estrela do Sul","3124807");
-    listIbge.set("MG-Eugenópolis","3124906");
-    listIbge.set("MG-Ewbank da Câmara","3125002");
-    listIbge.set("MG-Extrema","3125101");
-    listIbge.set("MG-Fama","3125200");
-    listIbge.set("MG-Faria Lemos","3125309");
-    listIbge.set("MG-Felício dos Santos","3125408");
-    listIbge.set("MG-Felisburgo","3125606");
-    listIbge.set("MG-Felixlândia","3125705");
-    listIbge.set("MG-Fernandes Tourinho","3125804");
-    listIbge.set("MG-Ferros","3125903");
-    listIbge.set("MG-Fervedouro","3125952");
-    listIbge.set("MG-Florestal","3126000");
-    listIbge.set("MG-Formiga","3126109");
-    listIbge.set("MG-Formoso","3126208");
-    listIbge.set("MG-Fortaleza de Minas","3126307");
-    listIbge.set("MG-Fortuna de Minas","3126406");
-    listIbge.set("MG-Francisco Badaró","3126505");
-    listIbge.set("MG-Francisco Dumont","3126604");
-    listIbge.set("MG-Francisco Sá","3126703");
-    listIbge.set("MG-Franciscópolis","3126752");
-    listIbge.set("MG-Frei Gaspar","3126802");
-    listIbge.set("MG-Frei Inocêncio","3126901");
-    listIbge.set("MG-Frei Lagonegro","3126950");
-    listIbge.set("MG-Fronteira","3127008");
-    listIbge.set("MG-Fronteira dos Vales","3127057");
-    listIbge.set("MG-Fruta de Leite","3127073");
-    listIbge.set("MG-Frutal","3127107");
-    listIbge.set("MG-Funilândia","3127206");
-    listIbge.set("MG-Galiléia","3127305");
-    listIbge.set("MG-Gameleiras","3127339");
-    listIbge.set("MG-Glaucilândia","3127354");
-    listIbge.set("MG-Goiabeira","3127370");
-    listIbge.set("MG-Goianá","3127388");
-    listIbge.set("MG-Gonçalves","3127404");
-    listIbge.set("MG-Gonzaga","3127503");
-    listIbge.set("MG-Gouveia","3127602");
-    listIbge.set("MG-Governador Valadares","3127701");
-    listIbge.set("MG-Grão Mogol","3127800");
-    listIbge.set("MG-Grupiara","3127909");
-    listIbge.set("MG-Guanhães","3128006");
-    listIbge.set("MG-Guapé","3128105");
-    listIbge.set("MG-Guaraciaba","3128204");
-    listIbge.set("MG-Guaraciama","3128253");
-    listIbge.set("MG-Guaranésia","3128303");
-    listIbge.set("MG-Guarani","3128402");
-    listIbge.set("MG-Guarará","3128501");
-    listIbge.set("MG-Guarda-Mor","3128600");
-    listIbge.set("MG-Guaxupé","3128709");
-    listIbge.set("MG-Guidoval","3128808");
-    listIbge.set("MG-Guimarânia","3128907");
-    listIbge.set("MG-Guiricema","3129004");
-    listIbge.set("MG-Gurinhatã","3129103");
-    listIbge.set("MG-Heliodora","3129202");
-    listIbge.set("MG-Iapu","3129301");
-    listIbge.set("MG-Ibertioga","3129400");
-    listIbge.set("MG-Ibiá","3129509");
-    listIbge.set("MG-Ibiaí","3129608");
-    listIbge.set("MG-Ibiracatu","3129657");
-    listIbge.set("MG-Ibiraci","3129707");
-    listIbge.set("MG-Ibirité","3129806");
-    listIbge.set("MG-Ibitiúra de Minas","3129905");
-    listIbge.set("MG-Ibituruna","3130002");
-    listIbge.set("MG-Icaraí de Minas","3130051");
-    listIbge.set("MG-Igarapé","3130101");
-    listIbge.set("MG-Igaratinga","3130200");
-    listIbge.set("MG-Iguatama","3130309");
-    listIbge.set("MG-Ijaci","3130408");
-    listIbge.set("MG-Ilicínea","3130507");
-    listIbge.set("MG-Imbé de Minas","3130556");
-    listIbge.set("MG-Inconfidentes","3130606");
-    listIbge.set("MG-Indaiabira","3130655");
-    listIbge.set("MG-Indianópolis","3130705");
-    listIbge.set("MG-Ingaí","3130804");
-    listIbge.set("MG-Inhapim","3130903");
-    listIbge.set("MG-Inhaúma","3131000");
-    listIbge.set("MG-Inimutaba","3131109");
-    listIbge.set("MG-Ipaba","3131158");
-    listIbge.set("MG-Ipanema","3131208");
-    listIbge.set("MG-Ipatinga","3131307");
-    listIbge.set("MG-Ipiaçu","3131406");
-    listIbge.set("MG-Ipuiúna","3131505");
-    listIbge.set("MG-Iraí de Minas","3131604");
-    listIbge.set("MG-Itabira","3131703");
-    listIbge.set("MG-Itabirinha","3131802");
-    listIbge.set("MG-Itabirito","3131901");
-    listIbge.set("MG-Itacambira","3132008");
-    listIbge.set("MG-Itacarambi","3132107");
-    listIbge.set("MG-Itaguara","3132206");
-    listIbge.set("MG-Itaipé","3132305");
-    listIbge.set("MG-Itajubá","3132404");
-    listIbge.set("MG-Itamarandiba","3132503");
-    listIbge.set("MG-Itamarati de Minas","3132602");
-    listIbge.set("MG-Itambacuri","3132701");
-    listIbge.set("MG-Itambé do Mato Dentro","3132800");
-    listIbge.set("MG-Itamogi","3132909");
-    listIbge.set("MG-Itamonte","3133006");
-    listIbge.set("MG-Itanhandu","3133105");
-    listIbge.set("MG-Itanhomi","3133204");
-    listIbge.set("MG-Itaobim","3133303");
-    listIbge.set("MG-Itapagipe","3133402");
-    listIbge.set("MG-Itapecerica","3133501");
-    listIbge.set("MG-Itapeva","3133600");
-    listIbge.set("MG-Itatiaiuçu","3133709");
-    listIbge.set("MG-Itaú de Minas","3133758");
-    listIbge.set("MG-Itaúna","3133808");
-    listIbge.set("MG-Itaverava","3133907");
-    listIbge.set("MG-Itinga","3134004");
-    listIbge.set("MG-Itueta","3134103");
-    listIbge.set("MG-Ituiutaba","3134202");
-    listIbge.set("MG-Itumirim","3134301");
-    listIbge.set("MG-Iturama","3134400");
-    listIbge.set("MG-Itutinga","3134509");
-    listIbge.set("MG-Jaboticatubas","3134608");
-    listIbge.set("MG-Jacinto","3134707");
-    listIbge.set("MG-Jacuí","3134806");
-    listIbge.set("MG-Jacutinga","3134905");
-    listIbge.set("MG-Jaguaraçu","3135001");
-    listIbge.set("MG-Jaíba","3135050");
-    listIbge.set("MG-Jampruca","3135076");
-    listIbge.set("MG-Janaúba","3135100");
-    listIbge.set("MG-Januária","3135209");
-    listIbge.set("MG-Japaraíba","3135308");
-    listIbge.set("MG-Japonvar","3135357");
-    listIbge.set("MG-Jeceaba","3135407");
-    listIbge.set("MG-Jenipapo de Minas","3135456");
-    listIbge.set("MG-Jequeri","3135506");
-    listIbge.set("MG-Jequitaí","3135605");
-    listIbge.set("MG-Jequitibá","3135704");
-    listIbge.set("MG-Jequitinhonha","3135803");
-    listIbge.set("MG-Jesuânia","3135902");
-    listIbge.set("MG-Joaíma","3136009");
-    listIbge.set("MG-Joanésia","3136108");
-    listIbge.set("MG-João Monlevade","3136207");
-    listIbge.set("MG-João Pinheiro","3136306");
-    listIbge.set("MG-Joaquim Felício","3136405");
-    listIbge.set("MG-Jordânia","3136504");
-    listIbge.set("MG-José Gonçalves de Minas","3136520");
-    listIbge.set("MG-José Raydan","3136553");
-    listIbge.set("MG-Josenópolis","3136579");
-    listIbge.set("MG-Juatuba","3136652");
-    listIbge.set("MG-Juiz de Fora","3136702");
-    listIbge.set("MG-Juramento","3136801");
-    listIbge.set("MG-Juruaia","3136900");
-    listIbge.set("MG-Juvenília","3136959");
-    listIbge.set("MG-Ladainha","3137007");
-    listIbge.set("MG-Lagamar","3137106");
-    listIbge.set("MG-Lagoa da Prata","3137205");
-    listIbge.set("MG-Lagoa dos Patos","3137304");
-    listIbge.set("MG-Lagoa Dourada","3137403");
-    listIbge.set("MG-Lagoa Formosa","3137502");
-    listIbge.set("MG-Lagoa Grande","3137536");
-    listIbge.set("MG-Lagoa Santa","3137601");
-    listIbge.set("MG-Lajinha","3137700");
-    listIbge.set("MG-Lambari","3137809");
-    listIbge.set("MG-Lamim","3137908");
-    listIbge.set("MG-Laranjal","3138005");
-    listIbge.set("MG-Lassance","3138104");
-    listIbge.set("MG-Lavras","3138203");
-    listIbge.set("MG-Leandro Ferreira","3138302");
-    listIbge.set("MG-Leme do Prado","3138351");
-    listIbge.set("MG-Leopoldina","3138401");
-    listIbge.set("MG-Liberdade","3138500");
-    listIbge.set("MG-Lima Duarte","3138609");
-    listIbge.set("MG-Limeira do Oeste","3138625");
-    listIbge.set("MG-Lontra","3138658");
-    listIbge.set("MG-Luisburgo","3138674");
-    listIbge.set("MG-Luislândia","3138682");
-    listIbge.set("MG-Luminárias","3138708");
-    listIbge.set("MG-Luz","3138807");
-    listIbge.set("MG-Machacalis","3138906");
-    listIbge.set("MG-Machado","3139003");
-    listIbge.set("MG-Madre de Deus de Minas","3139102");
-    listIbge.set("MG-Malacacheta","3139201");
-    listIbge.set("MG-Mamonas","3139250");
-    listIbge.set("MG-Manga","3139300");
-    listIbge.set("MG-Manhuaçu","3139409");
-    listIbge.set("MG-Manhumirim","3139508");
-    listIbge.set("MG-Mantena","3139607");
-    listIbge.set("MG-Mar de Espanha","3139805");
-    listIbge.set("MG-Maravilhas","3139706");
-    listIbge.set("MG-Maria da Fé","3139904");
-    listIbge.set("MG-Mariana","3140001");
-    listIbge.set("MG-Marilac","3140100");
-    listIbge.set("MG-Mário Campos","3140159");
-    listIbge.set("MG-Maripá de Minas","3140209");
-    listIbge.set("MG-Marliéria","3140308");
-    listIbge.set("MG-Marmelópolis","3140407");
-    listIbge.set("MG-Martinho Campos","3140506");
-    listIbge.set("MG-Martins Soares","3140530");
-    listIbge.set("MG-Mata Verde","3140555");
-    listIbge.set("MG-Materlândia","3140605");
-    listIbge.set("MG-Mateus Leme","3140704");
-    listIbge.set("MG-Mathias Lobato","3171501");
-    listIbge.set("MG-Matias Barbosa","3140803");
-    listIbge.set("MG-Matias Cardoso","3140852");
-    listIbge.set("MG-Matipó","3140902");
-    listIbge.set("MG-Mato Verde","3141009");
-    listIbge.set("MG-Matozinhos","3141108");
-    listIbge.set("MG-Matutina","3141207");
-    listIbge.set("MG-Medeiros","3141306");
-    listIbge.set("MG-Medina","3141405");
-    listIbge.set("MG-Mendes Pimentel","3141504");
-    listIbge.set("MG-Mercês","3141603");
-    listIbge.set("MG-Mesquita","3141702");
-    listIbge.set("MG-Minas Novas","3141801");
-    listIbge.set("MG-Minduri","3141900");
-    listIbge.set("MG-Mirabela","3142007");
-    listIbge.set("MG-Miradouro","3142106");
-    listIbge.set("MG-Miraí","3142205");
-    listIbge.set("MG-Miravânia","3142254");
-    listIbge.set("MG-Moeda","3142304");
-    listIbge.set("MG-Moema","3142403");
-    listIbge.set("MG-Monjolos","3142502");
-    listIbge.set("MG-Monsenhor Paulo","3142601");
-    listIbge.set("MG-Montalvânia","3142700");
-    listIbge.set("MG-Monte Alegre de Minas","3142809");
-    listIbge.set("MG-Monte Azul","3142908");
-    listIbge.set("MG-Monte Belo","3143005");
-    listIbge.set("MG-Monte Carmelo","3143104");
-    listIbge.set("MG-Monte Formoso","3143153");
-    listIbge.set("MG-Monte Santo de Minas","3143203");
-    listIbge.set("MG-Monte Sião","3143401");
-    listIbge.set("MG-Montes Claros","3143302");
-    listIbge.set("MG-Montezuma","3143450");
-    listIbge.set("MG-Morada Nova de Minas","3143500");
-    listIbge.set("MG-Morro da Garça","3143609");
-    listIbge.set("MG-Morro do Pilar","3143708");
-    listIbge.set("MG-Munhoz","3143807");
-    listIbge.set("MG-Muriaé","3143906");
-    listIbge.set("MG-Mutum","3144003");
-    listIbge.set("MG-Muzambinho","3144102");
-    listIbge.set("MG-Nacip Raydan","3144201");
-    listIbge.set("MG-Nanuque","3144300");
-    listIbge.set("MG-Naque","3144359");
-    listIbge.set("MG-Natalândia","3144375");
-    listIbge.set("MG-Natércia","3144409");
-    listIbge.set("MG-Nazareno","3144508");
-    listIbge.set("MG-Nepomuceno","3144607");
-    listIbge.set("MG-Ninheira","3144656");
-    listIbge.set("MG-Nova Belém","3144672");
-    listIbge.set("MG-Nova Era","3144706");
-    listIbge.set("MG-Nova Lima","3144805");
-    listIbge.set("MG-Nova Módica","3144904");
-    listIbge.set("MG-Nova Ponte","3145000");
-    listIbge.set("MG-Nova Porteirinha","3145059");
-    listIbge.set("MG-Nova Resende","3145109");
-    listIbge.set("MG-Nova Serrana","3145208");
-    listIbge.set("MG-Nova União","3136603");
-    listIbge.set("MG-Novo Cruzeiro","3145307");
-    listIbge.set("MG-Novo Oriente de Minas","3145356");
-    listIbge.set("MG-Novorizonte","3145372");
-    listIbge.set("MG-Olaria","3145406");
-    listIbge.set("MG-Olhos-d'Água","3145455");
-    listIbge.set("MG-Olímpio Noronha","3145505");
-    listIbge.set("MG-Oliveira","3145604");
-    listIbge.set("MG-Oliveira Fortes","3145703");
-    listIbge.set("MG-Onça de Pitangui","3145802");
-    listIbge.set("MG-Oratórios","3145851");
-    listIbge.set("MG-Orizânia","3145877");
-    listIbge.set("MG-Ouro Branco","3145901");
-    listIbge.set("MG-Ouro Fino","3146008");
-    listIbge.set("MG-Ouro Preto","3146107");
-    listIbge.set("MG-Ouro Verde de Minas","3146206");
-    listIbge.set("MG-Padre Carvalho","3146255");
-    listIbge.set("MG-Padre Paraíso","3146305");
-    listIbge.set("MG-Pai Pedro","3146552");
-    listIbge.set("MG-Paineiras","3146404");
-    listIbge.set("MG-Pains","3146503");
-    listIbge.set("MG-Paiva","3146602");
-    listIbge.set("MG-Palma","3146701");
-    listIbge.set("MG-Palmópolis","3146750");
-    listIbge.set("MG-Papagaios","3146909");
-    listIbge.set("MG-Pará de Minas","3147105");
-    listIbge.set("MG-Paracatu","3147006");
-    listIbge.set("MG-Paraguaçu","3147204");
-    listIbge.set("MG-Paraisópolis","3147303");
-    listIbge.set("MG-Paraopeba","3147402");
-    listIbge.set("MG-Passa Quatro","3147600");
-    listIbge.set("MG-Passa Tempo","3147709");
-    listIbge.set("MG-Passa Vinte","3147808");
-    listIbge.set("MG-Passabém","3147501");
-    listIbge.set("MG-Passos","3147907");
-    listIbge.set("MG-Patis","3147956");
-    listIbge.set("MG-Patos de Minas","3148004");
-    listIbge.set("MG-Patrocínio","3148103");
-    listIbge.set("MG-Patrocínio do Muriaé","3148202");
-    listIbge.set("MG-Paula Cândido","3148301");
-    listIbge.set("MG-Paulistas","3148400");
-    listIbge.set("MG-Pavão","3148509");
-    listIbge.set("MG-Peçanha","3148608");
-    listIbge.set("MG-Pedra Azul","3148707");
-    listIbge.set("MG-Pedra Bonita","3148756");
-    listIbge.set("MG-Pedra do Anta","3148806");
-    listIbge.set("MG-Pedra do Indaiá","3148905");
-    listIbge.set("MG-Pedra Dourada","3149002");
-    listIbge.set("MG-Pedralva","3149101");
-    listIbge.set("MG-Pedras de Maria da Cruz","3149150");
-    listIbge.set("MG-Pedrinópolis","3149200");
-    listIbge.set("MG-Pedro Leopoldo","3149309");
-    listIbge.set("MG-Pedro Teixeira","3149408");
-    listIbge.set("MG-Pequeri","3149507");
-    listIbge.set("MG-Pequi","3149606");
-    listIbge.set("MG-Perdigão","3149705");
-    listIbge.set("MG-Perdizes","3149804");
-    listIbge.set("MG-Perdões","3149903");
-    listIbge.set("MG-Periquito","3149952");
-    listIbge.set("MG-Pescador","3150000");
-    listIbge.set("MG-Piau","3150109");
-    listIbge.set("MG-Piedade de Caratinga","3150158");
-    listIbge.set("MG-Piedade de Ponte Nova","3150208");
-    listIbge.set("MG-Piedade do Rio Grande","3150307");
-    listIbge.set("MG-Piedade dos Gerais","3150406");
-    listIbge.set("MG-Pimenta","3150505");
-    listIbge.set("MG-Pingo-d'Água","3150539");
-    listIbge.set("MG-Pintópolis","3150570");
-    listIbge.set("MG-Piracema","3150604");
-    listIbge.set("MG-Pirajuba","3150703");
-    listIbge.set("MG-Piranga","3150802");
-    listIbge.set("MG-Piranguçu","3150901");
-    listIbge.set("MG-Piranguinho","3151008");
-    listIbge.set("MG-Pirapetinga","3151107");
-    listIbge.set("MG-Pirapora","3151206");
-    listIbge.set("MG-Piraúba","3151305");
-    listIbge.set("MG-Pitangui","3151404");
-    listIbge.set("MG-Piumhi","3151503");
-    listIbge.set("MG-Planura","3151602");
-    listIbge.set("MG-Poço Fundo","3151701");
-    listIbge.set("MG-Poços de Caldas","3151800");
-    listIbge.set("MG-Pocrane","3151909");
-    listIbge.set("MG-Pompéu","3152006");
-    listIbge.set("MG-Ponte Nova","3152105");
-    listIbge.set("MG-Ponto Chique","3152131");
-    listIbge.set("MG-Ponto dos Volantes","3152170");
-    listIbge.set("MG-Porteirinha","3152204");
-    listIbge.set("MG-Porto Firme","3152303");
-    listIbge.set("MG-Poté","3152402");
-    listIbge.set("MG-Pouso Alegre","3152501");
-    listIbge.set("MG-Pouso Alto","3152600");
-    listIbge.set("MG-Prados","3152709");
-    listIbge.set("MG-Prata","3152808");
-    listIbge.set("MG-Pratápolis","3152907");
-    listIbge.set("MG-Pratinha","3153004");
-    listIbge.set("MG-Presidente Bernardes","3153103");
-    listIbge.set("MG-Presidente Juscelino","3153202");
-    listIbge.set("MG-Presidente Kubitschek","3153301");
-    listIbge.set("MG-Presidente Olegário","3153400");
-    listIbge.set("MG-Prudente de Morais","3153608");
-    listIbge.set("MG-Quartel Geral","3153707");
-    listIbge.set("MG-Queluzito","3153806");
-    listIbge.set("MG-Raposos","3153905");
-    listIbge.set("MG-Raul Soares","3154002");
-    listIbge.set("MG-Recreio","3154101");
-    listIbge.set("MG-Reduto","3154150");
-    listIbge.set("MG-Resende Costa","3154200");
-    listIbge.set("MG-Resplendor","3154309");
-    listIbge.set("MG-Ressaquinha","3154408");
-    listIbge.set("MG-Riachinho","3154457");
-    listIbge.set("MG-Riacho dos Machados","3154507");
-    listIbge.set("MG-Ribeirão das Neves","3154606");
-    listIbge.set("MG-Ribeirão Vermelho","3154705");
-    listIbge.set("MG-Rio Acima","3154804");
-    listIbge.set("MG-Rio Casca","3154903");
-    listIbge.set("MG-Rio do Prado","3155108");
-    listIbge.set("MG-Rio Doce","3155009");
-    listIbge.set("MG-Rio Espera","3155207");
-    listIbge.set("MG-Rio Manso","3155306");
-    listIbge.set("MG-Rio Novo","3155405");
-    listIbge.set("MG-Rio Paranaíba","3155504");
-    listIbge.set("MG-Rio Pardo de Minas","3155603");
-    listIbge.set("MG-Rio Piracicaba","3155702");
-    listIbge.set("MG-Rio Pomba","3155801");
-    listIbge.set("MG-Rio Preto","3155900");
-    listIbge.set("MG-Rio Vermelho","3156007");
-    listIbge.set("MG-Ritápolis","3156106");
-    listIbge.set("MG-Rochedo de Minas","3156205");
-    listIbge.set("MG-Rodeiro","3156304");
-    listIbge.set("MG-Romaria","3156403");
-    listIbge.set("MG-Rosário da Limeira","3156452");
-    listIbge.set("MG-Rubelita","3156502");
-    listIbge.set("MG-Rubim","3156601");
-    listIbge.set("MG-Sabará","3156700");
-    listIbge.set("MG-Sabinópolis","3156809");
-    listIbge.set("MG-Sacramento","3156908");
-    listIbge.set("MG-Salinas","3157005");
-    listIbge.set("MG-Salto da Divisa","3157104");
-    listIbge.set("MG-Santa Bárbara","3157203");
-    listIbge.set("MG-Santa Bárbara do Leste","3157252");
-    listIbge.set("MG-Santa Bárbara do Monte Verde","3157278");
-    listIbge.set("MG-Santa Bárbara do Tugúrio","3157302");
-    listIbge.set("MG-Santa Cruz de Minas","3157336");
-    listIbge.set("MG-Santa Cruz de Salinas","3157377");
-    listIbge.set("MG-Santa Cruz do Escalvado","3157401");
-    listIbge.set("MG-Santa Efigênia de Minas","3157500");
-    listIbge.set("MG-Santa Fé de Minas","3157609");
-    listIbge.set("MG-Santa Helena de Minas","3157658");
-    listIbge.set("MG-Santa Juliana","3157708");
-    listIbge.set("MG-Santa Luzia","3157807");
-    listIbge.set("MG-Santa Margarida","3157906");
-    listIbge.set("MG-Santa Maria de Itabira","3158003");
-    listIbge.set("MG-Santa Maria do Salto","3158102");
-    listIbge.set("MG-Santa Maria do Suaçuí","3158201");
-    listIbge.set("MG-Santa Rita de Caldas","3159209");
-    listIbge.set("MG-Santa Rita de Ibitipoca","3159407");
-    listIbge.set("MG-Santa Rita de Jacutinga","3159308");
-    listIbge.set("MG-Santa Rita de Minas","3159357");
-    listIbge.set("MG-Santa Rita do Itueto","3159506");
-    listIbge.set("MG-Santa Rita do Sapucaí","3159605");
-    listIbge.set("MG-Santa Rosa da Serra","3159704");
-    listIbge.set("MG-Santa Vitória","3159803");
-    listIbge.set("MG-Santana da Vargem","3158300");
-    listIbge.set("MG-Santana de Cataguases","3158409");
-    listIbge.set("MG-Santana de Pirapama","3158508");
-    listIbge.set("MG-Santana do Deserto","3158607");
-    listIbge.set("MG-Santana do Garambéu","3158706");
-    listIbge.set("MG-Santana do Jacaré","3158805");
-    listIbge.set("MG-Santana do Manhuaçu","3158904");
-    listIbge.set("MG-Santana do Paraíso","3158953");
-    listIbge.set("MG-Santana do Riacho","3159001");
-    listIbge.set("MG-Santana dos Montes","3159100");
-    listIbge.set("MG-Santo Antônio do Amparo","3159902");
-    listIbge.set("MG-Santo Antônio do Aventureiro","3160009");
-    listIbge.set("MG-Santo Antônio do Grama","3160108");
-    listIbge.set("MG-Santo Antônio do Itambé","3160207");
-    listIbge.set("MG-Santo Antônio do Jacinto","3160306");
-    listIbge.set("MG-Santo Antônio do Monte","3160405");
-    listIbge.set("MG-Santo Antônio do Retiro","3160454");
-    listIbge.set("MG-Santo Antônio do Rio Abaixo","3160504");
-    listIbge.set("MG-Santo Hipólito","3160603");
-    listIbge.set("MG-Santos Dumont","3160702");
-    listIbge.set("MG-São Bento Abade","3160801");
-    listIbge.set("MG-São Brás do Suaçuí","3160900");
-    listIbge.set("MG-São Domingos das Dores","3160959");
-    listIbge.set("MG-São Domingos do Prata","3161007");
-    listIbge.set("MG-São Félix de Minas","3161056");
-    listIbge.set("MG-São Francisco","3161106");
-    listIbge.set("MG-São Francisco de Paula","3161205");
-    listIbge.set("MG-São Francisco de Sales","3161304");
-    listIbge.set("MG-São Francisco do Glória","3161403");
-    listIbge.set("MG-São Geraldo","3161502");
-    listIbge.set("MG-São Geraldo da Piedade","3161601");
-    listIbge.set("MG-São Geraldo do Baixio","3161650");
-    listIbge.set("MG-São Gonçalo do Abaeté","3161700");
-    listIbge.set("MG-São Gonçalo do Pará","3161809");
-    listIbge.set("MG-São Gonçalo do Rio Abaixo","3161908");
-    listIbge.set("MG-São Gonçalo do Rio Preto","3125507");
-    listIbge.set("MG-São Gonçalo do Sapucaí","3162005");
-    listIbge.set("MG-São Gotardo","3162104");
-    listIbge.set("MG-São João Batista do Glória","3162203");
-    listIbge.set("MG-São João da Lagoa","3162252");
-    listIbge.set("MG-São João da Mata","3162302");
-    listIbge.set("MG-São João da Ponte","3162401");
-    listIbge.set("MG-São João das Missões","3162450");
-    listIbge.set("MG-São João del Rei","3162500");
-    listIbge.set("MG-São João do Manhuaçu","3162559");
-    listIbge.set("MG-São João do Manteninha","3162575");
-    listIbge.set("MG-São João do Oriente","3162609");
-    listIbge.set("MG-São João do Pacuí","3162658");
-    listIbge.set("MG-São João do Paraíso","3162708");
-    listIbge.set("MG-São João Evangelista","3162807");
-    listIbge.set("MG-São João Nepomuceno","3162906");
-    listIbge.set("MG-São Joaquim de Bicas","3162922");
-    listIbge.set("MG-São José da Barra","3162948");
-    listIbge.set("MG-São José da Lapa","3162955");
-    listIbge.set("MG-São José da Safira","3163003");
-    listIbge.set("MG-São José da Varginha","3163102");
-    listIbge.set("MG-São José do Alegre","3163201");
-    listIbge.set("MG-São José do Divino","3163300");
-    listIbge.set("MG-São José do Goiabal","3163409");
-    listIbge.set("MG-São José do Jacuri","3163508");
-    listIbge.set("MG-São José do Mantimento","3163607");
-    listIbge.set("MG-São Lourenço","3163706");
-    listIbge.set("MG-São Miguel do Anta","3163805");
-    listIbge.set("MG-São Pedro da União","3163904");
-    listIbge.set("MG-São Pedro do Suaçuí","3164100");
-    listIbge.set("MG-São Pedro dos Ferros","3164001");
-    listIbge.set("MG-São Romão","3164209");
-    listIbge.set("MG-São Roque de Minas","3164308");
-    listIbge.set("MG-São Sebastião da Bela Vista","3164407");
-    listIbge.set("MG-São Sebastião da Vargem Alegre","3164431");
-    listIbge.set("MG-São Sebastião do Anta","3164472");
-    listIbge.set("MG-São Sebastião do Maranhão","3164506");
-    listIbge.set("MG-São Sebastião do Oeste","3164605");
-    listIbge.set("MG-São Sebastião do Paraíso","3164704");
-    listIbge.set("MG-São Sebastião do Rio Preto","3164803");
-    listIbge.set("MG-São Sebastião do Rio Verde","3164902");
-    listIbge.set("MG-São Tiago","3165008");
-    listIbge.set("MG-São Tomás de Aquino","3165107");
-    listIbge.set("MG-São Tomé das Letras","3165206");
-    listIbge.set("MG-São Vicente de Minas","3165305");
-    listIbge.set("MG-Sapucaí-Mirim","3165404");
-    listIbge.set("MG-Sardoá","3165503");
-    listIbge.set("MG-Sarzedo","3165537");
-    listIbge.set("MG-Sem-Peixe","3165560");
-    listIbge.set("MG-Senador Amaral","3165578");
-    listIbge.set("MG-Senador Cortes","3165602");
-    listIbge.set("MG-Senador Firmino","3165701");
-    listIbge.set("MG-Senador José Bento","3165800");
-    listIbge.set("MG-Senador Modestino Gonçalves","3165909");
-    listIbge.set("MG-Senhora de Oliveira","3166006");
-    listIbge.set("MG-Senhora do Porto","3166105");
-    listIbge.set("MG-Senhora dos Remédios","3166204");
-    listIbge.set("MG-Sericita","3166303");
-    listIbge.set("MG-Seritinga","3166402");
-    listIbge.set("MG-Serra Azul de Minas","3166501");
-    listIbge.set("MG-Serra da Saudade","3166600");
-    listIbge.set("MG-Serra do Salitre","3166808");
-    listIbge.set("MG-Serra dos Aimorés","3166709");
-    listIbge.set("MG-Serrania","3166907");
-    listIbge.set("MG-Serranópolis de Minas","3166956");
-    listIbge.set("MG-Serranos","3167004");
-    listIbge.set("MG-Serro","3167103");
-    listIbge.set("MG-Sete Lagoas","3167202");
-    listIbge.set("MG-Setubinha","3165552");
-    listIbge.set("MG-Silveirânia","3167301");
-    listIbge.set("MG-Silvianópolis","3167400");
-    listIbge.set("MG-Simão Pereira","3167509");
-    listIbge.set("MG-Simonésia","3167608");
-    listIbge.set("MG-Sobrália","3167707");
-    listIbge.set("MG-Soledade de Minas","3167806");
-    listIbge.set("MG-Tabuleiro","3167905");
-    listIbge.set("MG-Taiobeiras","3168002");
-    listIbge.set("MG-Taparuba","3168051");
-    listIbge.set("MG-Tapira","3168101");
-    listIbge.set("MG-Tapiraí","3168200");
-    listIbge.set("MG-Taquaraçu de Minas","3168309");
-    listIbge.set("MG-Tarumirim","3168408");
-    listIbge.set("MG-Teixeiras","3168507");
-    listIbge.set("MG-Teófilo Otoni","3168606");
-    listIbge.set("MG-Timóteo","3168705");
-    listIbge.set("MG-Tiradentes","3168804");
-    listIbge.set("MG-Tiros","3168903");
-    listIbge.set("MG-Tocantins","3169000");
-    listIbge.set("MG-Tocos do Moji","3169059");
-    listIbge.set("MG-Toledo","3169109");
-    listIbge.set("MG-Tombos","3169208");
-    listIbge.set("MG-Três Corações","3169307");
-    listIbge.set("MG-Três Marias","3169356");
-    listIbge.set("MG-Três Pontas","3169406");
-    listIbge.set("MG-Tumiritinga","3169505");
-    listIbge.set("MG-Tupaciguara","3169604");
-    listIbge.set("MG-Turmalina","3169703");
-    listIbge.set("MG-Turvolândia","3169802");
-    listIbge.set("MG-Ubá","3169901");
-    listIbge.set("MG-Ubaí","3170008");
-    listIbge.set("MG-Ubaporanga","3170057");
-    listIbge.set("MG-Uberaba","3170107");
-    listIbge.set("MG-Uberlândia","3170206");
-    listIbge.set("MG-Umburatiba","3170305");
-    listIbge.set("MG-Unaí","3170404");
-    listIbge.set("MG-União de Minas","3170438");
-    listIbge.set("MG-Uruana de Minas","3170479");
-    listIbge.set("MG-Urucânia","3170503");
-    listIbge.set("MG-Urucuia","3170529");
-    listIbge.set("MG-Vargem Alegre","3170578");
-    listIbge.set("MG-Vargem Bonita","3170602");
-    listIbge.set("MG-Vargem Grande do Rio Pardo","3170651");
-    listIbge.set("MG-Varginha","3170701");
-    listIbge.set("MG-Varjão de Minas","3170750");
-    listIbge.set("MG-Várzea da Palma","3170800");
-    listIbge.set("MG-Varzelândia","3170909");
-    listIbge.set("MG-Vazante","3171006");
-    listIbge.set("MG-Verdelândia","3171030");
-    listIbge.set("MG-Veredinha","3171071");
-    listIbge.set("MG-Veríssimo","3171105");
-    listIbge.set("MG-Vermelho Novo","3171154");
-    listIbge.set("MG-Vespasiano","3171204");
-    listIbge.set("MG-Viçosa","3171303");
-    listIbge.set("MG-Vieiras","3171402");
-    listIbge.set("MG-Virgem da Lapa","3171600");
-    listIbge.set("MG-Virgínia","3171709");
-    listIbge.set("MG-Virginópolis","3171808");
-    listIbge.set("MG-Virgolândia","3171907");
-    listIbge.set("MG-Visconde do Rio Branco","3172004");
-    listIbge.set("MG-Volta Grande","3172103");
-    listIbge.set("MG-Wenceslau Braz","3172202");
-    listIbge.set("ES-Afonso Cláudio","3200102");
-    listIbge.set("ES-Água Doce do Norte","3200169");
-    listIbge.set("ES-Águia Branca","3200136");
-    listIbge.set("ES-Alegre","3200201");
-    listIbge.set("ES-Alfredo Chaves","3200300");
-    listIbge.set("ES-Alto Rio Novo","3200359");
-    listIbge.set("ES-Anchieta","3200409");
-    listIbge.set("ES-Apiacá","3200508");
-    listIbge.set("ES-Aracruz","3200607");
-    listIbge.set("ES-Atílio Vivácqua","3200706");
-    listIbge.set("ES-Baixo Guandu","3200805");
-    listIbge.set("ES-Barra de São Francisco","3200904");
-    listIbge.set("ES-Boa Esperança","3201001");
-    listIbge.set("ES-Bom Jesus do Norte","3201100");
-    listIbge.set("ES-Brejetuba","3201159");
-    listIbge.set("ES-Cachoeiro de Itapemirim","3201209");
-    listIbge.set("ES-Cariacica","3201308");
-    listIbge.set("ES-Castelo","3201407");
-    listIbge.set("ES-Colatina","3201506");
-    listIbge.set("ES-Conceição da Barra","3201605");
-    listIbge.set("ES-Conceição do Castelo","3201704");
-    listIbge.set("ES-Divino de São Lourenço","3201803");
-    listIbge.set("ES-Domingos Martins","3201902");
-    listIbge.set("ES-Dores do Rio Preto","3202009");
-    listIbge.set("ES-Ecoporanga","3202108");
-    listIbge.set("ES-Fundão","3202207");
-    listIbge.set("ES-Governador Lindenberg","3202256");
-    listIbge.set("ES-Guaçuí","3202306");
-    listIbge.set("ES-Guarapari","3202405");
-    listIbge.set("ES-Ibatiba","3202454");
-    listIbge.set("ES-Ibiraçu","3202504");
-    listIbge.set("ES-Ibitirama","3202553");
-    listIbge.set("ES-Iconha","3202603");
-    listIbge.set("ES-Irupi","3202652");
-    listIbge.set("ES-Itaguaçu","3202702");
-    listIbge.set("ES-Itapemirim","3202801");
-    listIbge.set("ES-Itarana","3202900");
-    listIbge.set("ES-Iúna","3203007");
-    listIbge.set("ES-Jaguaré","3203056");
-    listIbge.set("ES-Jerônimo Monteiro","3203106");
-    listIbge.set("ES-João Neiva","3203130");
-    listIbge.set("ES-Laranja da Terra","3203163");
-    listIbge.set("ES-Linhares","3203205");
-    listIbge.set("ES-Mantenópolis","3203304");
-    listIbge.set("ES-Marataízes","3203320");
-    listIbge.set("ES-Marechal Floriano","3203346");
-    listIbge.set("ES-Marilândia","3203353");
-    listIbge.set("ES-Mimoso do Sul","3203403");
-    listIbge.set("ES-Montanha","3203502");
-    listIbge.set("ES-Mucurici","3203601");
-    listIbge.set("ES-Muniz Freire","3203700");
-    listIbge.set("ES-Muqui","3203809");
-    listIbge.set("ES-Nova Venécia","3203908");
-    listIbge.set("ES-Pancas","3204005");
-    listIbge.set("ES-Pedro Canário","3204054");
-    listIbge.set("ES-Pinheiros","3204104");
-    listIbge.set("ES-Piúma","3204203");
-    listIbge.set("ES-Ponto Belo","3204252");
-    listIbge.set("ES-Presidente Kennedy","3204302");
-    listIbge.set("ES-Rio Bananal","3204351");
-    listIbge.set("ES-Rio Novo do Sul","3204401");
-    listIbge.set("ES-Santa Leopoldina","3204500");
-    listIbge.set("ES-Santa Maria de Jetibá","3204559");
-    listIbge.set("ES-Santa Teresa","3204609");
-    listIbge.set("ES-São Domingos do Norte","3204658");
-    listIbge.set("ES-São Gabriel da Palha","3204708");
-    listIbge.set("ES-São José do Calçado","3204807");
-    listIbge.set("ES-São Mateus","3204906");
-    listIbge.set("ES-São Roque do Canaã","3204955");
-    listIbge.set("ES-Serra","3205002");
-    listIbge.set("ES-Sooretama","3205010");
-    listIbge.set("ES-Vargem Alta","3205036");
-    listIbge.set("ES-Venda Nova do Imigrante","3205069");
-    listIbge.set("ES-Viana","3205101");
-    listIbge.set("ES-Vila Pavão","3205150");
-    listIbge.set("ES-Vila Valério","3205176");
-    listIbge.set("ES-Vila Velha","3205200");
-    listIbge.set("ES-Vitória","3205309");
-    listIbge.set("RJ-Angra dos Reis","3300100");
-    listIbge.set("RJ-Aperibé","3300159");
-    listIbge.set("RJ-Araruama","3300209");
-    listIbge.set("RJ-Areal","3300225");
-    listIbge.set("RJ-Armação dos Búzios","3300233");
-    listIbge.set("RJ-Arraial do Cabo","3300258");
-    listIbge.set("RJ-Barra do Piraí","3300308");
-    listIbge.set("RJ-Barra Mansa","3300407");
-    listIbge.set("RJ-Belford Roxo","3300456");
-    listIbge.set("RJ-Bom Jardim","3300506");
-    listIbge.set("RJ-Bom Jesus do Itabapoana","3300605");
-    listIbge.set("RJ-Cabo Frio","3300704");
-    listIbge.set("RJ-Cachoeiras de Macacu","3300803");
-    listIbge.set("RJ-Cambuci","3300902");
-    listIbge.set("RJ-Campos dos Goytacazes","3301009");
-    listIbge.set("RJ-Cantagalo","3301108");
-    listIbge.set("RJ-Carapebus","3300936");
-    listIbge.set("RJ-Cardoso Moreira","3301157");
-    listIbge.set("RJ-Carmo","3301207");
-    listIbge.set("RJ-Casimiro de Abreu","3301306");
-    listIbge.set("RJ-Comendador Levy Gasparian","3300951");
-    listIbge.set("RJ-Conceição de Macabu","3301405");
-    listIbge.set("RJ-Cordeiro","3301504");
-    listIbge.set("RJ-Duas Barras","3301603");
-    listIbge.set("RJ-Duque de Caxias","3301702");
-    listIbge.set("RJ-Engenheiro Paulo de Frontin","3301801");
-    listIbge.set("RJ-Guapimirim","3301850");
-    listIbge.set("RJ-Iguaba Grande","3301876");
-    listIbge.set("RJ-Itaboraí","3301900");
-    listIbge.set("RJ-Itaguaí","3302007");
-    listIbge.set("RJ-Italva","3302056");
-    listIbge.set("RJ-Itaocara","3302106");
-    listIbge.set("RJ-Itaperuna","3302205");
-    listIbge.set("RJ-Itatiaia","3302254");
-    listIbge.set("RJ-Japeri","3302270");
-    listIbge.set("RJ-Laje do Muriaé","3302304");
-    listIbge.set("RJ-Macaé","3302403");
-    listIbge.set("RJ-Macuco","3302452");
-    listIbge.set("RJ-Magé","3302502");
-    listIbge.set("RJ-Mangaratiba","3302601");
-    listIbge.set("RJ-Maricá","3302700");
-    listIbge.set("RJ-Mendes","3302809");
-    listIbge.set("RJ-Mesquita","3302858");
-    listIbge.set("RJ-Miguel Pereira","3302908");
-    listIbge.set("RJ-Miracema","3303005");
-    listIbge.set("RJ-Natividade","3303104");
-    listIbge.set("RJ-Nilópolis","3303203");
-    listIbge.set("RJ-Niterói","3303302");
-    listIbge.set("RJ-Nova Friburgo","3303401");
-    listIbge.set("RJ-Nova Iguaçu","3303500");
-    listIbge.set("RJ-Paracambi","3303609");
-    listIbge.set("RJ-Paraíba do Sul","3303708");
-    listIbge.set("RJ-Paraty","3303807");
-    listIbge.set("RJ-Paty do Alferes","3303856");
-    listIbge.set("RJ-Petrópolis","3303906");
-    listIbge.set("RJ-Pinheiral","3303955");
-    listIbge.set("RJ-Piraí","3304003");
-    listIbge.set("RJ-Porciúncula","3304102");
-    listIbge.set("RJ-Porto Real","3304110");
-    listIbge.set("RJ-Quatis","3304128");
-    listIbge.set("RJ-Queimados","3304144");
-    listIbge.set("RJ-Quissamã","3304151");
-    listIbge.set("RJ-Resende","3304201");
-    listIbge.set("RJ-Rio Bonito","3304300");
-    listIbge.set("RJ-Rio Claro","3304409");
-    listIbge.set("RJ-Rio das Flores","3304508");
-    listIbge.set("RJ-Rio das Ostras","3304524");
-    listIbge.set("RJ-Rio de Janeiro","3304557");
-    listIbge.set("RJ-Santa Maria Madalena","3304607");
-    listIbge.set("RJ-Santo Antônio de Pádua","3304706");
-    listIbge.set("RJ-São Fidélis","3304805");
-    listIbge.set("RJ-São Francisco de Itabapoana","3304755");
-    listIbge.set("RJ-São Gonçalo","3304904");
-    listIbge.set("RJ-São João da Barra","3305000");
-    listIbge.set("RJ-São João de Meriti","3305109");
-    listIbge.set("RJ-São José de Ubá","3305133");
-    listIbge.set("RJ-São José do Vale do Rio Preto","3305158");
-    listIbge.set("RJ-São Pedro da Aldeia","3305208");
-    listIbge.set("RJ-São Sebastião do Alto","3305307");
-    listIbge.set("RJ-Sapucaia","3305406");
-    listIbge.set("RJ-Saquarema","3305505");
-    listIbge.set("RJ-Seropédica","3305554");
-    listIbge.set("RJ-Silva Jardim","3305604");
-    listIbge.set("RJ-Sumidouro","3305703");
-    listIbge.set("RJ-Tanguá","3305752");
-    listIbge.set("RJ-Teresópolis","3305802");
-    listIbge.set("RJ-Trajano de Moraes","3305901");
-    listIbge.set("RJ-Três Rios","3306008");
-    listIbge.set("RJ-Valença","3306107");
-    listIbge.set("RJ-Varre-Sai","3306156");
-    listIbge.set("RJ-Vassouras","3306206");
-    listIbge.set("RJ-Volta Redonda","3306305");
-    listIbge.set("SP-Adamantina","3500105");
-    listIbge.set("SP-Adolfo","3500204");
-    listIbge.set("SP-Aguaí","3500303");
-    listIbge.set("SP-Águas da Prata","3500402");
-    listIbge.set("SP-Águas de Lindóia","3500501");
-    listIbge.set("SP-Águas de Santa Bárbara","3500550");
-    listIbge.set("SP-Águas de São Pedro","3500600");
-    listIbge.set("SP-Agudos","3500709");
-    listIbge.set("SP-Alambari","3500758");
-    listIbge.set("SP-Alfredo Marcondes","3500808");
-    listIbge.set("SP-Altair","3500907");
-    listIbge.set("SP-Altinópolis","3501004");
-    listIbge.set("SP-Alto Alegre","3501103");
-    listIbge.set("SP-Alumínio","3501152");
-    listIbge.set("SP-Álvares Florence","3501202");
-    listIbge.set("SP-Álvares Machado","3501301");
-    listIbge.set("SP-Álvaro de Carvalho","3501400");
-    listIbge.set("SP-Alvinlândia","3501509");
-    listIbge.set("SP-Americana","3501608");
-    listIbge.set("SP-Américo Brasiliense","3501707");
-    listIbge.set("SP-Américo de Campos","3501806");
-    listIbge.set("SP-Amparo","3501905");
-    listIbge.set("SP-Analândia","3502002");
-    listIbge.set("SP-Andradina","3502101");
-    listIbge.set("SP-Angatuba","3502200");
-    listIbge.set("SP-Anhembi","3502309");
-    listIbge.set("SP-Anhumas","3502408");
-    listIbge.set("SP-Aparecida","3502507");
-    listIbge.set("SP-Aparecida d'Oeste","3502606");
-    listIbge.set("SP-Apiaí","3502705");
-    listIbge.set("SP-Araçariguama","3502754");
-    listIbge.set("SP-Araçatuba","3502804");
-    listIbge.set("SP-Araçoiaba da Serra","3502903");
-    listIbge.set("SP-Aramina","3503000");
-    listIbge.set("SP-Arandu","3503109");
-    listIbge.set("SP-Arapeí","3503158");
-    listIbge.set("SP-Araraquara","3503208");
-    listIbge.set("SP-Araras","3503307");
-    listIbge.set("SP-Arco-Íris","3503356");
-    listIbge.set("SP-Arealva","3503406");
-    listIbge.set("SP-Areias","3503505");
-    listIbge.set("SP-Areiópolis","3503604");
-    listIbge.set("SP-Ariranha","3503703");
-    listIbge.set("SP-Artur Nogueira","3503802");
-    listIbge.set("SP-Arujá","3503901");
-    listIbge.set("SP-Aspásia","3503950");
-    listIbge.set("SP-Assis","3504008");
-    listIbge.set("SP-Atibaia","3504107");
-    listIbge.set("SP-Auriflama","3504206");
-    listIbge.set("SP-Avaí","3504305");
-    listIbge.set("SP-Avanhandava","3504404");
-    listIbge.set("SP-Avaré","3504503");
-    listIbge.set("SP-Bady Bassitt","3504602");
-    listIbge.set("SP-Balbinos","3504701");
-    listIbge.set("SP-Bálsamo","3504800");
-    listIbge.set("SP-Bananal","3504909");
-    listIbge.set("SP-Barão de Antonina","3505005");
-    listIbge.set("SP-Barbosa","3505104");
-    listIbge.set("SP-Bariri","3505203");
-    listIbge.set("SP-Barra Bonita","3505302");
-    listIbge.set("SP-Barra do Chapéu","3505351");
-    listIbge.set("SP-Barra do Turvo","3505401");
-    listIbge.set("SP-Barretos","3505500");
-    listIbge.set("SP-Barrinha","3505609");
-    listIbge.set("SP-Barueri","3505708");
-    listIbge.set("SP-Bastos","3505807");
-    listIbge.set("SP-Batatais","3505906");
-    listIbge.set("SP-Bauru","3506003");
-    listIbge.set("SP-Bebedouro","3506102");
-    listIbge.set("SP-Bento de Abreu","3506201");
-    listIbge.set("SP-Bernardino de Campos","3506300");
-    listIbge.set("SP-Bertioga","3506359");
-    listIbge.set("SP-Bilac","3506409");
-    listIbge.set("SP-Birigui","3506508");
-    listIbge.set("SP-Biritiba Mirim","3506607");
-    listIbge.set("SP-Boa Esperança do Sul","3506706");
-    listIbge.set("SP-Bocaina","3506805");
-    listIbge.set("SP-Bofete","3506904");
-    listIbge.set("SP-Boituva","3507001");
-    listIbge.set("SP-Bom Jesus dos Perdões","3507100");
-    listIbge.set("SP-Bom Sucesso de Itararé","3507159");
-    listIbge.set("SP-Borá","3507209");
-    listIbge.set("SP-Boracéia","3507308");
-    listIbge.set("SP-Borborema","3507407");
-    listIbge.set("SP-Borebi","3507456");
-    listIbge.set("SP-Botucatu","3507506");
-    listIbge.set("SP-Bragança Paulista","3507605");
-    listIbge.set("SP-Braúna","3507704");
-    listIbge.set("SP-Brejo Alegre","3507753");
-    listIbge.set("SP-Brodowski","3507803");
-    listIbge.set("SP-Brotas","3507902");
-    listIbge.set("SP-Buri","3508009");
-    listIbge.set("SP-Buritama","3508108");
-    listIbge.set("SP-Buritizal","3508207");
-    listIbge.set("SP-Cabrália Paulista","3508306");
-    listIbge.set("SP-Cabreúva","3508405");
-    listIbge.set("SP-Caçapava","3508504");
-    listIbge.set("SP-Cachoeira Paulista","3508603");
-    listIbge.set("SP-Caconde","3508702");
-    listIbge.set("SP-Cafelândia","3508801");
-    listIbge.set("SP-Caiabu","3508900");
-    listIbge.set("SP-Caieiras","3509007");
-    listIbge.set("SP-Caiuá","3509106");
-    listIbge.set("SP-Cajamar","3509205");
-    listIbge.set("SP-Cajati","3509254");
-    listIbge.set("SP-Cajobi","3509304");
-    listIbge.set("SP-Cajuru","3509403");
-    listIbge.set("SP-Campina do Monte Alegre","3509452");
-    listIbge.set("SP-Campinas","3509502");
-    listIbge.set("SP-Campo Limpo Paulista","3509601");
-    listIbge.set("SP-Campos do Jordão","3509700");
-    listIbge.set("SP-Campos Novos Paulista","3509809");
-    listIbge.set("SP-Cananéia","3509908");
-    listIbge.set("SP-Canas","3509957");
-    listIbge.set("SP-Cândido Mota","3510005");
-    listIbge.set("SP-Cândido Rodrigues","3510104");
-    listIbge.set("SP-Canitar","3510153");
-    listIbge.set("SP-Capão Bonito","3510203");
-    listIbge.set("SP-Capela do Alto","3510302");
-    listIbge.set("SP-Capivari","3510401");
-    listIbge.set("SP-Caraguatatuba","3510500");
-    listIbge.set("SP-Carapicuíba","3510609");
-    listIbge.set("SP-Cardoso","3510708");
-    listIbge.set("SP-Casa Branca","3510807");
-    listIbge.set("SP-Cássia dos Coqueiros","3510906");
-    listIbge.set("SP-Castilho","3511003");
-    listIbge.set("SP-Catanduva","3511102");
-    listIbge.set("SP-Catiguá","3511201");
-    listIbge.set("SP-Cedral","3511300");
-    listIbge.set("SP-Cerqueira César","3511409");
-    listIbge.set("SP-Cerquilho","3511508");
-    listIbge.set("SP-Cesário Lange","3511607");
-    listIbge.set("SP-Charqueada","3511706");
-    listIbge.set("SP-Chavantes","3557204");
-    listIbge.set("SP-Clementina","3511904");
-    listIbge.set("SP-Colina","3512001");
-    listIbge.set("SP-Colômbia","3512100");
-    listIbge.set("SP-Conchal","3512209");
-    listIbge.set("SP-Conchas","3512308");
-    listIbge.set("SP-Cordeirópolis","3512407");
-    listIbge.set("SP-Coroados","3512506");
-    listIbge.set("SP-Coronel Macedo","3512605");
-    listIbge.set("SP-Corumbataí","3512704");
-    listIbge.set("SP-Cosmópolis","3512803");
-    listIbge.set("SP-Cosmorama","3512902");
-    listIbge.set("SP-Cotia","3513009");
-    listIbge.set("SP-Cravinhos","3513108");
-    listIbge.set("SP-Cristais Paulista","3513207");
-    listIbge.set("SP-Cruzália","3513306");
-    listIbge.set("SP-Cruzeiro","3513405");
-    listIbge.set("SP-Cubatão","3513504");
-    listIbge.set("SP-Cunha","3513603");
-    listIbge.set("SP-Descalvado","3513702");
-    listIbge.set("SP-Diadema","3513801");
-    listIbge.set("SP-Dirce Reis","3513850");
-    listIbge.set("SP-Divinolândia","3513900");
-    listIbge.set("SP-Dobrada","3514007");
-    listIbge.set("SP-Dois Córregos","3514106");
-    listIbge.set("SP-Dolcinópolis","3514205");
-    listIbge.set("SP-Dourado","3514304");
-    listIbge.set("SP-Dracena","3514403");
-    listIbge.set("SP-Duartina","3514502");
-    listIbge.set("SP-Dumont","3514601");
-    listIbge.set("SP-Echaporã","3514700");
-    listIbge.set("SP-Eldorado","3514809");
-    listIbge.set("SP-Elias Fausto","3514908");
-    listIbge.set("SP-Elisiário","3514924");
-    listIbge.set("SP-Embaúba","3514957");
-    listIbge.set("SP-Embu das Artes","3515004");
-    listIbge.set("SP-Embu-Guaçu","3515103");
-    listIbge.set("SP-Emilianópolis","3515129");
-    listIbge.set("SP-Engenheiro Coelho","3515152");
-    listIbge.set("SP-Espírito Santo do Pinhal","3515186");
-    listIbge.set("SP-Espírito Santo do Turvo","3515194");
-    listIbge.set("SP-Estiva Gerbi","3557303");
-    listIbge.set("SP-Estrela do Norte","3515301");
-    listIbge.set("SP-Estrela d'Oeste","3515202");
-    listIbge.set("SP-Euclides da Cunha Paulista","3515350");
-    listIbge.set("SP-Fartura","3515400");
-    listIbge.set("SP-Fernando Prestes","3515608");
-    listIbge.set("SP-Fernandópolis","3515509");
-    listIbge.set("SP-Fernão","3515657");
-    listIbge.set("SP-Ferraz de Vasconcelos","3515707");
-    listIbge.set("SP-Flora Rica","3515806");
-    listIbge.set("SP-Floreal","3515905");
-    listIbge.set("SP-Flórida Paulista","3516002");
-    listIbge.set("SP-Florínea","3516101");
-    listIbge.set("SP-Franca","3516200");
-    listIbge.set("SP-Francisco Morato","3516309");
-    listIbge.set("SP-Franco da Rocha","3516408");
-    listIbge.set("SP-Gabriel Monteiro","3516507");
-    listIbge.set("SP-Gália","3516606");
-    listIbge.set("SP-Garça","3516705");
-    listIbge.set("SP-Gastão Vidigal","3516804");
-    listIbge.set("SP-Gavião Peixoto","3516853");
-    listIbge.set("SP-General Salgado","3516903");
-    listIbge.set("SP-Getulina","3517000");
-    listIbge.set("SP-Glicério","3517109");
-    listIbge.set("SP-Guaiçara","3517208");
-    listIbge.set("SP-Guaimbê","3517307");
-    listIbge.set("SP-Guaíra","3517406");
-    listIbge.set("SP-Guapiaçu","3517505");
-    listIbge.set("SP-Guapiara","3517604");
-    listIbge.set("SP-Guará","3517703");
-    listIbge.set("SP-Guaraçaí","3517802");
-    listIbge.set("SP-Guaraci","3517901");
-    listIbge.set("SP-Guarani d'Oeste","3518008");
-    listIbge.set("SP-Guarantã","3518107");
-    listIbge.set("SP-Guararapes","3518206");
-    listIbge.set("SP-Guararema","3518305");
-    listIbge.set("SP-Guaratinguetá","3518404");
-    listIbge.set("SP-Guareí","3518503");
-    listIbge.set("SP-Guariba","3518602");
-    listIbge.set("SP-Guarujá","3518701");
-    listIbge.set("SP-Guarulhos","3518800");
-    listIbge.set("SP-Guatapará","3518859");
-    listIbge.set("SP-Guzolândia","3518909");
-    listIbge.set("SP-Herculândia","3519006");
-    listIbge.set("SP-Holambra","3519055");
-    listIbge.set("SP-Hortolândia","3519071");
-    listIbge.set("SP-Iacanga","3519105");
-    listIbge.set("SP-Iacri","3519204");
-    listIbge.set("SP-Iaras","3519253");
-    listIbge.set("SP-Ibaté","3519303");
-    listIbge.set("SP-Ibirá","3519402");
-    listIbge.set("SP-Ibirarema","3519501");
-    listIbge.set("SP-Ibitinga","3519600");
-    listIbge.set("SP-Ibiúna","3519709");
-    listIbge.set("SP-Icém","3519808");
-    listIbge.set("SP-Iepê","3519907");
-    listIbge.set("SP-Igaraçu do Tietê","3520004");
-    listIbge.set("SP-Igarapava","3520103");
-    listIbge.set("SP-Igaratá","3520202");
-    listIbge.set("SP-Iguape","3520301");
-    listIbge.set("SP-Ilha Comprida","3520426");
-    listIbge.set("SP-Ilha Solteira","3520442");
-    listIbge.set("SP-Ilhabela","3520400");
-    listIbge.set("SP-Indaiatuba","3520509");
-    listIbge.set("SP-Indiana","3520608");
-    listIbge.set("SP-Indiaporã","3520707");
-    listIbge.set("SP-Inúbia Paulista","3520806");
-    listIbge.set("SP-Ipaussu","3520905");
-    listIbge.set("SP-Iperó","3521002");
-    listIbge.set("SP-Ipeúna","3521101");
-    listIbge.set("SP-Ipiguá","3521150");
-    listIbge.set("SP-Iporanga","3521200");
-    listIbge.set("SP-Ipuã","3521309");
-    listIbge.set("SP-Iracemápolis","3521408");
-    listIbge.set("SP-Irapuã","3521507");
-    listIbge.set("SP-Irapuru","3521606");
-    listIbge.set("SP-Itaberá","3521705");
-    listIbge.set("SP-Itaí","3521804");
-    listIbge.set("SP-Itajobi","3521903");
-    listIbge.set("SP-Itaju","3522000");
-    listIbge.set("SP-Itanhaém","3522109");
-    listIbge.set("SP-Itaoca","3522158");
-    listIbge.set("SP-Itapecerica da Serra","3522208");
-    listIbge.set("SP-Itapetininga","3522307");
-    listIbge.set("SP-Itapeva","3522406");
-    listIbge.set("SP-Itapevi","3522505");
-    listIbge.set("SP-Itapira","3522604");
-    listIbge.set("SP-Itapirapuã Paulista","3522653");
-    listIbge.set("SP-Itápolis","3522703");
-    listIbge.set("SP-Itaporanga","3522802");
-    listIbge.set("SP-Itapuí","3522901");
-    listIbge.set("SP-Itapura","3523008");
-    listIbge.set("SP-Itaquaquecetuba","3523107");
-    listIbge.set("SP-Itararé","3523206");
-    listIbge.set("SP-Itariri","3523305");
-    listIbge.set("SP-Itatiba","3523404");
-    listIbge.set("SP-Itatinga","3523503");
-    listIbge.set("SP-Itirapina","3523602");
-    listIbge.set("SP-Itirapuã","3523701");
-    listIbge.set("SP-Itobi","3523800");
-    listIbge.set("SP-Itu","3523909");
-    listIbge.set("SP-Itupeva","3524006");
-    listIbge.set("SP-Ituverava","3524105");
-    listIbge.set("SP-Jaborandi","3524204");
-    listIbge.set("SP-Jaboticabal","3524303");
-    listIbge.set("SP-Jacareí","3524402");
-    listIbge.set("SP-Jaci","3524501");
-    listIbge.set("SP-Jacupiranga","3524600");
-    listIbge.set("SP-Jaguariúna","3524709");
-    listIbge.set("SP-Jales","3524808");
-    listIbge.set("SP-Jambeiro","3524907");
-    listIbge.set("SP-Jandira","3525003");
-    listIbge.set("SP-Jardinópolis","3525102");
-    listIbge.set("SP-Jarinu","3525201");
-    listIbge.set("SP-Jaú","3525300");
-    listIbge.set("SP-Jeriquara","3525409");
-    listIbge.set("SP-Joanópolis","3525508");
-    listIbge.set("SP-João Ramalho","3525607");
-    listIbge.set("SP-José Bonifácio","3525706");
-    listIbge.set("SP-Júlio Mesquita","3525805");
-    listIbge.set("SP-Jumirim","3525854");
-    listIbge.set("SP-Jundiaí","3525904");
-    listIbge.set("SP-Junqueirópolis","3526001");
-    listIbge.set("SP-Juquiá","3526100");
-    listIbge.set("SP-Juquitiba","3526209");
-    listIbge.set("SP-Lagoinha","3526308");
-    listIbge.set("SP-Laranjal Paulista","3526407");
-    listIbge.set("SP-Lavínia","3526506");
-    listIbge.set("SP-Lavrinhas","3526605");
-    listIbge.set("SP-Leme","3526704");
-    listIbge.set("SP-Lençóis Paulista","3526803");
-    listIbge.set("SP-Limeira","3526902");
-    listIbge.set("SP-Lindóia","3527009");
-    listIbge.set("SP-Lins","3527108");
-    listIbge.set("SP-Lorena","3527207");
-    listIbge.set("SP-Lourdes","3527256");
-    listIbge.set("SP-Louveira","3527306");
-    listIbge.set("SP-Lucélia","3527405");
-    listIbge.set("SP-Lucianópolis","3527504");
-    listIbge.set("SP-Luís Antônio","3527603");
-    listIbge.set("SP-Luiziânia","3527702");
-    listIbge.set("SP-Lupércio","3527801");
-    listIbge.set("SP-Lutécia","3527900");
-    listIbge.set("SP-Macatuba","3528007");
-    listIbge.set("SP-Macaubal","3528106");
-    listIbge.set("SP-Macedônia","3528205");
-    listIbge.set("SP-Magda","3528304");
-    listIbge.set("SP-Mairinque","3528403");
-    listIbge.set("SP-Mairiporã","3528502");
-    listIbge.set("SP-Manduri","3528601");
-    listIbge.set("SP-Marabá Paulista","3528700");
-    listIbge.set("SP-Maracaí","3528809");
-    listIbge.set("SP-Marapoama","3528858");
-    listIbge.set("SP-Mariápolis","3528908");
-    listIbge.set("SP-Marília","3529005");
-    listIbge.set("SP-Marinópolis","3529104");
-    listIbge.set("SP-Martinópolis","3529203");
-    listIbge.set("SP-Matão","3529302");
-    listIbge.set("SP-Mauá","3529401");
-    listIbge.set("SP-Mendonça","3529500");
-    listIbge.set("SP-Meridiano","3529609");
-    listIbge.set("SP-Mesópolis","3529658");
-    listIbge.set("SP-Miguelópolis","3529708");
-    listIbge.set("SP-Mineiros do Tietê","3529807");
-    listIbge.set("SP-Mira Estrela","3530003");
-    listIbge.set("SP-Miracatu","3529906");
-    listIbge.set("SP-Mirandópolis","3530102");
-    listIbge.set("SP-Mirante do Paranapanema","3530201");
-    listIbge.set("SP-Mirassol","3530300");
-    listIbge.set("SP-Mirassolândia","3530409");
-    listIbge.set("SP-Mococa","3530508");
-    listIbge.set("SP-Mogi das Cruzes","3530607");
-    listIbge.set("SP-Mogi Guaçu","3530706");
-    listIbge.set("SP-Mogi Mirim","3530805");
-    listIbge.set("SP-Mombuca","3530904");
-    listIbge.set("SP-Monções","3531001");
-    listIbge.set("SP-Mongaguá","3531100");
-    listIbge.set("SP-Monte Alegre do Sul","3531209");
-    listIbge.set("SP-Monte Alto","3531308");
-    listIbge.set("SP-Monte Aprazível","3531407");
-    listIbge.set("SP-Monte Azul Paulista","3531506");
-    listIbge.set("SP-Monte Castelo","3531605");
-    listIbge.set("SP-Monte Mor","3531803");
-    listIbge.set("SP-Monteiro Lobato","3531704");
-    listIbge.set("SP-Morro Agudo","3531902");
-    listIbge.set("SP-Morungaba","3532009");
-    listIbge.set("SP-Motuca","3532058");
-    listIbge.set("SP-Murutinga do Sul","3532108");
-    listIbge.set("SP-Nantes","3532157");
-    listIbge.set("SP-Narandiba","3532207");
-    listIbge.set("SP-Natividade da Serra","3532306");
-    listIbge.set("SP-Nazaré Paulista","3532405");
-    listIbge.set("SP-Neves Paulista","3532504");
-    listIbge.set("SP-Nhandeara","3532603");
-    listIbge.set("SP-Nipoã","3532702");
-    listIbge.set("SP-Nova Aliança","3532801");
-    listIbge.set("SP-Nova Campina","3532827");
-    listIbge.set("SP-Nova Canaã Paulista","3532843");
-    listIbge.set("SP-Nova Castilho","3532868");
-    listIbge.set("SP-Nova Europa","3532900");
-    listIbge.set("SP-Nova Granada","3533007");
-    listIbge.set("SP-Nova Guataporanga","3533106");
-    listIbge.set("SP-Nova Independência","3533205");
-    listIbge.set("SP-Nova Luzitânia","3533304");
-    listIbge.set("SP-Nova Odessa","3533403");
-    listIbge.set("SP-Novais","3533254");
-    listIbge.set("SP-Novo Horizonte","3533502");
-    listIbge.set("SP-Nuporanga","3533601");
-    listIbge.set("SP-Ocauçu","3533700");
-    listIbge.set("SP-Óleo","3533809");
-    listIbge.set("SP-Olímpia","3533908");
-    listIbge.set("SP-Onda Verde","3534005");
-    listIbge.set("SP-Oriente","3534104");
-    listIbge.set("SP-Orindiúva","3534203");
-    listIbge.set("SP-Orlândia","3534302");
-    listIbge.set("SP-Osasco","3534401");
-    listIbge.set("SP-Oscar Bressane","3534500");
-    listIbge.set("SP-Osvaldo Cruz","3534609");
-    listIbge.set("SP-Ourinhos","3534708");
-    listIbge.set("SP-Ouro Verde","3534807");
-    listIbge.set("SP-Ouroeste","3534757");
-    listIbge.set("SP-Pacaembu","3534906");
-    listIbge.set("SP-Palestina","3535002");
-    listIbge.set("SP-Palmares Paulista","3535101");
-    listIbge.set("SP-Palmeira d'Oeste","3535200");
-    listIbge.set("SP-Palmital","3535309");
-    listIbge.set("SP-Panorama","3535408");
-    listIbge.set("SP-Paraguaçu Paulista","3535507");
-    listIbge.set("SP-Paraibuna","3535606");
-    listIbge.set("SP-Paraíso","3535705");
-    listIbge.set("SP-Paranapanema","3535804");
-    listIbge.set("SP-Paranapuã","3535903");
-    listIbge.set("SP-Parapuã","3536000");
-    listIbge.set("SP-Pardinho","3536109");
-    listIbge.set("SP-Pariquera-Açu","3536208");
-    listIbge.set("SP-Parisi","3536257");
-    listIbge.set("SP-Patrocínio Paulista","3536307");
-    listIbge.set("SP-Paulicéia","3536406");
-    listIbge.set("SP-Paulínia","3536505");
-    listIbge.set("SP-Paulistânia","3536570");
-    listIbge.set("SP-Paulo de Faria","3536604");
-    listIbge.set("SP-Pederneiras","3536703");
-    listIbge.set("SP-Pedra Bela","3536802");
-    listIbge.set("SP-Pedranópolis","3536901");
-    listIbge.set("SP-Pedregulho","3537008");
-    listIbge.set("SP-Pedreira","3537107");
-    listIbge.set("SP-Pedrinhas Paulista","3537156");
-    listIbge.set("SP-Pedro de Toledo","3537206");
-    listIbge.set("SP-Penápolis","3537305");
-    listIbge.set("SP-Pereira Barreto","3537404");
-    listIbge.set("SP-Pereiras","3537503");
-    listIbge.set("SP-Peruíbe","3537602");
-    listIbge.set("SP-Piacatu","3537701");
-    listIbge.set("SP-Piedade","3537800");
-    listIbge.set("SP-Pilar do Sul","3537909");
-    listIbge.set("SP-Pindamonhangaba","3538006");
-    listIbge.set("SP-Pindorama","3538105");
-    listIbge.set("SP-Pinhalzinho","3538204");
-    listIbge.set("SP-Piquerobi","3538303");
-    listIbge.set("SP-Piquete","3538501");
-    listIbge.set("SP-Piracaia","3538600");
-    listIbge.set("SP-Piracicaba","3538709");
-    listIbge.set("SP-Piraju","3538808");
-    listIbge.set("SP-Pirajuí","3538907");
-    listIbge.set("SP-Pirangi","3539004");
-    listIbge.set("SP-Pirapora do Bom Jesus","3539103");
-    listIbge.set("SP-Pirapozinho","3539202");
-    listIbge.set("SP-Pirassununga","3539301");
-    listIbge.set("SP-Piratininga","3539400");
-    listIbge.set("SP-Pitangueiras","3539509");
-    listIbge.set("SP-Planalto","3539608");
-    listIbge.set("SP-Platina","3539707");
-    listIbge.set("SP-Poá","3539806");
-    listIbge.set("SP-Poloni","3539905");
-    listIbge.set("SP-Pompéia","3540002");
-    listIbge.set("SP-Pongaí","3540101");
-    listIbge.set("SP-Pontal","3540200");
-    listIbge.set("SP-Pontalinda","3540259");
-    listIbge.set("SP-Pontes Gestal","3540309");
-    listIbge.set("SP-Populina","3540408");
-    listIbge.set("SP-Porangaba","3540507");
-    listIbge.set("SP-Porto Feliz","3540606");
-    listIbge.set("SP-Porto Ferreira","3540705");
-    listIbge.set("SP-Potim","3540754");
-    listIbge.set("SP-Potirendaba","3540804");
-    listIbge.set("SP-Pracinha","3540853");
-    listIbge.set("SP-Pradópolis","3540903");
-    listIbge.set("SP-Praia Grande","3541000");
-    listIbge.set("SP-Pratânia","3541059");
-    listIbge.set("SP-Presidente Alves","3541109");
-    listIbge.set("SP-Presidente Bernardes","3541208");
-    listIbge.set("SP-Presidente Epitácio","3541307");
-    listIbge.set("SP-Presidente Prudente","3541406");
-    listIbge.set("SP-Presidente Venceslau","3541505");
-    listIbge.set("SP-Promissão","3541604");
-    listIbge.set("SP-Quadra","3541653");
-    listIbge.set("SP-Quatá","3541703");
-    listIbge.set("SP-Queiroz","3541802");
-    listIbge.set("SP-Queluz","3541901");
-    listIbge.set("SP-Quintana","3542008");
-    listIbge.set("SP-Rafard","3542107");
-    listIbge.set("SP-Rancharia","3542206");
-    listIbge.set("SP-Redenção da Serra","3542305");
-    listIbge.set("SP-Regente Feijó","3542404");
-    listIbge.set("SP-Reginópolis","3542503");
-    listIbge.set("SP-Registro","3542602");
-    listIbge.set("SP-Restinga","3542701");
-    listIbge.set("SP-Ribeira","3542800");
-    listIbge.set("SP-Ribeirão Bonito","3542909");
-    listIbge.set("SP-Ribeirão Branco","3543006");
-    listIbge.set("SP-Ribeirão Corrente","3543105");
-    listIbge.set("SP-Ribeirão do Sul","3543204");
-    listIbge.set("SP-Ribeirão dos Índios","3543238");
-    listIbge.set("SP-Ribeirão Grande","3543253");
-    listIbge.set("SP-Ribeirão Pires","3543303");
-    listIbge.set("SP-Ribeirão Preto","3543402");
-    listIbge.set("SP-Rifaina","3543600");
-    listIbge.set("SP-Rincão","3543709");
-    listIbge.set("SP-Rinópolis","3543808");
-    listIbge.set("SP-Rio Claro","3543907");
-    listIbge.set("SP-Rio das Pedras","3544004");
-    listIbge.set("SP-Rio Grande da Serra","3544103");
-    listIbge.set("SP-Riolândia","3544202");
-    listIbge.set("SP-Riversul","3543501");
-    listIbge.set("SP-Rosana","3544251");
-    listIbge.set("SP-Roseira","3544301");
-    listIbge.set("SP-Rubiácea","3544400");
-    listIbge.set("SP-Rubinéia","3544509");
-    listIbge.set("SP-Sabino","3544608");
-    listIbge.set("SP-Sagres","3544707");
-    listIbge.set("SP-Sales","3544806");
-    listIbge.set("SP-Sales Oliveira","3544905");
-    listIbge.set("SP-Salesópolis","3545001");
-    listIbge.set("SP-Salmourão","3545100");
-    listIbge.set("SP-Saltinho","3545159");
-    listIbge.set("SP-Salto","3545209");
-    listIbge.set("SP-Salto de Pirapora","3545308");
-    listIbge.set("SP-Salto Grande","3545407");
-    listIbge.set("SP-Sandovalina","3545506");
-    listIbge.set("SP-Santa Adélia","3545605");
-    listIbge.set("SP-Santa Albertina","3545704");
-    listIbge.set("SP-Santa Bárbara d'Oeste","3545803");
-    listIbge.set("SP-Santa Branca","3546009");
-    listIbge.set("SP-Santa Clara d'Oeste","3546108");
-    listIbge.set("SP-Santa Cruz da Conceição","3546207");
-    listIbge.set("SP-Santa Cruz da Esperança","3546256");
-    listIbge.set("SP-Santa Cruz das Palmeiras","3546306");
-    listIbge.set("SP-Santa Cruz do Rio Pardo","3546405");
-    listIbge.set("SP-Santa Ernestina","3546504");
-    listIbge.set("SP-Santa Fé do Sul","3546603");
-    listIbge.set("SP-Santa Gertrudes","3546702");
-    listIbge.set("SP-Santa Isabel","3546801");
-    listIbge.set("SP-Santa Lúcia","3546900");
-    listIbge.set("SP-Santa Maria da Serra","3547007");
-    listIbge.set("SP-Santa Mercedes","3547106");
-    listIbge.set("SP-Santa Rita do Passa Quatro","3547502");
-    listIbge.set("SP-Santa Rita d'Oeste","3547403");
-    listIbge.set("SP-Santa Rosa de Viterbo","3547601");
-    listIbge.set("SP-Santa Salete","3547650");
-    listIbge.set("SP-Santana da Ponte Pensa","3547205");
-    listIbge.set("SP-Santana de Parnaíba","3547304");
-    listIbge.set("SP-Santo Anastácio","3547700");
-    listIbge.set("SP-Santo André","3547809");
-    listIbge.set("SP-Santo Antônio da Alegria","3547908");
-    listIbge.set("SP-Santo Antônio de Posse","3548005");
-    listIbge.set("SP-Santo Antônio do Aracanguá","3548054");
-    listIbge.set("SP-Santo Antônio do Jardim","3548104");
-    listIbge.set("SP-Santo Antônio do Pinhal","3548203");
-    listIbge.set("SP-Santo Expedito","3548302");
-    listIbge.set("SP-Santópolis do Aguapeí","3548401");
-    listIbge.set("SP-Santos","3548500");
-    listIbge.set("SP-São Bento do Sapucaí","3548609");
-    listIbge.set("SP-São Bernardo do Campo","3548708");
-    listIbge.set("SP-São Caetano do Sul","3548807");
-    listIbge.set("SP-São Carlos","3548906");
-    listIbge.set("SP-São Francisco","3549003");
-    listIbge.set("SP-São João da Boa Vista","3549102");
-    listIbge.set("SP-São João das Duas Pontes","3549201");
-    listIbge.set("SP-São João de Iracema","3549250");
-    listIbge.set("SP-São João do Pau d'Alho","3549300");
-    listIbge.set("SP-São Joaquim da Barra","3549409");
-    listIbge.set("SP-São José da Bela Vista","3549508");
-    listIbge.set("SP-São José do Barreiro","3549607");
-    listIbge.set("SP-São José do Rio Pardo","3549706");
-    listIbge.set("SP-São José do Rio Preto","3549805");
-    listIbge.set("SP-São José dos Campos","3549904");
-    listIbge.set("SP-São Lourenço da Serra","3549953");
-    listIbge.set("SP-São Luiz do Paraitinga","3550001");
-    listIbge.set("SP-São Manuel","3550100");
-    listIbge.set("SP-São Miguel Arcanjo","3550209");
-    listIbge.set("SP-São Paulo","3550308");
-    listIbge.set("SP-São Pedro","3550407");
-    listIbge.set("SP-São Pedro do Turvo","3550506");
-    listIbge.set("SP-São Roque","3550605");
-    listIbge.set("SP-São Sebastião","3550704");
-    listIbge.set("SP-São Sebastião da Grama","3550803");
-    listIbge.set("SP-São Simão","3550902");
-    listIbge.set("SP-São Vicente","3551009");
-    listIbge.set("SP-Sarapuí","3551108");
-    listIbge.set("SP-Sarutaiá","3551207");
-    listIbge.set("SP-Sebastianópolis do Sul","3551306");
-    listIbge.set("SP-Serra Azul","3551405");
-    listIbge.set("SP-Serra Negra","3551603");
-    listIbge.set("SP-Serrana","3551504");
-    listIbge.set("SP-Sertãozinho","3551702");
-    listIbge.set("SP-Sete Barras","3551801");
-    listIbge.set("SP-Severínia","3551900");
-    listIbge.set("SP-Silveiras","3552007");
-    listIbge.set("SP-Socorro","3552106");
-    listIbge.set("SP-Sorocaba","3552205");
-    listIbge.set("SP-Sud Mennucci","3552304");
-    listIbge.set("SP-Sumaré","3552403");
-    listIbge.set("SP-Suzanápolis","3552551");
-    listIbge.set("SP-Suzano","3552502");
-    listIbge.set("SP-Tabapuã","3552601");
-    listIbge.set("SP-Tabatinga","3552700");
-    listIbge.set("SP-Taboão da Serra","3552809");
-    listIbge.set("SP-Taciba","3552908");
-    listIbge.set("SP-Taguaí","3553005");
-    listIbge.set("SP-Taiaçu","3553104");
-    listIbge.set("SP-Taiúva","3553203");
-    listIbge.set("SP-Tambaú","3553302");
-    listIbge.set("SP-Tanabi","3553401");
-    listIbge.set("SP-Tapiraí","3553500");
-    listIbge.set("SP-Tapiratiba","3553609");
-    listIbge.set("SP-Taquaral","3553658");
-    listIbge.set("SP-Taquaritinga","3553708");
-    listIbge.set("SP-Taquarituba","3553807");
-    listIbge.set("SP-Taquarivaí","3553856");
-    listIbge.set("SP-Tarabai","3553906");
-    listIbge.set("SP-Tarumã","3553955");
-    listIbge.set("SP-Tatuí","3554003");
-    listIbge.set("SP-Taubaté","3554102");
-    listIbge.set("SP-Tejupá","3554201");
-    listIbge.set("SP-Teodoro Sampaio","3554300");
-    listIbge.set("SP-Terra Roxa","3554409");
-    listIbge.set("SP-Tietê","3554508");
-    listIbge.set("SP-Timburi","3554607");
-    listIbge.set("SP-Torre de Pedra","3554656");
-    listIbge.set("SP-Torrinha","3554706");
-    listIbge.set("SP-Trabiju","3554755");
-    listIbge.set("SP-Tremembé","3554805");
-    listIbge.set("SP-Três Fronteiras","3554904");
-    listIbge.set("SP-Tuiuti","3554953");
-    listIbge.set("SP-Tupã","3555000");
-    listIbge.set("SP-Tupi Paulista","3555109");
-    listIbge.set("SP-Turiúba","3555208");
-    listIbge.set("SP-Turmalina","3555307");
-    listIbge.set("SP-Ubarana","3555356");
-    listIbge.set("SP-Ubatuba","3555406");
-    listIbge.set("SP-Ubirajara","3555505");
-    listIbge.set("SP-Uchoa","3555604");
-    listIbge.set("SP-União Paulista","3555703");
-    listIbge.set("SP-Urânia","3555802");
-    listIbge.set("SP-Uru","3555901");
-    listIbge.set("SP-Urupês","3556008");
-    listIbge.set("SP-Valentim Gentil","3556107");
-    listIbge.set("SP-Valinhos","3556206");
-    listIbge.set("SP-Valparaíso","3556305");
-    listIbge.set("SP-Vargem","3556354");
-    listIbge.set("SP-Vargem Grande do Sul","3556404");
-    listIbge.set("SP-Vargem Grande Paulista","3556453");
-    listIbge.set("SP-Várzea Paulista","3556503");
-    listIbge.set("SP-Vera Cruz","3556602");
-    listIbge.set("SP-Vinhedo","3556701");
-    listIbge.set("SP-Viradouro","3556800");
-    listIbge.set("SP-Vista Alegre do Alto","3556909");
-    listIbge.set("SP-Vitória Brasil","3556958");
-    listIbge.set("SP-Votorantim","3557006");
-    listIbge.set("SP-Votuporanga","3557105");
-    listIbge.set("SP-Zacarias","3557154");
-    listIbge.set("PR-Abatiá","4100103");
-    listIbge.set("PR-Adrianópolis","4100202");
-    listIbge.set("PR-Agudos do Sul","4100301");
-    listIbge.set("PR-Almirante Tamandaré","4100400");
-    listIbge.set("PR-Altamira do Paraná","4100459");
-    listIbge.set("PR-Alto Paraíso","4128625");
-    listIbge.set("PR-Alto Paraná","4100608");
-    listIbge.set("PR-Alto Piquiri","4100707");
-    listIbge.set("PR-Altônia","4100509");
-    listIbge.set("PR-Alvorada do Sul","4100806");
-    listIbge.set("PR-Amaporã","4100905");
-    listIbge.set("PR-Ampére","4101002");
-    listIbge.set("PR-Anahy","4101051");
-    listIbge.set("PR-Andirá","4101101");
-    listIbge.set("PR-Ângulo","4101150");
-    listIbge.set("PR-Antonina","4101200");
-    listIbge.set("PR-Antônio Olinto","4101309");
-    listIbge.set("PR-Apucarana","4101408");
-    listIbge.set("PR-Arapongas","4101507");
-    listIbge.set("PR-Arapoti","4101606");
-    listIbge.set("PR-Arapuã","4101655");
-    listIbge.set("PR-Araruna","4101705");
-    listIbge.set("PR-Araucária","4101804");
-    listIbge.set("PR-Ariranha do Ivaí","4101853");
-    listIbge.set("PR-Assaí","4101903");
-    listIbge.set("PR-Assis Chateaubriand","4102000");
-    listIbge.set("PR-Astorga","4102109");
-    listIbge.set("PR-Atalaia","4102208");
-    listIbge.set("PR-Balsa Nova","4102307");
-    listIbge.set("PR-Bandeirantes","4102406");
-    listIbge.set("PR-Barbosa Ferraz","4102505");
-    listIbge.set("PR-Barra do Jacaré","4102703");
-    listIbge.set("PR-Barracão","4102604");
-    listIbge.set("PR-Bela Vista da Caroba","4102752");
-    listIbge.set("PR-Bela Vista do Paraíso","4102802");
-    listIbge.set("PR-Bituruna","4102901");
-    listIbge.set("PR-Boa Esperança","4103008");
-    listIbge.set("PR-Boa Esperança do Iguaçu","4103024");
-    listIbge.set("PR-Boa Ventura de São Roque","4103040");
-    listIbge.set("PR-Boa Vista da Aparecida","4103057");
-    listIbge.set("PR-Bocaiúva do Sul","4103107");
-    listIbge.set("PR-Bom Jesus do Sul","4103156");
-    listIbge.set("PR-Bom Sucesso","4103206");
-    listIbge.set("PR-Bom Sucesso do Sul","4103222");
-    listIbge.set("PR-Borrazópolis","4103305");
-    listIbge.set("PR-Braganey","4103354");
-    listIbge.set("PR-Brasilândia do Sul","4103370");
-    listIbge.set("PR-Cafeara","4103404");
-    listIbge.set("PR-Cafelândia","4103453");
-    listIbge.set("PR-Cafezal do Sul","4103479");
-    listIbge.set("PR-Califórnia","4103503");
-    listIbge.set("PR-Cambará","4103602");
-    listIbge.set("PR-Cambé","4103701");
-    listIbge.set("PR-Cambira","4103800");
-    listIbge.set("PR-Campina da Lagoa","4103909");
-    listIbge.set("PR-Campina do Simão","4103958");
-    listIbge.set("PR-Campina Grande do Sul","4104006");
-    listIbge.set("PR-Campo Bonito","4104055");
-    listIbge.set("PR-Campo do Tenente","4104105");
-    listIbge.set("PR-Campo Largo","4104204");
-    listIbge.set("PR-Campo Magro","4104253");
-    listIbge.set("PR-Campo Mourão","4104303");
-    listIbge.set("PR-Cândido de Abreu","4104402");
-    listIbge.set("PR-Candói","4104428");
-    listIbge.set("PR-Cantagalo","4104451");
-    listIbge.set("PR-Capanema","4104501");
-    listIbge.set("PR-Capitão Leônidas Marques","4104600");
-    listIbge.set("PR-Carambeí","4104659");
-    listIbge.set("PR-Carlópolis","4104709");
-    listIbge.set("PR-Cascavel","4104808");
-    listIbge.set("PR-Castro","4104907");
-    listIbge.set("PR-Catanduvas","4105003");
-    listIbge.set("PR-Centenário do Sul","4105102");
-    listIbge.set("PR-Cerro Azul","4105201");
-    listIbge.set("PR-Céu Azul","4105300");
-    listIbge.set("PR-Chopinzinho","4105409");
-    listIbge.set("PR-Cianorte","4105508");
-    listIbge.set("PR-Cidade Gaúcha","4105607");
-    listIbge.set("PR-Clevelândia","4105706");
-    listIbge.set("PR-Colombo","4105805");
-    listIbge.set("PR-Colorado","4105904");
-    listIbge.set("PR-Congonhinhas","4106001");
-    listIbge.set("PR-Conselheiro Mairinck","4106100");
-    listIbge.set("PR-Contenda","4106209");
-    listIbge.set("PR-Corbélia","4106308");
-    listIbge.set("PR-Cornélio Procópio","4106407");
-    listIbge.set("PR-Coronel Domingos Soares","4106456");
-    listIbge.set("PR-Coronel Vivida","4106506");
-    listIbge.set("PR-Corumbataí do Sul","4106555");
-    listIbge.set("PR-Cruz Machado","4106803");
-    listIbge.set("PR-Cruzeiro do Iguaçu","4106571");
-    listIbge.set("PR-Cruzeiro do Oeste","4106605");
-    listIbge.set("PR-Cruzeiro do Sul","4106704");
-    listIbge.set("PR-Cruzmaltina","4106852");
-    listIbge.set("PR-Curitiba","4106902");
-    listIbge.set("PR-Curiúva","4107009");
-    listIbge.set("PR-Diamante do Norte","4107108");
-    listIbge.set("PR-Diamante do Sul","4107124");
-    listIbge.set("PR-Diamante D'Oeste","4107157");
-    listIbge.set("PR-Dois Vizinhos","4107207");
-    listIbge.set("PR-Douradina","4107256");
-    listIbge.set("PR-Doutor Camargo","4107306");
-    listIbge.set("PR-Doutor Ulysses","4128633");
-    listIbge.set("PR-Enéas Marques","4107405");
-    listIbge.set("PR-Engenheiro Beltrão","4107504");
-    listIbge.set("PR-Entre Rios do Oeste","4107538");
-    listIbge.set("PR-Esperança Nova","4107520");
-    listIbge.set("PR-Espigão Alto do Iguaçu","4107546");
-    listIbge.set("PR-Farol","4107553");
-    listIbge.set("PR-Faxinal","4107603");
-    listIbge.set("PR-Fazenda Rio Grande","4107652");
-    listIbge.set("PR-Fênix","4107702");
-    listIbge.set("PR-Fernandes Pinheiro","4107736");
-    listIbge.set("PR-Figueira","4107751");
-    listIbge.set("PR-Flor da Serra do Sul","4107850");
-    listIbge.set("PR-Floraí","4107801");
-    listIbge.set("PR-Floresta","4107900");
-    listIbge.set("PR-Florestópolis","4108007");
-    listIbge.set("PR-Flórida","4108106");
-    listIbge.set("PR-Formosa do Oeste","4108205");
-    listIbge.set("PR-Foz do Iguaçu","4108304");
-    listIbge.set("PR-Foz do Jordão","4108452");
-    listIbge.set("PR-Francisco Alves","4108320");
-    listIbge.set("PR-Francisco Beltrão","4108403");
-    listIbge.set("PR-General Carneiro","4108502");
-    listIbge.set("PR-Godoy Moreira","4108551");
-    listIbge.set("PR-Goioerê","4108601");
-    listIbge.set("PR-Goioxim","4108650");
-    listIbge.set("PR-Grandes Rios","4108700");
-    listIbge.set("PR-Guaíra","4108809");
-    listIbge.set("PR-Guairaçá","4108908");
-    listIbge.set("PR-Guamiranga","4108957");
-    listIbge.set("PR-Guapirama","4109005");
-    listIbge.set("PR-Guaporema","4109104");
-    listIbge.set("PR-Guaraci","4109203");
-    listIbge.set("PR-Guaraniaçu","4109302");
-    listIbge.set("PR-Guarapuava","4109401");
-    listIbge.set("PR-Guaraqueçaba","4109500");
-    listIbge.set("PR-Guaratuba","4109609");
-    listIbge.set("PR-Honório Serpa","4109658");
-    listIbge.set("PR-Ibaiti","4109708");
-    listIbge.set("PR-Ibema","4109757");
-    listIbge.set("PR-Ibiporã","4109807");
-    listIbge.set("PR-Icaraíma","4109906");
-    listIbge.set("PR-Iguaraçu","4110003");
-    listIbge.set("PR-Iguatu","4110052");
-    listIbge.set("PR-Imbaú","4110078");
-    listIbge.set("PR-Imbituva","4110102");
-    listIbge.set("PR-Inácio Martins","4110201");
-    listIbge.set("PR-Inajá","4110300");
-    listIbge.set("PR-Indianópolis","4110409");
-    listIbge.set("PR-Ipiranga","4110508");
-    listIbge.set("PR-Iporã","4110607");
-    listIbge.set("PR-Iracema do Oeste","4110656");
-    listIbge.set("PR-Irati","4110706");
-    listIbge.set("PR-Iretama","4110805");
-    listIbge.set("PR-Itaguajé","4110904");
-    listIbge.set("PR-Itaipulândia","4110953");
-    listIbge.set("PR-Itambaracá","4111001");
-    listIbge.set("PR-Itambé","4111100");
-    listIbge.set("PR-Itapejara d'Oeste","4111209");
-    listIbge.set("PR-Itaperuçu","4111258");
-    listIbge.set("PR-Itaúna do Sul","4111308");
-    listIbge.set("PR-Ivaí","4111407");
-    listIbge.set("PR-Ivaiporã","4111506");
-    listIbge.set("PR-Ivaté","4111555");
-    listIbge.set("PR-Ivatuba","4111605");
-    listIbge.set("PR-Jaboti","4111704");
-    listIbge.set("PR-Jacarezinho","4111803");
-    listIbge.set("PR-Jaguapitã","4111902");
-    listIbge.set("PR-Jaguariaíva","4112009");
-    listIbge.set("PR-Jandaia do Sul","4112108");
-    listIbge.set("PR-Janiópolis","4112207");
-    listIbge.set("PR-Japira","4112306");
-    listIbge.set("PR-Japurá","4112405");
-    listIbge.set("PR-Jardim Alegre","4112504");
-    listIbge.set("PR-Jardim Olinda","4112603");
-    listIbge.set("PR-Jataizinho","4112702");
-    listIbge.set("PR-Jesuítas","4112751");
-    listIbge.set("PR-Joaquim Távora","4112801");
-    listIbge.set("PR-Jundiaí do Sul","4112900");
-    listIbge.set("PR-Juranda","4112959");
-    listIbge.set("PR-Jussara","4113007");
-    listIbge.set("PR-Kaloré","4113106");
-    listIbge.set("PR-Lapa","4113205");
-    listIbge.set("PR-Laranjal","4113254");
-    listIbge.set("PR-Laranjeiras do Sul","4113304");
-    listIbge.set("PR-Leópolis","4113403");
-    listIbge.set("PR-Lidianópolis","4113429");
-    listIbge.set("PR-Lindoeste","4113452");
-    listIbge.set("PR-Loanda","4113502");
-    listIbge.set("PR-Lobato","4113601");
-    listIbge.set("PR-Londrina","4113700");
-    listIbge.set("PR-Luiziana","4113734");
-    listIbge.set("PR-Lunardelli","4113759");
-    listIbge.set("PR-Lupionópolis","4113809");
-    listIbge.set("PR-Mallet","4113908");
-    listIbge.set("PR-Mamborê","4114005");
-    listIbge.set("PR-Mandaguaçu","4114104");
-    listIbge.set("PR-Mandaguari","4114203");
-    listIbge.set("PR-Mandirituba","4114302");
-    listIbge.set("PR-Manfrinópolis","4114351");
-    listIbge.set("PR-Mangueirinha","4114401");
-    listIbge.set("PR-Manoel Ribas","4114500");
-    listIbge.set("PR-Marechal Cândido Rondon","4114609");
-    listIbge.set("PR-Maria Helena","4114708");
-    listIbge.set("PR-Marialva","4114807");
-    listIbge.set("PR-Marilândia do Sul","4114906");
-    listIbge.set("PR-Marilena","4115002");
-    listIbge.set("PR-Mariluz","4115101");
-    listIbge.set("PR-Maringá","4115200");
-    listIbge.set("PR-Mariópolis","4115309");
-    listIbge.set("PR-Maripá","4115358");
-    listIbge.set("PR-Marmeleiro","4115408");
-    listIbge.set("PR-Marquinho","4115457");
-    listIbge.set("PR-Marumbi","4115507");
-    listIbge.set("PR-Matelândia","4115606");
-    listIbge.set("PR-Matinhos","4115705");
-    listIbge.set("PR-Mato Rico","4115739");
-    listIbge.set("PR-Mauá da Serra","4115754");
-    listIbge.set("PR-Medianeira","4115804");
-    listIbge.set("PR-Mercedes","4115853");
-    listIbge.set("PR-Mirador","4115903");
-    listIbge.set("PR-Miraselva","4116000");
-    listIbge.set("PR-Missal","4116059");
-    listIbge.set("PR-Moreira Sales","4116109");
-    listIbge.set("PR-Morretes","4116208");
-    listIbge.set("PR-Munhoz de Melo","4116307");
-    listIbge.set("PR-Nossa Senhora das Graças","4116406");
-    listIbge.set("PR-Nova Aliança do Ivaí","4116505");
-    listIbge.set("PR-Nova América da Colina","4116604");
-    listIbge.set("PR-Nova Aurora","4116703");
-    listIbge.set("PR-Nova Cantu","4116802");
-    listIbge.set("PR-Nova Esperança","4116901");
-    listIbge.set("PR-Nova Esperança do Sudoeste","4116950");
-    listIbge.set("PR-Nova Fátima","4117008");
-    listIbge.set("PR-Nova Laranjeiras","4117057");
-    listIbge.set("PR-Nova Londrina","4117107");
-    listIbge.set("PR-Nova Olímpia","4117206");
-    listIbge.set("PR-Nova Prata do Iguaçu","4117255");
-    listIbge.set("PR-Nova Santa Bárbara","4117214");
-    listIbge.set("PR-Nova Santa Rosa","4117222");
-    listIbge.set("PR-Nova Tebas","4117271");
-    listIbge.set("PR-Novo Itacolomi","4117297");
-    listIbge.set("PR-Ortigueira","4117305");
-    listIbge.set("PR-Ourizona","4117404");
-    listIbge.set("PR-Ouro Verde do Oeste","4117453");
-    listIbge.set("PR-Paiçandu","4117503");
-    listIbge.set("PR-Palmas","4117602");
-    listIbge.set("PR-Palmeira","4117701");
-    listIbge.set("PR-Palmital","4117800");
-    listIbge.set("PR-Palotina","4117909");
-    listIbge.set("PR-Paraíso do Norte","4118006");
-    listIbge.set("PR-Paranacity","4118105");
-    listIbge.set("PR-Paranaguá","4118204");
-    listIbge.set("PR-Paranapoema","4118303");
-    listIbge.set("PR-Paranavaí","4118402");
-    listIbge.set("PR-Pato Bragado","4118451");
-    listIbge.set("PR-Pato Branco","4118501");
-    listIbge.set("PR-Paula Freitas","4118600");
-    listIbge.set("PR-Paulo Frontin","4118709");
-    listIbge.set("PR-Peabiru","4118808");
-    listIbge.set("PR-Perobal","4118857");
-    listIbge.set("PR-Pérola","4118907");
-    listIbge.set("PR-Pérola d'Oeste","4119004");
-    listIbge.set("PR-Piên","4119103");
-    listIbge.set("PR-Pinhais","4119152");
-    listIbge.set("PR-Pinhal de São Bento","4119251");
-    listIbge.set("PR-Pinhalão","4119202");
-    listIbge.set("PR-Pinhão","4119301");
-    listIbge.set("PR-Piraí do Sul","4119400");
-    listIbge.set("PR-Piraquara","4119509");
-    listIbge.set("PR-Pitanga","4119608");
-    listIbge.set("PR-Pitangueiras","4119657");
-    listIbge.set("PR-Planaltina do Paraná","4119707");
-    listIbge.set("PR-Planalto","4119806");
-    listIbge.set("PR-Ponta Grossa","4119905");
-    listIbge.set("PR-Pontal do Paraná","4119954");
-    listIbge.set("PR-Porecatu","4120002");
-    listIbge.set("PR-Porto Amazonas","4120101");
-    listIbge.set("PR-Porto Barreiro","4120150");
-    listIbge.set("PR-Porto Rico","4120200");
-    listIbge.set("PR-Porto Vitória","4120309");
-    listIbge.set("PR-Prado Ferreira","4120333");
-    listIbge.set("PR-Pranchita","4120358");
-    listIbge.set("PR-Presidente Castelo Branco","4120408");
-    listIbge.set("PR-Primeiro de Maio","4120507");
-    listIbge.set("PR-Prudentópolis","4120606");
-    listIbge.set("PR-Quarto Centenário","4120655");
-    listIbge.set("PR-Quatiguá","4120705");
-    listIbge.set("PR-Quatro Barras","4120804");
-    listIbge.set("PR-Quatro Pontes","4120853");
-    listIbge.set("PR-Quedas do Iguaçu","4120903");
-    listIbge.set("PR-Querência do Norte","4121000");
-    listIbge.set("PR-Quinta do Sol","4121109");
-    listIbge.set("PR-Quitandinha","4121208");
-    listIbge.set("PR-Ramilândia","4121257");
-    listIbge.set("PR-Rancho Alegre","4121307");
-    listIbge.set("PR-Rancho Alegre D'Oeste","4121356");
-    listIbge.set("PR-Realeza","4121406");
-    listIbge.set("PR-Rebouças","4121505");
-    listIbge.set("PR-Renascença","4121604");
-    listIbge.set("PR-Reserva","4121703");
-    listIbge.set("PR-Reserva do Iguaçu","4121752");
-    listIbge.set("PR-Ribeirão Claro","4121802");
-    listIbge.set("PR-Ribeirão do Pinhal","4121901");
-    listIbge.set("PR-Rio Azul","4122008");
-    listIbge.set("PR-Rio Bom","4122107");
-    listIbge.set("PR-Rio Bonito do Iguaçu","4122156");
-    listIbge.set("PR-Rio Branco do Ivaí","4122172");
-    listIbge.set("PR-Rio Branco do Sul","4122206");
-    listIbge.set("PR-Rio Negro","4122305");
-    listIbge.set("PR-Rolândia","4122404");
-    listIbge.set("PR-Roncador","4122503");
-    listIbge.set("PR-Rondon","4122602");
-    listIbge.set("PR-Rosário do Ivaí","4122651");
-    listIbge.set("PR-Sabáudia","4122701");
-    listIbge.set("PR-Salgado Filho","4122800");
-    listIbge.set("PR-Salto do Itararé","4122909");
-    listIbge.set("PR-Salto do Lontra","4123006");
-    listIbge.set("PR-Santa Amélia","4123105");
-    listIbge.set("PR-Santa Cecília do Pavão","4123204");
-    listIbge.set("PR-Santa Cruz de Monte Castelo","4123303");
-    listIbge.set("PR-Santa Fé","4123402");
-    listIbge.set("PR-Santa Helena","4123501");
-    listIbge.set("PR-Santa Inês","4123600");
-    listIbge.set("PR-Santa Isabel do Ivaí","4123709");
-    listIbge.set("PR-Santa Izabel do Oeste","4123808");
-    listIbge.set("PR-Santa Lúcia","4123824");
-    listIbge.set("PR-Santa Maria do Oeste","4123857");
-    listIbge.set("PR-Santa Mariana","4123907");
-    listIbge.set("PR-Santa Mônica","4123956");
-    listIbge.set("PR-Santa Tereza do Oeste","4124020");
-    listIbge.set("PR-Santa Terezinha de Itaipu","4124053");
-    listIbge.set("PR-Santana do Itararé","4124004");
-    listIbge.set("PR-Santo Antônio da Platina","4124103");
-    listIbge.set("PR-Santo Antônio do Caiuá","4124202");
-    listIbge.set("PR-Santo Antônio do Paraíso","4124301");
-    listIbge.set("PR-Santo Antônio do Sudoeste","4124400");
-    listIbge.set("PR-Santo Inácio","4124509");
-    listIbge.set("PR-São Carlos do Ivaí","4124608");
-    listIbge.set("PR-São Jerônimo da Serra","4124707");
-    listIbge.set("PR-São João","4124806");
-    listIbge.set("PR-São João do Caiuá","4124905");
-    listIbge.set("PR-São João do Ivaí","4125001");
-    listIbge.set("PR-São João do Triunfo","4125100");
-    listIbge.set("PR-São Jorge do Ivaí","4125308");
-    listIbge.set("PR-São Jorge do Patrocínio","4125357");
-    listIbge.set("PR-São Jorge d'Oeste","4125209");
-    listIbge.set("PR-São José da Boa Vista","4125407");
-    listIbge.set("PR-São José das Palmeiras","4125456");
-    listIbge.set("PR-São José dos Pinhais","4125506");
-    listIbge.set("PR-São Manoel do Paraná","4125555");
-    listIbge.set("PR-São Mateus do Sul","4125605");
-    listIbge.set("PR-São Miguel do Iguaçu","4125704");
-    listIbge.set("PR-São Pedro do Iguaçu","4125753");
-    listIbge.set("PR-São Pedro do Ivaí","4125803");
-    listIbge.set("PR-São Pedro do Paraná","4125902");
-    listIbge.set("PR-São Sebastião da Amoreira","4126009");
-    listIbge.set("PR-São Tomé","4126108");
-    listIbge.set("PR-Sapopema","4126207");
-    listIbge.set("PR-Sarandi","4126256");
-    listIbge.set("PR-Saudade do Iguaçu","4126272");
-    listIbge.set("PR-Sengés","4126306");
-    listIbge.set("PR-Serranópolis do Iguaçu","4126355");
-    listIbge.set("PR-Sertaneja","4126405");
-    listIbge.set("PR-Sertanópolis","4126504");
-    listIbge.set("PR-Siqueira Campos","4126603");
-    listIbge.set("PR-Sulina","4126652");
-    listIbge.set("PR-Tamarana","4126678");
-    listIbge.set("PR-Tamboara","4126702");
-    listIbge.set("PR-Tapejara","4126801");
-    listIbge.set("PR-Tapira","4126900");
-    listIbge.set("PR-Teixeira Soares","4127007");
-    listIbge.set("PR-Telêmaco Borba","4127106");
-    listIbge.set("PR-Terra Boa","4127205");
-    listIbge.set("PR-Terra Rica","4127304");
-    listIbge.set("PR-Terra Roxa","4127403");
-    listIbge.set("PR-Tibagi","4127502");
-    listIbge.set("PR-Tijucas do Sul","4127601");
-    listIbge.set("PR-Toledo","4127700");
-    listIbge.set("PR-Tomazina","4127809");
-    listIbge.set("PR-Três Barras do Paraná","4127858");
-    listIbge.set("PR-Tunas do Paraná","4127882");
-    listIbge.set("PR-Tuneiras do Oeste","4127908");
-    listIbge.set("PR-Tupãssi","4127957");
-    listIbge.set("PR-Turvo","4127965");
-    listIbge.set("PR-Ubiratã","4128005");
-    listIbge.set("PR-Umuarama","4128104");
-    listIbge.set("PR-União da Vitória","4128203");
-    listIbge.set("PR-Uniflor","4128302");
-    listIbge.set("PR-Uraí","4128401");
-    listIbge.set("PR-Ventania","4128534");
-    listIbge.set("PR-Vera Cruz do Oeste","4128559");
-    listIbge.set("PR-Verê","4128609");
-    listIbge.set("PR-Virmond","4128658");
-    listIbge.set("PR-Vitorino","4128708");
-    listIbge.set("PR-Wenceslau Braz","4128500");
-    listIbge.set("PR-Xambrê","4128807");
-    listIbge.set("SC-Abdon Batista","4200051");
-    listIbge.set("SC-Abelardo Luz","4200101");
-    listIbge.set("SC-Agrolândia","4200200");
-    listIbge.set("SC-Agronômica","4200309");
-    listIbge.set("SC-Água Doce","4200408");
-    listIbge.set("SC-Águas de Chapecó","4200507");
-    listIbge.set("SC-Águas Frias","4200556");
-    listIbge.set("SC-Águas Mornas","4200606");
-    listIbge.set("SC-Alfredo Wagner","4200705");
-    listIbge.set("SC-Alto Bela Vista","4200754");
-    listIbge.set("SC-Anchieta","4200804");
-    listIbge.set("SC-Angelina","4200903");
-    listIbge.set("SC-Anita Garibaldi","4201000");
-    listIbge.set("SC-Anitápolis","4201109");
-    listIbge.set("SC-Antônio Carlos","4201208");
-    listIbge.set("SC-Apiúna","4201257");
-    listIbge.set("SC-Arabutã","4201273");
-    listIbge.set("SC-Araquari","4201307");
-    listIbge.set("SC-Araranguá","4201406");
-    listIbge.set("SC-Armazém","4201505");
-    listIbge.set("SC-Arroio Trinta","4201604");
-    listIbge.set("SC-Arvoredo","4201653");
-    listIbge.set("SC-Ascurra","4201703");
-    listIbge.set("SC-Atalanta","4201802");
-    listIbge.set("SC-Aurora","4201901");
-    listIbge.set("SC-Balneário Arroio do Silva","4201950");
-    listIbge.set("SC-Balneário Barra do Sul","4202057");
-    listIbge.set("SC-Balneário Camboriú","4202008");
-    listIbge.set("SC-Balneário Gaivota","4202073");
-    listIbge.set("SC-Balneário Piçarras","4212809");
-    listIbge.set("SC-Balneário Rincão","4220000");
-    listIbge.set("SC-Bandeirante","4202081");
-    listIbge.set("SC-Barra Bonita","4202099");
-    listIbge.set("SC-Barra Velha","4202107");
-    listIbge.set("SC-Bela Vista do Toldo","4202131");
-    listIbge.set("SC-Belmonte","4202156");
-    listIbge.set("SC-Benedito Novo","4202206");
-    listIbge.set("SC-Biguaçu","4202305");
-    listIbge.set("SC-Blumenau","4202404");
-    listIbge.set("SC-Bocaina do Sul","4202438");
-    listIbge.set("SC-Bom Jardim da Serra","4202503");
-    listIbge.set("SC-Bom Jesus","4202537");
-    listIbge.set("SC-Bom Jesus do Oeste","4202578");
-    listIbge.set("SC-Bom Retiro","4202602");
-    listIbge.set("SC-Bombinhas","4202453");
-    listIbge.set("SC-Botuverá","4202701");
-    listIbge.set("SC-Braço do Norte","4202800");
-    listIbge.set("SC-Braço do Trombudo","4202859");
-    listIbge.set("SC-Brunópolis","4202875");
-    listIbge.set("SC-Brusque","4202909");
-    listIbge.set("SC-Caçador","4203006");
-    listIbge.set("SC-Caibi","4203105");
-    listIbge.set("SC-Calmon","4203154");
-    listIbge.set("SC-Camboriú","4203204");
-    listIbge.set("SC-Campo Alegre","4203303");
-    listIbge.set("SC-Campo Belo do Sul","4203402");
-    listIbge.set("SC-Campo Erê","4203501");
-    listIbge.set("SC-Campos Novos","4203600");
-    listIbge.set("SC-Canelinha","4203709");
-    listIbge.set("SC-Canoinhas","4203808");
-    listIbge.set("SC-Capão Alto","4203253");
-    listIbge.set("SC-Capinzal","4203907");
-    listIbge.set("SC-Capivari de Baixo","4203956");
-    listIbge.set("SC-Catanduvas","4204004");
-    listIbge.set("SC-Caxambu do Sul","4204103");
-    listIbge.set("SC-Celso Ramos","4204152");
-    listIbge.set("SC-Cerro Negro","4204178");
-    listIbge.set("SC-Chapadão do Lageado","4204194");
-    listIbge.set("SC-Chapecó","4204202");
-    listIbge.set("SC-Cocal do Sul","4204251");
-    listIbge.set("SC-Concórdia","4204301");
-    listIbge.set("SC-Cordilheira Alta","4204350");
-    listIbge.set("SC-Coronel Freitas","4204400");
-    listIbge.set("SC-Coronel Martins","4204459");
-    listIbge.set("SC-Correia Pinto","4204558");
-    listIbge.set("SC-Corupá","4204509");
-    listIbge.set("SC-Criciúma","4204608");
-    listIbge.set("SC-Cunha Porã","4204707");
-    listIbge.set("SC-Cunhataí","4204756");
-    listIbge.set("SC-Curitibanos","4204806");
-    listIbge.set("SC-Descanso","4204905");
-    listIbge.set("SC-Dionísio Cerqueira","4205001");
-    listIbge.set("SC-Dona Emma","4205100");
-    listIbge.set("SC-Doutor Pedrinho","4205159");
-    listIbge.set("SC-Entre Rios","4205175");
-    listIbge.set("SC-Ermo","4205191");
-    listIbge.set("SC-Erval Velho","4205209");
-    listIbge.set("SC-Faxinal dos Guedes","4205308");
-    listIbge.set("SC-Flor do Sertão","4205357");
-    listIbge.set("SC-Florianópolis","4205407");
-    listIbge.set("SC-Formosa do Sul","4205431");
-    listIbge.set("SC-Forquilhinha","4205456");
-    listIbge.set("SC-Fraiburgo","4205506");
-    listIbge.set("SC-Frei Rogério","4205555");
-    listIbge.set("SC-Galvão","4205605");
-    listIbge.set("SC-Garopaba","4205704");
-    listIbge.set("SC-Garuva","4205803");
-    listIbge.set("SC-Gaspar","4205902");
-    listIbge.set("SC-Governador Celso Ramos","4206009");
-    listIbge.set("SC-Grão-Pará","4206108");
-    listIbge.set("SC-Gravatal","4206207");
-    listIbge.set("SC-Guabiruba","4206306");
-    listIbge.set("SC-Guaraciaba","4206405");
-    listIbge.set("SC-Guaramirim","4206504");
-    listIbge.set("SC-Guarujá do Sul","4206603");
-    listIbge.set("SC-Guatambú","4206652");
-    listIbge.set("SC-Herval d'Oeste","4206702");
-    listIbge.set("SC-Ibiam","4206751");
-    listIbge.set("SC-Ibicaré","4206801");
-    listIbge.set("SC-Ibirama","4206900");
-    listIbge.set("SC-Içara","4207007");
-    listIbge.set("SC-Ilhota","4207106");
-    listIbge.set("SC-Imaruí","4207205");
-    listIbge.set("SC-Imbituba","4207304");
-    listIbge.set("SC-Imbuia","4207403");
-    listIbge.set("SC-Indaial","4207502");
-    listIbge.set("SC-Iomerê","4207577");
-    listIbge.set("SC-Ipira","4207601");
-    listIbge.set("SC-Iporã do Oeste","4207650");
-    listIbge.set("SC-Ipuaçu","4207684");
-    listIbge.set("SC-Ipumirim","4207700");
-    listIbge.set("SC-Iraceminha","4207759");
-    listIbge.set("SC-Irani","4207809");
-    listIbge.set("SC-Irati","4207858");
-    listIbge.set("SC-Irineópolis","4207908");
-    listIbge.set("SC-Itá","4208005");
-    listIbge.set("SC-Itaiópolis","4208104");
-    listIbge.set("SC-Itajaí","4208203");
-    listIbge.set("SC-Itapema","4208302");
-    listIbge.set("SC-Itapiranga","4208401");
-    listIbge.set("SC-Itapoá","4208450");
-    listIbge.set("SC-Ituporanga","4208500");
-    listIbge.set("SC-Jaborá","4208609");
-    listIbge.set("SC-Jacinto Machado","4208708");
-    listIbge.set("SC-Jaguaruna","4208807");
-    listIbge.set("SC-Jaraguá do Sul","4208906");
-    listIbge.set("SC-Jardinópolis","4208955");
-    listIbge.set("SC-Joaçaba","4209003");
-    listIbge.set("SC-Joinville","4209102");
-    listIbge.set("SC-José Boiteux","4209151");
-    listIbge.set("SC-Jupiá","4209177");
-    listIbge.set("SC-Lacerdópolis","4209201");
-    listIbge.set("SC-Lages","4209300");
-    listIbge.set("SC-Laguna","4209409");
-    listIbge.set("SC-Lajeado Grande","4209458");
-    listIbge.set("SC-Laurentino","4209508");
-    listIbge.set("SC-Lauro Müller","4209607");
-    listIbge.set("SC-Lebon Régis","4209706");
-    listIbge.set("SC-Leoberto Leal","4209805");
-    listIbge.set("SC-Lindóia do Sul","4209854");
-    listIbge.set("SC-Lontras","4209904");
-    listIbge.set("SC-Luiz Alves","4210001");
-    listIbge.set("SC-Luzerna","4210035");
-    listIbge.set("SC-Macieira","4210050");
-    listIbge.set("SC-Mafra","4210100");
-    listIbge.set("SC-Major Gercino","4210209");
-    listIbge.set("SC-Major Vieira","4210308");
-    listIbge.set("SC-Maracajá","4210407");
-    listIbge.set("SC-Maravilha","4210506");
-    listIbge.set("SC-Marema","4210555");
-    listIbge.set("SC-Massaranduba","4210605");
-    listIbge.set("SC-Matos Costa","4210704");
-    listIbge.set("SC-Meleiro","4210803");
-    listIbge.set("SC-Mirim Doce","4210852");
-    listIbge.set("SC-Modelo","4210902");
-    listIbge.set("SC-Mondaí","4211009");
-    listIbge.set("SC-Monte Carlo","4211058");
-    listIbge.set("SC-Monte Castelo","4211108");
-    listIbge.set("SC-Morro da Fumaça","4211207");
-    listIbge.set("SC-Morro Grande","4211256");
-    listIbge.set("SC-Navegantes","4211306");
-    listIbge.set("SC-Nova Erechim","4211405");
-    listIbge.set("SC-Nova Itaberaba","4211454");
-    listIbge.set("SC-Nova Trento","4211504");
-    listIbge.set("SC-Nova Veneza","4211603");
-    listIbge.set("SC-Novo Horizonte","4211652");
-    listIbge.set("SC-Orleans","4211702");
-    listIbge.set("SC-Otacílio Costa","4211751");
-    listIbge.set("SC-Ouro","4211801");
-    listIbge.set("SC-Ouro Verde","4211850");
-    listIbge.set("SC-Paial","4211876");
-    listIbge.set("SC-Painel","4211892");
-    listIbge.set("SC-Palhoça","4211900");
-    listIbge.set("SC-Palma Sola","4212007");
-    listIbge.set("SC-Palmeira","4212056");
-    listIbge.set("SC-Palmitos","4212106");
-    listIbge.set("SC-Papanduva","4212205");
-    listIbge.set("SC-Paraíso","4212239");
-    listIbge.set("SC-Passo de Torres","4212254");
-    listIbge.set("SC-Passos Maia","4212270");
-    listIbge.set("SC-Paulo Lopes","4212304");
-    listIbge.set("SC-Pedras Grandes","4212403");
-    listIbge.set("SC-Penha","4212502");
-    listIbge.set("SC-Peritiba","4212601");
-    listIbge.set("SC-Pescaria Brava","4212650");
-    listIbge.set("SC-Petrolândia","4212700");
-    listIbge.set("SC-Pinhalzinho","4212908");
-    listIbge.set("SC-Pinheiro Preto","4213005");
-    listIbge.set("SC-Piratuba","4213104");
-    listIbge.set("SC-Planalto Alegre","4213153");
-    listIbge.set("SC-Pomerode","4213203");
-    listIbge.set("SC-Ponte Alta","4213302");
-    listIbge.set("SC-Ponte Alta do Norte","4213351");
-    listIbge.set("SC-Ponte Serrada","4213401");
-    listIbge.set("SC-Porto Belo","4213500");
-    listIbge.set("SC-Porto União","4213609");
-    listIbge.set("SC-Pouso Redondo","4213708");
-    listIbge.set("SC-Praia Grande","4213807");
-    listIbge.set("SC-Presidente Castello Branco","4213906");
-    listIbge.set("SC-Presidente Getúlio","4214003");
-    listIbge.set("SC-Presidente Nereu","4214102");
-    listIbge.set("SC-Princesa","4214151");
-    listIbge.set("SC-Quilombo","4214201");
-    listIbge.set("SC-Rancho Queimado","4214300");
-    listIbge.set("SC-Rio das Antas","4214409");
-    listIbge.set("SC-Rio do Campo","4214508");
-    listIbge.set("SC-Rio do Oeste","4214607");
-    listIbge.set("SC-Rio do Sul","4214805");
-    listIbge.set("SC-Rio dos Cedros","4214706");
-    listIbge.set("SC-Rio Fortuna","4214904");
-    listIbge.set("SC-Rio Negrinho","4215000");
-    listIbge.set("SC-Rio Rufino","4215059");
-    listIbge.set("SC-Riqueza","4215075");
-    listIbge.set("SC-Rodeio","4215109");
-    listIbge.set("SC-Romelândia","4215208");
-    listIbge.set("SC-Salete","4215307");
-    listIbge.set("SC-Saltinho","4215356");
-    listIbge.set("SC-Salto Veloso","4215406");
-    listIbge.set("SC-Sangão","4215455");
-    listIbge.set("SC-Santa Cecília","4215505");
-    listIbge.set("SC-Santa Helena","4215554");
-    listIbge.set("SC-Santa Rosa de Lima","4215604");
-    listIbge.set("SC-Santa Rosa do Sul","4215653");
-    listIbge.set("SC-Santa Terezinha","4215679");
-    listIbge.set("SC-Santa Terezinha do Progresso","4215687");
-    listIbge.set("SC-Santiago do Sul","4215695");
-    listIbge.set("SC-Santo Amaro da Imperatriz","4215703");
-    listIbge.set("SC-São Bento do Sul","4215802");
-    listIbge.set("SC-São Bernardino","4215752");
-    listIbge.set("SC-São Bonifácio","4215901");
-    listIbge.set("SC-São Carlos","4216008");
-    listIbge.set("SC-São Cristóvão do Sul","4216057");
-    listIbge.set("SC-São Domingos","4216107");
-    listIbge.set("SC-São Francisco do Sul","4216206");
-    listIbge.set("SC-São João Batista","4216305");
-    listIbge.set("SC-São João do Itaperiú","4216354");
-    listIbge.set("SC-São João do Oeste","4216255");
-    listIbge.set("SC-São João do Sul","4216404");
-    listIbge.set("SC-São Joaquim","4216503");
-    listIbge.set("SC-São José","4216602");
-    listIbge.set("SC-São José do Cedro","4216701");
-    listIbge.set("SC-São José do Cerrito","4216800");
-    listIbge.set("SC-São Lourenço do Oeste","4216909");
-    listIbge.set("SC-São Ludgero","4217006");
-    listIbge.set("SC-São Martinho","4217105");
-    listIbge.set("SC-São Miguel da Boa Vista","4217154");
-    listIbge.set("SC-São Miguel do Oeste","4217204");
-    listIbge.set("SC-São Pedro de Alcântara","4217253");
-    listIbge.set("SC-Saudades","4217303");
-    listIbge.set("SC-Schroeder","4217402");
-    listIbge.set("SC-Seara","4217501");
-    listIbge.set("SC-Serra Alta","4217550");
-    listIbge.set("SC-Siderópolis","4217600");
-    listIbge.set("SC-Sombrio","4217709");
-    listIbge.set("SC-Sul Brasil","4217758");
-    listIbge.set("SC-Taió","4217808");
-    listIbge.set("SC-Tangará","4217907");
-    listIbge.set("SC-Tigrinhos","4217956");
-    listIbge.set("SC-Tijucas","4218004");
-    listIbge.set("SC-Timbé do Sul","4218103");
-    listIbge.set("SC-Timbó","4218202");
-    listIbge.set("SC-Timbó Grande","4218251");
-    listIbge.set("SC-Três Barras","4218301");
-    listIbge.set("SC-Treviso","4218350");
-    listIbge.set("SC-Treze de Maio","4218400");
-    listIbge.set("SC-Treze Tílias","4218509");
-    listIbge.set("SC-Trombudo Central","4218608");
-    listIbge.set("SC-Tubarão","4218707");
-    listIbge.set("SC-Tunápolis","4218756");
-    listIbge.set("SC-Turvo","4218806");
-    listIbge.set("SC-União do Oeste","4218855");
-    listIbge.set("SC-Urubici","4218905");
-    listIbge.set("SC-Urupema","4218954");
-    listIbge.set("SC-Urussanga","4219002");
-    listIbge.set("SC-Vargeão","4219101");
-    listIbge.set("SC-Vargem","4219150");
-    listIbge.set("SC-Vargem Bonita","4219176");
-    listIbge.set("SC-Vidal Ramos","4219200");
-    listIbge.set("SC-Videira","4219309");
-    listIbge.set("SC-Vitor Meireles","4219358");
-    listIbge.set("SC-Witmarsum","4219408");
-    listIbge.set("SC-Xanxerê","4219507");
-    listIbge.set("SC-Xavantina","4219606");
-    listIbge.set("SC-Xaxim","4219705");
-    listIbge.set("SC-Zortéa","4219853");
-    listIbge.set("RS-Aceguá","4300034");
-    listIbge.set("RS-Água Santa","4300059");
-    listIbge.set("RS-Agudo","4300109");
-    listIbge.set("RS-Ajuricaba","4300208");
-    listIbge.set("RS-Alecrim","4300307");
-    listIbge.set("RS-Alegrete","4300406");
-    listIbge.set("RS-Alegria","4300455");
-    listIbge.set("RS-Almirante Tamandaré do Sul","4300471");
-    listIbge.set("RS-Alpestre","4300505");
-    listIbge.set("RS-Alto Alegre","4300554");
-    listIbge.set("RS-Alto Feliz","4300570");
-    listIbge.set("RS-Alvorada","4300604");
-    listIbge.set("RS-Amaral Ferrador","4300638");
-    listIbge.set("RS-Ametista do Sul","4300646");
-    listIbge.set("RS-André da Rocha","4300661");
-    listIbge.set("RS-Anta Gorda","4300703");
-    listIbge.set("RS-Antônio Prado","4300802");
-    listIbge.set("RS-Arambaré","4300851");
-    listIbge.set("RS-Araricá","4300877");
-    listIbge.set("RS-Aratiba","4300901");
-    listIbge.set("RS-Arroio do Meio","4301008");
-    listIbge.set("RS-Arroio do Padre","4301073");
-    listIbge.set("RS-Arroio do Sal","4301057");
-    listIbge.set("RS-Arroio do Tigre","4301206");
-    listIbge.set("RS-Arroio dos Ratos","4301107");
-    listIbge.set("RS-Arroio Grande","4301305");
-    listIbge.set("RS-Arvorezinha","4301404");
-    listIbge.set("RS-Augusto Pestana","4301503");
-    listIbge.set("RS-Áurea","4301552");
-    listIbge.set("RS-Bagé","4301602");
-    listIbge.set("RS-Balneário Pinhal","4301636");
-    listIbge.set("RS-Barão","4301651");
-    listIbge.set("RS-Barão de Cotegipe","4301701");
-    listIbge.set("RS-Barão do Triunfo","4301750");
-    listIbge.set("RS-Barra do Guarita","4301859");
-    listIbge.set("RS-Barra do Quaraí","4301875");
-    listIbge.set("RS-Barra do Ribeiro","4301909");
-    listIbge.set("RS-Barra do Rio Azul","4301925");
-    listIbge.set("RS-Barra Funda","4301958");
-    listIbge.set("RS-Barracão","4301800");
-    listIbge.set("RS-Barros Cassal","4302006");
-    listIbge.set("RS-Benjamin Constant do Sul","4302055");
-    listIbge.set("RS-Bento Gonçalves","4302105");
-    listIbge.set("RS-Boa Vista das Missões","4302154");
-    listIbge.set("RS-Boa Vista do Buricá","4302204");
-    listIbge.set("RS-Boa Vista do Cadeado","4302220");
-    listIbge.set("RS-Boa Vista do Incra","4302238");
-    listIbge.set("RS-Boa Vista do Sul","4302253");
-    listIbge.set("RS-Bom Jesus","4302303");
-    listIbge.set("RS-Bom Princípio","4302352");
-    listIbge.set("RS-Bom Progresso","4302378");
-    listIbge.set("RS-Bom Retiro do Sul","4302402");
-    listIbge.set("RS-Boqueirão do Leão","4302451");
-    listIbge.set("RS-Bossoroca","4302501");
-    listIbge.set("RS-Bozano","4302584");
-    listIbge.set("RS-Braga","4302600");
-    listIbge.set("RS-Brochier","4302659");
-    listIbge.set("RS-Butiá","4302709");
-    listIbge.set("RS-Caçapava do Sul","4302808");
-    listIbge.set("RS-Cacequi","4302907");
-    listIbge.set("RS-Cachoeira do Sul","4303004");
-    listIbge.set("RS-Cachoeirinha","4303103");
-    listIbge.set("RS-Cacique Doble","4303202");
-    listIbge.set("RS-Caibaté","4303301");
-    listIbge.set("RS-Caiçara","4303400");
-    listIbge.set("RS-Camaquã","4303509");
-    listIbge.set("RS-Camargo","4303558");
-    listIbge.set("RS-Cambará do Sul","4303608");
-    listIbge.set("RS-Campestre da Serra","4303673");
-    listIbge.set("RS-Campina das Missões","4303707");
-    listIbge.set("RS-Campinas do Sul","4303806");
-    listIbge.set("RS-Campo Bom","4303905");
-    listIbge.set("RS-Campo Novo","4304002");
-    listIbge.set("RS-Campos Borges","4304101");
-    listIbge.set("RS-Candelária","4304200");
-    listIbge.set("RS-Cândido Godói","4304309");
-    listIbge.set("RS-Candiota","4304358");
-    listIbge.set("RS-Canela","4304408");
-    listIbge.set("RS-Canguçu","4304507");
-    listIbge.set("RS-Canoas","4304606");
-    listIbge.set("RS-Canudos do Vale","4304614");
-    listIbge.set("RS-Capão Bonito do Sul","4304622");
-    listIbge.set("RS-Capão da Canoa","4304630");
-    listIbge.set("RS-Capão do Cipó","4304655");
-    listIbge.set("RS-Capão do Leão","4304663");
-    listIbge.set("RS-Capela de Santana","4304689");
-    listIbge.set("RS-Capitão","4304697");
-    listIbge.set("RS-Capivari do Sul","4304671");
-    listIbge.set("RS-Caraá","4304713");
-    listIbge.set("RS-Carazinho","4304705");
-    listIbge.set("RS-Carlos Barbosa","4304804");
-    listIbge.set("RS-Carlos Gomes","4304853");
-    listIbge.set("RS-Casca","4304903");
-    listIbge.set("RS-Caseiros","4304952");
-    listIbge.set("RS-Catuípe","4305009");
-    listIbge.set("RS-Caxias do Sul","4305108");
-    listIbge.set("RS-Centenário","4305116");
-    listIbge.set("RS-Cerrito","4305124");
-    listIbge.set("RS-Cerro Branco","4305132");
-    listIbge.set("RS-Cerro Grande","4305157");
-    listIbge.set("RS-Cerro Grande do Sul","4305173");
-    listIbge.set("RS-Cerro Largo","4305207");
-    listIbge.set("RS-Chapada","4305306");
-    listIbge.set("RS-Charqueadas","4305355");
-    listIbge.set("RS-Charrua","4305371");
-    listIbge.set("RS-Chiapetta","4305405");
-    listIbge.set("RS-Chuí","4305439");
-    listIbge.set("RS-Chuvisca","4305447");
-    listIbge.set("RS-Cidreira","4305454");
-    listIbge.set("RS-Ciríaco","4305504");
-    listIbge.set("RS-Colinas","4305587");
-    listIbge.set("RS-Colorado","4305603");
-    listIbge.set("RS-Condor","4305702");
-    listIbge.set("RS-Constantina","4305801");
-    listIbge.set("RS-Coqueiro Baixo","4305835");
-    listIbge.set("RS-Coqueiros do Sul","4305850");
-    listIbge.set("RS-Coronel Barros","4305871");
-    listIbge.set("RS-Coronel Bicaco","4305900");
-    listIbge.set("RS-Coronel Pilar","4305934");
-    listIbge.set("RS-Cotiporã","4305959");
-    listIbge.set("RS-Coxilha","4305975");
-    listIbge.set("RS-Crissiumal","4306007");
-    listIbge.set("RS-Cristal","4306056");
-    listIbge.set("RS-Cristal do Sul","4306072");
-    listIbge.set("RS-Cruz Alta","4306106");
-    listIbge.set("RS-Cruzaltense","4306130");
-    listIbge.set("RS-Cruzeiro do Sul","4306205");
-    listIbge.set("RS-David Canabarro","4306304");
-    listIbge.set("RS-Derrubadas","4306320");
-    listIbge.set("RS-Dezesseis de Novembro","4306353");
-    listIbge.set("RS-Dilermando de Aguiar","4306379");
-    listIbge.set("RS-Dois Irmãos","4306403");
-    listIbge.set("RS-Dois Irmãos das Missões","4306429");
-    listIbge.set("RS-Dois Lajeados","4306452");
-    listIbge.set("RS-Dom Feliciano","4306502");
-    listIbge.set("RS-Dom Pedrito","4306601");
-    listIbge.set("RS-Dom Pedro de Alcântara","4306551");
-    listIbge.set("RS-Dona Francisca","4306700");
-    listIbge.set("RS-Doutor Maurício Cardoso","4306734");
-    listIbge.set("RS-Doutor Ricardo","4306759");
-    listIbge.set("RS-Eldorado do Sul","4306767");
-    listIbge.set("RS-Encantado","4306809");
-    listIbge.set("RS-Encruzilhada do Sul","4306908");
-    listIbge.set("RS-Engenho Velho","4306924");
-    listIbge.set("RS-Entre Rios do Sul","4306957");
-    listIbge.set("RS-Entre-Ijuís","4306932");
-    listIbge.set("RS-Erebango","4306973");
-    listIbge.set("RS-Erechim","4307005");
-    listIbge.set("RS-Ernestina","4307054");
-    listIbge.set("RS-Erval Grande","4307203");
-    listIbge.set("RS-Erval Seco","4307302");
-    listIbge.set("RS-Esmeralda","4307401");
-    listIbge.set("RS-Esperança do Sul","4307450");
-    listIbge.set("RS-Espumoso","4307500");
-    listIbge.set("RS-Estação","4307559");
-    listIbge.set("RS-Estância Velha","4307609");
-    listIbge.set("RS-Esteio","4307708");
-    listIbge.set("RS-Estrela","4307807");
-    listIbge.set("RS-Estrela Velha","4307815");
-    listIbge.set("RS-Eugênio de Castro","4307831");
-    listIbge.set("RS-Fagundes Varela","4307864");
-    listIbge.set("RS-Farroupilha","4307906");
-    listIbge.set("RS-Faxinal do Soturno","4308003");
-    listIbge.set("RS-Faxinalzinho","4308052");
-    listIbge.set("RS-Fazenda Vilanova","4308078");
-    listIbge.set("RS-Feliz","4308102");
-    listIbge.set("RS-Flores da Cunha","4308201");
-    listIbge.set("RS-Floriano Peixoto","4308250");
-    listIbge.set("RS-Fontoura Xavier","4308300");
-    listIbge.set("RS-Formigueiro","4308409");
-    listIbge.set("RS-Forquetinha","4308433");
-    listIbge.set("RS-Fortaleza dos Valos","4308458");
-    listIbge.set("RS-Frederico Westphalen","4308508");
-    listIbge.set("RS-Garibaldi","4308607");
-    listIbge.set("RS-Garruchos","4308656");
-    listIbge.set("RS-Gaurama","4308706");
-    listIbge.set("RS-General Câmara","4308805");
-    listIbge.set("RS-Gentil","4308854");
-    listIbge.set("RS-Getúlio Vargas","4308904");
-    listIbge.set("RS-Giruá","4309001");
-    listIbge.set("RS-Glorinha","4309050");
-    listIbge.set("RS-Gramado","4309100");
-    listIbge.set("RS-Gramado dos Loureiros","4309126");
-    listIbge.set("RS-Gramado Xavier","4309159");
-    listIbge.set("RS-Gravataí","4309209");
-    listIbge.set("RS-Guabiju","4309258");
-    listIbge.set("RS-Guaíba","4309308");
-    listIbge.set("RS-Guaporé","4309407");
-    listIbge.set("RS-Guarani das Missões","4309506");
-    listIbge.set("RS-Harmonia","4309555");
-    listIbge.set("RS-Herval","4307104");
-    listIbge.set("RS-Herveiras","4309571");
-    listIbge.set("RS-Horizontina","4309605");
-    listIbge.set("RS-Hulha Negra","4309654");
-    listIbge.set("RS-Humaitá","4309704");
-    listIbge.set("RS-Ibarama","4309753");
-    listIbge.set("RS-Ibiaçá","4309803");
-    listIbge.set("RS-Ibiraiaras","4309902");
-    listIbge.set("RS-Ibirapuitã","4309951");
-    listIbge.set("RS-Ibirubá","4310009");
-    listIbge.set("RS-Igrejinha","4310108");
-    listIbge.set("RS-Ijuí","4310207");
-    listIbge.set("RS-Ilópolis","4310306");
-    listIbge.set("RS-Imbé","4310330");
-    listIbge.set("RS-Imigrante","4310363");
-    listIbge.set("RS-Independência","4310405");
-    listIbge.set("RS-Inhacorá","4310413");
-    listIbge.set("RS-Ipê","4310439");
-    listIbge.set("RS-Ipiranga do Sul","4310462");
-    listIbge.set("RS-Iraí","4310504");
-    listIbge.set("RS-Itaara","4310538");
-    listIbge.set("RS-Itacurubi","4310553");
-    listIbge.set("RS-Itapuca","4310579");
-    listIbge.set("RS-Itaqui","4310603");
-    listIbge.set("RS-Itati","4310652");
-    listIbge.set("RS-Itatiba do Sul","4310702");
-    listIbge.set("RS-Ivorá","4310751");
-    listIbge.set("RS-Ivoti","4310801");
-    listIbge.set("RS-Jaboticaba","4310850");
-    listIbge.set("RS-Jacuizinho","4310876");
-    listIbge.set("RS-Jacutinga","4310900");
-    listIbge.set("RS-Jaguarão","4311007");
-    listIbge.set("RS-Jaguari","4311106");
-    listIbge.set("RS-Jaquirana","4311122");
-    listIbge.set("RS-Jari","4311130");
-    listIbge.set("RS-Jóia","4311155");
-    listIbge.set("RS-Júlio de Castilhos","4311205");
-    listIbge.set("RS-Lagoa Bonita do Sul","4311239");
-    listIbge.set("RS-Lagoa dos Três Cantos","4311270");
-    listIbge.set("RS-Lagoa Vermelha","4311304");
-    listIbge.set("RS-Lagoão","4311254");
-    listIbge.set("RS-Lajeado","4311403");
-    listIbge.set("RS-Lajeado do Bugre","4311429");
-    listIbge.set("RS-Lavras do Sul","4311502");
-    listIbge.set("RS-Liberato Salzano","4311601");
-    listIbge.set("RS-Lindolfo Collor","4311627");
-    listIbge.set("RS-Linha Nova","4311643");
-    listIbge.set("RS-Maçambará","4311718");
-    listIbge.set("RS-Machadinho","4311700");
-    listIbge.set("RS-Mampituba","4311734");
-    listIbge.set("RS-Manoel Viana","4311759");
-    listIbge.set("RS-Maquiné","4311775");
-    listIbge.set("RS-Maratá","4311791");
-    listIbge.set("RS-Marau","4311809");
-    listIbge.set("RS-Marcelino Ramos","4311908");
-    listIbge.set("RS-Mariana Pimentel","4311981");
-    listIbge.set("RS-Mariano Moro","4312005");
-    listIbge.set("RS-Marques de Souza","4312054");
-    listIbge.set("RS-Mata","4312104");
-    listIbge.set("RS-Mato Castelhano","4312138");
-    listIbge.set("RS-Mato Leitão","4312153");
-    listIbge.set("RS-Mato Queimado","4312179");
-    listIbge.set("RS-Maximiliano de Almeida","4312203");
-    listIbge.set("RS-Minas do Leão","4312252");
-    listIbge.set("RS-Miraguaí","4312302");
-    listIbge.set("RS-Montauri","4312351");
-    listIbge.set("RS-Monte Alegre dos Campos","4312377");
-    listIbge.set("RS-Monte Belo do Sul","4312385");
-    listIbge.set("RS-Montenegro","4312401");
-    listIbge.set("RS-Mormaço","4312427");
-    listIbge.set("RS-Morrinhos do Sul","4312443");
-    listIbge.set("RS-Morro Redondo","4312450");
-    listIbge.set("RS-Morro Reuter","4312476");
-    listIbge.set("RS-Mostardas","4312500");
-    listIbge.set("RS-Muçum","4312609");
-    listIbge.set("RS-Muitos Capões","4312617");
-    listIbge.set("RS-Muliterno","4312625");
-    listIbge.set("RS-Não-Me-Toque","4312658");
-    listIbge.set("RS-Nicolau Vergueiro","4312674");
-    listIbge.set("RS-Nonoai","4312708");
-    listIbge.set("RS-Nova Alvorada","4312757");
-    listIbge.set("RS-Nova Araçá","4312807");
-    listIbge.set("RS-Nova Bassano","4312906");
-    listIbge.set("RS-Nova Boa Vista","4312955");
-    listIbge.set("RS-Nova Bréscia","4313003");
-    listIbge.set("RS-Nova Candelária","4313011");
-    listIbge.set("RS-Nova Esperança do Sul","4313037");
-    listIbge.set("RS-Nova Hartz","4313060");
-    listIbge.set("RS-Nova Pádua","4313086");
-    listIbge.set("RS-Nova Palma","4313102");
-    listIbge.set("RS-Nova Petrópolis","4313201");
-    listIbge.set("RS-Nova Prata","4313300");
-    listIbge.set("RS-Nova Ramada","4313334");
-    listIbge.set("RS-Nova Roma do Sul","4313359");
-    listIbge.set("RS-Nova Santa Rita","4313375");
-    listIbge.set("RS-Novo Barreiro","4313490");
-    listIbge.set("RS-Novo Cabrais","4313391");
-    listIbge.set("RS-Novo Hamburgo","4313409");
-    listIbge.set("RS-Novo Machado","4313425");
-    listIbge.set("RS-Novo Tiradentes","4313441");
-    listIbge.set("RS-Novo Xingu","4313466");
-    listIbge.set("RS-Osório","4313508");
-    listIbge.set("RS-Paim Filho","4313607");
-    listIbge.set("RS-Palmares do Sul","4313656");
-    listIbge.set("RS-Palmeira das Missões","4313706");
-    listIbge.set("RS-Palmitinho","4313805");
-    listIbge.set("RS-Panambi","4313904");
-    listIbge.set("RS-Pantano Grande","4313953");
-    listIbge.set("RS-Paraí","4314001");
-    listIbge.set("RS-Paraíso do Sul","4314027");
-    listIbge.set("RS-Pareci Novo","4314035");
-    listIbge.set("RS-Parobé","4314050");
-    listIbge.set("RS-Passa Sete","4314068");
-    listIbge.set("RS-Passo do Sobrado","4314076");
-    listIbge.set("RS-Passo Fundo","4314100");
-    listIbge.set("RS-Paulo Bento","4314134");
-    listIbge.set("RS-Paverama","4314159");
-    listIbge.set("RS-Pedras Altas","4314175");
-    listIbge.set("RS-Pedro Osório","4314209");
-    listIbge.set("RS-Pejuçara","4314308");
-    listIbge.set("RS-Pelotas","4314407");
-    listIbge.set("RS-Picada Café","4314423");
-    listIbge.set("RS-Pinhal","4314456");
-    listIbge.set("RS-Pinhal da Serra","4314464");
-    listIbge.set("RS-Pinhal Grande","4314472");
-    listIbge.set("RS-Pinheirinho do Vale","4314498");
-    listIbge.set("RS-Pinheiro Machado","4314506");
-    listIbge.set("RS-Pinto Bandeira","4314548");
-    listIbge.set("RS-Pirapó","4314555");
-    listIbge.set("RS-Piratini","4314605");
-    listIbge.set("RS-Planalto","4314704");
-    listIbge.set("RS-Poço das Antas","4314753");
-    listIbge.set("RS-Pontão","4314779");
-    listIbge.set("RS-Ponte Preta","4314787");
-    listIbge.set("RS-Portão","4314803");
-    listIbge.set("RS-Porto Alegre","4314902");
-    listIbge.set("RS-Porto Lucena","4315008");
-    listIbge.set("RS-Porto Mauá","4315057");
-    listIbge.set("RS-Porto Vera Cruz","4315073");
-    listIbge.set("RS-Porto Xavier","4315107");
-    listIbge.set("RS-Pouso Novo","4315131");
-    listIbge.set("RS-Presidente Lucena","4315149");
-    listIbge.set("RS-Progresso","4315156");
-    listIbge.set("RS-Protásio Alves","4315172");
-    listIbge.set("RS-Putinga","4315206");
-    listIbge.set("RS-Quaraí","4315305");
-    listIbge.set("RS-Quatro Irmãos","4315313");
-    listIbge.set("RS-Quevedos","4315321");
-    listIbge.set("RS-Quinze de Novembro","4315354");
-    listIbge.set("RS-Redentora","4315404");
-    listIbge.set("RS-Relvado","4315453");
-    listIbge.set("RS-Restinga Sêca","4315503");
-    listIbge.set("RS-Rio dos Índios","4315552");
-    listIbge.set("RS-Rio Grande","4315602");
-    listIbge.set("RS-Rio Pardo","4315701");
-    listIbge.set("RS-Riozinho","4315750");
-    listIbge.set("RS-Roca Sales","4315800");
-    listIbge.set("RS-Rodeio Bonito","4315909");
-    listIbge.set("RS-Rolador","4315958");
-    listIbge.set("RS-Rolante","4316006");
-    listIbge.set("RS-Ronda Alta","4316105");
-    listIbge.set("RS-Rondinha","4316204");
-    listIbge.set("RS-Roque Gonzales","4316303");
-    listIbge.set("RS-Rosário do Sul","4316402");
-    listIbge.set("RS-Sagrada Família","4316428");
-    listIbge.set("RS-Saldanha Marinho","4316436");
-    listIbge.set("RS-Salto do Jacuí","4316451");
-    listIbge.set("RS-Salvador das Missões","4316477");
-    listIbge.set("RS-Salvador do Sul","4316501");
-    listIbge.set("RS-Sananduva","4316600");
-    listIbge.set("RS-Santa Bárbara do Sul","4316709");
-    listIbge.set("RS-Santa Cecília do Sul","4316733");
-    listIbge.set("RS-Santa Clara do Sul","4316758");
-    listIbge.set("RS-Santa Cruz do Sul","4316808");
-    listIbge.set("RS-Santa Margarida do Sul","4316972");
-    listIbge.set("RS-Santa Maria","4316907");
-    listIbge.set("RS-Santa Maria do Herval","4316956");
-    listIbge.set("RS-Santa Rosa","4317202");
-    listIbge.set("RS-Santa Tereza","4317251");
-    listIbge.set("RS-Santa Vitória do Palmar","4317301");
-    listIbge.set("RS-Santana da Boa Vista","4317004");
-    listIbge.set("RS-Sant'Ana do Livramento","4317103");
-    listIbge.set("RS-Santiago","4317400");
-    listIbge.set("RS-Santo Ângelo","4317509");
-    listIbge.set("RS-Santo Antônio da Patrulha","4317608");
-    listIbge.set("RS-Santo Antônio das Missões","4317707");
-    listIbge.set("RS-Santo Antônio do Palma","4317558");
-    listIbge.set("RS-Santo Antônio do Planalto","4317756");
-    listIbge.set("RS-Santo Augusto","4317806");
-    listIbge.set("RS-Santo Cristo","4317905");
-    listIbge.set("RS-Santo Expedito do Sul","4317954");
-    listIbge.set("RS-São Borja","4318002");
-    listIbge.set("RS-São Domingos do Sul","4318051");
-    listIbge.set("RS-São Francisco de Assis","4318101");
-    listIbge.set("RS-São Francisco de Paula","4318200");
-    listIbge.set("RS-São Gabriel","4318309");
-    listIbge.set("RS-São Jerônimo","4318408");
-    listIbge.set("RS-São João da Urtiga","4318424");
-    listIbge.set("RS-São João do Polêsine","4318432");
-    listIbge.set("RS-São Jorge","4318440");
-    listIbge.set("RS-São José das Missões","4318457");
-    listIbge.set("RS-São José do Herval","4318465");
-    listIbge.set("RS-São José do Hortêncio","4318481");
-    listIbge.set("RS-São José do Inhacorá","4318499");
-    listIbge.set("RS-São José do Norte","4318507");
-    listIbge.set("RS-São José do Ouro","4318606");
-    listIbge.set("RS-São José do Sul","4318614");
-    listIbge.set("RS-São José dos Ausentes","4318622");
-    listIbge.set("RS-São Leopoldo","4318705");
-    listIbge.set("RS-São Lourenço do Sul","4318804");
-    listIbge.set("RS-São Luiz Gonzaga","4318903");
-    listIbge.set("RS-São Marcos","4319000");
-    listIbge.set("RS-São Martinho","4319109");
-    listIbge.set("RS-São Martinho da Serra","4319125");
-    listIbge.set("RS-São Miguel das Missões","4319158");
-    listIbge.set("RS-São Nicolau","4319208");
-    listIbge.set("RS-São Paulo das Missões","4319307");
-    listIbge.set("RS-São Pedro da Serra","4319356");
-    listIbge.set("RS-São Pedro das Missões","4319364");
-    listIbge.set("RS-São Pedro do Butiá","4319372");
-    listIbge.set("RS-São Pedro do Sul","4319406");
-    listIbge.set("RS-São Sebastião do Caí","4319505");
-    listIbge.set("RS-São Sepé","4319604");
-    listIbge.set("RS-São Valentim","4319703");
-    listIbge.set("RS-São Valentim do Sul","4319711");
-    listIbge.set("RS-São Valério do Sul","4319737");
-    listIbge.set("RS-São Vendelino","4319752");
-    listIbge.set("RS-São Vicente do Sul","4319802");
-    listIbge.set("RS-Sapiranga","4319901");
-    listIbge.set("RS-Sapucaia do Sul","4320008");
-    listIbge.set("RS-Sarandi","4320107");
-    listIbge.set("RS-Seberi","4320206");
-    listIbge.set("RS-Sede Nova","4320230");
-    listIbge.set("RS-Segredo","4320263");
-    listIbge.set("RS-Selbach","4320305");
-    listIbge.set("RS-Senador Salgado Filho","4320321");
-    listIbge.set("RS-Sentinela do Sul","4320354");
-    listIbge.set("RS-Serafina Corrêa","4320404");
-    listIbge.set("RS-Sério","4320453");
-    listIbge.set("RS-Sertão","4320503");
-    listIbge.set("RS-Sertão Santana","4320552");
-    listIbge.set("RS-Sete de Setembro","4320578");
-    listIbge.set("RS-Severiano de Almeida","4320602");
-    listIbge.set("RS-Silveira Martins","4320651");
-    listIbge.set("RS-Sinimbu","4320677");
-    listIbge.set("RS-Sobradinho","4320701");
-    listIbge.set("RS-Soledade","4320800");
-    listIbge.set("RS-Tabaí","4320859");
-    listIbge.set("RS-Tapejara","4320909");
-    listIbge.set("RS-Tapera","4321006");
-    listIbge.set("RS-Tapes","4321105");
-    listIbge.set("RS-Taquara","4321204");
-    listIbge.set("RS-Taquari","4321303");
-    listIbge.set("RS-Taquaruçu do Sul","4321329");
-    listIbge.set("RS-Tavares","4321352");
-    listIbge.set("RS-Tenente Portela","4321402");
-    listIbge.set("RS-Terra de Areia","4321436");
-    listIbge.set("RS-Teutônia","4321451");
-    listIbge.set("RS-Tio Hugo","4321469");
-    listIbge.set("RS-Tiradentes do Sul","4321477");
-    listIbge.set("RS-Toropi","4321493");
-    listIbge.set("RS-Torres","4321501");
-    listIbge.set("RS-Tramandaí","4321600");
-    listIbge.set("RS-Travesseiro","4321626");
-    listIbge.set("RS-Três Arroios","4321634");
-    listIbge.set("RS-Três Cachoeiras","4321667");
-    listIbge.set("RS-Três Coroas","4321709");
-    listIbge.set("RS-Três de Maio","4321808");
-    listIbge.set("RS-Três Forquilhas","4321832");
-    listIbge.set("RS-Três Palmeiras","4321857");
-    listIbge.set("RS-Três Passos","4321907");
-    listIbge.set("RS-Trindade do Sul","4321956");
-    listIbge.set("RS-Triunfo","4322004");
-    listIbge.set("RS-Tucunduva","4322103");
-    listIbge.set("RS-Tunas","4322152");
-    listIbge.set("RS-Tupanci do Sul","4322186");
-    listIbge.set("RS-Tupanciretã","4322202");
-    listIbge.set("RS-Tupandi","4322251");
-    listIbge.set("RS-Tuparendi","4322301");
-    listIbge.set("RS-Turuçu","4322327");
-    listIbge.set("RS-Ubiretama","4322343");
-    listIbge.set("RS-União da Serra","4322350");
-    listIbge.set("RS-Unistalda","4322376");
-    listIbge.set("RS-Uruguaiana","4322400");
-    listIbge.set("RS-Vacaria","4322509");
-    listIbge.set("RS-Vale do Sol","4322533");
-    listIbge.set("RS-Vale Real","4322541");
-    listIbge.set("RS-Vale Verde","4322525");
-    listIbge.set("RS-Vanini","4322558");
-    listIbge.set("RS-Venâncio Aires","4322608");
-    listIbge.set("RS-Vera Cruz","4322707");
-    listIbge.set("RS-Veranópolis","4322806");
-    listIbge.set("RS-Vespasiano Corrêa","4322855");
-    listIbge.set("RS-Viadutos","4322905");
-    listIbge.set("RS-Viamão","4323002");
-    listIbge.set("RS-Vicente Dutra","4323101");
-    listIbge.set("RS-Victor Graeff","4323200");
-    listIbge.set("RS-Vila Flores","4323309");
-    listIbge.set("RS-Vila Lângaro","4323358");
-    listIbge.set("RS-Vila Maria","4323408");
-    listIbge.set("RS-Vila Nova do Sul","4323457");
-    listIbge.set("RS-Vista Alegre","4323507");
-    listIbge.set("RS-Vista Alegre do Prata","4323606");
-    listIbge.set("RS-Vista Gaúcha","4323705");
-    listIbge.set("RS-Vitória das Missões","4323754");
-    listIbge.set("RS-Westfália","4323770");
-    listIbge.set("RS-Xangri-lá","4323804");
-    listIbge.set("MS-Água Clara","5000203");
-    listIbge.set("MS-Alcinópolis","5000252");
-    listIbge.set("MS-Amambai","5000609");
-    listIbge.set("MS-Anastácio","5000708");
-    listIbge.set("MS-Anaurilândia","5000807");
-    listIbge.set("MS-Angélica","5000856");
-    listIbge.set("MS-Antônio João","5000906");
-    listIbge.set("MS-Aparecida do Taboado","5001003");
-    listIbge.set("MS-Aquidauana","5001102");
-    listIbge.set("MS-Aral Moreira","5001243");
-    listIbge.set("MS-Bandeirantes","5001508");
-    listIbge.set("MS-Bataguassu","5001904");
-    listIbge.set("MS-Batayporã","5002001");
-    listIbge.set("MS-Bela Vista","5002100");
-    listIbge.set("MS-Bodoquena","5002159");
-    listIbge.set("MS-Bonito","5002209");
-    listIbge.set("MS-Brasilândia","5002308");
-    listIbge.set("MS-Caarapó","5002407");
-    listIbge.set("MS-Camapuã","5002605");
-    listIbge.set("MS-Campo Grande","5002704");
-    listIbge.set("MS-Caracol","5002803");
-    listIbge.set("MS-Cassilândia","5002902");
-    listIbge.set("MS-Chapadão do Sul","5002951");
-    listIbge.set("MS-Corguinho","5003108");
-    listIbge.set("MS-Coronel Sapucaia","5003157");
-    listIbge.set("MS-Corumbá","5003207");
-    listIbge.set("MS-Costa Rica","5003256");
-    listIbge.set("MS-Coxim","5003306");
-    listIbge.set("MS-Deodápolis","5003454");
-    listIbge.set("MS-Dois Irmãos do Buriti","5003488");
-    listIbge.set("MS-Douradina","5003504");
-    listIbge.set("MS-Dourados","5003702");
-    listIbge.set("MS-Eldorado","5003751");
-    listIbge.set("MS-Fátima do Sul","5003801");
-    listIbge.set("MS-Figueirão","5003900");
-    listIbge.set("MS-Glória de Dourados","5004007");
-    listIbge.set("MS-Guia Lopes da Laguna","5004106");
-    listIbge.set("MS-Iguatemi","5004304");
-    listIbge.set("MS-Inocência","5004403");
-    listIbge.set("MS-Itaporã","5004502");
-    listIbge.set("MS-Itaquiraí","5004601");
-    listIbge.set("MS-Ivinhema","5004700");
-    listIbge.set("MS-Japorã","5004809");
-    listIbge.set("MS-Jaraguari","5004908");
-    listIbge.set("MS-Jardim","5005004");
-    listIbge.set("MS-Jateí","5005103");
-    listIbge.set("MS-Juti","5005152");
-    listIbge.set("MS-Ladário","5005202");
-    listIbge.set("MS-Laguna Carapã","5005251");
-    listIbge.set("MS-Maracaju","5005400");
-    listIbge.set("MS-Miranda","5005608");
-    listIbge.set("MS-Mundo Novo","5005681");
-    listIbge.set("MS-Naviraí","5005707");
-    listIbge.set("MS-Nioaque","5005806");
-    listIbge.set("MS-Nova Alvorada do Sul","5006002");
-    listIbge.set("MS-Nova Andradina","5006200");
-    listIbge.set("MS-Novo Horizonte do Sul","5006259");
-    listIbge.set("MS-Paraíso das Águas","5006275");
-    listIbge.set("MS-Paranaíba","5006309");
-    listIbge.set("MS-Paranhos","5006358");
-    listIbge.set("MS-Pedro Gomes","5006408");
-    listIbge.set("MS-Ponta Porã","5006606");
-    listIbge.set("MS-Porto Murtinho","5006903");
-    listIbge.set("MS-Ribas do Rio Pardo","5007109");
-    listIbge.set("MS-Rio Brilhante","5007208");
-    listIbge.set("MS-Rio Negro","5007307");
-    listIbge.set("MS-Rio Verde de Mato Grosso","5007406");
-    listIbge.set("MS-Rochedo","5007505");
-    listIbge.set("MS-Santa Rita do Pardo","5007554");
-    listIbge.set("MS-São Gabriel do Oeste","5007695");
-    listIbge.set("MS-Selvíria","5007802");
-    listIbge.set("MS-Sete Quedas","5007703");
-    listIbge.set("MS-Sidrolândia","5007901");
-    listIbge.set("MS-Sonora","5007935");
-    listIbge.set("MS-Tacuru","5007950");
-    listIbge.set("MS-Taquarussu","5007976");
-    listIbge.set("MS-Terenos","5008008");
-    listIbge.set("MS-Três Lagoas","5008305");
-    listIbge.set("MS-Vicentina","5008404");
-    listIbge.set("MT-Acorizal","5100102");
-    listIbge.set("MT-Água Boa","5100201");
-    listIbge.set("MT-Alta Floresta","5100250");
-    listIbge.set("MT-Alto Araguaia","5100300");
-    listIbge.set("MT-Alto Boa Vista","5100359");
-    listIbge.set("MT-Alto Garças","5100409");
-    listIbge.set("MT-Alto Paraguai","5100508");
-    listIbge.set("MT-Alto Taquari","5100607");
-    listIbge.set("MT-Apiacás","5100805");
-    listIbge.set("MT-Araguaiana","5101001");
-    listIbge.set("MT-Araguainha","5101209");
-    listIbge.set("MT-Araputanga","5101258");
-    listIbge.set("MT-Arenápolis","5101308");
-    listIbge.set("MT-Aripuanã","5101407");
-    listIbge.set("MT-Barão de Melgaço","5101605");
-    listIbge.set("MT-Barra do Bugres","5101704");
-    listIbge.set("MT-Barra do Garças","5101803");
-    listIbge.set("MT-Bom Jesus do Araguaia","5101852");
-    listIbge.set("MT-Brasnorte","5101902");
-    listIbge.set("MT-Cáceres","5102504");
-    listIbge.set("MT-Campinápolis","5102603");
-    listIbge.set("MT-Campo Novo do Parecis","5102637");
-    listIbge.set("MT-Campo Verde","5102678");
-    listIbge.set("MT-Campos de Júlio","5102686");
-    listIbge.set("MT-Canabrava do Norte","5102694");
-    listIbge.set("MT-Canarana","5102702");
-    listIbge.set("MT-Carlinda","5102793");
-    listIbge.set("MT-Castanheira","5102850");
-    listIbge.set("MT-Chapada dos Guimarães","5103007");
-    listIbge.set("MT-Cláudia","5103056");
-    listIbge.set("MT-Cocalinho","5103106");
-    listIbge.set("MT-Colíder","5103205");
-    listIbge.set("MT-Colniza","5103254");
-    listIbge.set("MT-Comodoro","5103304");
-    listIbge.set("MT-Confresa","5103353");
-    listIbge.set("MT-Conquista D'Oeste","5103361");
-    listIbge.set("MT-Cotriguaçu","5103379");
-    listIbge.set("MT-Cuiabá","5103403");
-    listIbge.set("MT-Curvelândia","5103437");
-    listIbge.set("MT-Denise","5103452");
-    listIbge.set("MT-Diamantino","5103502");
-    listIbge.set("MT-Dom Aquino","5103601");
-    listIbge.set("MT-Feliz Natal","5103700");
-    listIbge.set("MT-Figueirópolis D'Oeste","5103809");
-    listIbge.set("MT-Gaúcha do Norte","5103858");
-    listIbge.set("MT-General Carneiro","5103908");
-    listIbge.set("MT-Glória D'Oeste","5103957");
-    listIbge.set("MT-Guarantã do Norte","5104104");
-    listIbge.set("MT-Guiratinga","5104203");
-    listIbge.set("MT-Indiavaí","5104500");
-    listIbge.set("MT-Ipiranga do Norte","5104526");
-    listIbge.set("MT-Itanhangá","5104542");
-    listIbge.set("MT-Itaúba","5104559");
-    listIbge.set("MT-Itiquira","5104609");
-    listIbge.set("MT-Jaciara","5104807");
-    listIbge.set("MT-Jangada","5104906");
-    listIbge.set("MT-Jauru","5105002");
-    listIbge.set("MT-Juara","5105101");
-    listIbge.set("MT-Juína","5105150");
-    listIbge.set("MT-Juruena","5105176");
-    listIbge.set("MT-Juscimeira","5105200");
-    listIbge.set("MT-Lambari D'Oeste","5105234");
-    listIbge.set("MT-Lucas do Rio Verde","5105259");
-    listIbge.set("MT-Luciara","5105309");
-    listIbge.set("MT-Marcelândia","5105580");
-    listIbge.set("MT-Matupá","5105606");
-    listIbge.set("MT-Mirassol d'Oeste","5105622");
-    listIbge.set("MT-Nobres","5105903");
-    listIbge.set("MT-Nortelândia","5106000");
-    listIbge.set("MT-Nossa Senhora do Livramento","5106109");
-    listIbge.set("MT-Nova Bandeirantes","5106158");
-    listIbge.set("MT-Nova Brasilândia","5106208");
-    listIbge.set("MT-Nova Canaã do Norte","5106216");
-    listIbge.set("MT-Nova Guarita","5108808");
-    listIbge.set("MT-Nova Lacerda","5106182");
-    listIbge.set("MT-Nova Marilândia","5108857");
-    listIbge.set("MT-Nova Maringá","5108907");
-    listIbge.set("MT-Nova Monte Verde","5108956");
-    listIbge.set("MT-Nova Mutum","5106224");
-    listIbge.set("MT-Nova Nazaré","5106174");
-    listIbge.set("MT-Nova Olímpia","5106232");
-    listIbge.set("MT-Nova Santa Helena","5106190");
-    listIbge.set("MT-Nova Ubiratã","5106240");
-    listIbge.set("MT-Nova Xavantina","5106257");
-    listIbge.set("MT-Novo Horizonte do Norte","5106273");
-    listIbge.set("MT-Novo Mundo","5106265");
-    listIbge.set("MT-Novo Santo Antônio","5106315");
-    listIbge.set("MT-Novo São Joaquim","5106281");
-    listIbge.set("MT-Paranaíta","5106299");
-    listIbge.set("MT-Paranatinga","5106307");
-    listIbge.set("MT-Pedra Preta","5106372");
-    listIbge.set("MT-Peixoto de Azevedo","5106422");
-    listIbge.set("MT-Planalto da Serra","5106455");
-    listIbge.set("MT-Poconé","5106505");
-    listIbge.set("MT-Pontal do Araguaia","5106653");
-    listIbge.set("MT-Ponte Branca","5106703");
-    listIbge.set("MT-Pontes e Lacerda","5106752");
-    listIbge.set("MT-Porto Alegre do Norte","5106778");
-    listIbge.set("MT-Porto dos Gaúchos","5106802");
-    listIbge.set("MT-Porto Esperidião","5106828");
-    listIbge.set("MT-Porto Estrela","5106851");
-    listIbge.set("MT-Poxoréu","5107008");
-    listIbge.set("MT-Primavera do Leste","5107040");
-    listIbge.set("MT-Querência","5107065");
-    listIbge.set("MT-Reserva do Cabaçal","5107156");
-    listIbge.set("MT-Ribeirão Cascalheira","5107180");
-    listIbge.set("MT-Ribeirãozinho","5107198");
-    listIbge.set("MT-Rio Branco","5107206");
-    listIbge.set("MT-Rondolândia","5107578");
-    listIbge.set("MT-Rondonópolis","5107602");
-    listIbge.set("MT-Rosário Oeste","5107701");
-    listIbge.set("MT-Salto do Céu","5107750");
-    listIbge.set("MT-Santa Carmem","5107248");
-    listIbge.set("MT-Santa Cruz do Xingu","5107743");
-    listIbge.set("MT-Santa Rita do Trivelato","5107768");
-    listIbge.set("MT-Santa Terezinha","5107776");
-    listIbge.set("MT-Santo Afonso","5107263");
-    listIbge.set("MT-Santo Antônio do Leste","5107792");
-    listIbge.set("MT-Santo Antônio do Leverger","5107800");
-    listIbge.set("MT-São Félix do Araguaia","5107859");
-    listIbge.set("MT-São José do Povo","5107297");
-    listIbge.set("MT-São José do Rio Claro","5107305");
-    listIbge.set("MT-São José do Xingu","5107354");
-    listIbge.set("MT-São José dos Quatro Marcos","5107107");
-    listIbge.set("MT-São Pedro da Cipa","5107404");
-    listIbge.set("MT-Sapezal","5107875");
-    listIbge.set("MT-Serra Nova Dourada","5107883");
-    listIbge.set("MT-Sinop","5107909");
-    listIbge.set("MT-Sorriso","5107925");
-    listIbge.set("MT-Tabaporã","5107941");
-    listIbge.set("MT-Tangará da Serra","5107958");
-    listIbge.set("MT-Tapurah","5108006");
-    listIbge.set("MT-Terra Nova do Norte","5108055");
-    listIbge.set("MT-Tesouro","5108105");
-    listIbge.set("MT-Torixoréu","5108204");
-    listIbge.set("MT-União do Sul","5108303");
-    listIbge.set("MT-Vale de São Domingos","5108352");
-    listIbge.set("MT-Várzea Grande","5108402");
-    listIbge.set("MT-Vera","5108501");
-    listIbge.set("MT-Vila Bela da Santíssima Trindade","5105507");
-    listIbge.set("MT-Vila Rica","5108600");
-    listIbge.set("GO-Abadia de Goiás","5200050");
-    listIbge.set("GO-Abadiânia","5200100");
-    listIbge.set("GO-Acreúna","5200134");
-    listIbge.set("GO-Adelândia","5200159");
-    listIbge.set("GO-Água Fria de Goiás","5200175");
-    listIbge.set("GO-Água Limpa","5200209");
-    listIbge.set("GO-Águas Lindas de Goiás","5200258");
-    listIbge.set("GO-Alexânia","5200308");
-    listIbge.set("GO-Aloândia","5200506");
-    listIbge.set("GO-Alto Horizonte","5200555");
-    listIbge.set("GO-Alto Paraíso de Goiás","5200605");
-    listIbge.set("GO-Alvorada do Norte","5200803");
-    listIbge.set("GO-Amaralina","5200829");
-    listIbge.set("GO-Americano do Brasil","5200852");
-    listIbge.set("GO-Amorinópolis","5200902");
-    listIbge.set("GO-Anápolis","5201108");
-    listIbge.set("GO-Anhanguera","5201207");
-    listIbge.set("GO-Anicuns","5201306");
-    listIbge.set("GO-Aparecida de Goiânia","5201405");
-    listIbge.set("GO-Aparecida do Rio Doce","5201454");
-    listIbge.set("GO-Aporé","5201504");
-    listIbge.set("GO-Araçu","5201603");
-    listIbge.set("GO-Aragarças","5201702");
-    listIbge.set("GO-Aragoiânia","5201801");
-    listIbge.set("GO-Araguapaz","5202155");
-    listIbge.set("GO-Arenópolis","5202353");
-    listIbge.set("GO-Aruanã","5202502");
-    listIbge.set("GO-Aurilândia","5202601");
-    listIbge.set("GO-Avelinópolis","5202809");
-    listIbge.set("GO-Baliza","5203104");
-    listIbge.set("GO-Barro Alto","5203203");
-    listIbge.set("GO-Bela Vista de Goiás","5203302");
-    listIbge.set("GO-Bom Jardim de Goiás","5203401");
-    listIbge.set("GO-Bom Jesus de Goiás","5203500");
-    listIbge.set("GO-Bonfinópolis","5203559");
-    listIbge.set("GO-Bonópolis","5203575");
-    listIbge.set("GO-Brazabrantes","5203609");
-    listIbge.set("GO-Britânia","5203807");
-    listIbge.set("GO-Buriti Alegre","5203906");
-    listIbge.set("GO-Buriti de Goiás","5203939");
-    listIbge.set("GO-Buritinópolis","5203962");
-    listIbge.set("GO-Cabeceiras","5204003");
-    listIbge.set("GO-Cachoeira Alta","5204102");
-    listIbge.set("GO-Cachoeira de Goiás","5204201");
-    listIbge.set("GO-Cachoeira Dourada","5204250");
-    listIbge.set("GO-Caçu","5204300");
-    listIbge.set("GO-Caiapônia","5204409");
-    listIbge.set("GO-Caldas Novas","5204508");
-    listIbge.set("GO-Caldazinha","5204557");
-    listIbge.set("GO-Campestre de Goiás","5204607");
-    listIbge.set("GO-Campinaçu","5204656");
-    listIbge.set("GO-Campinorte","5204706");
-    listIbge.set("GO-Campo Alegre de Goiás","5204805");
-    listIbge.set("GO-Campo Limpo de Goiás","5204854");
-    listIbge.set("GO-Campos Belos","5204904");
-    listIbge.set("GO-Campos Verdes","5204953");
-    listIbge.set("GO-Carmo do Rio Verde","5205000");
-    listIbge.set("GO-Castelândia","5205059");
-    listIbge.set("GO-Catalão","5205109");
-    listIbge.set("GO-Caturaí","5205208");
-    listIbge.set("GO-Cavalcante","5205307");
-    listIbge.set("GO-Ceres","5205406");
-    listIbge.set("GO-Cezarina","5205455");
-    listIbge.set("GO-Chapadão do Céu","5205471");
-    listIbge.set("GO-Cidade Ocidental","5205497");
-    listIbge.set("GO-Cocalzinho de Goiás","5205513");
-    listIbge.set("GO-Colinas do Sul","5205521");
-    listIbge.set("GO-Córrego do Ouro","5205703");
-    listIbge.set("GO-Corumbá de Goiás","5205802");
-    listIbge.set("GO-Corumbaíba","5205901");
-    listIbge.set("GO-Cristalina","5206206");
-    listIbge.set("GO-Cristianópolis","5206305");
-    listIbge.set("GO-Crixás","5206404");
-    listIbge.set("GO-Cromínia","5206503");
-    listIbge.set("GO-Cumari","5206602");
-    listIbge.set("GO-Damianópolis","5206701");
-    listIbge.set("GO-Damolândia","5206800");
-    listIbge.set("GO-Davinópolis","5206909");
-    listIbge.set("GO-Diorama","5207105");
-    listIbge.set("GO-Divinópolis de Goiás","5208301");
-    listIbge.set("GO-Doverlândia","5207253");
-    listIbge.set("GO-Edealina","5207352");
-    listIbge.set("GO-Edéia","5207402");
-    listIbge.set("GO-Estrela do Norte","5207501");
-    listIbge.set("GO-Faina","5207535");
-    listIbge.set("GO-Fazenda Nova","5207600");
-    listIbge.set("GO-Firminópolis","5207808");
-    listIbge.set("GO-Flores de Goiás","5207907");
-    listIbge.set("GO-Formosa","5208004");
-    listIbge.set("GO-Formoso","5208103");
-    listIbge.set("GO-Gameleira de Goiás","5208152");
-    listIbge.set("GO-Goianápolis","5208400");
-    listIbge.set("GO-Goiandira","5208509");
-    listIbge.set("GO-Goianésia","5208608");
-    listIbge.set("GO-Goiânia","5208707");
-    listIbge.set("GO-Goianira","5208806");
-    listIbge.set("GO-Goiás","5208905");
-    listIbge.set("GO-Goiatuba","5209101");
-    listIbge.set("GO-Gouvelândia","5209150");
-    listIbge.set("GO-Guapó","5209200");
-    listIbge.set("GO-Guaraíta","5209291");
-    listIbge.set("GO-Guarani de Goiás","5209408");
-    listIbge.set("GO-Guarinos","5209457");
-    listIbge.set("GO-Heitoraí","5209606");
-    listIbge.set("GO-Hidrolândia","5209705");
-    listIbge.set("GO-Hidrolina","5209804");
-    listIbge.set("GO-Iaciara","5209903");
-    listIbge.set("GO-Inaciolândia","5209937");
-    listIbge.set("GO-Indiara","5209952");
-    listIbge.set("GO-Inhumas","5210000");
-    listIbge.set("GO-Ipameri","5210109");
-    listIbge.set("GO-Ipiranga de Goiás","5210158");
-    listIbge.set("GO-Iporá","5210208");
-    listIbge.set("GO-Israelândia","5210307");
-    listIbge.set("GO-Itaberaí","5210406");
-    listIbge.set("GO-Itaguari","5210562");
-    listIbge.set("GO-Itaguaru","5210604");
-    listIbge.set("GO-Itajá","5210802");
-    listIbge.set("GO-Itapaci","5210901");
-    listIbge.set("GO-Itapirapuã","5211008");
-    listIbge.set("GO-Itapuranga","5211206");
-    listIbge.set("GO-Itarumã","5211305");
-    listIbge.set("GO-Itauçu","5211404");
-    listIbge.set("GO-Itumbiara","5211503");
-    listIbge.set("GO-Ivolândia","5211602");
-    listIbge.set("GO-Jandaia","5211701");
-    listIbge.set("GO-Jaraguá","5211800");
-    listIbge.set("GO-Jataí","5211909");
-    listIbge.set("GO-Jaupaci","5212006");
-    listIbge.set("GO-Jesúpolis","5212055");
-    listIbge.set("GO-Joviânia","5212105");
-    listIbge.set("GO-Jussara","5212204");
-    listIbge.set("GO-Lagoa Santa","5212253");
-    listIbge.set("GO-Leopoldo de Bulhões","5212303");
-    listIbge.set("GO-Luziânia","5212501");
-    listIbge.set("GO-Mairipotaba","5212600");
-    listIbge.set("GO-Mambaí","5212709");
-    listIbge.set("GO-Mara Rosa","5212808");
-    listIbge.set("GO-Marzagão","5212907");
-    listIbge.set("GO-Matrinchã","5212956");
-    listIbge.set("GO-Maurilândia","5213004");
-    listIbge.set("GO-Mimoso de Goiás","5213053");
-    listIbge.set("GO-Minaçu","5213087");
-    listIbge.set("GO-Mineiros","5213103");
-    listIbge.set("GO-Moiporá","5213400");
-    listIbge.set("GO-Monte Alegre de Goiás","5213509");
-    listIbge.set("GO-Montes Claros de Goiás","5213707");
-    listIbge.set("GO-Montividiu","5213756");
-    listIbge.set("GO-Montividiu do Norte","5213772");
-    listIbge.set("GO-Morrinhos","5213806");
-    listIbge.set("GO-Morro Agudo de Goiás","5213855");
-    listIbge.set("GO-Mossâmedes","5213905");
-    listIbge.set("GO-Mozarlândia","5214002");
-    listIbge.set("GO-Mundo Novo","5214051");
-    listIbge.set("GO-Mutunópolis","5214101");
-    listIbge.set("GO-Nazário","5214408");
-    listIbge.set("GO-Nerópolis","5214507");
-    listIbge.set("GO-Niquelândia","5214606");
-    listIbge.set("GO-Nova América","5214705");
-    listIbge.set("GO-Nova Aurora","5214804");
-    listIbge.set("GO-Nova Crixás","5214838");
-    listIbge.set("GO-Nova Glória","5214861");
-    listIbge.set("GO-Nova Iguaçu de Goiás","5214879");
-    listIbge.set("GO-Nova Roma","5214903");
-    listIbge.set("GO-Nova Veneza","5215009");
-    listIbge.set("GO-Novo Brasil","5215207");
-    listIbge.set("GO-Novo Gama","5215231");
-    listIbge.set("GO-Novo Planalto","5215256");
-    listIbge.set("GO-Orizona","5215306");
-    listIbge.set("GO-Ouro Verde de Goiás","5215405");
-    listIbge.set("GO-Ouvidor","5215504");
-    listIbge.set("GO-Padre Bernardo","5215603");
-    listIbge.set("GO-Palestina de Goiás","5215652");
-    listIbge.set("GO-Palmeiras de Goiás","5215702");
-    listIbge.set("GO-Palmelo","5215801");
-    listIbge.set("GO-Palminópolis","5215900");
-    listIbge.set("GO-Panamá","5216007");
-    listIbge.set("GO-Paranaiguara","5216304");
-    listIbge.set("GO-Paraúna","5216403");
-    listIbge.set("GO-Perolândia","5216452");
-    listIbge.set("GO-Petrolina de Goiás","5216809");
-    listIbge.set("GO-Pilar de Goiás","5216908");
-    listIbge.set("GO-Piracanjuba","5217104");
-    listIbge.set("GO-Piranhas","5217203");
-    listIbge.set("GO-Pirenópolis","5217302");
-    listIbge.set("GO-Pires do Rio","5217401");
-    listIbge.set("GO-Planaltina","5217609");
-    listIbge.set("GO-Pontalina","5217708");
-    listIbge.set("GO-Porangatu","5218003");
-    listIbge.set("GO-Porteirão","5218052");
-    listIbge.set("GO-Portelândia","5218102");
-    listIbge.set("GO-Posse","5218300");
-    listIbge.set("GO-Professor Jamil","5218391");
-    listIbge.set("GO-Quirinópolis","5218508");
-    listIbge.set("GO-Rialma","5218607");
-    listIbge.set("GO-Rianápolis","5218706");
-    listIbge.set("GO-Rio Quente","5218789");
-    listIbge.set("GO-Rio Verde","5218805");
-    listIbge.set("GO-Rubiataba","5218904");
-    listIbge.set("GO-Sanclerlândia","5219001");
-    listIbge.set("GO-Santa Bárbara de Goiás","5219100");
-    listIbge.set("GO-Santa Cruz de Goiás","5219209");
-    listIbge.set("GO-Santa Fé de Goiás","5219258");
-    listIbge.set("GO-Santa Helena de Goiás","5219308");
-    listIbge.set("GO-Santa Isabel","5219357");
-    listIbge.set("GO-Santa Rita do Araguaia","5219407");
-    listIbge.set("GO-Santa Rita do Novo Destino","5219456");
-    listIbge.set("GO-Santa Rosa de Goiás","5219506");
-    listIbge.set("GO-Santa Tereza de Goiás","5219605");
-    listIbge.set("GO-Santa Terezinha de Goiás","5219704");
-    listIbge.set("GO-Santo Antônio da Barra","5219712");
-    listIbge.set("GO-Santo Antônio de Goiás","5219738");
-    listIbge.set("GO-Santo Antônio do Descoberto","5219753");
-    listIbge.set("GO-São Domingos","5219803");
-    listIbge.set("GO-São Francisco de Goiás","5219902");
-    listIbge.set("GO-São João da Paraúna","5220058");
-    listIbge.set("GO-São João d'Aliança","5220009");
-    listIbge.set("GO-São Luís de Montes Belos","5220108");
-    listIbge.set("GO-São Luiz do Norte","5220157");
-    listIbge.set("GO-São Miguel do Araguaia","5220207");
-    listIbge.set("GO-São Miguel do Passa Quatro","5220264");
-    listIbge.set("GO-São Patrício","5220280");
-    listIbge.set("GO-São Simão","5220405");
-    listIbge.set("GO-Senador Canedo","5220454");
-    listIbge.set("GO-Serranópolis","5220504");
-    listIbge.set("GO-Silvânia","5220603");
-    listIbge.set("GO-Simolândia","5220686");
-    listIbge.set("GO-Sítio d'Abadia","5220702");
-    listIbge.set("GO-Taquaral de Goiás","5221007");
-    listIbge.set("GO-Teresina de Goiás","5221080");
-    listIbge.set("GO-Terezópolis de Goiás","5221197");
-    listIbge.set("GO-Três Ranchos","5221304");
-    listIbge.set("GO-Trindade","5221403");
-    listIbge.set("GO-Trombas","5221452");
-    listIbge.set("GO-Turvânia","5221502");
-    listIbge.set("GO-Turvelândia","5221551");
-    listIbge.set("GO-Uirapuru","5221577");
-    listIbge.set("GO-Uruaçu","5221601");
-    listIbge.set("GO-Uruana","5221700");
-    listIbge.set("GO-Urutaí","5221809");
-    listIbge.set("GO-Valparaíso de Goiás","5221858");
-    listIbge.set("GO-Varjão","5221908");
-    listIbge.set("GO-Vianópolis","5222005");
-    listIbge.set("GO-Vicentinópolis","5222054");
-    listIbge.set("GO-Vila Boa","5222203");
-    listIbge.set("GO-Vila Propício","5222302");
-    listIbge.set("DF-Brasília","5300108");
+    const listIbge = new Map()
+    listIbge.set('RO-Alto Alegre dos Parecis', '1100379')
+    listIbge.set('RO-Alto Paraíso', '1100403')
+    listIbge.set('RO-Ariquemes', '1100023')
+    listIbge.set('RO-Buritis', '1100452')
+    listIbge.set('RO-Cabixi', '1100031')
+    listIbge.set('RO-Cacaulândia', '1100601')
+    listIbge.set('RO-Cacoal', '1100049')
+    listIbge.set('RO-Campo Novo de Rondônia', '1100700')
+    listIbge.set('RO-Candeias do Jamari', '1100809')
+    listIbge.set('RO-Castanheiras', '1100908')
+    listIbge.set('RO-Cerejeiras', '1100056')
+    listIbge.set('RO-Chupinguaia', '1100924')
+    listIbge.set('RO-Colorado do Oeste', '1100064')
+    listIbge.set('RO-Corumbiara', '1100072')
+    listIbge.set('RO-Costa Marques', '1100080')
+    listIbge.set('RO-Cujubim', '1100940')
+    listIbge.set('RO-Governador Jorge Teixeira', '1101005')
+    listIbge.set('RO-Guajará-Mirim', '1100106')
+    listIbge.set('RO-Itapuã do Oeste', '1101104')
+    listIbge.set('RO-Jaru', '1100114')
+    listIbge.set('RO-Ji-Paraná', '1100122')
+    listIbge.set('RO-Ministro Andreazza', '1101203')
+    listIbge.set('RO-Mirante da Serra', '1101302')
+    listIbge.set('RO-Monte Negro', '1101401')
+    listIbge.set('RO-Nova Mamoré', '1100338')
+    listIbge.set('RO-Nova União', '1101435')
+    listIbge.set('RO-Novo Horizonte do Oeste', '1100502')
+    listIbge.set('RO-Ouro Preto do Oeste', '1100155')
+    listIbge.set('RO-Parecis', '1101450')
+    listIbge.set('RO-Pimenta Bueno', '1100189')
+    listIbge.set('RO-Pimenteiras do Oeste', '1101468')
+    listIbge.set('RO-Porto Velho', '1100205')
+    listIbge.set('RO-Presidente Médici', '1100254')
+    listIbge.set('RO-Primavera de Rondônia', '1101476')
+    listIbge.set('RO-Rio Crespo', '1100262')
+    listIbge.set('RO-Rolim de Moura', '1100288')
+    listIbge.set('RO-São Francisco do Guaporé', '1101492')
+    listIbge.set('RO-São Miguel do Guaporé', '1100320')
+    listIbge.set('RO-Seringueiras', '1101500')
+    listIbge.set('RO-Teixeirópolis', '1101559')
+    listIbge.set('RO-Theobroma', '1101609')
+    listIbge.set('RO-Urupá', '1101708')
+    listIbge.set('RO-Vale do Anari', '1101757')
+    listIbge.set('RO-Vale do Paraíso', '1101807')
+    listIbge.set('RO-Vilhena', '1100304')
+    listIbge.set('AC-Acrelândia', '1200013')
+    listIbge.set('AC-Assis Brasil', '1200054')
+    listIbge.set('AC-Brasiléia', '1200104')
+    listIbge.set('AC-Bujari', '1200138')
+    listIbge.set('AC-Capixaba', '1200179')
+    listIbge.set('AC-Cruzeiro do Sul', '1200203')
+    listIbge.set('AC-Epitaciolândia', '1200252')
+    listIbge.set('AC-Feijó', '1200302')
+    listIbge.set('AC-Jordão', '1200328')
+    listIbge.set('AC-Mâncio Lima', '1200336')
+    listIbge.set('AC-Manoel Urbano', '1200344')
+    listIbge.set('AC-Marechal Thaumaturgo', '1200351')
+    listIbge.set('AC-Plácido de Castro', '1200385')
+    listIbge.set('AC-Porto Acre', '1200807')
+    listIbge.set('AC-Porto Walter', '1200393')
+    listIbge.set('AC-Rio Branco', '1200401')
+    listIbge.set('AC-Rodrigues Alves', '1200427')
+    listIbge.set('AC-Santa Rosa do Purus', '1200435')
+    listIbge.set('AC-Sena Madureira', '1200500')
+    listIbge.set('AC-Senador Guiomard', '1200450')
+    listIbge.set('AC-Tarauacá', '1200609')
+    listIbge.set('AC-Xapuri', '1200708')
+    listIbge.set('AM-Alvarães', '1300029')
+    listIbge.set('AM-Amaturá', '1300060')
+    listIbge.set('AM-Anamã', '1300086')
+    listIbge.set('AM-Anori', '1300102')
+    listIbge.set('AM-Apuí', '1300144')
+    listIbge.set('AM-Atalaia do Norte', '1300201')
+    listIbge.set('AM-Autazes', '1300300')
+    listIbge.set('AM-Barcelos', '1300409')
+    listIbge.set('AM-Barreirinha', '1300508')
+    listIbge.set('AM-Benjamin Constant', '1300607')
+    listIbge.set('AM-Beruri', '1300631')
+    listIbge.set('AM-Boa Vista do Ramos', '1300680')
+    listIbge.set('AM-Boca do Acre', '1300706')
+    listIbge.set('AM-Borba', '1300805')
+    listIbge.set('AM-Caapiranga', '1300839')
+    listIbge.set('AM-Canutama', '1300904')
+    listIbge.set('AM-Carauari', '1301001')
+    listIbge.set('AM-Careiro', '1301100')
+    listIbge.set('AM-Careiro da Várzea', '1301159')
+    listIbge.set('AM-Coari', '1301209')
+    listIbge.set('AM-Codajás', '1301308')
+    listIbge.set('AM-Eirunepé', '1301407')
+    listIbge.set('AM-Envira', '1301506')
+    listIbge.set('AM-Fonte Boa', '1301605')
+    listIbge.set('AM-Guajará', '1301654')
+    listIbge.set('AM-Humaitá', '1301704')
+    listIbge.set('AM-Ipixuna', '1301803')
+    listIbge.set('AM-Iranduba', '1301852')
+    listIbge.set('AM-Itacoatiara', '1301902')
+    listIbge.set('AM-Itamarati', '1301951')
+    listIbge.set('AM-Itapiranga', '1302009')
+    listIbge.set('AM-Japurá', '1302108')
+    listIbge.set('AM-Juruá', '1302207')
+    listIbge.set('AM-Jutaí', '1302306')
+    listIbge.set('AM-Lábrea', '1302405')
+    listIbge.set('AM-Manacapuru', '1302504')
+    listIbge.set('AM-Manaquiri', '1302553')
+    listIbge.set('AM-Manaus', '1302603')
+    listIbge.set('AM-Manicoré', '1302702')
+    listIbge.set('AM-Maraã', '1302801')
+    listIbge.set('AM-Maués', '1302900')
+    listIbge.set('AM-Nhamundá', '1303007')
+    listIbge.set('AM-Nova Olinda do Norte', '1303106')
+    listIbge.set('AM-Novo Airão', '1303205')
+    listIbge.set('AM-Novo Aripuanã', '1303304')
+    listIbge.set('AM-Parintins', '1303403')
+    listIbge.set('AM-Pauini', '1303502')
+    listIbge.set('AM-Presidente Figueiredo', '1303536')
+    listIbge.set('AM-Rio Preto da Eva', '1303569')
+    listIbge.set('AM-Santa Isabel do Rio Negro', '1303601')
+    listIbge.set('AM-Santo Antônio do Içá', '1303700')
+    listIbge.set('AM-São Gabriel da Cachoeira', '1303809')
+    listIbge.set('AM-São Paulo de Olivença', '1303908')
+    listIbge.set('AM-São Sebastião do Uatumã', '1303957')
+    listIbge.set('AM-Silves', '1304005')
+    listIbge.set('AM-Tabatinga', '1304062')
+    listIbge.set('AM-Tapauá', '1304104')
+    listIbge.set('AM-Tefé', '1304203')
+    listIbge.set('AM-Tonantins', '1304237')
+    listIbge.set('AM-Uarini', '1304260')
+    listIbge.set('AM-Urucará', '1304302')
+    listIbge.set('AM-Urucurituba', '1304401')
+    listIbge.set('RR-Alto Alegre', '1400050')
+    listIbge.set('RR-Amajari', '1400027')
+    listIbge.set('RR-Boa Vista', '1400100')
+    listIbge.set('RR-Bonfim', '1400159')
+    listIbge.set('RR-Cantá', '1400175')
+    listIbge.set('RR-Caracaraí', '1400209')
+    listIbge.set('RR-Caroebe', '1400233')
+    listIbge.set('RR-Iracema', '1400282')
+    listIbge.set('RR-Mucajaí', '1400308')
+    listIbge.set('RR-Normandia', '1400407')
+    listIbge.set('RR-Pacaraima', '1400456')
+    listIbge.set('RR-Rorainópolis', '1400472')
+    listIbge.set('RR-São João da Baliza', '1400506')
+    listIbge.set('RR-São Luiz', '1400605')
+    listIbge.set('RR-Uiramutã', '1400704')
+    listIbge.set('PA-Abaetetuba', '1500107')
+    listIbge.set('PA-Abel Figueiredo', '1500131')
+    listIbge.set('PA-Acará', '1500206')
+    listIbge.set('PA-Afuá', '1500305')
+    listIbge.set('PA-Água Azul do Norte', '1500347')
+    listIbge.set('PA-Alenquer', '1500404')
+    listIbge.set('PA-Almeirim', '1500503')
+    listIbge.set('PA-Altamira', '1500602')
+    listIbge.set('PA-Anajás', '1500701')
+    listIbge.set('PA-Ananindeua', '1500800')
+    listIbge.set('PA-Anapu', '1500859')
+    listIbge.set('PA-Augusto Corrêa', '1500909')
+    listIbge.set('PA-Aurora do Pará', '1500958')
+    listIbge.set('PA-Aveiro', '1501006')
+    listIbge.set('PA-Bagre', '1501105')
+    listIbge.set('PA-Baião', '1501204')
+    listIbge.set('PA-Bannach', '1501253')
+    listIbge.set('PA-Barcarena', '1501303')
+    listIbge.set('PA-Belém', '1501402')
+    listIbge.set('PA-Belterra', '1501451')
+    listIbge.set('PA-Benevides', '1501501')
+    listIbge.set('PA-Bom Jesus do Tocantins', '1501576')
+    listIbge.set('PA-Bonito', '1501600')
+    listIbge.set('PA-Bragança', '1501709')
+    listIbge.set('PA-Brasil Novo', '1501725')
+    listIbge.set('PA-Brejo Grande do Araguaia', '1501758')
+    listIbge.set('PA-Breu Branco', '1501782')
+    listIbge.set('PA-Breves', '1501808')
+    listIbge.set('PA-Bujaru', '1501907')
+    listIbge.set('PA-Cachoeira do Arari', '1502004')
+    listIbge.set('PA-Cachoeira do Piriá', '1501956')
+    listIbge.set('PA-Cametá', '1502103')
+    listIbge.set('PA-Canaã dos Carajás', '1502152')
+    listIbge.set('PA-Capanema', '1502202')
+    listIbge.set('PA-Capitão Poço', '1502301')
+    listIbge.set('PA-Castanhal', '1502400')
+    listIbge.set('PA-Chaves', '1502509')
+    listIbge.set('PA-Colares', '1502608')
+    listIbge.set('PA-Conceição do Araguaia', '1502707')
+    listIbge.set('PA-Concórdia do Pará', '1502756')
+    listIbge.set('PA-Cumaru do Norte', '1502764')
+    listIbge.set('PA-Curionópolis', '1502772')
+    listIbge.set('PA-Curralinho', '1502806')
+    listIbge.set('PA-Curuá', '1502855')
+    listIbge.set('PA-Curuçá', '1502905')
+    listIbge.set('PA-Dom Eliseu', '1502939')
+    listIbge.set('PA-Eldorado do Carajás', '1502954')
+    listIbge.set('PA-Faro', '1503002')
+    listIbge.set('PA-Floresta do Araguaia', '1503044')
+    listIbge.set('PA-Garrafão do Norte', '1503077')
+    listIbge.set('PA-Goianésia do Pará', '1503093')
+    listIbge.set('PA-Gurupá', '1503101')
+    listIbge.set('PA-Igarapé-Açu', '1503200')
+    listIbge.set('PA-Igarapé-Miri', '1503309')
+    listIbge.set('PA-Inhangapi', '1503408')
+    listIbge.set('PA-Ipixuna do Pará', '1503457')
+    listIbge.set('PA-Irituia', '1503507')
+    listIbge.set('PA-Itaituba', '1503606')
+    listIbge.set('PA-Itupiranga', '1503705')
+    listIbge.set('PA-Jacareacanga', '1503754')
+    listIbge.set('PA-Jacundá', '1503804')
+    listIbge.set('PA-Juruti', '1503903')
+    listIbge.set('PA-Limoeiro do Ajuru', '1504000')
+    listIbge.set('PA-Mãe do Rio', '1504059')
+    listIbge.set('PA-Magalhães Barata', '1504109')
+    listIbge.set('PA-Marabá', '1504208')
+    listIbge.set('PA-Maracanã', '1504307')
+    listIbge.set('PA-Marapanim', '1504406')
+    listIbge.set('PA-Marituba', '1504422')
+    listIbge.set('PA-Medicilândia', '1504455')
+    listIbge.set('PA-Melgaço', '1504505')
+    listIbge.set('PA-Mocajuba', '1504604')
+    listIbge.set('PA-Moju', '1504703')
+    listIbge.set('PA-Mojuí dos Campos', '1504752')
+    listIbge.set('PA-Monte Alegre', '1504802')
+    listIbge.set('PA-Muaná', '1504901')
+    listIbge.set('PA-Nova Esperança do Piriá', '1504950')
+    listIbge.set('PA-Nova Ipixuna', '1504976')
+    listIbge.set('PA-Nova Timboteua', '1505007')
+    listIbge.set('PA-Novo Progresso', '1505031')
+    listIbge.set('PA-Novo Repartimento', '1505064')
+    listIbge.set('PA-Óbidos', '1505106')
+    listIbge.set('PA-Oeiras do Pará', '1505205')
+    listIbge.set('PA-Oriximiná', '1505304')
+    listIbge.set('PA-Ourém', '1505403')
+    listIbge.set('PA-Ourilândia do Norte', '1505437')
+    listIbge.set('PA-Pacajá', '1505486')
+    listIbge.set('PA-Palestina do Pará', '1505494')
+    listIbge.set('PA-Paragominas', '1505502')
+    listIbge.set('PA-Parauapebas', '1505536')
+    listIbge.set('PA-Peixe-Boi', '1505601')
+    listIbge.set('PA-Piçarra', '1505635')
+    listIbge.set('PA-Placas', '1505650')
+    listIbge.set('PA-Ponta de Pedras', '1505700')
+    listIbge.set('PA-Portel', '1505809')
+    listIbge.set('PA-Porto de Moz', '1505908')
+    listIbge.set('PA-Prainha', '1506005')
+    listIbge.set('PA-Primavera', '1506104')
+    listIbge.set('PA-Quatipuru', '1506112')
+    listIbge.set('PA-Redenção', '1506138')
+    listIbge.set('PA-Rio Maria', '1506161')
+    listIbge.set('PA-Rondon do Pará', '1506187')
+    listIbge.set('PA-Rurópolis', '1506195')
+    listIbge.set('PA-Salinópolis', '1506203')
+    listIbge.set('PA-Salvaterra', '1506302')
+    listIbge.set('PA-Santa Bárbara do Pará', '1506351')
+    listIbge.set('PA-Santa Cruz do Arari', '1506401')
+    listIbge.set('PA-Santa Izabel do Pará', '1506500')
+    listIbge.set('PA-Santa Luzia do Pará', '1506559')
+    listIbge.set('PA-Santa Maria das Barreiras', '1506583')
+    listIbge.set('PA-Santa Maria do Pará', '1506609')
+    listIbge.set('PA-Santana do Araguaia', '1506708')
+    listIbge.set('PA-Santarém', '1506807')
+    listIbge.set('PA-Santarém Novo', '1506906')
+    listIbge.set('PA-Santo Antônio do Tauá', '1507003')
+    listIbge.set('PA-São Caetano de Odivelas', '1507102')
+    listIbge.set('PA-São Domingos do Araguaia', '1507151')
+    listIbge.set('PA-São Domingos do Capim', '1507201')
+    listIbge.set('PA-São Félix do Xingu', '1507300')
+    listIbge.set('PA-São Francisco do Pará', '1507409')
+    listIbge.set('PA-São Geraldo do Araguaia', '1507458')
+    listIbge.set('PA-São João da Ponta', '1507466')
+    listIbge.set('PA-São João de Pirabas', '1507474')
+    listIbge.set('PA-São João do Araguaia', '1507508')
+    listIbge.set('PA-São Miguel do Guamá', '1507607')
+    listIbge.set('PA-São Sebastião da Boa Vista', '1507706')
+    listIbge.set('PA-Sapucaia', '1507755')
+    listIbge.set('PA-Senador José Porfírio', '1507805')
+    listIbge.set('PA-Soure', '1507904')
+    listIbge.set('PA-Tailândia', '1507953')
+    listIbge.set('PA-Terra Alta', '1507961')
+    listIbge.set('PA-Terra Santa', '1507979')
+    listIbge.set('PA-Tomé-Açu', '1508001')
+    listIbge.set('PA-Tracuateua', '1508035')
+    listIbge.set('PA-Trairão', '1508050')
+    listIbge.set('PA-Tucumã', '1508084')
+    listIbge.set('PA-Tucuruí', '1508100')
+    listIbge.set('PA-Ulianópolis', '1508126')
+    listIbge.set('PA-Uruará', '1508159')
+    listIbge.set('PA-Vigia', '1508209')
+    listIbge.set('PA-Viseu', '1508308')
+    listIbge.set('PA-Vitória do Xingu', '1508357')
+    listIbge.set('PA-Xinguara', '1508407')
+    listIbge.set('AP-Amapá', '1600105')
+    listIbge.set('AP-Calçoene', '1600204')
+    listIbge.set('AP-Cutias', '1600212')
+    listIbge.set('AP-Ferreira Gomes', '1600238')
+    listIbge.set('AP-Itaubal', '1600253')
+    listIbge.set('AP-Laranjal do Jari', '1600279')
+    listIbge.set('AP-Macapá', '1600303')
+    listIbge.set('AP-Mazagão', '1600402')
+    listIbge.set('AP-Oiapoque', '1600501')
+    listIbge.set('AP-Pedra Branca do Amapari', '1600154')
+    listIbge.set('AP-Porto Grande', '1600535')
+    listIbge.set('AP-Pracuúba', '1600550')
+    listIbge.set('AP-Santana', '1600600')
+    listIbge.set('AP-Serra do Navio', '1600055')
+    listIbge.set('AP-Tartarugalzinho', '1600709')
+    listIbge.set('AP-Vitória do Jari', '1600808')
+    listIbge.set('TO-Abreulândia', '1700251')
+    listIbge.set('TO-Aguiarnópolis', '1700301')
+    listIbge.set('TO-Aliança do Tocantins', '1700350')
+    listIbge.set('TO-Almas', '1700400')
+    listIbge.set('TO-Alvorada', '1700707')
+    listIbge.set('TO-Ananás', '1701002')
+    listIbge.set('TO-Angico', '1701051')
+    listIbge.set('TO-Aparecida do Rio Negro', '1701101')
+    listIbge.set('TO-Aragominas', '1701309')
+    listIbge.set('TO-Araguacema', '1701903')
+    listIbge.set('TO-Araguaçu', '1702000')
+    listIbge.set('TO-Araguaína', '1702109')
+    listIbge.set('TO-Araguanã', '1702158')
+    listIbge.set('TO-Araguatins', '1702208')
+    listIbge.set('TO-Arapoema', '1702307')
+    listIbge.set('TO-Arraias', '1702406')
+    listIbge.set('TO-Augustinópolis', '1702554')
+    listIbge.set('TO-Aurora do Tocantins', '1702703')
+    listIbge.set('TO-Axixá do Tocantins', '1702901')
+    listIbge.set('TO-Babaçulândia', '1703008')
+    listIbge.set('TO-Bandeirantes do Tocantins', '1703057')
+    listIbge.set('TO-Barra do Ouro', '1703073')
+    listIbge.set('TO-Barrolândia', '1703107')
+    listIbge.set('TO-Bernardo Sayão', '1703206')
+    listIbge.set('TO-Bom Jesus do Tocantins', '1703305')
+    listIbge.set('TO-Brasilândia do Tocantins', '1703602')
+    listIbge.set('TO-Brejinho de Nazaré', '1703701')
+    listIbge.set('TO-Buriti do Tocantins', '1703800')
+    listIbge.set('TO-Cachoeirinha', '1703826')
+    listIbge.set('TO-Campos Lindos', '1703842')
+    listIbge.set('TO-Cariri do Tocantins', '1703867')
+    listIbge.set('TO-Carmolândia', '1703883')
+    listIbge.set('TO-Carrasco Bonito', '1703891')
+    listIbge.set('TO-Caseara', '1703909')
+    listIbge.set('TO-Centenário', '1704105')
+    listIbge.set('TO-Chapada da Natividade', '1705102')
+    listIbge.set('TO-Chapada de Areia', '1704600')
+    listIbge.set('TO-Colinas do Tocantins', '1705508')
+    listIbge.set('TO-Colméia', '1716703')
+    listIbge.set('TO-Combinado', '1705557')
+    listIbge.set('TO-Conceição do Tocantins', '1705607')
+    listIbge.set('TO-Couto Magalhães', '1706001')
+    listIbge.set('TO-Cristalândia', '1706100')
+    listIbge.set('TO-Crixás do Tocantins', '1706258')
+    listIbge.set('TO-Darcinópolis', '1706506')
+    listIbge.set('TO-Dianópolis', '1707009')
+    listIbge.set('TO-Divinópolis do Tocantins', '1707108')
+    listIbge.set('TO-Dois Irmãos do Tocantins', '1707207')
+    listIbge.set('TO-Dueré', '1707306')
+    listIbge.set('TO-Esperantina', '1707405')
+    listIbge.set('TO-Fátima', '1707553')
+    listIbge.set('TO-Figueirópolis', '1707652')
+    listIbge.set('TO-Filadélfia', '1707702')
+    listIbge.set('TO-Formoso do Araguaia', '1708205')
+    listIbge.set('TO-Goianorte', '1708304')
+    listIbge.set('TO-Goiatins', '1709005')
+    listIbge.set('TO-Guaraí', '1709302')
+    listIbge.set('TO-Gurupi', '1709500')
+    listIbge.set('TO-Ipueiras', '1709807')
+    listIbge.set('TO-Itacajá', '1710508')
+    listIbge.set('TO-Itaguatins', '1710706')
+    listIbge.set('TO-Itapiratins', '1710904')
+    listIbge.set('TO-Itaporã do Tocantins', '1711100')
+    listIbge.set('TO-Jaú do Tocantins', '1711506')
+    listIbge.set('TO-Juarina', '1711803')
+    listIbge.set('TO-Lagoa da Confusão', '1711902')
+    listIbge.set('TO-Lagoa do Tocantins', '1711951')
+    listIbge.set('TO-Lajeado', '1712009')
+    listIbge.set('TO-Lavandeira', '1712157')
+    listIbge.set('TO-Lizarda', '1712405')
+    listIbge.set('TO-Luzinópolis', '1712454')
+    listIbge.set('TO-Marianópolis do Tocantins', '1712504')
+    listIbge.set('TO-Mateiros', '1712702')
+    listIbge.set('TO-Maurilândia do Tocantins', '1712801')
+    listIbge.set('TO-Miracema do Tocantins', '1713205')
+    listIbge.set('TO-Miranorte', '1713304')
+    listIbge.set('TO-Monte do Carmo', '1713601')
+    listIbge.set('TO-Monte Santo do Tocantins', '1713700')
+    listIbge.set('TO-Muricilândia', '1713957')
+    listIbge.set('TO-Natividade', '1714203')
+    listIbge.set('TO-Nazaré', '1714302')
+    listIbge.set('TO-Nova Olinda', '1714880')
+    listIbge.set('TO-Nova Rosalândia', '1715002')
+    listIbge.set('TO-Novo Acordo', '1715101')
+    listIbge.set('TO-Novo Alegre', '1715150')
+    listIbge.set('TO-Novo Jardim', '1715259')
+    listIbge.set('TO-Oliveira de Fátima', '1715507')
+    listIbge.set('TO-Palmas', '1721000')
+    listIbge.set('TO-Palmeirante', '1715705')
+    listIbge.set('TO-Palmeiras do Tocantins', '1713809')
+    listIbge.set('TO-Palmeirópolis', '1715754')
+    listIbge.set('TO-Paraíso do Tocantins', '1716109')
+    listIbge.set('TO-Paranã', '1716208')
+    listIbge.set('TO-Pedro Afonso', '1716505')
+    listIbge.set('TO-Peixe', '1716604')
+    listIbge.set('TO-Pequizeiro', '1716653')
+    listIbge.set('TO-Pindorama do Tocantins', '1717008')
+    listIbge.set('TO-Piraquê', '1717206')
+    listIbge.set('TO-Pium', '1717503')
+    listIbge.set('TO-Ponte Alta do Bom Jesus', '1717800')
+    listIbge.set('TO-Ponte Alta do Tocantins', '1717909')
+    listIbge.set('TO-Porto Alegre do Tocantins', '1718006')
+    listIbge.set('TO-Porto Nacional', '1718204')
+    listIbge.set('TO-Praia Norte', '1718303')
+    listIbge.set('TO-Presidente Kennedy', '1718402')
+    listIbge.set('TO-Pugmil', '1718451')
+    listIbge.set('TO-Recursolândia', '1718501')
+    listIbge.set('TO-Riachinho', '1718550')
+    listIbge.set('TO-Rio da Conceição', '1718659')
+    listIbge.set('TO-Rio dos Bois', '1718709')
+    listIbge.set('TO-Rio Sono', '1718758')
+    listIbge.set('TO-Sampaio', '1718808')
+    listIbge.set('TO-Sandolândia', '1718840')
+    listIbge.set('TO-Santa Fé do Araguaia', '1718865')
+    listIbge.set('TO-Santa Maria do Tocantins', '1718881')
+    listIbge.set('TO-Santa Rita do Tocantins', '1718899')
+    listIbge.set('TO-Santa Rosa do Tocantins', '1718907')
+    listIbge.set('TO-Santa Tereza do Tocantins', '1719004')
+    listIbge.set('TO-Santa Terezinha do Tocantins', '1720002')
+    listIbge.set('TO-São Bento do Tocantins', '1720101')
+    listIbge.set('TO-São Félix do Tocantins', '1720150')
+    listIbge.set('TO-São Miguel do Tocantins', '1720200')
+    listIbge.set('TO-São Salvador do Tocantins', '1720259')
+    listIbge.set('TO-São Sebastião do Tocantins', '1720309')
+    listIbge.set('TO-São Valério', '1720499')
+    listIbge.set('TO-Silvanópolis', '1720655')
+    listIbge.set('TO-Sítio Novo do Tocantins', '1720804')
+    listIbge.set('TO-Sucupira', '1720853')
+    listIbge.set('TO-Tabocão', '1708254')
+    listIbge.set('TO-Taguatinga', '1720903')
+    listIbge.set('TO-Taipas do Tocantins', '1720937')
+    listIbge.set('TO-Talismã', '1720978')
+    listIbge.set('TO-Tocantínia', '1721109')
+    listIbge.set('TO-Tocantinópolis', '1721208')
+    listIbge.set('TO-Tupirama', '1721257')
+    listIbge.set('TO-Tupiratins', '1721307')
+    listIbge.set('TO-Wanderlândia', '1722081')
+    listIbge.set('TO-Xambioá', '1722107')
+    listIbge.set('MA-Açailândia', '2100055')
+    listIbge.set('MA-Afonso Cunha', '2100105')
+    listIbge.set('MA-Água Doce do Maranhão', '2100154')
+    listIbge.set('MA-Alcântara', '2100204')
+    listIbge.set('MA-Aldeias Altas', '2100303')
+    listIbge.set('MA-Altamira do Maranhão', '2100402')
+    listIbge.set('MA-Alto Alegre do Maranhão', '2100436')
+    listIbge.set('MA-Alto Alegre do Pindaré', '2100477')
+    listIbge.set('MA-Alto Parnaíba', '2100501')
+    listIbge.set('MA-Amapá do Maranhão', '2100550')
+    listIbge.set('MA-Amarante do Maranhão', '2100600')
+    listIbge.set('MA-Anajatuba', '2100709')
+    listIbge.set('MA-Anapurus', '2100808')
+    listIbge.set('MA-Apicum-Açu', '2100832')
+    listIbge.set('MA-Araguanã', '2100873')
+    listIbge.set('MA-Araioses', '2100907')
+    listIbge.set('MA-Arame', '2100956')
+    listIbge.set('MA-Arari', '2101004')
+    listIbge.set('MA-Axixá', '2101103')
+    listIbge.set('MA-Bacabal', '2101202')
+    listIbge.set('MA-Bacabeira', '2101251')
+    listIbge.set('MA-Bacuri', '2101301')
+    listIbge.set('MA-Bacurituba', '2101350')
+    listIbge.set('MA-Balsas', '2101400')
+    listIbge.set('MA-Barão de Grajaú', '2101509')
+    listIbge.set('MA-Barra do Corda', '2101608')
+    listIbge.set('MA-Barreirinhas', '2101707')
+    listIbge.set('MA-Bela Vista do Maranhão', '2101772')
+    listIbge.set('MA-Belágua', '2101731')
+    listIbge.set('MA-Benedito Leite', '2101806')
+    listIbge.set('MA-Bequimão', '2101905')
+    listIbge.set('MA-Bernardo do Mearim', '2101939')
+    listIbge.set('MA-Boa Vista do Gurupi', '2101970')
+    listIbge.set('MA-Bom Jardim', '2102002')
+    listIbge.set('MA-Bom Jesus das Selvas', '2102036')
+    listIbge.set('MA-Bom Lugar', '2102077')
+    listIbge.set('MA-Brejo', '2102101')
+    listIbge.set('MA-Brejo de Areia', '2102150')
+    listIbge.set('MA-Buriti', '2102200')
+    listIbge.set('MA-Buriti Bravo', '2102309')
+    listIbge.set('MA-Buriticupu', '2102325')
+    listIbge.set('MA-Buritirana', '2102358')
+    listIbge.set('MA-Cachoeira Grande', '2102374')
+    listIbge.set('MA-Cajapió', '2102408')
+    listIbge.set('MA-Cajari', '2102507')
+    listIbge.set('MA-Campestre do Maranhão', '2102556')
+    listIbge.set('MA-Cândido Mendes', '2102606')
+    listIbge.set('MA-Cantanhede', '2102705')
+    listIbge.set('MA-Capinzal do Norte', '2102754')
+    listIbge.set('MA-Carolina', '2102804')
+    listIbge.set('MA-Carutapera', '2102903')
+    listIbge.set('MA-Caxias', '2103000')
+    listIbge.set('MA-Cedral', '2103109')
+    listIbge.set('MA-Central do Maranhão', '2103125')
+    listIbge.set('MA-Centro do Guilherme', '2103158')
+    listIbge.set('MA-Centro Novo do Maranhão', '2103174')
+    listIbge.set('MA-Chapadinha', '2103208')
+    listIbge.set('MA-Cidelândia', '2103257')
+    listIbge.set('MA-Codó', '2103307')
+    listIbge.set('MA-Coelho Neto', '2103406')
+    listIbge.set('MA-Colinas', '2103505')
+    listIbge.set('MA-Conceição do Lago-Açu', '2103554')
+    listIbge.set('MA-Coroatá', '2103604')
+    listIbge.set('MA-Cururupu', '2103703')
+    listIbge.set('MA-Davinópolis', '2103752')
+    listIbge.set('MA-Dom Pedro', '2103802')
+    listIbge.set('MA-Duque Bacelar', '2103901')
+    listIbge.set('MA-Esperantinópolis', '2104008')
+    listIbge.set('MA-Estreito', '2104057')
+    listIbge.set('MA-Feira Nova do Maranhão', '2104073')
+    listIbge.set('MA-Fernando Falcão', '2104081')
+    listIbge.set('MA-Formosa da Serra Negra', '2104099')
+    listIbge.set('MA-Fortaleza dos Nogueiras', '2104107')
+    listIbge.set('MA-Fortuna', '2104206')
+    listIbge.set('MA-Godofredo Viana', '2104305')
+    listIbge.set('MA-Gonçalves Dias', '2104404')
+    listIbge.set('MA-Governador Archer', '2104503')
+    listIbge.set('MA-Governador Edison Lobão', '2104552')
+    listIbge.set('MA-Governador Eugênio Barros', '2104602')
+    listIbge.set('MA-Governador Luiz Rocha', '2104628')
+    listIbge.set('MA-Governador Newton Bello', '2104651')
+    listIbge.set('MA-Governador Nunes Freire', '2104677')
+    listIbge.set('MA-Graça Aranha', '2104701')
+    listIbge.set('MA-Grajaú', '2104800')
+    listIbge.set('MA-Guimarães', '2104909')
+    listIbge.set('MA-Humberto de Campos', '2105005')
+    listIbge.set('MA-Icatu', '2105104')
+    listIbge.set('MA-Igarapé do Meio', '2105153')
+    listIbge.set('MA-Igarapé Grande', '2105203')
+    listIbge.set('MA-Imperatriz', '2105302')
+    listIbge.set('MA-Itaipava do Grajaú', '2105351')
+    listIbge.set('MA-Itapecuru Mirim', '2105401')
+    listIbge.set('MA-Itinga do Maranhão', '2105427')
+    listIbge.set('MA-Jatobá', '2105450')
+    listIbge.set('MA-Jenipapo dos Vieiras', '2105476')
+    listIbge.set('MA-João Lisboa', '2105500')
+    listIbge.set('MA-Joselândia', '2105609')
+    listIbge.set('MA-Junco do Maranhão', '2105658')
+    listIbge.set('MA-Lago da Pedra', '2105708')
+    listIbge.set('MA-Lago do Junco', '2105807')
+    listIbge.set('MA-Lago dos Rodrigues', '2105948')
+    listIbge.set('MA-Lago Verde', '2105906')
+    listIbge.set('MA-Lagoa do Mato', '2105922')
+    listIbge.set('MA-Lagoa Grande do Maranhão', '2105963')
+    listIbge.set('MA-Lajeado Novo', '2105989')
+    listIbge.set('MA-Lima Campos', '2106003')
+    listIbge.set('MA-Loreto', '2106102')
+    listIbge.set('MA-Luís Domingues', '2106201')
+    listIbge.set('MA-Magalhães de Almeida', '2106300')
+    listIbge.set('MA-Maracaçumé', '2106326')
+    listIbge.set('MA-Marajá do Sena', '2106359')
+    listIbge.set('MA-Maranhãozinho', '2106375')
+    listIbge.set('MA-Mata Roma', '2106409')
+    listIbge.set('MA-Matinha', '2106508')
+    listIbge.set('MA-Matões', '2106607')
+    listIbge.set('MA-Matões do Norte', '2106631')
+    listIbge.set('MA-Milagres do Maranhão', '2106672')
+    listIbge.set('MA-Mirador', '2106706')
+    listIbge.set('MA-Miranda do Norte', '2106755')
+    listIbge.set('MA-Mirinzal', '2106805')
+    listIbge.set('MA-Monção', '2106904')
+    listIbge.set('MA-Montes Altos', '2107001')
+    listIbge.set('MA-Morros', '2107100')
+    listIbge.set('MA-Nina Rodrigues', '2107209')
+    listIbge.set('MA-Nova Colinas', '2107258')
+    listIbge.set('MA-Nova Iorque', '2107308')
+    listIbge.set('MA-Nova Olinda do Maranhão', '2107357')
+    listIbge.set('MA-Olinda Nova do Maranhão', '2107456')
+    listIbge.set('MA-Paço do Lumiar', '2107506')
+    listIbge.set('MA-Palmeirândia', '2107605')
+    listIbge.set('MA-Paraibano', '2107704')
+    listIbge.set('MA-Parnarama', '2107803')
+    listIbge.set('MA-Passagem Franca', '2107902')
+    listIbge.set('MA-Pastos Bons', '2108009')
+    listIbge.set('MA-Paulino Neves', '2108058')
+    listIbge.set('MA-Paulo Ramos', '2108108')
+    listIbge.set('MA-Pedreiras', '2108207')
+    listIbge.set('MA-Pedro do Rosário', '2108256')
+    listIbge.set('MA-Penalva', '2108306')
+    listIbge.set('MA-Peri Mirim', '2108405')
+    listIbge.set('MA-Peritoró', '2108454')
+    listIbge.set('MA-Pindaré-Mirim', '2108504')
+    listIbge.set('MA-Pinheiro', '2108603')
+    listIbge.set('MA-Pio XII', '2108702')
+    listIbge.set('MA-Pirapemas', '2108801')
+    listIbge.set('MA-Poção de Pedras', '2108900')
+    listIbge.set('MA-Porto Franco', '2109007')
+    listIbge.set('MA-Porto Rico do Maranhão', '2109056')
+    listIbge.set('MA-Presidente Dutra', '2109106')
+    listIbge.set('MA-Presidente Juscelino', '2109205')
+    listIbge.set('MA-Presidente Médici', '2109239')
+    listIbge.set('MA-Presidente Sarney', '2109270')
+    listIbge.set('MA-Presidente Vargas', '2109304')
+    listIbge.set('MA-Primeira Cruz', '2109403')
+    listIbge.set('MA-Raposa', '2109452')
+    listIbge.set('MA-Riachão', '2109502')
+    listIbge.set('MA-Ribamar Fiquene', '2109551')
+    listIbge.set('MA-Rosário', '2109601')
+    listIbge.set('MA-Sambaíba', '2109700')
+    listIbge.set('MA-Santa Filomena do Maranhão', '2109759')
+    listIbge.set('MA-Santa Helena', '2109809')
+    listIbge.set('MA-Santa Inês', '2109908')
+    listIbge.set('MA-Santa Luzia', '2110005')
+    listIbge.set('MA-Santa Luzia do Paruá', '2110039')
+    listIbge.set('MA-Santa Quitéria do Maranhão', '2110104')
+    listIbge.set('MA-Santa Rita', '2110203')
+    listIbge.set('MA-Santana do Maranhão', '2110237')
+    listIbge.set('MA-Santo Amaro do Maranhão', '2110278')
+    listIbge.set('MA-Santo Antônio dos Lopes', '2110302')
+    listIbge.set('MA-São Benedito do Rio Preto', '2110401')
+    listIbge.set('MA-São Bento', '2110500')
+    listIbge.set('MA-São Bernardo', '2110609')
+    listIbge.set('MA-São Domingos do Azeitão', '2110658')
+    listIbge.set('MA-São Domingos do Maranhão', '2110708')
+    listIbge.set('MA-São Félix de Balsas', '2110807')
+    listIbge.set('MA-São Francisco do Brejão', '2110856')
+    listIbge.set('MA-São Francisco do Maranhão', '2110906')
+    listIbge.set('MA-São João Batista', '2111003')
+    listIbge.set('MA-São João do Carú', '2111029')
+    listIbge.set('MA-São João do Paraíso', '2111052')
+    listIbge.set('MA-São João do Soter', '2111078')
+    listIbge.set('MA-São João dos Patos', '2111102')
+    listIbge.set('MA-São José de Ribamar', '2111201')
+    listIbge.set('MA-São José dos Basílios', '2111250')
+    listIbge.set('MA-São Luís', '2111300')
+    listIbge.set('MA-São Luís Gonzaga do Maranhão', '2111409')
+    listIbge.set('MA-São Mateus do Maranhão', '2111508')
+    listIbge.set('MA-São Pedro da Água Branca', '2111532')
+    listIbge.set('MA-São Pedro dos Crentes', '2111573')
+    listIbge.set('MA-São Raimundo das Mangabeiras', '2111607')
+    listIbge.set('MA-São Raimundo do Doca Bezerra', '2111631')
+    listIbge.set('MA-São Roberto', '2111672')
+    listIbge.set('MA-São Vicente Ferrer', '2111706')
+    listIbge.set('MA-Satubinha', '2111722')
+    listIbge.set('MA-Senador Alexandre Costa', '2111748')
+    listIbge.set('MA-Senador La Rocque', '2111763')
+    listIbge.set('MA-Serrano do Maranhão', '2111789')
+    listIbge.set('MA-Sítio Novo', '2111805')
+    listIbge.set('MA-Sucupira do Norte', '2111904')
+    listIbge.set('MA-Sucupira do Riachão', '2111953')
+    listIbge.set('MA-Tasso Fragoso', '2112001')
+    listIbge.set('MA-Timbiras', '2112100')
+    listIbge.set('MA-Timon', '2112209')
+    listIbge.set('MA-Trizidela do Vale', '2112233')
+    listIbge.set('MA-Tufilândia', '2112274')
+    listIbge.set('MA-Tuntum', '2112308')
+    listIbge.set('MA-Turiaçu', '2112407')
+    listIbge.set('MA-Turilândia', '2112456')
+    listIbge.set('MA-Tutóia', '2112506')
+    listIbge.set('MA-Urbano Santos', '2112605')
+    listIbge.set('MA-Vargem Grande', '2112704')
+    listIbge.set('MA-Viana', '2112803')
+    listIbge.set('MA-Vila Nova dos Martírios', '2112852')
+    listIbge.set('MA-Vitória do Mearim', '2112902')
+    listIbge.set('MA-Vitorino Freire', '2113009')
+    listIbge.set('MA-Zé Doca', '2114007')
+    listIbge.set('PI-Acauã', '2200053')
+    listIbge.set('PI-Agricolândia', '2200103')
+    listIbge.set('PI-Água Branca', '2200202')
+    listIbge.set('PI-Alagoinha do Piauí', '2200251')
+    listIbge.set('PI-Alegrete do Piauí', '2200277')
+    listIbge.set('PI-Alto Longá', '2200301')
+    listIbge.set('PI-Altos', '2200400')
+    listIbge.set('PI-Alvorada do Gurguéia', '2200459')
+    listIbge.set('PI-Amarante', '2200509')
+    listIbge.set('PI-Angical do Piauí', '2200608')
+    listIbge.set('PI-Anísio de Abreu', '2200707')
+    listIbge.set('PI-Antônio Almeida', '2200806')
+    listIbge.set('PI-Aroazes', '2200905')
+    listIbge.set('PI-Aroeiras do Itaim', '2200954')
+    listIbge.set('PI-Arraial', '2201002')
+    listIbge.set('PI-Assunção do Piauí', '2201051')
+    listIbge.set('PI-Avelino Lopes', '2201101')
+    listIbge.set('PI-Baixa Grande do Ribeiro', '2201150')
+    listIbge.set('PI-Barras', '2201200')
+    listIbge.set('PI-Barreiras do Piauí', '2201309')
+    listIbge.set('PI-Barro Duro', '2201408')
+    listIbge.set('PI-Batalha', '2201507')
+    listIbge.set('PI-Bela Vista do Piauí', '2201556')
+    listIbge.set('PI-Belém do Piauí', '2201572')
+    listIbge.set('PI-Beneditinos', '2201606')
+    listIbge.set('PI-Bertolínia', '2201705')
+    listIbge.set('PI-Betânia do Piauí', '2201739')
+    listIbge.set('PI-Boa Hora', '2201770')
+    listIbge.set('PI-Bocaina', '2201804')
+    listIbge.set('PI-Bom Jesus', '2201903')
+    listIbge.set('PI-Bom Princípio do Piauí', '2201919')
+    listIbge.set('PI-Bonfim do Piauí', '2201929')
+    listIbge.set('PI-Boqueirão do Piauí', '2201945')
+    listIbge.set('PI-Brasileira', '2201960')
+    listIbge.set('PI-Brejo do Piauí', '2201988')
+    listIbge.set('PI-Buriti dos Lopes', '2202000')
+    listIbge.set('PI-Buriti dos Montes', '2202026')
+    listIbge.set('PI-Cabeceiras do Piauí', '2202059')
+    listIbge.set('PI-Cajazeiras do Piauí', '2202075')
+    listIbge.set('PI-Cajueiro da Praia', '2202083')
+    listIbge.set('PI-Caldeirão Grande do Piauí', '2202091')
+    listIbge.set('PI-Campinas do Piauí', '2202109')
+    listIbge.set('PI-Campo Alegre do Fidalgo', '2202117')
+    listIbge.set('PI-Campo Grande do Piauí', '2202133')
+    listIbge.set('PI-Campo Largo do Piauí', '2202174')
+    listIbge.set('PI-Campo Maior', '2202208')
+    listIbge.set('PI-Canavieira', '2202251')
+    listIbge.set('PI-Canto do Buriti', '2202307')
+    listIbge.set('PI-Capitão de Campos', '2202406')
+    listIbge.set('PI-Capitão Gervásio Oliveira', '2202455')
+    listIbge.set('PI-Caracol', '2202505')
+    listIbge.set('PI-Caraúbas do Piauí', '2202539')
+    listIbge.set('PI-Caridade do Piauí', '2202554')
+    listIbge.set('PI-Castelo do Piauí', '2202604')
+    listIbge.set('PI-Caxingó', '2202653')
+    listIbge.set('PI-Cocal', '2202703')
+    listIbge.set('PI-Cocal de Telha', '2202711')
+    listIbge.set('PI-Cocal dos Alves', '2202729')
+    listIbge.set('PI-Coivaras', '2202737')
+    listIbge.set('PI-Colônia do Gurguéia', '2202752')
+    listIbge.set('PI-Colônia do Piauí', '2202778')
+    listIbge.set('PI-Conceição do Canindé', '2202802')
+    listIbge.set('PI-Coronel José Dias', '2202851')
+    listIbge.set('PI-Corrente', '2202901')
+    listIbge.set('PI-Cristalândia do Piauí', '2203008')
+    listIbge.set('PI-Cristino Castro', '2203107')
+    listIbge.set('PI-Curimatá', '2203206')
+    listIbge.set('PI-Currais', '2203230')
+    listIbge.set('PI-Curral Novo do Piauí', '2203271')
+    listIbge.set('PI-Curralinhos', '2203255')
+    listIbge.set('PI-Demerval Lobão', '2203305')
+    listIbge.set('PI-Dirceu Arcoverde', '2203354')
+    listIbge.set('PI-Dom Expedito Lopes', '2203404')
+    listIbge.set('PI-Dom Inocêncio', '2203453')
+    listIbge.set('PI-Domingos Mourão', '2203420')
+    listIbge.set('PI-Elesbão Veloso', '2203503')
+    listIbge.set('PI-Eliseu Martins', '2203602')
+    listIbge.set('PI-Esperantina', '2203701')
+    listIbge.set('PI-Fartura do Piauí', '2203750')
+    listIbge.set('PI-Flores do Piauí', '2203800')
+    listIbge.set('PI-Floresta do Piauí', '2203859')
+    listIbge.set('PI-Floriano', '2203909')
+    listIbge.set('PI-Francinópolis', '2204006')
+    listIbge.set('PI-Francisco Ayres', '2204105')
+    listIbge.set('PI-Francisco Macedo', '2204154')
+    listIbge.set('PI-Francisco Santos', '2204204')
+    listIbge.set('PI-Fronteiras', '2204303')
+    listIbge.set('PI-Geminiano', '2204352')
+    listIbge.set('PI-Gilbués', '2204402')
+    listIbge.set('PI-Guadalupe', '2204501')
+    listIbge.set('PI-Guaribas', '2204550')
+    listIbge.set('PI-Hugo Napoleão', '2204600')
+    listIbge.set('PI-Ilha Grande', '2204659')
+    listIbge.set('PI-Inhuma', '2204709')
+    listIbge.set('PI-Ipiranga do Piauí', '2204808')
+    listIbge.set('PI-Isaías Coelho', '2204907')
+    listIbge.set('PI-Itainópolis', '2205003')
+    listIbge.set('PI-Itaueira', '2205102')
+    listIbge.set('PI-Jacobina do Piauí', '2205151')
+    listIbge.set('PI-Jaicós', '2205201')
+    listIbge.set('PI-Jardim do Mulato', '2205250')
+    listIbge.set('PI-Jatobá do Piauí', '2205276')
+    listIbge.set('PI-Jerumenha', '2205300')
+    listIbge.set('PI-João Costa', '2205359')
+    listIbge.set('PI-Joaquim Pires', '2205409')
+    listIbge.set('PI-Joca Marques', '2205458')
+    listIbge.set('PI-José de Freitas', '2205508')
+    listIbge.set('PI-Juazeiro do Piauí', '2205516')
+    listIbge.set('PI-Júlio Borges', '2205524')
+    listIbge.set('PI-Jurema', '2205532')
+    listIbge.set('PI-Lagoa Alegre', '2205557')
+    listIbge.set('PI-Lagoa de São Francisco', '2205573')
+    listIbge.set('PI-Lagoa do Barro do Piauí', '2205565')
+    listIbge.set('PI-Lagoa do Piauí', '2205581')
+    listIbge.set('PI-Lagoa do Sítio', '2205599')
+    listIbge.set('PI-Lagoinha do Piauí', '2205540')
+    listIbge.set('PI-Landri Sales', '2205607')
+    listIbge.set('PI-Luís Correia', '2205706')
+    listIbge.set('PI-Luzilândia', '2205805')
+    listIbge.set('PI-Madeiro', '2205854')
+    listIbge.set('PI-Manoel Emídio', '2205904')
+    listIbge.set('PI-Marcolândia', '2205953')
+    listIbge.set('PI-Marcos Parente', '2206001')
+    listIbge.set('PI-Massapê do Piauí', '2206050')
+    listIbge.set('PI-Matias Olímpio', '2206100')
+    listIbge.set('PI-Miguel Alves', '2206209')
+    listIbge.set('PI-Miguel Leão', '2206308')
+    listIbge.set('PI-Milton Brandão', '2206357')
+    listIbge.set('PI-Monsenhor Gil', '2206407')
+    listIbge.set('PI-Monsenhor Hipólito', '2206506')
+    listIbge.set('PI-Monte Alegre do Piauí', '2206605')
+    listIbge.set('PI-Morro Cabeça no Tempo', '2206654')
+    listIbge.set('PI-Morro do Chapéu do Piauí', '2206670')
+    listIbge.set('PI-Murici dos Portelas', '2206696')
+    listIbge.set('PI-Nazaré do Piauí', '2206704')
+    listIbge.set('PI-Nazária', '2206720')
+    listIbge.set('PI-Nossa Senhora de Nazaré', '2206753')
+    listIbge.set('PI-Nossa Senhora dos Remédios', '2206803')
+    listIbge.set('PI-Nova Santa Rita', '2207959')
+    listIbge.set('PI-Novo Oriente do Piauí', '2206902')
+    listIbge.set('PI-Novo Santo Antônio', '2206951')
+    listIbge.set('PI-Oeiras', '2207009')
+    listIbge.set('PI-Padre Marcos', '2207207')
+    listIbge.set('PI-Paes Landim', '2207306')
+    listIbge.set('PI-Pajeú do Piauí', '2207355')
+    listIbge.set('PI-Palmeira do Piauí', '2207405')
+    listIbge.set('PI-Palmeirais', '2207504')
+    listIbge.set('PI-Paquetá', '2207553')
+    listIbge.set('PI-Parnaguá', '2207603')
+    listIbge.set('PI-Parnaíba', '2207702')
+    listIbge.set('PI-Passagem Franca do Piauí', '2207751')
+    listIbge.set('PI-Patos do Piauí', '2207777')
+    listIbge.set('PI-Paulistana', '2207801')
+    listIbge.set('PI-Pavussu', '2207850')
+    listIbge.set('PI-Pedro II', '2207900')
+    listIbge.set('PI-Pedro Laurentino', '2207934')
+    listIbge.set('PI-Picos', '2208007')
+    listIbge.set('PI-Pimenteiras', '2208106')
+    listIbge.set('PI-Pio IX', '2208205')
+    listIbge.set('PI-Piracuruca', '2208304')
+    listIbge.set('PI-Piripiri', '2208403')
+    listIbge.set('PI-Porto', '2208502')
+    listIbge.set('PI-Porto Alegre do Piauí', '2208551')
+    listIbge.set('PI-Prata do Piauí', '2208601')
+    listIbge.set('PI-Queimada Nova', '2208650')
+    listIbge.set('PI-Redenção do Gurguéia', '2208700')
+    listIbge.set('PI-Regeneração', '2208809')
+    listIbge.set('PI-Riacho Frio', '2208858')
+    listIbge.set('PI-Ribeira do Piauí', '2208874')
+    listIbge.set('PI-Ribeiro Gonçalves', '2208908')
+    listIbge.set('PI-Rio Grande do Piauí', '2209005')
+    listIbge.set('PI-Santa Cruz do Piauí', '2209104')
+    listIbge.set('PI-Santa Cruz dos Milagres', '2209153')
+    listIbge.set('PI-Santa Filomena', '2209203')
+    listIbge.set('PI-Santa Luz', '2209302')
+    listIbge.set('PI-Santa Rosa do Piauí', '2209377')
+    listIbge.set('PI-Santana do Piauí', '2209351')
+    listIbge.set('PI-Santo Antônio de Lisboa', '2209401')
+    listIbge.set('PI-Santo Antônio dos Milagres', '2209450')
+    listIbge.set('PI-Santo Inácio do Piauí', '2209500')
+    listIbge.set('PI-São Braz do Piauí', '2209559')
+    listIbge.set('PI-São Félix do Piauí', '2209609')
+    listIbge.set('PI-São Francisco de Assis do Piauí', '2209658')
+    listIbge.set('PI-São Francisco do Piauí', '2209708')
+    listIbge.set('PI-São Gonçalo do Gurguéia', '2209757')
+    listIbge.set('PI-São Gonçalo do Piauí', '2209807')
+    listIbge.set('PI-São João da Canabrava', '2209856')
+    listIbge.set('PI-São João da Fronteira', '2209872')
+    listIbge.set('PI-São João da Serra', '2209906')
+    listIbge.set('PI-São João da Varjota', '2209955')
+    listIbge.set('PI-São João do Arraial', '2209971')
+    listIbge.set('PI-São João do Piauí', '2210003')
+    listIbge.set('PI-São José do Divino', '2210052')
+    listIbge.set('PI-São José do Peixe', '2210102')
+    listIbge.set('PI-São José do Piauí', '2210201')
+    listIbge.set('PI-São Julião', '2210300')
+    listIbge.set('PI-São Lourenço do Piauí', '2210359')
+    listIbge.set('PI-São Luis do Piauí', '2210375')
+    listIbge.set('PI-São Miguel da Baixa Grande', '2210383')
+    listIbge.set('PI-São Miguel do Fidalgo', '2210391')
+    listIbge.set('PI-São Miguel do Tapuio', '2210409')
+    listIbge.set('PI-São Pedro do Piauí', '2210508')
+    listIbge.set('PI-São Raimundo Nonato', '2210607')
+    listIbge.set('PI-Sebastião Barros', '2210623')
+    listIbge.set('PI-Sebastião Leal', '2210631')
+    listIbge.set('PI-Sigefredo Pacheco', '2210656')
+    listIbge.set('PI-Simões', '2210706')
+    listIbge.set('PI-Simplício Mendes', '2210805')
+    listIbge.set('PI-Socorro do Piauí', '2210904')
+    listIbge.set('PI-Sussuapara', '2210938')
+    listIbge.set('PI-Tamboril do Piauí', '2210953')
+    listIbge.set('PI-Tanque do Piauí', '2210979')
+    listIbge.set('PI-Teresina', '2211001')
+    listIbge.set('PI-União', '2211100')
+    listIbge.set('PI-Uruçuí', '2211209')
+    listIbge.set('PI-Valença do Piauí', '2211308')
+    listIbge.set('PI-Várzea Branca', '2211357')
+    listIbge.set('PI-Várzea Grande', '2211407')
+    listIbge.set('PI-Vera Mendes', '2211506')
+    listIbge.set('PI-Vila Nova do Piauí', '2211605')
+    listIbge.set('PI-Wall Ferraz', '2211704')
+    listIbge.set('CE-Abaiara', '2300101')
+    listIbge.set('CE-Acarape', '2300150')
+    listIbge.set('CE-Acaraú', '2300200')
+    listIbge.set('CE-Acopiara', '2300309')
+    listIbge.set('CE-Aiuaba', '2300408')
+    listIbge.set('CE-Alcântaras', '2300507')
+    listIbge.set('CE-Altaneira', '2300606')
+    listIbge.set('CE-Alto Santo', '2300705')
+    listIbge.set('CE-Amontada', '2300754')
+    listIbge.set('CE-Antonina do Norte', '2300804')
+    listIbge.set('CE-Apuiarés', '2300903')
+    listIbge.set('CE-Aquiraz', '2301000')
+    listIbge.set('CE-Aracati', '2301109')
+    listIbge.set('CE-Aracoiaba', '2301208')
+    listIbge.set('CE-Ararendá', '2301257')
+    listIbge.set('CE-Araripe', '2301307')
+    listIbge.set('CE-Aratuba', '2301406')
+    listIbge.set('CE-Arneiroz', '2301505')
+    listIbge.set('CE-Assaré', '2301604')
+    listIbge.set('CE-Aurora', '2301703')
+    listIbge.set('CE-Baixio', '2301802')
+    listIbge.set('CE-Banabuiú', '2301851')
+    listIbge.set('CE-Barbalha', '2301901')
+    listIbge.set('CE-Barreira', '2301950')
+    listIbge.set('CE-Barro', '2302008')
+    listIbge.set('CE-Barroquinha', '2302057')
+    listIbge.set('CE-Baturité', '2302107')
+    listIbge.set('CE-Beberibe', '2302206')
+    listIbge.set('CE-Bela Cruz', '2302305')
+    listIbge.set('CE-Boa Viagem', '2302404')
+    listIbge.set('CE-Brejo Santo', '2302503')
+    listIbge.set('CE-Camocim', '2302602')
+    listIbge.set('CE-Campos Sales', '2302701')
+    listIbge.set('CE-Canindé', '2302800')
+    listIbge.set('CE-Capistrano', '2302909')
+    listIbge.set('CE-Caridade', '2303006')
+    listIbge.set('CE-Cariré', '2303105')
+    listIbge.set('CE-Caririaçu', '2303204')
+    listIbge.set('CE-Cariús', '2303303')
+    listIbge.set('CE-Carnaubal', '2303402')
+    listIbge.set('CE-Cascavel', '2303501')
+    listIbge.set('CE-Catarina', '2303600')
+    listIbge.set('CE-Catunda', '2303659')
+    listIbge.set('CE-Caucaia', '2303709')
+    listIbge.set('CE-Cedro', '2303808')
+    listIbge.set('CE-Chaval', '2303907')
+    listIbge.set('CE-Choró', '2303931')
+    listIbge.set('CE-Chorozinho', '2303956')
+    listIbge.set('CE-Coreaú', '2304004')
+    listIbge.set('CE-Crateús', '2304103')
+    listIbge.set('CE-Crato', '2304202')
+    listIbge.set('CE-Croatá', '2304236')
+    listIbge.set('CE-Cruz', '2304251')
+    listIbge.set('CE-Deputado Irapuan Pinheiro', '2304269')
+    listIbge.set('CE-Ereré', '2304277')
+    listIbge.set('CE-Eusébio', '2304285')
+    listIbge.set('CE-Farias Brito', '2304301')
+    listIbge.set('CE-Forquilha', '2304350')
+    listIbge.set('CE-Fortaleza', '2304400')
+    listIbge.set('CE-Fortim', '2304459')
+    listIbge.set('CE-Frecheirinha', '2304509')
+    listIbge.set('CE-General Sampaio', '2304608')
+    listIbge.set('CE-Graça', '2304657')
+    listIbge.set('CE-Granja', '2304707')
+    listIbge.set('CE-Granjeiro', '2304806')
+    listIbge.set('CE-Groaíras', '2304905')
+    listIbge.set('CE-Guaiúba', '2304954')
+    listIbge.set('CE-Guaraciaba do Norte', '2305001')
+    listIbge.set('CE-Guaramiranga', '2305100')
+    listIbge.set('CE-Hidrolândia', '2305209')
+    listIbge.set('CE-Horizonte', '2305233')
+    listIbge.set('CE-Ibaretama', '2305266')
+    listIbge.set('CE-Ibiapina', '2305308')
+    listIbge.set('CE-Ibicuitinga', '2305332')
+    listIbge.set('CE-Icapuí', '2305357')
+    listIbge.set('CE-Icó', '2305407')
+    listIbge.set('CE-Iguatu', '2305506')
+    listIbge.set('CE-Independência', '2305605')
+    listIbge.set('CE-Ipaporanga', '2305654')
+    listIbge.set('CE-Ipaumirim', '2305704')
+    listIbge.set('CE-Ipu', '2305803')
+    listIbge.set('CE-Ipueiras', '2305902')
+    listIbge.set('CE-Iracema', '2306009')
+    listIbge.set('CE-Irauçuba', '2306108')
+    listIbge.set('CE-Itaiçaba', '2306207')
+    listIbge.set('CE-Itaitinga', '2306256')
+    listIbge.set('CE-Itapajé', '2306306')
+    listIbge.set('CE-Itapipoca', '2306405')
+    listIbge.set('CE-Itapiúna', '2306504')
+    listIbge.set('CE-Itarema', '2306553')
+    listIbge.set('CE-Itatira', '2306603')
+    listIbge.set('CE-Jaguaretama', '2306702')
+    listIbge.set('CE-Jaguaribara', '2306801')
+    listIbge.set('CE-Jaguaribe', '2306900')
+    listIbge.set('CE-Jaguaruana', '2307007')
+    listIbge.set('CE-Jardim', '2307106')
+    listIbge.set('CE-Jati', '2307205')
+    listIbge.set('CE-Jijoca de Jericoacoara', '2307254')
+    listIbge.set('CE-Juazeiro do Norte', '2307304')
+    listIbge.set('CE-Jucás', '2307403')
+    listIbge.set('CE-Lavras da Mangabeira', '2307502')
+    listIbge.set('CE-Limoeiro do Norte', '2307601')
+    listIbge.set('CE-Madalena', '2307635')
+    listIbge.set('CE-Maracanaú', '2307650')
+    listIbge.set('CE-Maranguape', '2307700')
+    listIbge.set('CE-Marco', '2307809')
+    listIbge.set('CE-Martinópole', '2307908')
+    listIbge.set('CE-Massapê', '2308005')
+    listIbge.set('CE-Mauriti', '2308104')
+    listIbge.set('CE-Meruoca', '2308203')
+    listIbge.set('CE-Milagres', '2308302')
+    listIbge.set('CE-Milhã', '2308351')
+    listIbge.set('CE-Miraíma', '2308377')
+    listIbge.set('CE-Missão Velha', '2308401')
+    listIbge.set('CE-Mombaça', '2308500')
+    listIbge.set('CE-Monsenhor Tabosa', '2308609')
+    listIbge.set('CE-Morada Nova', '2308708')
+    listIbge.set('CE-Moraújo', '2308807')
+    listIbge.set('CE-Morrinhos', '2308906')
+    listIbge.set('CE-Mucambo', '2309003')
+    listIbge.set('CE-Mulungu', '2309102')
+    listIbge.set('CE-Nova Olinda', '2309201')
+    listIbge.set('CE-Nova Russas', '2309300')
+    listIbge.set('CE-Novo Oriente', '2309409')
+    listIbge.set('CE-Ocara', '2309458')
+    listIbge.set('CE-Orós', '2309508')
+    listIbge.set('CE-Pacajus', '2309607')
+    listIbge.set('CE-Pacatuba', '2309706')
+    listIbge.set('CE-Pacoti', '2309805')
+    listIbge.set('CE-Pacujá', '2309904')
+    listIbge.set('CE-Palhano', '2310001')
+    listIbge.set('CE-Palmácia', '2310100')
+    listIbge.set('CE-Paracuru', '2310209')
+    listIbge.set('CE-Paraipaba', '2310258')
+    listIbge.set('CE-Parambu', '2310308')
+    listIbge.set('CE-Paramoti', '2310407')
+    listIbge.set('CE-Pedra Branca', '2310506')
+    listIbge.set('CE-Penaforte', '2310605')
+    listIbge.set('CE-Pentecoste', '2310704')
+    listIbge.set('CE-Pereiro', '2310803')
+    listIbge.set('CE-Pindoretama', '2310852')
+    listIbge.set('CE-Piquet Carneiro', '2310902')
+    listIbge.set('CE-Pires Ferreira', '2310951')
+    listIbge.set('CE-Poranga', '2311009')
+    listIbge.set('CE-Porteiras', '2311108')
+    listIbge.set('CE-Potengi', '2311207')
+    listIbge.set('CE-Potiretama', '2311231')
+    listIbge.set('CE-Quiterianópolis', '2311264')
+    listIbge.set('CE-Quixadá', '2311306')
+    listIbge.set('CE-Quixelô', '2311355')
+    listIbge.set('CE-Quixeramobim', '2311405')
+    listIbge.set('CE-Quixeré', '2311504')
+    listIbge.set('CE-Redenção', '2311603')
+    listIbge.set('CE-Reriutaba', '2311702')
+    listIbge.set('CE-Russas', '2311801')
+    listIbge.set('CE-Saboeiro', '2311900')
+    listIbge.set('CE-Salitre', '2311959')
+    listIbge.set('CE-Santa Quitéria', '2312205')
+    listIbge.set('CE-Santana do Acaraú', '2312007')
+    listIbge.set('CE-Santana do Cariri', '2312106')
+    listIbge.set('CE-São Benedito', '2312304')
+    listIbge.set('CE-São Gonçalo do Amarante', '2312403')
+    listIbge.set('CE-São João do Jaguaribe', '2312502')
+    listIbge.set('CE-São Luís do Curu', '2312601')
+    listIbge.set('CE-Senador Pompeu', '2312700')
+    listIbge.set('CE-Senador Sá', '2312809')
+    listIbge.set('CE-Sobral', '2312908')
+    listIbge.set('CE-Solonópole', '2313005')
+    listIbge.set('CE-Tabuleiro do Norte', '2313104')
+    listIbge.set('CE-Tamboril', '2313203')
+    listIbge.set('CE-Tarrafas', '2313252')
+    listIbge.set('CE-Tauá', '2313302')
+    listIbge.set('CE-Tejuçuoca', '2313351')
+    listIbge.set('CE-Tianguá', '2313401')
+    listIbge.set('CE-Trairi', '2313500')
+    listIbge.set('CE-Tururu', '2313559')
+    listIbge.set('CE-Ubajara', '2313609')
+    listIbge.set('CE-Umari', '2313708')
+    listIbge.set('CE-Umirim', '2313757')
+    listIbge.set('CE-Uruburetama', '2313807')
+    listIbge.set('CE-Uruoca', '2313906')
+    listIbge.set('CE-Varjota', '2313955')
+    listIbge.set('CE-Várzea Alegre', '2314003')
+    listIbge.set('CE-Viçosa do Ceará', '2314102')
+    listIbge.set('RN-Acari', '2400109')
+    listIbge.set('RN-Açu', '2400208')
+    listIbge.set('RN-Afonso Bezerra', '2400307')
+    listIbge.set('RN-Água Nova', '2400406')
+    listIbge.set('RN-Alexandria', '2400505')
+    listIbge.set('RN-Almino Afonso', '2400604')
+    listIbge.set('RN-Alto do Rodrigues', '2400703')
+    listIbge.set('RN-Angicos', '2400802')
+    listIbge.set('RN-Antônio Martins', '2400901')
+    listIbge.set('RN-Apodi', '2401008')
+    listIbge.set('RN-Areia Branca', '2401107')
+    listIbge.set('RN-Arês', '2401206')
+    listIbge.set('RN-Baía Formosa', '2401404')
+    listIbge.set('RN-Baraúna', '2401453')
+    listIbge.set('RN-Barcelona', '2401503')
+    listIbge.set('RN-Bento Fernandes', '2401602')
+    listIbge.set('RN-Bodó', '2401651')
+    listIbge.set('RN-Bom Jesus', '2401701')
+    listIbge.set('RN-Brejinho', '2401800')
+    listIbge.set('RN-Caiçara do Norte', '2401859')
+    listIbge.set('RN-Caiçara do Rio do Vento', '2401909')
+    listIbge.set('RN-Caicó', '2402006')
+    listIbge.set('RN-Campo Grande', '2401305')
+    listIbge.set('RN-Campo Redondo', '2402105')
+    listIbge.set('RN-Canguaretama', '2402204')
+    listIbge.set('RN-Caraúbas', '2402303')
+    listIbge.set('RN-Carnaúba dos Dantas', '2402402')
+    listIbge.set('RN-Carnaubais', '2402501')
+    listIbge.set('RN-Ceará-Mirim', '2402600')
+    listIbge.set('RN-Cerro Corá', '2402709')
+    listIbge.set('RN-Coronel Ezequiel', '2402808')
+    listIbge.set('RN-Coronel João Pessoa', '2402907')
+    listIbge.set('RN-Cruzeta', '2403004')
+    listIbge.set('RN-Currais Novos', '2403103')
+    listIbge.set('RN-Doutor Severiano', '2403202')
+    listIbge.set('RN-Encanto', '2403301')
+    listIbge.set('RN-Equador', '2403400')
+    listIbge.set('RN-Espírito Santo', '2403509')
+    listIbge.set('RN-Extremoz', '2403608')
+    listIbge.set('RN-Felipe Guerra', '2403707')
+    listIbge.set('RN-Fernando Pedroza', '2403756')
+    listIbge.set('RN-Florânia', '2403806')
+    listIbge.set('RN-Francisco Dantas', '2403905')
+    listIbge.set('RN-Frutuoso Gomes', '2404002')
+    listIbge.set('RN-Galinhos', '2404101')
+    listIbge.set('RN-Goianinha', '2404200')
+    listIbge.set('RN-Governador Dix-Sept Rosado', '2404309')
+    listIbge.set('RN-Grossos', '2404408')
+    listIbge.set('RN-Guamaré', '2404507')
+    listIbge.set('RN-Ielmo Marinho', '2404606')
+    listIbge.set('RN-Ipanguaçu', '2404705')
+    listIbge.set('RN-Ipueira', '2404804')
+    listIbge.set('RN-Itajá', '2404853')
+    listIbge.set('RN-Itaú', '2404903')
+    listIbge.set('RN-Jaçanã', '2405009')
+    listIbge.set('RN-Jandaíra', '2405108')
+    listIbge.set('RN-Janduís', '2405207')
+    listIbge.set('RN-Januário Cicco', '2405306')
+    listIbge.set('RN-Japi', '2405405')
+    listIbge.set('RN-Jardim de Angicos', '2405504')
+    listIbge.set('RN-Jardim de Piranhas', '2405603')
+    listIbge.set('RN-Jardim do Seridó', '2405702')
+    listIbge.set('RN-João Câmara', '2405801')
+    listIbge.set('RN-João Dias', '2405900')
+    listIbge.set('RN-José da Penha', '2406007')
+    listIbge.set('RN-Jucurutu', '2406106')
+    listIbge.set('RN-Jundiá', '2406155')
+    listIbge.set('RN-Lagoa de Pedras', '2406304')
+    listIbge.set('RN-Lagoa de Velhos', '2406403')
+    listIbge.set('RN-Lagoa Nova', '2406502')
+    listIbge.set('RN-Lagoa Salgada', '2406601')
+    listIbge.set('RN-Lajes', '2406700')
+    listIbge.set('RN-Lajes Pintadas', '2406809')
+    listIbge.set('RN-Lucrécia', '2406908')
+    listIbge.set('RN-Luís Gomes', '2407005')
+    listIbge.set('RN-Macaíba', '2407104')
+    listIbge.set('RN-Macau', '2407203')
+    listIbge.set('RN-Major Sales', '2407252')
+    listIbge.set('RN-Marcelino Vieira', '2407302')
+    listIbge.set('RN-Martins', '2407401')
+    listIbge.set('RN-Maxaranguape', '2407500')
+    listIbge.set('RN-Messias Targino', '2407609')
+    listIbge.set('RN-Montanhas', '2407708')
+    listIbge.set('RN-Monte Alegre', '2407807')
+    listIbge.set('RN-Monte das Gameleiras', '2407906')
+    listIbge.set('RN-Mossoró', '2408003')
+    listIbge.set('RN-Natal', '2408102')
+    listIbge.set('RN-Nísia Floresta', '2408201')
+    listIbge.set('RN-Nova Cruz', '2408300')
+    listIbge.set('RN-Ouro Branco', '2408508')
+    listIbge.set('RN-Paraná', '2408607')
+    listIbge.set('RN-Paraú', '2408706')
+    listIbge.set('RN-Parazinho', '2408805')
+    listIbge.set('RN-Parelhas', '2408904')
+    listIbge.set('RN-Parnamirim', '2403251')
+    listIbge.set('RN-Passa e Fica', '2409100')
+    listIbge.set('RN-Passagem', '2409209')
+    listIbge.set('RN-Patu', '2409308')
+    listIbge.set('RN-Pau dos Ferros', '2409407')
+    listIbge.set('RN-Pedra Grande', '2409506')
+    listIbge.set('RN-Pedra Preta', '2409605')
+    listIbge.set('RN-Pedro Avelino', '2409704')
+    listIbge.set('RN-Pedro Velho', '2409803')
+    listIbge.set('RN-Pendências', '2409902')
+    listIbge.set('RN-Pilões', '2410009')
+    listIbge.set('RN-Poço Branco', '2410108')
+    listIbge.set('RN-Portalegre', '2410207')
+    listIbge.set('RN-Porto do Mangue', '2410256')
+    listIbge.set('RN-Pureza', '2410405')
+    listIbge.set('RN-Rafael Fernandes', '2410504')
+    listIbge.set('RN-Rafael Godeiro', '2410603')
+    listIbge.set('RN-Riacho da Cruz', '2410702')
+    listIbge.set('RN-Riacho de Santana', '2410801')
+    listIbge.set('RN-Riachuelo', '2410900')
+    listIbge.set('RN-Rio do Fogo', '2408953')
+    listIbge.set('RN-Rodolfo Fernandes', '2411007')
+    listIbge.set('RN-Ruy Barbosa', '2411106')
+    listIbge.set('RN-Santa Cruz', '2411205')
+    listIbge.set('RN-Santa Maria', '2409332')
+    listIbge.set('RN-Santana do Matos', '2411403')
+    listIbge.set('RN-Santana do Seridó', '2411429')
+    listIbge.set('RN-Santo Antônio', '2411502')
+    listIbge.set('RN-São Bento do Norte', '2411601')
+    listIbge.set('RN-São Bento do Trairí', '2411700')
+    listIbge.set('RN-São Fernando', '2411809')
+    listIbge.set('RN-São Francisco do Oeste', '2411908')
+    listIbge.set('RN-São Gonçalo do Amarante', '2412005')
+    listIbge.set('RN-São João do Sabugi', '2412104')
+    listIbge.set('RN-São José de Mipibu', '2412203')
+    listIbge.set('RN-São José do Campestre', '2412302')
+    listIbge.set('RN-São José do Seridó', '2412401')
+    listIbge.set('RN-São Miguel', '2412500')
+    listIbge.set('RN-São Miguel do Gostoso', '2412559')
+    listIbge.set('RN-São Paulo do Potengi', '2412609')
+    listIbge.set('RN-São Pedro', '2412708')
+    listIbge.set('RN-São Rafael', '2412807')
+    listIbge.set('RN-São Tomé', '2412906')
+    listIbge.set('RN-São Vicente', '2413003')
+    listIbge.set('RN-Senador Elói de Souza', '2413102')
+    listIbge.set('RN-Senador Georgino Avelino', '2413201')
+    listIbge.set('RN-Serra Caiada', '2410306')
+    listIbge.set('RN-Serra de São Bento', '2413300')
+    listIbge.set('RN-Serra do Mel', '2413359')
+    listIbge.set('RN-Serra Negra do Norte', '2413409')
+    listIbge.set('RN-Serrinha', '2413508')
+    listIbge.set('RN-Serrinha dos Pintos', '2413557')
+    listIbge.set('RN-Severiano Melo', '2413607')
+    listIbge.set('RN-Sítio Novo', '2413706')
+    listIbge.set('RN-Taboleiro Grande', '2413805')
+    listIbge.set('RN-Taipu', '2413904')
+    listIbge.set('RN-Tangará', '2414001')
+    listIbge.set('RN-Tenente Ananias', '2414100')
+    listIbge.set('RN-Tenente Laurentino Cruz', '2414159')
+    listIbge.set('RN-Tibau', '2411056')
+    listIbge.set('RN-Tibau do Sul', '2414209')
+    listIbge.set('RN-Timbaúba dos Batistas', '2414308')
+    listIbge.set('RN-Touros', '2414407')
+    listIbge.set('RN-Triunfo Potiguar', '2414456')
+    listIbge.set('RN-Umarizal', '2414506')
+    listIbge.set('RN-Upanema', '2414605')
+    listIbge.set('RN-Várzea', '2414704')
+    listIbge.set('RN-Venha-Ver', '2414753')
+    listIbge.set('RN-Vera Cruz', '2414803')
+    listIbge.set('RN-Viçosa', '2414902')
+    listIbge.set('RN-Vila Flor', '2415008')
+    listIbge.set('PB-Água Branca', '2500106')
+    listIbge.set('PB-Aguiar', '2500205')
+    listIbge.set('PB-Alagoa Grande', '2500304')
+    listIbge.set('PB-Alagoa Nova', '2500403')
+    listIbge.set('PB-Alagoinha', '2500502')
+    listIbge.set('PB-Alcantil', '2500536')
+    listIbge.set('PB-Algodão de Jandaíra', '2500577')
+    listIbge.set('PB-Alhandra', '2500601')
+    listIbge.set('PB-Amparo', '2500734')
+    listIbge.set('PB-Aparecida', '2500775')
+    listIbge.set('PB-Araçagi', '2500809')
+    listIbge.set('PB-Arara', '2500908')
+    listIbge.set('PB-Araruna', '2501005')
+    listIbge.set('PB-Areia', '2501104')
+    listIbge.set('PB-Areia de Baraúnas', '2501153')
+    listIbge.set('PB-Areial', '2501203')
+    listIbge.set('PB-Aroeiras', '2501302')
+    listIbge.set('PB-Assunção', '2501351')
+    listIbge.set('PB-Baía da Traição', '2501401')
+    listIbge.set('PB-Bananeiras', '2501500')
+    listIbge.set('PB-Baraúna', '2501534')
+    listIbge.set('PB-Barra de Santa Rosa', '2501609')
+    listIbge.set('PB-Barra de Santana', '2501575')
+    listIbge.set('PB-Barra de São Miguel', '2501708')
+    listIbge.set('PB-Bayeux', '2501807')
+    listIbge.set('PB-Belém', '2501906')
+    listIbge.set('PB-Belém do Brejo do Cruz', '2502003')
+    listIbge.set('PB-Bernardino Batista', '2502052')
+    listIbge.set('PB-Boa Ventura', '2502102')
+    listIbge.set('PB-Boa Vista', '2502151')
+    listIbge.set('PB-Bom Jesus', '2502201')
+    listIbge.set('PB-Bom Sucesso', '2502300')
+    listIbge.set('PB-Bonito de Santa Fé', '2502409')
+    listIbge.set('PB-Boqueirão', '2502508')
+    listIbge.set('PB-Borborema', '2502706')
+    listIbge.set('PB-Brejo do Cruz', '2502805')
+    listIbge.set('PB-Brejo dos Santos', '2502904')
+    listIbge.set('PB-Caaporã', '2503001')
+    listIbge.set('PB-Cabaceiras', '2503100')
+    listIbge.set('PB-Cabedelo', '2503209')
+    listIbge.set('PB-Cachoeira dos Índios', '2503308')
+    listIbge.set('PB-Cacimba de Areia', '2503407')
+    listIbge.set('PB-Cacimba de Dentro', '2503506')
+    listIbge.set('PB-Cacimbas', '2503555')
+    listIbge.set('PB-Caiçara', '2503605')
+    listIbge.set('PB-Cajazeiras', '2503704')
+    listIbge.set('PB-Cajazeirinhas', '2503753')
+    listIbge.set('PB-Caldas Brandão', '2503803')
+    listIbge.set('PB-Camalaú', '2503902')
+    listIbge.set('PB-Campina Grande', '2504009')
+    listIbge.set('PB-Capim', '2504033')
+    listIbge.set('PB-Caraúbas', '2504074')
+    listIbge.set('PB-Carrapateira', '2504108')
+    listIbge.set('PB-Casserengue', '2504157')
+    listIbge.set('PB-Catingueira', '2504207')
+    listIbge.set('PB-Catolé do Rocha', '2504306')
+    listIbge.set('PB-Caturité', '2504355')
+    listIbge.set('PB-Conceição', '2504405')
+    listIbge.set('PB-Condado', '2504504')
+    listIbge.set('PB-Conde', '2504603')
+    listIbge.set('PB-Congo', '2504702')
+    listIbge.set('PB-Coremas', '2504801')
+    listIbge.set('PB-Coxixola', '2504850')
+    listIbge.set('PB-Cruz do Espírito Santo', '2504900')
+    listIbge.set('PB-Cubati', '2505006')
+    listIbge.set('PB-Cuité', '2505105')
+    listIbge.set('PB-Cuité de Mamanguape', '2505238')
+    listIbge.set('PB-Cuitegi', '2505204')
+    listIbge.set('PB-Curral de Cima', '2505279')
+    listIbge.set('PB-Curral Velho', '2505303')
+    listIbge.set('PB-Damião', '2505352')
+    listIbge.set('PB-Desterro', '2505402')
+    listIbge.set('PB-Diamante', '2505600')
+    listIbge.set('PB-Dona Inês', '2505709')
+    listIbge.set('PB-Duas Estradas', '2505808')
+    listIbge.set('PB-Emas', '2505907')
+    listIbge.set('PB-Esperança', '2506004')
+    listIbge.set('PB-Fagundes', '2506103')
+    listIbge.set('PB-Frei Martinho', '2506202')
+    listIbge.set('PB-Gado Bravo', '2506251')
+    listIbge.set('PB-Guarabira', '2506301')
+    listIbge.set('PB-Gurinhém', '2506400')
+    listIbge.set('PB-Gurjão', '2506509')
+    listIbge.set('PB-Ibiara', '2506608')
+    listIbge.set('PB-Igaracy', '2502607')
+    listIbge.set('PB-Imaculada', '2506707')
+    listIbge.set('PB-Ingá', '2506806')
+    listIbge.set('PB-Itabaiana', '2506905')
+    listIbge.set('PB-Itaporanga', '2507002')
+    listIbge.set('PB-Itapororoca', '2507101')
+    listIbge.set('PB-Itatuba', '2507200')
+    listIbge.set('PB-Jacaraú', '2507309')
+    listIbge.set('PB-Jericó', '2507408')
+    listIbge.set('PB-João Pessoa', '2507507')
+    listIbge.set('PB-Joca Claudino', '2513653')
+    listIbge.set('PB-Juarez Távora', '2507606')
+    listIbge.set('PB-Juazeirinho', '2507705')
+    listIbge.set('PB-Junco do Seridó', '2507804')
+    listIbge.set('PB-Juripiranga', '2507903')
+    listIbge.set('PB-Juru', '2508000')
+    listIbge.set('PB-Lagoa', '2508109')
+    listIbge.set('PB-Lagoa de Dentro', '2508208')
+    listIbge.set('PB-Lagoa Seca', '2508307')
+    listIbge.set('PB-Lastro', '2508406')
+    listIbge.set('PB-Livramento', '2508505')
+    listIbge.set('PB-Logradouro', '2508554')
+    listIbge.set('PB-Lucena', '2508604')
+    listIbge.set('PB-Malta', '2508802')
+    listIbge.set('PB-Mamanguape', '2508901')
+    listIbge.set('PB-Manaíra', '2509008')
+    listIbge.set('PB-Marcação', '2509057')
+    listIbge.set('PB-Mari', '2509107')
+    listIbge.set('PB-Marizópolis', '2509156')
+    listIbge.set('PB-Massaranduba', '2509206')
+    listIbge.set('PB-Mataraca', '2509305')
+    listIbge.set('PB-Matinhas', '2509339')
+    listIbge.set('PB-Mato Grosso', '2509370')
+    listIbge.set('PB-Maturéia', '2509396')
+    listIbge.set('PB-Mogeiro', '2509404')
+    listIbge.set('PB-Montadas', '2509503')
+    listIbge.set('PB-Monte Horebe', '2509602')
+    listIbge.set('PB-Monteiro', '2509701')
+    listIbge.set('PB-Mulungu', '2509800')
+    listIbge.set('PB-Natuba', '2509909')
+    listIbge.set('PB-Nazarezinho', '2510006')
+    listIbge.set('PB-Nova Floresta', '2510105')
+    listIbge.set('PB-Nova Olinda', '2510204')
+    listIbge.set('PB-Nova Palmeira', '2510303')
+    listIbge.set('PB-Olivedos', '2510501')
+    listIbge.set('PB-Ouro Velho', '2510600')
+    listIbge.set('PB-Parari', '2510659')
+    listIbge.set('PB-Passagem', '2510709')
+    listIbge.set('PB-Patos', '2510808')
+    listIbge.set('PB-Paulista', '2510907')
+    listIbge.set('PB-Pedra Branca', '2511004')
+    listIbge.set('PB-Pedra Lavrada', '2511103')
+    listIbge.set('PB-Pedras de Fogo', '2511202')
+    listIbge.set('PB-Pedro Régis', '2512721')
+    listIbge.set('PB-Piancó', '2511301')
+    listIbge.set('PB-Picuí', '2511400')
+    listIbge.set('PB-Pilar', '2511509')
+    listIbge.set('PB-Pilões', '2511608')
+    listIbge.set('PB-Pilõezinhos', '2511707')
+    listIbge.set('PB-Pirpirituba', '2511806')
+    listIbge.set('PB-Pitimbu', '2511905')
+    listIbge.set('PB-Pocinhos', '2512002')
+    listIbge.set('PB-Poço Dantas', '2512036')
+    listIbge.set('PB-Poço de José de Moura', '2512077')
+    listIbge.set('PB-Pombal', '2512101')
+    listIbge.set('PB-Prata', '2512200')
+    listIbge.set('PB-Princesa Isabel', '2512309')
+    listIbge.set('PB-Puxinanã', '2512408')
+    listIbge.set('PB-Queimadas', '2512507')
+    listIbge.set('PB-Quixaba', '2512606')
+    listIbge.set('PB-Remígio', '2512705')
+    listIbge.set('PB-Riachão', '2512747')
+    listIbge.set('PB-Riachão do Bacamarte', '2512754')
+    listIbge.set('PB-Riachão do Poço', '2512762')
+    listIbge.set('PB-Riacho de Santo Antônio', '2512788')
+    listIbge.set('PB-Riacho dos Cavalos', '2512804')
+    listIbge.set('PB-Rio Tinto', '2512903')
+    listIbge.set('PB-Salgadinho', '2513000')
+    listIbge.set('PB-Salgado de São Félix', '2513109')
+    listIbge.set('PB-Santa Cecília', '2513158')
+    listIbge.set('PB-Santa Cruz', '2513208')
+    listIbge.set('PB-Santa Helena', '2513307')
+    listIbge.set('PB-Santa Inês', '2513356')
+    listIbge.set('PB-Santa Luzia', '2513406')
+    listIbge.set('PB-Santa Rita', '2513703')
+    listIbge.set('PB-Santa Teresinha', '2513802')
+    listIbge.set('PB-Santana de Mangueira', '2513505')
+    listIbge.set('PB-Santana dos Garrotes', '2513604')
+    listIbge.set('PB-Santo André', '2513851')
+    listIbge.set('PB-São Bentinho', '2513927')
+    listIbge.set('PB-São Bento', '2513901')
+    listIbge.set('PB-São Domingos', '2513968')
+    listIbge.set('PB-São Domingos do Cariri', '2513943')
+    listIbge.set('PB-São Francisco', '2513984')
+    listIbge.set('PB-São João do Cariri', '2514008')
+    listIbge.set('PB-São João do Rio do Peixe', '2500700')
+    listIbge.set('PB-São João do Tigre', '2514107')
+    listIbge.set('PB-São José da Lagoa Tapada', '2514206')
+    listIbge.set('PB-São José de Caiana', '2514305')
+    listIbge.set('PB-São José de Espinharas', '2514404')
+    listIbge.set('PB-São José de Piranhas', '2514503')
+    listIbge.set('PB-São José de Princesa', '2514552')
+    listIbge.set('PB-São José do Bonfim', '2514602')
+    listIbge.set('PB-São José do Brejo do Cruz', '2514651')
+    listIbge.set('PB-São José do Sabugi', '2514701')
+    listIbge.set('PB-São José dos Cordeiros', '2514800')
+    listIbge.set('PB-São José dos Ramos', '2514453')
+    listIbge.set('PB-São Mamede', '2514909')
+    listIbge.set('PB-São Miguel de Taipu', '2515005')
+    listIbge.set('PB-São Sebastião de Lagoa de Roça', '2515104')
+    listIbge.set('PB-São Sebastião do Umbuzeiro', '2515203')
+    listIbge.set('PB-São Vicente do Seridó', '2515401')
+    listIbge.set('PB-Sapé', '2515302')
+    listIbge.set('PB-Serra Branca', '2515500')
+    listIbge.set('PB-Serra da Raiz', '2515609')
+    listIbge.set('PB-Serra Grande', '2515708')
+    listIbge.set('PB-Serra Redonda', '2515807')
+    listIbge.set('PB-Serraria', '2515906')
+    listIbge.set('PB-Sertãozinho', '2515930')
+    listIbge.set('PB-Sobrado', '2515971')
+    listIbge.set('PB-Solânea', '2516003')
+    listIbge.set('PB-Soledade', '2516102')
+    listIbge.set('PB-Sossêgo', '2516151')
+    listIbge.set('PB-Sousa', '2516201')
+    listIbge.set('PB-Sumé', '2516300')
+    listIbge.set('PB-Tacima', '2516409')
+    listIbge.set('PB-Taperoá', '2516508')
+    listIbge.set('PB-Tavares', '2516607')
+    listIbge.set('PB-Teixeira', '2516706')
+    listIbge.set('PB-Tenório', '2516755')
+    listIbge.set('PB-Triunfo', '2516805')
+    listIbge.set('PB-Uiraúna', '2516904')
+    listIbge.set('PB-Umbuzeiro', '2517001')
+    listIbge.set('PB-Várzea', '2517100')
+    listIbge.set('PB-Vieirópolis', '2517209')
+    listIbge.set('PB-Vista Serrana', '2505501')
+    listIbge.set('PB-Zabelê', '2517407')
+    listIbge.set('PE-Abreu e Lima', '2600054')
+    listIbge.set('PE-Afogados da Ingazeira', '2600104')
+    listIbge.set('PE-Afrânio', '2600203')
+    listIbge.set('PE-Agrestina', '2600302')
+    listIbge.set('PE-Água Preta', '2600401')
+    listIbge.set('PE-Águas Belas', '2600500')
+    listIbge.set('PE-Alagoinha', '2600609')
+    listIbge.set('PE-Aliança', '2600708')
+    listIbge.set('PE-Altinho', '2600807')
+    listIbge.set('PE-Amaraji', '2600906')
+    listIbge.set('PE-Angelim', '2601003')
+    listIbge.set('PE-Araçoiaba', '2601052')
+    listIbge.set('PE-Araripina', '2601102')
+    listIbge.set('PE-Arcoverde', '2601201')
+    listIbge.set('PE-Barra de Guabiraba', '2601300')
+    listIbge.set('PE-Barreiros', '2601409')
+    listIbge.set('PE-Belém de Maria', '2601508')
+    listIbge.set('PE-Belém do São Francisco', '2601607')
+    listIbge.set('PE-Belo Jardim', '2601706')
+    listIbge.set('PE-Betânia', '2601805')
+    listIbge.set('PE-Bezerros', '2601904')
+    listIbge.set('PE-Bodocó', '2602001')
+    listIbge.set('PE-Bom Conselho', '2602100')
+    listIbge.set('PE-Bom Jardim', '2602209')
+    listIbge.set('PE-Bonito', '2602308')
+    listIbge.set('PE-Brejão', '2602407')
+    listIbge.set('PE-Brejinho', '2602506')
+    listIbge.set('PE-Brejo da Madre de Deus', '2602605')
+    listIbge.set('PE-Buenos Aires', '2602704')
+    listIbge.set('PE-Buíque', '2602803')
+    listIbge.set('PE-Cabo de Santo Agostinho', '2602902')
+    listIbge.set('PE-Cabrobó', '2603009')
+    listIbge.set('PE-Cachoeirinha', '2603108')
+    listIbge.set('PE-Caetés', '2603207')
+    listIbge.set('PE-Calçado', '2603306')
+    listIbge.set('PE-Calumbi', '2603405')
+    listIbge.set('PE-Camaragibe', '2603454')
+    listIbge.set('PE-Camocim de São Félix', '2603504')
+    listIbge.set('PE-Camutanga', '2603603')
+    listIbge.set('PE-Canhotinho', '2603702')
+    listIbge.set('PE-Capoeiras', '2603801')
+    listIbge.set('PE-Carnaíba', '2603900')
+    listIbge.set('PE-Carnaubeira da Penha', '2603926')
+    listIbge.set('PE-Carpina', '2604007')
+    listIbge.set('PE-Caruaru', '2604106')
+    listIbge.set('PE-Casinhas', '2604155')
+    listIbge.set('PE-Catende', '2604205')
+    listIbge.set('PE-Cedro', '2604304')
+    listIbge.set('PE-Chã de Alegria', '2604403')
+    listIbge.set('PE-Chã Grande', '2604502')
+    listIbge.set('PE-Condado', '2604601')
+    listIbge.set('PE-Correntes', '2604700')
+    listIbge.set('PE-Cortês', '2604809')
+    listIbge.set('PE-Cumaru', '2604908')
+    listIbge.set('PE-Cupira', '2605004')
+    listIbge.set('PE-Custódia', '2605103')
+    listIbge.set('PE-Dormentes', '2605152')
+    listIbge.set('PE-Escada', '2605202')
+    listIbge.set('PE-Exu', '2605301')
+    listIbge.set('PE-Feira Nova', '2605400')
+    listIbge.set('PE-Fernando de Noronha', '2605459')
+    listIbge.set('PE-Ferreiros', '2605509')
+    listIbge.set('PE-Flores', '2605608')
+    listIbge.set('PE-Floresta', '2605707')
+    listIbge.set('PE-Frei Miguelinho', '2605806')
+    listIbge.set('PE-Gameleira', '2605905')
+    listIbge.set('PE-Garanhuns', '2606002')
+    listIbge.set('PE-Glória do Goitá', '2606101')
+    listIbge.set('PE-Goiana', '2606200')
+    listIbge.set('PE-Granito', '2606309')
+    listIbge.set('PE-Gravatá', '2606408')
+    listIbge.set('PE-Iati', '2606507')
+    listIbge.set('PE-Ibimirim', '2606606')
+    listIbge.set('PE-Ibirajuba', '2606705')
+    listIbge.set('PE-Igarassu', '2606804')
+    listIbge.set('PE-Iguaracy', '2606903')
+    listIbge.set('PE-Ilha de Itamaracá', '2607604')
+    listIbge.set('PE-Inajá', '2607000')
+    listIbge.set('PE-Ingazeira', '2607109')
+    listIbge.set('PE-Ipojuca', '2607208')
+    listIbge.set('PE-Ipubi', '2607307')
+    listIbge.set('PE-Itacuruba', '2607406')
+    listIbge.set('PE-Itaíba', '2607505')
+    listIbge.set('PE-Itambé', '2607653')
+    listIbge.set('PE-Itapetim', '2607703')
+    listIbge.set('PE-Itapissuma', '2607752')
+    listIbge.set('PE-Itaquitinga', '2607802')
+    listIbge.set('PE-Jaboatão dos Guararapes', '2607901')
+    listIbge.set('PE-Jaqueira', '2607950')
+    listIbge.set('PE-Jataúba', '2608008')
+    listIbge.set('PE-Jatobá', '2608057')
+    listIbge.set('PE-João Alfredo', '2608107')
+    listIbge.set('PE-Joaquim Nabuco', '2608206')
+    listIbge.set('PE-Jucati', '2608255')
+    listIbge.set('PE-Jupi', '2608305')
+    listIbge.set('PE-Jurema', '2608404')
+    listIbge.set('PE-Lagoa de Itaenga', '2608503')
+    listIbge.set('PE-Lagoa do Carro', '2608453')
+    listIbge.set('PE-Lagoa do Ouro', '2608602')
+    listIbge.set('PE-Lagoa dos Gatos', '2608701')
+    listIbge.set('PE-Lagoa Grande', '2608750')
+    listIbge.set('PE-Lajedo', '2608800')
+    listIbge.set('PE-Limoeiro', '2608909')
+    listIbge.set('PE-Macaparana', '2609006')
+    listIbge.set('PE-Machados', '2609105')
+    listIbge.set('PE-Manari', '2609154')
+    listIbge.set('PE-Maraial', '2609204')
+    listIbge.set('PE-Mirandiba', '2609303')
+    listIbge.set('PE-Moreilândia', '2614303')
+    listIbge.set('PE-Moreno', '2609402')
+    listIbge.set('PE-Nazaré da Mata', '2609501')
+    listIbge.set('PE-Olinda', '2609600')
+    listIbge.set('PE-Orobó', '2609709')
+    listIbge.set('PE-Orocó', '2609808')
+    listIbge.set('PE-Ouricuri', '2609907')
+    listIbge.set('PE-Palmares', '2610004')
+    listIbge.set('PE-Palmeirina', '2610103')
+    listIbge.set('PE-Panelas', '2610202')
+    listIbge.set('PE-Paranatama', '2610301')
+    listIbge.set('PE-Parnamirim', '2610400')
+    listIbge.set('PE-Passira', '2610509')
+    listIbge.set('PE-Paudalho', '2610608')
+    listIbge.set('PE-Paulista', '2610707')
+    listIbge.set('PE-Pedra', '2610806')
+    listIbge.set('PE-Pesqueira', '2610905')
+    listIbge.set('PE-Petrolândia', '2611002')
+    listIbge.set('PE-Petrolina', '2611101')
+    listIbge.set('PE-Poção', '2611200')
+    listIbge.set('PE-Pombos', '2611309')
+    listIbge.set('PE-Primavera', '2611408')
+    listIbge.set('PE-Quipapá', '2611507')
+    listIbge.set('PE-Quixaba', '2611533')
+    listIbge.set('PE-Recife', '2611606')
+    listIbge.set('PE-Riacho das Almas', '2611705')
+    listIbge.set('PE-Ribeirão', '2611804')
+    listIbge.set('PE-Rio Formoso', '2611903')
+    listIbge.set('PE-Sairé', '2612000')
+    listIbge.set('PE-Salgadinho', '2612109')
+    listIbge.set('PE-Salgueiro', '2612208')
+    listIbge.set('PE-Saloá', '2612307')
+    listIbge.set('PE-Sanharó', '2612406')
+    listIbge.set('PE-Santa Cruz', '2612455')
+    listIbge.set('PE-Santa Cruz da Baixa Verde', '2612471')
+    listIbge.set('PE-Santa Cruz do Capibaribe', '2612505')
+    listIbge.set('PE-Santa Filomena', '2612554')
+    listIbge.set('PE-Santa Maria da Boa Vista', '2612604')
+    listIbge.set('PE-Santa Maria do Cambucá', '2612703')
+    listIbge.set('PE-Santa Terezinha', '2612802')
+    listIbge.set('PE-São Benedito do Sul', '2612901')
+    listIbge.set('PE-São Bento do Una', '2613008')
+    listIbge.set('PE-São Caitano', '2613107')
+    listIbge.set('PE-São João', '2613206')
+    listIbge.set('PE-São Joaquim do Monte', '2613305')
+    listIbge.set('PE-São José da Coroa Grande', '2613404')
+    listIbge.set('PE-São José do Belmonte', '2613503')
+    listIbge.set('PE-São José do Egito', '2613602')
+    listIbge.set('PE-São Lourenço da Mata', '2613701')
+    listIbge.set('PE-São Vicente Férrer', '2613800')
+    listIbge.set('PE-Serra Talhada', '2613909')
+    listIbge.set('PE-Serrita', '2614006')
+    listIbge.set('PE-Sertânia', '2614105')
+    listIbge.set('PE-Sirinhaém', '2614204')
+    listIbge.set('PE-Solidão', '2614402')
+    listIbge.set('PE-Surubim', '2614501')
+    listIbge.set('PE-Tabira', '2614600')
+    listIbge.set('PE-Tacaimbó', '2614709')
+    listIbge.set('PE-Tacaratu', '2614808')
+    listIbge.set('PE-Tamandaré', '2614857')
+    listIbge.set('PE-Taquaritinga do Norte', '2615003')
+    listIbge.set('PE-Terezinha', '2615102')
+    listIbge.set('PE-Terra Nova', '2615201')
+    listIbge.set('PE-Timbaúba', '2615300')
+    listIbge.set('PE-Toritama', '2615409')
+    listIbge.set('PE-Tracunhaém', '2615508')
+    listIbge.set('PE-Trindade', '2615607')
+    listIbge.set('PE-Triunfo', '2615706')
+    listIbge.set('PE-Tupanatinga', '2615805')
+    listIbge.set('PE-Tuparetama', '2615904')
+    listIbge.set('PE-Venturosa', '2616001')
+    listIbge.set('PE-Verdejante', '2616100')
+    listIbge.set('PE-Vertente do Lério', '2616183')
+    listIbge.set('PE-Vertentes', '2616209')
+    listIbge.set('PE-Vicência', '2616308')
+    listIbge.set('PE-Vitória de Santo Antão', '2616407')
+    listIbge.set('PE-Xexéu', '2616506')
+    listIbge.set('AL-Água Branca', '2700102')
+    listIbge.set('AL-Anadia', '2700201')
+    listIbge.set('AL-Arapiraca', '2700300')
+    listIbge.set('AL-Atalaia', '2700409')
+    listIbge.set('AL-Barra de Santo Antônio', '2700508')
+    listIbge.set('AL-Barra de São Miguel', '2700607')
+    listIbge.set('AL-Batalha', '2700706')
+    listIbge.set('AL-Belém', '2700805')
+    listIbge.set('AL-Belo Monte', '2700904')
+    listIbge.set('AL-Boca da Mata', '2701001')
+    listIbge.set('AL-Branquinha', '2701100')
+    listIbge.set('AL-Cacimbinhas', '2701209')
+    listIbge.set('AL-Cajueiro', '2701308')
+    listIbge.set('AL-Campestre', '2701357')
+    listIbge.set('AL-Campo Alegre', '2701407')
+    listIbge.set('AL-Campo Grande', '2701506')
+    listIbge.set('AL-Canapi', '2701605')
+    listIbge.set('AL-Capela', '2701704')
+    listIbge.set('AL-Carneiros', '2701803')
+    listIbge.set('AL-Chã Preta', '2701902')
+    listIbge.set('AL-Coité do Nóia', '2702009')
+    listIbge.set('AL-Colônia Leopoldina', '2702108')
+    listIbge.set('AL-Coqueiro Seco', '2702207')
+    listIbge.set('AL-Coruripe', '2702306')
+    listIbge.set('AL-Craíbas', '2702355')
+    listIbge.set('AL-Delmiro Gouveia', '2702405')
+    listIbge.set('AL-Dois Riachos', '2702504')
+    listIbge.set('AL-Estrela de Alagoas', '2702553')
+    listIbge.set('AL-Feira Grande', '2702603')
+    listIbge.set('AL-Feliz Deserto', '2702702')
+    listIbge.set('AL-Flexeiras', '2702801')
+    listIbge.set('AL-Girau do Ponciano', '2702900')
+    listIbge.set('AL-Ibateguara', '2703007')
+    listIbge.set('AL-Igaci', '2703106')
+    listIbge.set('AL-Igreja Nova', '2703205')
+    listIbge.set('AL-Inhapi', '2703304')
+    listIbge.set('AL-Jacaré dos Homens', '2703403')
+    listIbge.set('AL-Jacuípe', '2703502')
+    listIbge.set('AL-Japaratinga', '2703601')
+    listIbge.set('AL-Jaramataia', '2703700')
+    listIbge.set('AL-Jequiá da Praia', '2703759')
+    listIbge.set('AL-Joaquim Gomes', '2703809')
+    listIbge.set('AL-Jundiá', '2703908')
+    listIbge.set('AL-Junqueiro', '2704005')
+    listIbge.set('AL-Lagoa da Canoa', '2704104')
+    listIbge.set('AL-Limoeiro de Anadia', '2704203')
+    listIbge.set('AL-Maceió', '2704302')
+    listIbge.set('AL-Major Isidoro', '2704401')
+    listIbge.set('AL-Mar Vermelho', '2704906')
+    listIbge.set('AL-Maragogi', '2704500')
+    listIbge.set('AL-Maravilha', '2704609')
+    listIbge.set('AL-Marechal Deodoro', '2704708')
+    listIbge.set('AL-Maribondo', '2704807')
+    listIbge.set('AL-Mata Grande', '2705002')
+    listIbge.set('AL-Matriz de Camaragibe', '2705101')
+    listIbge.set('AL-Messias', '2705200')
+    listIbge.set('AL-Minador do Negrão', '2705309')
+    listIbge.set('AL-Monteirópolis', '2705408')
+    listIbge.set('AL-Murici', '2705507')
+    listIbge.set('AL-Novo Lino', '2705606')
+    listIbge.set('AL-Olivença', '2706000')
+    listIbge.set('AL-Ouro Branco', '2706109')
+    listIbge.set('AL-Palestina', '2706208')
+    listIbge.set('AL-Palmeira dos Índios', '2706307')
+    listIbge.set('AL-Pão de Açúcar', '2706406')
+    listIbge.set('AL-Pariconha', '2706422')
+    listIbge.set('AL-Paripueira', '2706448')
+    listIbge.set('AL-Passo de Camaragibe', '2706505')
+    listIbge.set('AL-Paulo Jacinto', '2706604')
+    listIbge.set('AL-Penedo', '2706703')
+    listIbge.set('AL-Piaçabuçu', '2706802')
+    listIbge.set('AL-Pilar', '2706901')
+    listIbge.set('AL-Pindoba', '2707008')
+    listIbge.set('AL-Piranhas', '2707107')
+    listIbge.set('AL-Poço das Trincheiras', '2707206')
+    listIbge.set('AL-Porto Calvo', '2707305')
+    listIbge.set('AL-Porto de Pedras', '2707404')
+    listIbge.set('AL-Porto Real do Colégio', '2707503')
+    listIbge.set('AL-Quebrangulo', '2707602')
+    listIbge.set('AL-Rio Largo', '2707701')
+    listIbge.set('AL-Roteiro', '2707800')
+    listIbge.set('AL-Santa Luzia do Norte', '2707909')
+    listIbge.set('AL-Santana do Ipanema', '2708006')
+    listIbge.set('AL-Santana do Mundaú', '2708105')
+    listIbge.set('AL-São Brás', '2708204')
+    listIbge.set('AL-São José da Laje', '2708303')
+    listIbge.set('AL-São José da Tapera', '2708402')
+    listIbge.set('AL-São Luís do Quitunde', '2708501')
+    listIbge.set('AL-São Miguel dos Campos', '2708600')
+    listIbge.set('AL-São Miguel dos Milagres', '2708709')
+    listIbge.set('AL-São Sebastião', '2708808')
+    listIbge.set('AL-Satuba', '2708907')
+    listIbge.set('AL-Senador Rui Palmeira', '2708956')
+    listIbge.set('AL-Taquarana', '2709103')
+    listIbge.set('AL-Teotônio Vilela', '2709152')
+    listIbge.set('AL-Traipu', '2709202')
+    listIbge.set('AL-União dos Palmares', '2709301')
+    listIbge.set('AL-Viçosa', '2709400')
+    listIbge.set('SE-Amparo do São Francisco', '2800100')
+    listIbge.set('SE-Aquidabã', '2800209')
+    listIbge.set('SE-Aracaju', '2800308')
+    listIbge.set('SE-Arauá', '2800407')
+    listIbge.set('SE-Areia Branca', '2800506')
+    listIbge.set('SE-Barra dos Coqueiros', '2800605')
+    listIbge.set('SE-Boquim', '2800670')
+    listIbge.set('SE-Brejo Grande', '2800704')
+    listIbge.set('SE-Campo do Brito', '2801009')
+    listIbge.set('SE-Canhoba', '2801108')
+    listIbge.set('SE-Canindé de São Francisco', '2801207')
+    listIbge.set('SE-Capela', '2801306')
+    listIbge.set('SE-Carira', '2801405')
+    listIbge.set('SE-Carmópolis', '2801504')
+    listIbge.set('SE-Cedro de São João', '2801603')
+    listIbge.set('SE-Cristinápolis', '2801702')
+    listIbge.set('SE-Cumbe', '2801900')
+    listIbge.set('SE-Divina Pastora', '2802007')
+    listIbge.set('SE-Estância', '2802106')
+    listIbge.set('SE-Feira Nova', '2802205')
+    listIbge.set('SE-Frei Paulo', '2802304')
+    listIbge.set('SE-Gararu', '2802403')
+    listIbge.set('SE-General Maynard', '2802502')
+    listIbge.set('SE-Gracho Cardoso', '2802601')
+    listIbge.set('SE-Ilha das Flores', '2802700')
+    listIbge.set('SE-Indiaroba', '2802809')
+    listIbge.set('SE-Itabaiana', '2802908')
+    listIbge.set('SE-Itabaianinha', '2803005')
+    listIbge.set('SE-Itabi', '2803104')
+    listIbge.set('SE-Japaratuba', '2803302')
+    listIbge.set('SE-Japoatã', '2803401')
+    listIbge.set('SE-Lagarto', '2803500')
+    listIbge.set('SE-Laranjeiras', '2803609')
+    listIbge.set('SE-Macambira', '2803708')
+    listIbge.set('SE-Malhada dos Bois', '2803807')
+    listIbge.set('SE-Malhador', '2803906')
+    listIbge.set('SE-Maruim', '2804003')
+    listIbge.set('SE-Moita Bonita', '2804102')
+    listIbge.set('SE-Monte Alegre de Sergipe', '2804201')
+    listIbge.set('SE-Muribeca', '2804300')
+    listIbge.set('SE-Neópolis', '2804409')
+    listIbge.set('SE-Nossa Senhora Aparecida', '2804458')
+    listIbge.set('SE-Nossa Senhora da Glória', '2804508')
+    listIbge.set('SE-Nossa Senhora das Dores', '2804607')
+    listIbge.set('SE-Nossa Senhora de Lourdes', '2804706')
+    listIbge.set('SE-Nossa Senhora do Socorro', '2804805')
+    listIbge.set('SE-Pacatuba', '2804904')
+    listIbge.set('SE-Pedra Mole', '2805000')
+    listIbge.set('SE-Pedrinhas', '2805109')
+    listIbge.set('SE-Pinhão', '2805208')
+    listIbge.set('SE-Pirambu', '2805307')
+    listIbge.set('SE-Poço Redondo', '2805406')
+    listIbge.set('SE-Poço Verde', '2805505')
+    listIbge.set('SE-Porto da Folha', '2805604')
+    listIbge.set('SE-Propriá', '2805703')
+    listIbge.set('SE-Riachão do Dantas', '2805802')
+    listIbge.set('SE-Riachuelo', '2805901')
+    listIbge.set('SE-Ribeirópolis', '2806008')
+    listIbge.set('SE-Rosário do Catete', '2806107')
+    listIbge.set('SE-Salgado', '2806206')
+    listIbge.set('SE-Santa Luzia do Itanhy', '2806305')
+    listIbge.set('SE-Santa Rosa de Lima', '2806503')
+    listIbge.set('SE-Santana do São Francisco', '2806404')
+    listIbge.set('SE-Santo Amaro das Brotas', '2806602')
+    listIbge.set('SE-São Cristóvão', '2806701')
+    listIbge.set('SE-São Domingos', '2806800')
+    listIbge.set('SE-São Francisco', '2806909')
+    listIbge.set('SE-São Miguel do Aleixo', '2807006')
+    listIbge.set('SE-Simão Dias', '2807105')
+    listIbge.set('SE-Siriri', '2807204')
+    listIbge.set('SE-Telha', '2807303')
+    listIbge.set('SE-Tobias Barreto', '2807402')
+    listIbge.set('SE-Tomar do Geru', '2807501')
+    listIbge.set('SE-Umbaúba', '2807600')
+    listIbge.set('BA-Abaíra', '2900108')
+    listIbge.set('BA-Abaré', '2900207')
+    listIbge.set('BA-Acajutiba', '2900306')
+    listIbge.set('BA-Adustina', '2900355')
+    listIbge.set('BA-Água Fria', '2900405')
+    listIbge.set('BA-Aiquara', '2900603')
+    listIbge.set('BA-Alagoinhas', '2900702')
+    listIbge.set('BA-Alcobaça', '2900801')
+    listIbge.set('BA-Almadina', '2900900')
+    listIbge.set('BA-Amargosa', '2901007')
+    listIbge.set('BA-Amélia Rodrigues', '2901106')
+    listIbge.set('BA-América Dourada', '2901155')
+    listIbge.set('BA-Anagé', '2901205')
+    listIbge.set('BA-Andaraí', '2901304')
+    listIbge.set('BA-Andorinha', '2901353')
+    listIbge.set('BA-Angical', '2901403')
+    listIbge.set('BA-Anguera', '2901502')
+    listIbge.set('BA-Antas', '2901601')
+    listIbge.set('BA-Antônio Cardoso', '2901700')
+    listIbge.set('BA-Antônio Gonçalves', '2901809')
+    listIbge.set('BA-Aporá', '2901908')
+    listIbge.set('BA-Apuarema', '2901957')
+    listIbge.set('BA-Araçás', '2902054')
+    listIbge.set('BA-Aracatu', '2902005')
+    listIbge.set('BA-Araci', '2902104')
+    listIbge.set('BA-Aramari', '2902203')
+    listIbge.set('BA-Arataca', '2902252')
+    listIbge.set('BA-Aratuípe', '2902302')
+    listIbge.set('BA-Aurelino Leal', '2902401')
+    listIbge.set('BA-Baianópolis', '2902500')
+    listIbge.set('BA-Baixa Grande', '2902609')
+    listIbge.set('BA-Banzaê', '2902658')
+    listIbge.set('BA-Barra', '2902708')
+    listIbge.set('BA-Barra da Estiva', '2902807')
+    listIbge.set('BA-Barra do Choça', '2902906')
+    listIbge.set('BA-Barra do Mendes', '2903003')
+    listIbge.set('BA-Barra do Rocha', '2903102')
+    listIbge.set('BA-Barreiras', '2903201')
+    listIbge.set('BA-Barro Alto', '2903235')
+    listIbge.set('BA-Barro Preto', '2903300')
+    listIbge.set('BA-Barrocas', '2903276')
+    listIbge.set('BA-Belmonte', '2903409')
+    listIbge.set('BA-Belo Campo', '2903508')
+    listIbge.set('BA-Biritinga', '2903607')
+    listIbge.set('BA-Boa Nova', '2903706')
+    listIbge.set('BA-Boa Vista do Tupim', '2903805')
+    listIbge.set('BA-Bom Jesus da Lapa', '2903904')
+    listIbge.set('BA-Bom Jesus da Serra', '2903953')
+    listIbge.set('BA-Boninal', '2904001')
+    listIbge.set('BA-Bonito', '2904050')
+    listIbge.set('BA-Boquira', '2904100')
+    listIbge.set('BA-Botuporã', '2904209')
+    listIbge.set('BA-Brejões', '2904308')
+    listIbge.set('BA-Brejolândia', '2904407')
+    listIbge.set('BA-Brotas de Macaúbas', '2904506')
+    listIbge.set('BA-Brumado', '2904605')
+    listIbge.set('BA-Buerarema', '2904704')
+    listIbge.set('BA-Buritirama', '2904753')
+    listIbge.set('BA-Caatiba', '2904803')
+    listIbge.set('BA-Cabaceiras do Paraguaçu', '2904852')
+    listIbge.set('BA-Cachoeira', '2904902')
+    listIbge.set('BA-Caculé', '2905008')
+    listIbge.set('BA-Caém', '2905107')
+    listIbge.set('BA-Caetanos', '2905156')
+    listIbge.set('BA-Caetité', '2905206')
+    listIbge.set('BA-Cafarnaum', '2905305')
+    listIbge.set('BA-Cairu', '2905404')
+    listIbge.set('BA-Caldeirão Grande', '2905503')
+    listIbge.set('BA-Camacan', '2905602')
+    listIbge.set('BA-Camaçari', '2905701')
+    listIbge.set('BA-Camamu', '2905800')
+    listIbge.set('BA-Campo Alegre de Lourdes', '2905909')
+    listIbge.set('BA-Campo Formoso', '2906006')
+    listIbge.set('BA-Canápolis', '2906105')
+    listIbge.set('BA-Canarana', '2906204')
+    listIbge.set('BA-Canavieiras', '2906303')
+    listIbge.set('BA-Candeal', '2906402')
+    listIbge.set('BA-Candeias', '2906501')
+    listIbge.set('BA-Candiba', '2906600')
+    listIbge.set('BA-Cândido Sales', '2906709')
+    listIbge.set('BA-Cansanção', '2906808')
+    listIbge.set('BA-Canudos', '2906824')
+    listIbge.set('BA-Capela do Alto Alegre', '2906857')
+    listIbge.set('BA-Capim Grosso', '2906873')
+    listIbge.set('BA-Caraíbas', '2906899')
+    listIbge.set('BA-Caravelas', '2906907')
+    listIbge.set('BA-Cardeal da Silva', '2907004')
+    listIbge.set('BA-Carinhanha', '2907103')
+    listIbge.set('BA-Casa Nova', '2907202')
+    listIbge.set('BA-Castro Alves', '2907301')
+    listIbge.set('BA-Catolândia', '2907400')
+    listIbge.set('BA-Catu', '2907509')
+    listIbge.set('BA-Caturama', '2907558')
+    listIbge.set('BA-Central', '2907608')
+    listIbge.set('BA-Chorrochó', '2907707')
+    listIbge.set('BA-Cícero Dantas', '2907806')
+    listIbge.set('BA-Cipó', '2907905')
+    listIbge.set('BA-Coaraci', '2908002')
+    listIbge.set('BA-Cocos', '2908101')
+    listIbge.set('BA-Conceição da Feira', '2908200')
+    listIbge.set('BA-Conceição do Almeida', '2908309')
+    listIbge.set('BA-Conceição do Coité', '2908408')
+    listIbge.set('BA-Conceição do Jacuípe', '2908507')
+    listIbge.set('BA-Conde', '2908606')
+    listIbge.set('BA-Condeúba', '2908705')
+    listIbge.set('BA-Contendas do Sincorá', '2908804')
+    listIbge.set('BA-Coração de Maria', '2908903')
+    listIbge.set('BA-Cordeiros', '2909000')
+    listIbge.set('BA-Coribe', '2909109')
+    listIbge.set('BA-Coronel João Sá', '2909208')
+    listIbge.set('BA-Correntina', '2909307')
+    listIbge.set('BA-Cotegipe', '2909406')
+    listIbge.set('BA-Cravolândia', '2909505')
+    listIbge.set('BA-Crisópolis', '2909604')
+    listIbge.set('BA-Cristópolis', '2909703')
+    listIbge.set('BA-Cruz das Almas', '2909802')
+    listIbge.set('BA-Curaçá', '2909901')
+    listIbge.set('BA-Dário Meira', '2910008')
+    listIbge.set('BA-Dom Basílio', '2910107')
+    listIbge.set('BA-Dom Macedo Costa', '2910206')
+    listIbge.set('BA-Elísio Medrado', '2910305')
+    listIbge.set('BA-Encruzilhada', '2910404')
+    listIbge.set('BA-Entre Rios', '2910503')
+    listIbge.set('BA-Érico Cardoso', '2900504')
+    listIbge.set('BA-Esplanada', '2910602')
+    listIbge.set('BA-Euclides da Cunha', '2910701')
+    listIbge.set('BA-Eunápolis', '2910727')
+    listIbge.set('BA-Fátima', '2910750')
+    listIbge.set('BA-Feira da Mata', '2910776')
+    listIbge.set('BA-Feira de Santana', '2910800')
+    listIbge.set('BA-Filadélfia', '2910859')
+    listIbge.set('BA-Firmino Alves', '2910909')
+    listIbge.set('BA-Floresta Azul', '2911006')
+    listIbge.set('BA-Formosa do Rio Preto', '2911105')
+    listIbge.set('BA-Gandu', '2911204')
+    listIbge.set('BA-Gavião', '2911253')
+    listIbge.set('BA-Gentio do Ouro', '2911303')
+    listIbge.set('BA-Glória', '2911402')
+    listIbge.set('BA-Gongogi', '2911501')
+    listIbge.set('BA-Governador Mangabeira', '2911600')
+    listIbge.set('BA-Guajeru', '2911659')
+    listIbge.set('BA-Guanambi', '2911709')
+    listIbge.set('BA-Guaratinga', '2911808')
+    listIbge.set('BA-Heliópolis', '2911857')
+    listIbge.set('BA-Iaçu', '2911907')
+    listIbge.set('BA-Ibiassucê', '2912004')
+    listIbge.set('BA-Ibicaraí', '2912103')
+    listIbge.set('BA-Ibicoara', '2912202')
+    listIbge.set('BA-Ibicuí', '2912301')
+    listIbge.set('BA-Ibipeba', '2912400')
+    listIbge.set('BA-Ibipitanga', '2912509')
+    listIbge.set('BA-Ibiquera', '2912608')
+    listIbge.set('BA-Ibirapitanga', '2912707')
+    listIbge.set('BA-Ibirapuã', '2912806')
+    listIbge.set('BA-Ibirataia', '2912905')
+    listIbge.set('BA-Ibitiara', '2913002')
+    listIbge.set('BA-Ibititá', '2913101')
+    listIbge.set('BA-Ibotirama', '2913200')
+    listIbge.set('BA-Ichu', '2913309')
+    listIbge.set('BA-Igaporã', '2913408')
+    listIbge.set('BA-Igrapiúna', '2913457')
+    listIbge.set('BA-Iguaí', '2913507')
+    listIbge.set('BA-Ilhéus', '2913606')
+    listIbge.set('BA-Inhambupe', '2913705')
+    listIbge.set('BA-Ipecaetá', '2913804')
+    listIbge.set('BA-Ipiaú', '2913903')
+    listIbge.set('BA-Ipirá', '2914000')
+    listIbge.set('BA-Ipupiara', '2914109')
+    listIbge.set('BA-Irajuba', '2914208')
+    listIbge.set('BA-Iramaia', '2914307')
+    listIbge.set('BA-Iraquara', '2914406')
+    listIbge.set('BA-Irará', '2914505')
+    listIbge.set('BA-Irecê', '2914604')
+    listIbge.set('BA-Itabela', '2914653')
+    listIbge.set('BA-Itaberaba', '2914703')
+    listIbge.set('BA-Itabuna', '2914802')
+    listIbge.set('BA-Itacaré', '2914901')
+    listIbge.set('BA-Itaeté', '2915007')
+    listIbge.set('BA-Itagi', '2915106')
+    listIbge.set('BA-Itagibá', '2915205')
+    listIbge.set('BA-Itagimirim', '2915304')
+    listIbge.set('BA-Itaguaçu da Bahia', '2915353')
+    listIbge.set('BA-Itaju do Colônia', '2915403')
+    listIbge.set('BA-Itajuípe', '2915502')
+    listIbge.set('BA-Itamaraju', '2915601')
+    listIbge.set('BA-Itamari', '2915700')
+    listIbge.set('BA-Itambé', '2915809')
+    listIbge.set('BA-Itanagra', '2915908')
+    listIbge.set('BA-Itanhém', '2916005')
+    listIbge.set('BA-Itaparica', '2916104')
+    listIbge.set('BA-Itapé', '2916203')
+    listIbge.set('BA-Itapebi', '2916302')
+    listIbge.set('BA-Itapetinga', '2916401')
+    listIbge.set('BA-Itapicuru', '2916500')
+    listIbge.set('BA-Itapitanga', '2916609')
+    listIbge.set('BA-Itaquara', '2916708')
+    listIbge.set('BA-Itarantim', '2916807')
+    listIbge.set('BA-Itatim', '2916856')
+    listIbge.set('BA-Itiruçu', '2916906')
+    listIbge.set('BA-Itiúba', '2917003')
+    listIbge.set('BA-Itororó', '2917102')
+    listIbge.set('BA-Ituaçu', '2917201')
+    listIbge.set('BA-Ituberá', '2917300')
+    listIbge.set('BA-Iuiu', '2917334')
+    listIbge.set('BA-Jaborandi', '2917359')
+    listIbge.set('BA-Jacaraci', '2917409')
+    listIbge.set('BA-Jacobina', '2917508')
+    listIbge.set('BA-Jaguaquara', '2917607')
+    listIbge.set('BA-Jaguarari', '2917706')
+    listIbge.set('BA-Jaguaripe', '2917805')
+    listIbge.set('BA-Jandaíra', '2917904')
+    listIbge.set('BA-Jequié', '2918001')
+    listIbge.set('BA-Jeremoabo', '2918100')
+    listIbge.set('BA-Jiquiriçá', '2918209')
+    listIbge.set('BA-Jitaúna', '2918308')
+    listIbge.set('BA-João Dourado', '2918357')
+    listIbge.set('BA-Juazeiro', '2918407')
+    listIbge.set('BA-Jucuruçu', '2918456')
+    listIbge.set('BA-Jussara', '2918506')
+    listIbge.set('BA-Jussari', '2918555')
+    listIbge.set('BA-Jussiape', '2918605')
+    listIbge.set('BA-Lafaiete Coutinho', '2918704')
+    listIbge.set('BA-Lagoa Real', '2918753')
+    listIbge.set('BA-Laje', '2918803')
+    listIbge.set('BA-Lajedão', '2918902')
+    listIbge.set('BA-Lajedinho', '2919009')
+    listIbge.set('BA-Lajedo do Tabocal', '2919058')
+    listIbge.set('BA-Lamarão', '2919108')
+    listIbge.set('BA-Lapão', '2919157')
+    listIbge.set('BA-Lauro de Freitas', '2919207')
+    listIbge.set('BA-Lençóis', '2919306')
+    listIbge.set('BA-Licínio de Almeida', '2919405')
+    listIbge.set('BA-Livramento de Nossa Senhora', '2919504')
+    listIbge.set('BA-Luís Eduardo Magalhães', '2919553')
+    listIbge.set('BA-Macajuba', '2919603')
+    listIbge.set('BA-Macarani', '2919702')
+    listIbge.set('BA-Macaúbas', '2919801')
+    listIbge.set('BA-Macururé', '2919900')
+    listIbge.set('BA-Madre de Deus', '2919926')
+    listIbge.set('BA-Maetinga', '2919959')
+    listIbge.set('BA-Maiquinique', '2920007')
+    listIbge.set('BA-Mairi', '2920106')
+    listIbge.set('BA-Malhada', '2920205')
+    listIbge.set('BA-Malhada de Pedras', '2920304')
+    listIbge.set('BA-Manoel Vitorino', '2920403')
+    listIbge.set('BA-Mansidão', '2920452')
+    listIbge.set('BA-Maracás', '2920502')
+    listIbge.set('BA-Maragogipe', '2920601')
+    listIbge.set('BA-Maraú', '2920700')
+    listIbge.set('BA-Marcionílio Souza', '2920809')
+    listIbge.set('BA-Mascote', '2920908')
+    listIbge.set('BA-Mata de São João', '2921005')
+    listIbge.set('BA-Matina', '2921054')
+    listIbge.set('BA-Medeiros Neto', '2921104')
+    listIbge.set('BA-Miguel Calmon', '2921203')
+    listIbge.set('BA-Milagres', '2921302')
+    listIbge.set('BA-Mirangaba', '2921401')
+    listIbge.set('BA-Mirante', '2921450')
+    listIbge.set('BA-Monte Santo', '2921500')
+    listIbge.set('BA-Morpará', '2921609')
+    listIbge.set('BA-Morro do Chapéu', '2921708')
+    listIbge.set('BA-Mortugaba', '2921807')
+    listIbge.set('BA-Mucugê', '2921906')
+    listIbge.set('BA-Mucuri', '2922003')
+    listIbge.set('BA-Mulungu do Morro', '2922052')
+    listIbge.set('BA-Mundo Novo', '2922102')
+    listIbge.set('BA-Muniz Ferreira', '2922201')
+    listIbge.set('BA-Muquém do São Francisco', '2922250')
+    listIbge.set('BA-Muritiba', '2922300')
+    listIbge.set('BA-Mutuípe', '2922409')
+    listIbge.set('BA-Nazaré', '2922508')
+    listIbge.set('BA-Nilo Peçanha', '2922607')
+    listIbge.set('BA-Nordestina', '2922656')
+    listIbge.set('BA-Nova Canaã', '2922706')
+    listIbge.set('BA-Nova Fátima', '2922730')
+    listIbge.set('BA-Nova Ibiá', '2922755')
+    listIbge.set('BA-Nova Itarana', '2922805')
+    listIbge.set('BA-Nova Redenção', '2922854')
+    listIbge.set('BA-Nova Soure', '2922904')
+    listIbge.set('BA-Nova Viçosa', '2923001')
+    listIbge.set('BA-Novo Horizonte', '2923035')
+    listIbge.set('BA-Novo Triunfo', '2923050')
+    listIbge.set('BA-Olindina', '2923100')
+    listIbge.set('BA-Oliveira dos Brejinhos', '2923209')
+    listIbge.set('BA-Ouriçangas', '2923308')
+    listIbge.set('BA-Ourolândia', '2923357')
+    listIbge.set('BA-Palmas de Monte Alto', '2923407')
+    listIbge.set('BA-Palmeiras', '2923506')
+    listIbge.set('BA-Paramirim', '2923605')
+    listIbge.set('BA-Paratinga', '2923704')
+    listIbge.set('BA-Paripiranga', '2923803')
+    listIbge.set('BA-Pau Brasil', '2923902')
+    listIbge.set('BA-Paulo Afonso', '2924009')
+    listIbge.set('BA-Pé de Serra', '2924058')
+    listIbge.set('BA-Pedrão', '2924108')
+    listIbge.set('BA-Pedro Alexandre', '2924207')
+    listIbge.set('BA-Piatã', '2924306')
+    listIbge.set('BA-Pilão Arcado', '2924405')
+    listIbge.set('BA-Pindaí', '2924504')
+    listIbge.set('BA-Pindobaçu', '2924603')
+    listIbge.set('BA-Pintadas', '2924652')
+    listIbge.set('BA-Piraí do Norte', '2924678')
+    listIbge.set('BA-Piripá', '2924702')
+    listIbge.set('BA-Piritiba', '2924801')
+    listIbge.set('BA-Planaltino', '2924900')
+    listIbge.set('BA-Planalto', '2925006')
+    listIbge.set('BA-Poções', '2925105')
+    listIbge.set('BA-Pojuca', '2925204')
+    listIbge.set('BA-Ponto Novo', '2925253')
+    listIbge.set('BA-Porto Seguro', '2925303')
+    listIbge.set('BA-Potiraguá', '2925402')
+    listIbge.set('BA-Prado', '2925501')
+    listIbge.set('BA-Presidente Dutra', '2925600')
+    listIbge.set('BA-Presidente Jânio Quadros', '2925709')
+    listIbge.set('BA-Presidente Tancredo Neves', '2925758')
+    listIbge.set('BA-Queimadas', '2925808')
+    listIbge.set('BA-Quijingue', '2925907')
+    listIbge.set('BA-Quixabeira', '2925931')
+    listIbge.set('BA-Rafael Jambeiro', '2925956')
+    listIbge.set('BA-Remanso', '2926004')
+    listIbge.set('BA-Retirolândia', '2926103')
+    listIbge.set('BA-Riachão das Neves', '2926202')
+    listIbge.set('BA-Riachão do Jacuípe', '2926301')
+    listIbge.set('BA-Riacho de Santana', '2926400')
+    listIbge.set('BA-Ribeira do Amparo', '2926509')
+    listIbge.set('BA-Ribeira do Pombal', '2926608')
+    listIbge.set('BA-Ribeirão do Largo', '2926657')
+    listIbge.set('BA-Rio de Contas', '2926707')
+    listIbge.set('BA-Rio do Antônio', '2926806')
+    listIbge.set('BA-Rio do Pires', '2926905')
+    listIbge.set('BA-Rio Real', '2927002')
+    listIbge.set('BA-Rodelas', '2927101')
+    listIbge.set('BA-Ruy Barbosa', '2927200')
+    listIbge.set('BA-Salinas da Margarida', '2927309')
+    listIbge.set('BA-Salvador', '2927408')
+    listIbge.set('BA-Santa Bárbara', '2927507')
+    listIbge.set('BA-Santa Brígida', '2927606')
+    listIbge.set('BA-Santa Cruz Cabrália', '2927705')
+    listIbge.set('BA-Santa Cruz da Vitória', '2927804')
+    listIbge.set('BA-Santa Inês', '2927903')
+    listIbge.set('BA-Santa Luzia', '2928059')
+    listIbge.set('BA-Santa Maria da Vitória', '2928109')
+    listIbge.set('BA-Santa Rita de Cássia', '2928406')
+    listIbge.set('BA-Santa Terezinha', '2928505')
+    listIbge.set('BA-Santaluz', '2928000')
+    listIbge.set('BA-Santana', '2928208')
+    listIbge.set('BA-Santanópolis', '2928307')
+    listIbge.set('BA-Santo Amaro', '2928604')
+    listIbge.set('BA-Santo Antônio de Jesus', '2928703')
+    listIbge.set('BA-Santo Estêvão', '2928802')
+    listIbge.set('BA-São Desidério', '2928901')
+    listIbge.set('BA-São Domingos', '2928950')
+    listIbge.set('BA-São Felipe', '2929107')
+    listIbge.set('BA-São Félix', '2929008')
+    listIbge.set('BA-São Félix do Coribe', '2929057')
+    listIbge.set('BA-São Francisco do Conde', '2929206')
+    listIbge.set('BA-São Gabriel', '2929255')
+    listIbge.set('BA-São Gonçalo dos Campos', '2929305')
+    listIbge.set('BA-São José da Vitória', '2929354')
+    listIbge.set('BA-São José do Jacuípe', '2929370')
+    listIbge.set('BA-São Miguel das Matas', '2929404')
+    listIbge.set('BA-São Sebastião do Passé', '2929503')
+    listIbge.set('BA-Sapeaçu', '2929602')
+    listIbge.set('BA-Sátiro Dias', '2929701')
+    listIbge.set('BA-Saubara', '2929750')
+    listIbge.set('BA-Saúde', '2929800')
+    listIbge.set('BA-Seabra', '2929909')
+    listIbge.set('BA-Sebastião Laranjeiras', '2930006')
+    listIbge.set('BA-Senhor do Bonfim', '2930105')
+    listIbge.set('BA-Sento Sé', '2930204')
+    listIbge.set('BA-Serra do Ramalho', '2930154')
+    listIbge.set('BA-Serra Dourada', '2930303')
+    listIbge.set('BA-Serra Preta', '2930402')
+    listIbge.set('BA-Serrinha', '2930501')
+    listIbge.set('BA-Serrolândia', '2930600')
+    listIbge.set('BA-Simões Filho', '2930709')
+    listIbge.set('BA-Sítio do Mato', '2930758')
+    listIbge.set('BA-Sítio do Quinto', '2930766')
+    listIbge.set('BA-Sobradinho', '2930774')
+    listIbge.set('BA-Souto Soares', '2930808')
+    listIbge.set('BA-Tabocas do Brejo Velho', '2930907')
+    listIbge.set('BA-Tanhaçu', '2931004')
+    listIbge.set('BA-Tanque Novo', '2931053')
+    listIbge.set('BA-Tanquinho', '2931103')
+    listIbge.set('BA-Taperoá', '2931202')
+    listIbge.set('BA-Tapiramutá', '2931301')
+    listIbge.set('BA-Teixeira de Freitas', '2931350')
+    listIbge.set('BA-Teodoro Sampaio', '2931400')
+    listIbge.set('BA-Teofilândia', '2931509')
+    listIbge.set('BA-Teolândia', '2931608')
+    listIbge.set('BA-Terra Nova', '2931707')
+    listIbge.set('BA-Tremedal', '2931806')
+    listIbge.set('BA-Tucano', '2931905')
+    listIbge.set('BA-Uauá', '2932002')
+    listIbge.set('BA-Ubaíra', '2932101')
+    listIbge.set('BA-Ubaitaba', '2932200')
+    listIbge.set('BA-Ubatã', '2932309')
+    listIbge.set('BA-Uibaí', '2932408')
+    listIbge.set('BA-Umburanas', '2932457')
+    listIbge.set('BA-Una', '2932507')
+    listIbge.set('BA-Urandi', '2932606')
+    listIbge.set('BA-Uruçuca', '2932705')
+    listIbge.set('BA-Utinga', '2932804')
+    listIbge.set('BA-Valença', '2932903')
+    listIbge.set('BA-Valente', '2933000')
+    listIbge.set('BA-Várzea da Roça', '2933059')
+    listIbge.set('BA-Várzea do Poço', '2933109')
+    listIbge.set('BA-Várzea Nova', '2933158')
+    listIbge.set('BA-Varzedo', '2933174')
+    listIbge.set('BA-Vera Cruz', '2933208')
+    listIbge.set('BA-Vereda', '2933257')
+    listIbge.set('BA-Vitória da Conquista', '2933307')
+    listIbge.set('BA-Wagner', '2933406')
+    listIbge.set('BA-Wanderley', '2933455')
+    listIbge.set('BA-Wenceslau Guimarães', '2933505')
+    listIbge.set('BA-Xique-Xique', '2933604')
+    listIbge.set('MG-Abadia dos Dourados', '3100104')
+    listIbge.set('MG-Abaeté', '3100203')
+    listIbge.set('MG-Abre Campo', '3100302')
+    listIbge.set('MG-Acaiaca', '3100401')
+    listIbge.set('MG-Açucena', '3100500')
+    listIbge.set('MG-Água Boa', '3100609')
+    listIbge.set('MG-Água Comprida', '3100708')
+    listIbge.set('MG-Aguanil', '3100807')
+    listIbge.set('MG-Águas Formosas', '3100906')
+    listIbge.set('MG-Águas Vermelhas', '3101003')
+    listIbge.set('MG-Aimorés', '3101102')
+    listIbge.set('MG-Aiuruoca', '3101201')
+    listIbge.set('MG-Alagoa', '3101300')
+    listIbge.set('MG-Albertina', '3101409')
+    listIbge.set('MG-Além Paraíba', '3101508')
+    listIbge.set('MG-Alfenas', '3101607')
+    listIbge.set('MG-Alfredo Vasconcelos', '3101631')
+    listIbge.set('MG-Almenara', '3101706')
+    listIbge.set('MG-Alpercata', '3101805')
+    listIbge.set('MG-Alpinópolis', '3101904')
+    listIbge.set('MG-Alterosa', '3102001')
+    listIbge.set('MG-Alto Caparaó', '3102050')
+    listIbge.set('MG-Alto Jequitibá', '3153509')
+    listIbge.set('MG-Alto Rio Doce', '3102100')
+    listIbge.set('MG-Alvarenga', '3102209')
+    listIbge.set('MG-Alvinópolis', '3102308')
+    listIbge.set('MG-Alvorada de Minas', '3102407')
+    listIbge.set('MG-Amparo do Serra', '3102506')
+    listIbge.set('MG-Andradas', '3102605')
+    listIbge.set('MG-Andrelândia', '3102803')
+    listIbge.set('MG-Angelândia', '3102852')
+    listIbge.set('MG-Antônio Carlos', '3102902')
+    listIbge.set('MG-Antônio Dias', '3103009')
+    listIbge.set('MG-Antônio Prado de Minas', '3103108')
+    listIbge.set('MG-Araçaí', '3103207')
+    listIbge.set('MG-Aracitaba', '3103306')
+    listIbge.set('MG-Araçuaí', '3103405')
+    listIbge.set('MG-Araguari', '3103504')
+    listIbge.set('MG-Arantina', '3103603')
+    listIbge.set('MG-Araponga', '3103702')
+    listIbge.set('MG-Araporã', '3103751')
+    listIbge.set('MG-Arapuá', '3103801')
+    listIbge.set('MG-Araújos', '3103900')
+    listIbge.set('MG-Araxá', '3104007')
+    listIbge.set('MG-Arceburgo', '3104106')
+    listIbge.set('MG-Arcos', '3104205')
+    listIbge.set('MG-Areado', '3104304')
+    listIbge.set('MG-Argirita', '3104403')
+    listIbge.set('MG-Aricanduva', '3104452')
+    listIbge.set('MG-Arinos', '3104502')
+    listIbge.set('MG-Astolfo Dutra', '3104601')
+    listIbge.set('MG-Ataléia', '3104700')
+    listIbge.set('MG-Augusto de Lima', '3104809')
+    listIbge.set('MG-Baependi', '3104908')
+    listIbge.set('MG-Baldim', '3105004')
+    listIbge.set('MG-Bambuí', '3105103')
+    listIbge.set('MG-Bandeira', '3105202')
+    listIbge.set('MG-Bandeira do Sul', '3105301')
+    listIbge.set('MG-Barão de Cocais', '3105400')
+    listIbge.set('MG-Barão de Monte Alto', '3105509')
+    listIbge.set('MG-Barbacena', '3105608')
+    listIbge.set('MG-Barra Longa', '3105707')
+    listIbge.set('MG-Barroso', '3105905')
+    listIbge.set('MG-Bela Vista de Minas', '3106002')
+    listIbge.set('MG-Belmiro Braga', '3106101')
+    listIbge.set('MG-Belo Horizonte', '3106200')
+    listIbge.set('MG-Belo Oriente', '3106309')
+    listIbge.set('MG-Belo Vale', '3106408')
+    listIbge.set('MG-Berilo', '3106507')
+    listIbge.set('MG-Berizal', '3106655')
+    listIbge.set('MG-Bertópolis', '3106606')
+    listIbge.set('MG-Betim', '3106705')
+    listIbge.set('MG-Bias Fortes', '3106804')
+    listIbge.set('MG-Bicas', '3106903')
+    listIbge.set('MG-Biquinhas', '3107000')
+    listIbge.set('MG-Boa Esperança', '3107109')
+    listIbge.set('MG-Bocaina de Minas', '3107208')
+    listIbge.set('MG-Bocaiúva', '3107307')
+    listIbge.set('MG-Bom Despacho', '3107406')
+    listIbge.set('MG-Bom Jardim de Minas', '3107505')
+    listIbge.set('MG-Bom Jesus da Penha', '3107604')
+    listIbge.set('MG-Bom Jesus do Amparo', '3107703')
+    listIbge.set('MG-Bom Jesus do Galho', '3107802')
+    listIbge.set('MG-Bom Repouso', '3107901')
+    listIbge.set('MG-Bom Sucesso', '3108008')
+    listIbge.set('MG-Bonfim', '3108107')
+    listIbge.set('MG-Bonfinópolis de Minas', '3108206')
+    listIbge.set('MG-Bonito de Minas', '3108255')
+    listIbge.set('MG-Borda da Mata', '3108305')
+    listIbge.set('MG-Botelhos', '3108404')
+    listIbge.set('MG-Botumirim', '3108503')
+    listIbge.set('MG-Brás Pires', '3108701')
+    listIbge.set('MG-Brasilândia de Minas', '3108552')
+    listIbge.set('MG-Brasília de Minas', '3108602')
+    listIbge.set('MG-Braúnas', '3108800')
+    listIbge.set('MG-Brazópolis', '3108909')
+    listIbge.set('MG-Brumadinho', '3109006')
+    listIbge.set('MG-Bueno Brandão', '3109105')
+    listIbge.set('MG-Buenópolis', '3109204')
+    listIbge.set('MG-Bugre', '3109253')
+    listIbge.set('MG-Buritis', '3109303')
+    listIbge.set('MG-Buritizeiro', '3109402')
+    listIbge.set('MG-Cabeceira Grande', '3109451')
+    listIbge.set('MG-Cabo Verde', '3109501')
+    listIbge.set('MG-Cachoeira da Prata', '3109600')
+    listIbge.set('MG-Cachoeira de Minas', '3109709')
+    listIbge.set('MG-Cachoeira de Pajeú', '3102704')
+    listIbge.set('MG-Cachoeira Dourada', '3109808')
+    listIbge.set('MG-Caetanópolis', '3109907')
+    listIbge.set('MG-Caeté', '3110004')
+    listIbge.set('MG-Caiana', '3110103')
+    listIbge.set('MG-Cajuri', '3110202')
+    listIbge.set('MG-Caldas', '3110301')
+    listIbge.set('MG-Camacho', '3110400')
+    listIbge.set('MG-Camanducaia', '3110509')
+    listIbge.set('MG-Cambuí', '3110608')
+    listIbge.set('MG-Cambuquira', '3110707')
+    listIbge.set('MG-Campanário', '3110806')
+    listIbge.set('MG-Campanha', '3110905')
+    listIbge.set('MG-Campestre', '3111002')
+    listIbge.set('MG-Campina Verde', '3111101')
+    listIbge.set('MG-Campo Azul', '3111150')
+    listIbge.set('MG-Campo Belo', '3111200')
+    listIbge.set('MG-Campo do Meio', '3111309')
+    listIbge.set('MG-Campo Florido', '3111408')
+    listIbge.set('MG-Campos Altos', '3111507')
+    listIbge.set('MG-Campos Gerais', '3111606')
+    listIbge.set('MG-Cana Verde', '3111903')
+    listIbge.set('MG-Canaã', '3111705')
+    listIbge.set('MG-Canápolis', '3111804')
+    listIbge.set('MG-Candeias', '3112000')
+    listIbge.set('MG-Cantagalo', '3112059')
+    listIbge.set('MG-Caparaó', '3112109')
+    listIbge.set('MG-Capela Nova', '3112208')
+    listIbge.set('MG-Capelinha', '3112307')
+    listIbge.set('MG-Capetinga', '3112406')
+    listIbge.set('MG-Capim Branco', '3112505')
+    listIbge.set('MG-Capinópolis', '3112604')
+    listIbge.set('MG-Capitão Andrade', '3112653')
+    listIbge.set('MG-Capitão Enéas', '3112703')
+    listIbge.set('MG-Capitólio', '3112802')
+    listIbge.set('MG-Caputira', '3112901')
+    listIbge.set('MG-Caraí', '3113008')
+    listIbge.set('MG-Caranaíba', '3113107')
+    listIbge.set('MG-Carandaí', '3113206')
+    listIbge.set('MG-Carangola', '3113305')
+    listIbge.set('MG-Caratinga', '3113404')
+    listIbge.set('MG-Carbonita', '3113503')
+    listIbge.set('MG-Careaçu', '3113602')
+    listIbge.set('MG-Carlos Chagas', '3113701')
+    listIbge.set('MG-Carmésia', '3113800')
+    listIbge.set('MG-Carmo da Cachoeira', '3113909')
+    listIbge.set('MG-Carmo da Mata', '3114006')
+    listIbge.set('MG-Carmo de Minas', '3114105')
+    listIbge.set('MG-Carmo do Cajuru', '3114204')
+    listIbge.set('MG-Carmo do Paranaíba', '3114303')
+    listIbge.set('MG-Carmo do Rio Claro', '3114402')
+    listIbge.set('MG-Carmópolis de Minas', '3114501')
+    listIbge.set('MG-Carneirinho', '3114550')
+    listIbge.set('MG-Carrancas', '3114600')
+    listIbge.set('MG-Carvalhópolis', '3114709')
+    listIbge.set('MG-Carvalhos', '3114808')
+    listIbge.set('MG-Casa Grande', '3114907')
+    listIbge.set('MG-Cascalho Rico', '3115003')
+    listIbge.set('MG-Cássia', '3115102')
+    listIbge.set('MG-Cataguases', '3115300')
+    listIbge.set('MG-Catas Altas', '3115359')
+    listIbge.set('MG-Catas Altas da Noruega', '3115409')
+    listIbge.set('MG-Catuji', '3115458')
+    listIbge.set('MG-Catuti', '3115474')
+    listIbge.set('MG-Caxambu', '3115508')
+    listIbge.set('MG-Cedro do Abaeté', '3115607')
+    listIbge.set('MG-Central de Minas', '3115706')
+    listIbge.set('MG-Centralina', '3115805')
+    listIbge.set('MG-Chácara', '3115904')
+    listIbge.set('MG-Chalé', '3116001')
+    listIbge.set('MG-Chapada do Norte', '3116100')
+    listIbge.set('MG-Chapada Gaúcha', '3116159')
+    listIbge.set('MG-Chiador', '3116209')
+    listIbge.set('MG-Cipotânea', '3116308')
+    listIbge.set('MG-Claraval', '3116407')
+    listIbge.set('MG-Claro dos Poções', '3116506')
+    listIbge.set('MG-Cláudio', '3116605')
+    listIbge.set('MG-Coimbra', '3116704')
+    listIbge.set('MG-Coluna', '3116803')
+    listIbge.set('MG-Comendador Gomes', '3116902')
+    listIbge.set('MG-Comercinho', '3117009')
+    listIbge.set('MG-Conceição da Aparecida', '3117108')
+    listIbge.set('MG-Conceição da Barra de Minas', '3115201')
+    listIbge.set('MG-Conceição das Alagoas', '3117306')
+    listIbge.set('MG-Conceição das Pedras', '3117207')
+    listIbge.set('MG-Conceição de Ipanema', '3117405')
+    listIbge.set('MG-Conceição do Mato Dentro', '3117504')
+    listIbge.set('MG-Conceição do Pará', '3117603')
+    listIbge.set('MG-Conceição do Rio Verde', '3117702')
+    listIbge.set('MG-Conceição dos Ouros', '3117801')
+    listIbge.set('MG-Cônego Marinho', '3117836')
+    listIbge.set('MG-Confins', '3117876')
+    listIbge.set('MG-Congonhal', '3117900')
+    listIbge.set('MG-Congonhas', '3118007')
+    listIbge.set('MG-Congonhas do Norte', '3118106')
+    listIbge.set('MG-Conquista', '3118205')
+    listIbge.set('MG-Conselheiro Lafaiete', '3118304')
+    listIbge.set('MG-Conselheiro Pena', '3118403')
+    listIbge.set('MG-Consolação', '3118502')
+    listIbge.set('MG-Contagem', '3118601')
+    listIbge.set('MG-Coqueiral', '3118700')
+    listIbge.set('MG-Coração de Jesus', '3118809')
+    listIbge.set('MG-Cordisburgo', '3118908')
+    listIbge.set('MG-Cordislândia', '3119005')
+    listIbge.set('MG-Corinto', '3119104')
+    listIbge.set('MG-Coroaci', '3119203')
+    listIbge.set('MG-Coromandel', '3119302')
+    listIbge.set('MG-Coronel Fabriciano', '3119401')
+    listIbge.set('MG-Coronel Murta', '3119500')
+    listIbge.set('MG-Coronel Pacheco', '3119609')
+    listIbge.set('MG-Coronel Xavier Chaves', '3119708')
+    listIbge.set('MG-Córrego Danta', '3119807')
+    listIbge.set('MG-Córrego do Bom Jesus', '3119906')
+    listIbge.set('MG-Córrego Fundo', '3119955')
+    listIbge.set('MG-Córrego Novo', '3120003')
+    listIbge.set('MG-Couto de Magalhães de Minas', '3120102')
+    listIbge.set('MG-Crisólita', '3120151')
+    listIbge.set('MG-Cristais', '3120201')
+    listIbge.set('MG-Cristália', '3120300')
+    listIbge.set('MG-Cristiano Otoni', '3120409')
+    listIbge.set('MG-Cristina', '3120508')
+    listIbge.set('MG-Crucilândia', '3120607')
+    listIbge.set('MG-Cruzeiro da Fortaleza', '3120706')
+    listIbge.set('MG-Cruzília', '3120805')
+    listIbge.set('MG-Cuparaque', '3120839')
+    listIbge.set('MG-Curral de Dentro', '3120870')
+    listIbge.set('MG-Curvelo', '3120904')
+    listIbge.set('MG-Datas', '3121001')
+    listIbge.set('MG-Delfim Moreira', '3121100')
+    listIbge.set('MG-Delfinópolis', '3121209')
+    listIbge.set('MG-Delta', '3121258')
+    listIbge.set('MG-Descoberto', '3121308')
+    listIbge.set('MG-Desterro de Entre Rios', '3121407')
+    listIbge.set('MG-Desterro do Melo', '3121506')
+    listIbge.set('MG-Diamantina', '3121605')
+    listIbge.set('MG-Diogo de Vasconcelos', '3121704')
+    listIbge.set('MG-Dionísio', '3121803')
+    listIbge.set('MG-Divinésia', '3121902')
+    listIbge.set('MG-Divino', '3122009')
+    listIbge.set('MG-Divino das Laranjeiras', '3122108')
+    listIbge.set('MG-Divinolândia de Minas', '3122207')
+    listIbge.set('MG-Divinópolis', '3122306')
+    listIbge.set('MG-Divisa Alegre', '3122355')
+    listIbge.set('MG-Divisa Nova', '3122405')
+    listIbge.set('MG-Divisópolis', '3122454')
+    listIbge.set('MG-Dom Bosco', '3122470')
+    listIbge.set('MG-Dom Cavati', '3122504')
+    listIbge.set('MG-Dom Joaquim', '3122603')
+    listIbge.set('MG-Dom Silvério', '3122702')
+    listIbge.set('MG-Dom Viçoso', '3122801')
+    listIbge.set('MG-Dona Euzébia', '3122900')
+    listIbge.set('MG-Dores de Campos', '3123007')
+    listIbge.set('MG-Dores de Guanhães', '3123106')
+    listIbge.set('MG-Dores do Indaiá', '3123205')
+    listIbge.set('MG-Dores do Turvo', '3123304')
+    listIbge.set('MG-Doresópolis', '3123403')
+    listIbge.set('MG-Douradoquara', '3123502')
+    listIbge.set('MG-Durandé', '3123528')
+    listIbge.set('MG-Elói Mendes', '3123601')
+    listIbge.set('MG-Engenheiro Caldas', '3123700')
+    listIbge.set('MG-Engenheiro Navarro', '3123809')
+    listIbge.set('MG-Entre Folhas', '3123858')
+    listIbge.set('MG-Entre Rios de Minas', '3123908')
+    listIbge.set('MG-Ervália', '3124005')
+    listIbge.set('MG-Esmeraldas', '3124104')
+    listIbge.set('MG-Espera Feliz', '3124203')
+    listIbge.set('MG-Espinosa', '3124302')
+    listIbge.set('MG-Espírito Santo do Dourado', '3124401')
+    listIbge.set('MG-Estiva', '3124500')
+    listIbge.set('MG-Estrela Dalva', '3124609')
+    listIbge.set('MG-Estrela do Indaiá', '3124708')
+    listIbge.set('MG-Estrela do Sul', '3124807')
+    listIbge.set('MG-Eugenópolis', '3124906')
+    listIbge.set('MG-Ewbank da Câmara', '3125002')
+    listIbge.set('MG-Extrema', '3125101')
+    listIbge.set('MG-Fama', '3125200')
+    listIbge.set('MG-Faria Lemos', '3125309')
+    listIbge.set('MG-Felício dos Santos', '3125408')
+    listIbge.set('MG-Felisburgo', '3125606')
+    listIbge.set('MG-Felixlândia', '3125705')
+    listIbge.set('MG-Fernandes Tourinho', '3125804')
+    listIbge.set('MG-Ferros', '3125903')
+    listIbge.set('MG-Fervedouro', '3125952')
+    listIbge.set('MG-Florestal', '3126000')
+    listIbge.set('MG-Formiga', '3126109')
+    listIbge.set('MG-Formoso', '3126208')
+    listIbge.set('MG-Fortaleza de Minas', '3126307')
+    listIbge.set('MG-Fortuna de Minas', '3126406')
+    listIbge.set('MG-Francisco Badaró', '3126505')
+    listIbge.set('MG-Francisco Dumont', '3126604')
+    listIbge.set('MG-Francisco Sá', '3126703')
+    listIbge.set('MG-Franciscópolis', '3126752')
+    listIbge.set('MG-Frei Gaspar', '3126802')
+    listIbge.set('MG-Frei Inocêncio', '3126901')
+    listIbge.set('MG-Frei Lagonegro', '3126950')
+    listIbge.set('MG-Fronteira', '3127008')
+    listIbge.set('MG-Fronteira dos Vales', '3127057')
+    listIbge.set('MG-Fruta de Leite', '3127073')
+    listIbge.set('MG-Frutal', '3127107')
+    listIbge.set('MG-Funilândia', '3127206')
+    listIbge.set('MG-Galiléia', '3127305')
+    listIbge.set('MG-Gameleiras', '3127339')
+    listIbge.set('MG-Glaucilândia', '3127354')
+    listIbge.set('MG-Goiabeira', '3127370')
+    listIbge.set('MG-Goianá', '3127388')
+    listIbge.set('MG-Gonçalves', '3127404')
+    listIbge.set('MG-Gonzaga', '3127503')
+    listIbge.set('MG-Gouveia', '3127602')
+    listIbge.set('MG-Governador Valadares', '3127701')
+    listIbge.set('MG-Grão Mogol', '3127800')
+    listIbge.set('MG-Grupiara', '3127909')
+    listIbge.set('MG-Guanhães', '3128006')
+    listIbge.set('MG-Guapé', '3128105')
+    listIbge.set('MG-Guaraciaba', '3128204')
+    listIbge.set('MG-Guaraciama', '3128253')
+    listIbge.set('MG-Guaranésia', '3128303')
+    listIbge.set('MG-Guarani', '3128402')
+    listIbge.set('MG-Guarará', '3128501')
+    listIbge.set('MG-Guarda-Mor', '3128600')
+    listIbge.set('MG-Guaxupé', '3128709')
+    listIbge.set('MG-Guidoval', '3128808')
+    listIbge.set('MG-Guimarânia', '3128907')
+    listIbge.set('MG-Guiricema', '3129004')
+    listIbge.set('MG-Gurinhatã', '3129103')
+    listIbge.set('MG-Heliodora', '3129202')
+    listIbge.set('MG-Iapu', '3129301')
+    listIbge.set('MG-Ibertioga', '3129400')
+    listIbge.set('MG-Ibiá', '3129509')
+    listIbge.set('MG-Ibiaí', '3129608')
+    listIbge.set('MG-Ibiracatu', '3129657')
+    listIbge.set('MG-Ibiraci', '3129707')
+    listIbge.set('MG-Ibirité', '3129806')
+    listIbge.set('MG-Ibitiúra de Minas', '3129905')
+    listIbge.set('MG-Ibituruna', '3130002')
+    listIbge.set('MG-Icaraí de Minas', '3130051')
+    listIbge.set('MG-Igarapé', '3130101')
+    listIbge.set('MG-Igaratinga', '3130200')
+    listIbge.set('MG-Iguatama', '3130309')
+    listIbge.set('MG-Ijaci', '3130408')
+    listIbge.set('MG-Ilicínea', '3130507')
+    listIbge.set('MG-Imbé de Minas', '3130556')
+    listIbge.set('MG-Inconfidentes', '3130606')
+    listIbge.set('MG-Indaiabira', '3130655')
+    listIbge.set('MG-Indianópolis', '3130705')
+    listIbge.set('MG-Ingaí', '3130804')
+    listIbge.set('MG-Inhapim', '3130903')
+    listIbge.set('MG-Inhaúma', '3131000')
+    listIbge.set('MG-Inimutaba', '3131109')
+    listIbge.set('MG-Ipaba', '3131158')
+    listIbge.set('MG-Ipanema', '3131208')
+    listIbge.set('MG-Ipatinga', '3131307')
+    listIbge.set('MG-Ipiaçu', '3131406')
+    listIbge.set('MG-Ipuiúna', '3131505')
+    listIbge.set('MG-Iraí de Minas', '3131604')
+    listIbge.set('MG-Itabira', '3131703')
+    listIbge.set('MG-Itabirinha', '3131802')
+    listIbge.set('MG-Itabirito', '3131901')
+    listIbge.set('MG-Itacambira', '3132008')
+    listIbge.set('MG-Itacarambi', '3132107')
+    listIbge.set('MG-Itaguara', '3132206')
+    listIbge.set('MG-Itaipé', '3132305')
+    listIbge.set('MG-Itajubá', '3132404')
+    listIbge.set('MG-Itamarandiba', '3132503')
+    listIbge.set('MG-Itamarati de Minas', '3132602')
+    listIbge.set('MG-Itambacuri', '3132701')
+    listIbge.set('MG-Itambé do Mato Dentro', '3132800')
+    listIbge.set('MG-Itamogi', '3132909')
+    listIbge.set('MG-Itamonte', '3133006')
+    listIbge.set('MG-Itanhandu', '3133105')
+    listIbge.set('MG-Itanhomi', '3133204')
+    listIbge.set('MG-Itaobim', '3133303')
+    listIbge.set('MG-Itapagipe', '3133402')
+    listIbge.set('MG-Itapecerica', '3133501')
+    listIbge.set('MG-Itapeva', '3133600')
+    listIbge.set('MG-Itatiaiuçu', '3133709')
+    listIbge.set('MG-Itaú de Minas', '3133758')
+    listIbge.set('MG-Itaúna', '3133808')
+    listIbge.set('MG-Itaverava', '3133907')
+    listIbge.set('MG-Itinga', '3134004')
+    listIbge.set('MG-Itueta', '3134103')
+    listIbge.set('MG-Ituiutaba', '3134202')
+    listIbge.set('MG-Itumirim', '3134301')
+    listIbge.set('MG-Iturama', '3134400')
+    listIbge.set('MG-Itutinga', '3134509')
+    listIbge.set('MG-Jaboticatubas', '3134608')
+    listIbge.set('MG-Jacinto', '3134707')
+    listIbge.set('MG-Jacuí', '3134806')
+    listIbge.set('MG-Jacutinga', '3134905')
+    listIbge.set('MG-Jaguaraçu', '3135001')
+    listIbge.set('MG-Jaíba', '3135050')
+    listIbge.set('MG-Jampruca', '3135076')
+    listIbge.set('MG-Janaúba', '3135100')
+    listIbge.set('MG-Januária', '3135209')
+    listIbge.set('MG-Japaraíba', '3135308')
+    listIbge.set('MG-Japonvar', '3135357')
+    listIbge.set('MG-Jeceaba', '3135407')
+    listIbge.set('MG-Jenipapo de Minas', '3135456')
+    listIbge.set('MG-Jequeri', '3135506')
+    listIbge.set('MG-Jequitaí', '3135605')
+    listIbge.set('MG-Jequitibá', '3135704')
+    listIbge.set('MG-Jequitinhonha', '3135803')
+    listIbge.set('MG-Jesuânia', '3135902')
+    listIbge.set('MG-Joaíma', '3136009')
+    listIbge.set('MG-Joanésia', '3136108')
+    listIbge.set('MG-João Monlevade', '3136207')
+    listIbge.set('MG-João Pinheiro', '3136306')
+    listIbge.set('MG-Joaquim Felício', '3136405')
+    listIbge.set('MG-Jordânia', '3136504')
+    listIbge.set('MG-José Gonçalves de Minas', '3136520')
+    listIbge.set('MG-José Raydan', '3136553')
+    listIbge.set('MG-Josenópolis', '3136579')
+    listIbge.set('MG-Juatuba', '3136652')
+    listIbge.set('MG-Juiz de Fora', '3136702')
+    listIbge.set('MG-Juramento', '3136801')
+    listIbge.set('MG-Juruaia', '3136900')
+    listIbge.set('MG-Juvenília', '3136959')
+    listIbge.set('MG-Ladainha', '3137007')
+    listIbge.set('MG-Lagamar', '3137106')
+    listIbge.set('MG-Lagoa da Prata', '3137205')
+    listIbge.set('MG-Lagoa dos Patos', '3137304')
+    listIbge.set('MG-Lagoa Dourada', '3137403')
+    listIbge.set('MG-Lagoa Formosa', '3137502')
+    listIbge.set('MG-Lagoa Grande', '3137536')
+    listIbge.set('MG-Lagoa Santa', '3137601')
+    listIbge.set('MG-Lajinha', '3137700')
+    listIbge.set('MG-Lambari', '3137809')
+    listIbge.set('MG-Lamim', '3137908')
+    listIbge.set('MG-Laranjal', '3138005')
+    listIbge.set('MG-Lassance', '3138104')
+    listIbge.set('MG-Lavras', '3138203')
+    listIbge.set('MG-Leandro Ferreira', '3138302')
+    listIbge.set('MG-Leme do Prado', '3138351')
+    listIbge.set('MG-Leopoldina', '3138401')
+    listIbge.set('MG-Liberdade', '3138500')
+    listIbge.set('MG-Lima Duarte', '3138609')
+    listIbge.set('MG-Limeira do Oeste', '3138625')
+    listIbge.set('MG-Lontra', '3138658')
+    listIbge.set('MG-Luisburgo', '3138674')
+    listIbge.set('MG-Luislândia', '3138682')
+    listIbge.set('MG-Luminárias', '3138708')
+    listIbge.set('MG-Luz', '3138807')
+    listIbge.set('MG-Machacalis', '3138906')
+    listIbge.set('MG-Machado', '3139003')
+    listIbge.set('MG-Madre de Deus de Minas', '3139102')
+    listIbge.set('MG-Malacacheta', '3139201')
+    listIbge.set('MG-Mamonas', '3139250')
+    listIbge.set('MG-Manga', '3139300')
+    listIbge.set('MG-Manhuaçu', '3139409')
+    listIbge.set('MG-Manhumirim', '3139508')
+    listIbge.set('MG-Mantena', '3139607')
+    listIbge.set('MG-Mar de Espanha', '3139805')
+    listIbge.set('MG-Maravilhas', '3139706')
+    listIbge.set('MG-Maria da Fé', '3139904')
+    listIbge.set('MG-Mariana', '3140001')
+    listIbge.set('MG-Marilac', '3140100')
+    listIbge.set('MG-Mário Campos', '3140159')
+    listIbge.set('MG-Maripá de Minas', '3140209')
+    listIbge.set('MG-Marliéria', '3140308')
+    listIbge.set('MG-Marmelópolis', '3140407')
+    listIbge.set('MG-Martinho Campos', '3140506')
+    listIbge.set('MG-Martins Soares', '3140530')
+    listIbge.set('MG-Mata Verde', '3140555')
+    listIbge.set('MG-Materlândia', '3140605')
+    listIbge.set('MG-Mateus Leme', '3140704')
+    listIbge.set('MG-Mathias Lobato', '3171501')
+    listIbge.set('MG-Matias Barbosa', '3140803')
+    listIbge.set('MG-Matias Cardoso', '3140852')
+    listIbge.set('MG-Matipó', '3140902')
+    listIbge.set('MG-Mato Verde', '3141009')
+    listIbge.set('MG-Matozinhos', '3141108')
+    listIbge.set('MG-Matutina', '3141207')
+    listIbge.set('MG-Medeiros', '3141306')
+    listIbge.set('MG-Medina', '3141405')
+    listIbge.set('MG-Mendes Pimentel', '3141504')
+    listIbge.set('MG-Mercês', '3141603')
+    listIbge.set('MG-Mesquita', '3141702')
+    listIbge.set('MG-Minas Novas', '3141801')
+    listIbge.set('MG-Minduri', '3141900')
+    listIbge.set('MG-Mirabela', '3142007')
+    listIbge.set('MG-Miradouro', '3142106')
+    listIbge.set('MG-Miraí', '3142205')
+    listIbge.set('MG-Miravânia', '3142254')
+    listIbge.set('MG-Moeda', '3142304')
+    listIbge.set('MG-Moema', '3142403')
+    listIbge.set('MG-Monjolos', '3142502')
+    listIbge.set('MG-Monsenhor Paulo', '3142601')
+    listIbge.set('MG-Montalvânia', '3142700')
+    listIbge.set('MG-Monte Alegre de Minas', '3142809')
+    listIbge.set('MG-Monte Azul', '3142908')
+    listIbge.set('MG-Monte Belo', '3143005')
+    listIbge.set('MG-Monte Carmelo', '3143104')
+    listIbge.set('MG-Monte Formoso', '3143153')
+    listIbge.set('MG-Monte Santo de Minas', '3143203')
+    listIbge.set('MG-Monte Sião', '3143401')
+    listIbge.set('MG-Montes Claros', '3143302')
+    listIbge.set('MG-Montezuma', '3143450')
+    listIbge.set('MG-Morada Nova de Minas', '3143500')
+    listIbge.set('MG-Morro da Garça', '3143609')
+    listIbge.set('MG-Morro do Pilar', '3143708')
+    listIbge.set('MG-Munhoz', '3143807')
+    listIbge.set('MG-Muriaé', '3143906')
+    listIbge.set('MG-Mutum', '3144003')
+    listIbge.set('MG-Muzambinho', '3144102')
+    listIbge.set('MG-Nacip Raydan', '3144201')
+    listIbge.set('MG-Nanuque', '3144300')
+    listIbge.set('MG-Naque', '3144359')
+    listIbge.set('MG-Natalândia', '3144375')
+    listIbge.set('MG-Natércia', '3144409')
+    listIbge.set('MG-Nazareno', '3144508')
+    listIbge.set('MG-Nepomuceno', '3144607')
+    listIbge.set('MG-Ninheira', '3144656')
+    listIbge.set('MG-Nova Belém', '3144672')
+    listIbge.set('MG-Nova Era', '3144706')
+    listIbge.set('MG-Nova Lima', '3144805')
+    listIbge.set('MG-Nova Módica', '3144904')
+    listIbge.set('MG-Nova Ponte', '3145000')
+    listIbge.set('MG-Nova Porteirinha', '3145059')
+    listIbge.set('MG-Nova Resende', '3145109')
+    listIbge.set('MG-Nova Serrana', '3145208')
+    listIbge.set('MG-Nova União', '3136603')
+    listIbge.set('MG-Novo Cruzeiro', '3145307')
+    listIbge.set('MG-Novo Oriente de Minas', '3145356')
+    listIbge.set('MG-Novorizonte', '3145372')
+    listIbge.set('MG-Olaria', '3145406')
+    listIbge.set('MG-Olímpio Noronha', '3145505')
+    listIbge.set('MG-Oliveira', '3145604')
+    listIbge.set('MG-Oliveira Fortes', '3145703')
+    listIbge.set('MG-Onça de Pitangui', '3145802')
+    listIbge.set('MG-Oratórios', '3145851')
+    listIbge.set('MG-Orizânia', '3145877')
+    listIbge.set('MG-Ouro Branco', '3145901')
+    listIbge.set('MG-Ouro Fino', '3146008')
+    listIbge.set('MG-Ouro Preto', '3146107')
+    listIbge.set('MG-Ouro Verde de Minas', '3146206')
+    listIbge.set('MG-Padre Carvalho', '3146255')
+    listIbge.set('MG-Padre Paraíso', '3146305')
+    listIbge.set('MG-Pai Pedro', '3146552')
+    listIbge.set('MG-Paineiras', '3146404')
+    listIbge.set('MG-Pains', '3146503')
+    listIbge.set('MG-Paiva', '3146602')
+    listIbge.set('MG-Palma', '3146701')
+    listIbge.set('MG-Palmópolis', '3146750')
+    listIbge.set('MG-Papagaios', '3146909')
+    listIbge.set('MG-Pará de Minas', '3147105')
+    listIbge.set('MG-Paracatu', '3147006')
+    listIbge.set('MG-Paraguaçu', '3147204')
+    listIbge.set('MG-Paraisópolis', '3147303')
+    listIbge.set('MG-Paraopeba', '3147402')
+    listIbge.set('MG-Passa Quatro', '3147600')
+    listIbge.set('MG-Passa Tempo', '3147709')
+    listIbge.set('MG-Passa Vinte', '3147808')
+    listIbge.set('MG-Passabém', '3147501')
+    listIbge.set('MG-Passos', '3147907')
+    listIbge.set('MG-Patis', '3147956')
+    listIbge.set('MG-Patos de Minas', '3148004')
+    listIbge.set('MG-Patrocínio', '3148103')
+    listIbge.set('MG-Patrocínio do Muriaé', '3148202')
+    listIbge.set('MG-Paula Cândido', '3148301')
+    listIbge.set('MG-Paulistas', '3148400')
+    listIbge.set('MG-Pavão', '3148509')
+    listIbge.set('MG-Peçanha', '3148608')
+    listIbge.set('MG-Pedra Azul', '3148707')
+    listIbge.set('MG-Pedra Bonita', '3148756')
+    listIbge.set('MG-Pedra do Anta', '3148806')
+    listIbge.set('MG-Pedra do Indaiá', '3148905')
+    listIbge.set('MG-Pedra Dourada', '3149002')
+    listIbge.set('MG-Pedralva', '3149101')
+    listIbge.set('MG-Pedras de Maria da Cruz', '3149150')
+    listIbge.set('MG-Pedrinópolis', '3149200')
+    listIbge.set('MG-Pedro Leopoldo', '3149309')
+    listIbge.set('MG-Pedro Teixeira', '3149408')
+    listIbge.set('MG-Pequeri', '3149507')
+    listIbge.set('MG-Pequi', '3149606')
+    listIbge.set('MG-Perdigão', '3149705')
+    listIbge.set('MG-Perdizes', '3149804')
+    listIbge.set('MG-Perdões', '3149903')
+    listIbge.set('MG-Periquito', '3149952')
+    listIbge.set('MG-Pescador', '3150000')
+    listIbge.set('MG-Piau', '3150109')
+    listIbge.set('MG-Piedade de Caratinga', '3150158')
+    listIbge.set('MG-Piedade de Ponte Nova', '3150208')
+    listIbge.set('MG-Piedade do Rio Grande', '3150307')
+    listIbge.set('MG-Piedade dos Gerais', '3150406')
+    listIbge.set('MG-Pimenta', '3150505')
+    listIbge.set('MG-Pintópolis', '3150570')
+    listIbge.set('MG-Piracema', '3150604')
+    listIbge.set('MG-Pirajuba', '3150703')
+    listIbge.set('MG-Piranga', '3150802')
+    listIbge.set('MG-Piranguçu', '3150901')
+    listIbge.set('MG-Piranguinho', '3151008')
+    listIbge.set('MG-Pirapetinga', '3151107')
+    listIbge.set('MG-Pirapora', '3151206')
+    listIbge.set('MG-Piraúba', '3151305')
+    listIbge.set('MG-Pitangui', '3151404')
+    listIbge.set('MG-Piumhi', '3151503')
+    listIbge.set('MG-Planura', '3151602')
+    listIbge.set('MG-Poço Fundo', '3151701')
+    listIbge.set('MG-Poços de Caldas', '3151800')
+    listIbge.set('MG-Pocrane', '3151909')
+    listIbge.set('MG-Pompéu', '3152006')
+    listIbge.set('MG-Ponte Nova', '3152105')
+    listIbge.set('MG-Ponto Chique', '3152131')
+    listIbge.set('MG-Ponto dos Volantes', '3152170')
+    listIbge.set('MG-Porteirinha', '3152204')
+    listIbge.set('MG-Porto Firme', '3152303')
+    listIbge.set('MG-Poté', '3152402')
+    listIbge.set('MG-Pouso Alegre', '3152501')
+    listIbge.set('MG-Pouso Alto', '3152600')
+    listIbge.set('MG-Prados', '3152709')
+    listIbge.set('MG-Prata', '3152808')
+    listIbge.set('MG-Pratápolis', '3152907')
+    listIbge.set('MG-Pratinha', '3153004')
+    listIbge.set('MG-Presidente Bernardes', '3153103')
+    listIbge.set('MG-Presidente Juscelino', '3153202')
+    listIbge.set('MG-Presidente Kubitschek', '3153301')
+    listIbge.set('MG-Presidente Olegário', '3153400')
+    listIbge.set('MG-Prudente de Morais', '3153608')
+    listIbge.set('MG-Quartel Geral', '3153707')
+    listIbge.set('MG-Queluzito', '3153806')
+    listIbge.set('MG-Raposos', '3153905')
+    listIbge.set('MG-Raul Soares', '3154002')
+    listIbge.set('MG-Recreio', '3154101')
+    listIbge.set('MG-Reduto', '3154150')
+    listIbge.set('MG-Resende Costa', '3154200')
+    listIbge.set('MG-Resplendor', '3154309')
+    listIbge.set('MG-Ressaquinha', '3154408')
+    listIbge.set('MG-Riachinho', '3154457')
+    listIbge.set('MG-Riacho dos Machados', '3154507')
+    listIbge.set('MG-Ribeirão das Neves', '3154606')
+    listIbge.set('MG-Ribeirão Vermelho', '3154705')
+    listIbge.set('MG-Rio Acima', '3154804')
+    listIbge.set('MG-Rio Casca', '3154903')
+    listIbge.set('MG-Rio do Prado', '3155108')
+    listIbge.set('MG-Rio Doce', '3155009')
+    listIbge.set('MG-Rio Espera', '3155207')
+    listIbge.set('MG-Rio Manso', '3155306')
+    listIbge.set('MG-Rio Novo', '3155405')
+    listIbge.set('MG-Rio Paranaíba', '3155504')
+    listIbge.set('MG-Rio Pardo de Minas', '3155603')
+    listIbge.set('MG-Rio Piracicaba', '3155702')
+    listIbge.set('MG-Rio Pomba', '3155801')
+    listIbge.set('MG-Rio Preto', '3155900')
+    listIbge.set('MG-Rio Vermelho', '3156007')
+    listIbge.set('MG-Ritápolis', '3156106')
+    listIbge.set('MG-Rochedo de Minas', '3156205')
+    listIbge.set('MG-Rodeiro', '3156304')
+    listIbge.set('MG-Romaria', '3156403')
+    listIbge.set('MG-Rosário da Limeira', '3156452')
+    listIbge.set('MG-Rubelita', '3156502')
+    listIbge.set('MG-Rubim', '3156601')
+    listIbge.set('MG-Sabará', '3156700')
+    listIbge.set('MG-Sabinópolis', '3156809')
+    listIbge.set('MG-Sacramento', '3156908')
+    listIbge.set('MG-Salinas', '3157005')
+    listIbge.set('MG-Salto da Divisa', '3157104')
+    listIbge.set('MG-Santa Bárbara', '3157203')
+    listIbge.set('MG-Santa Bárbara do Leste', '3157252')
+    listIbge.set('MG-Santa Bárbara do Monte Verde', '3157278')
+    listIbge.set('MG-Santa Bárbara do Tugúrio', '3157302')
+    listIbge.set('MG-Santa Cruz de Minas', '3157336')
+    listIbge.set('MG-Santa Cruz de Salinas', '3157377')
+    listIbge.set('MG-Santa Cruz do Escalvado', '3157401')
+    listIbge.set('MG-Santa Efigênia de Minas', '3157500')
+    listIbge.set('MG-Santa Fé de Minas', '3157609')
+    listIbge.set('MG-Santa Helena de Minas', '3157658')
+    listIbge.set('MG-Santa Juliana', '3157708')
+    listIbge.set('MG-Santa Luzia', '3157807')
+    listIbge.set('MG-Santa Margarida', '3157906')
+    listIbge.set('MG-Santa Maria de Itabira', '3158003')
+    listIbge.set('MG-Santa Maria do Salto', '3158102')
+    listIbge.set('MG-Santa Maria do Suaçuí', '3158201')
+    listIbge.set('MG-Santa Rita de Caldas', '3159209')
+    listIbge.set('MG-Santa Rita de Ibitipoca', '3159407')
+    listIbge.set('MG-Santa Rita de Jacutinga', '3159308')
+    listIbge.set('MG-Santa Rita de Minas', '3159357')
+    listIbge.set('MG-Santa Rita do Itueto', '3159506')
+    listIbge.set('MG-Santa Rita do Sapucaí', '3159605')
+    listIbge.set('MG-Santa Rosa da Serra', '3159704')
+    listIbge.set('MG-Santa Vitória', '3159803')
+    listIbge.set('MG-Santana da Vargem', '3158300')
+    listIbge.set('MG-Santana de Cataguases', '3158409')
+    listIbge.set('MG-Santana de Pirapama', '3158508')
+    listIbge.set('MG-Santana do Deserto', '3158607')
+    listIbge.set('MG-Santana do Garambéu', '3158706')
+    listIbge.set('MG-Santana do Jacaré', '3158805')
+    listIbge.set('MG-Santana do Manhuaçu', '3158904')
+    listIbge.set('MG-Santana do Paraíso', '3158953')
+    listIbge.set('MG-Santana do Riacho', '3159001')
+    listIbge.set('MG-Santana dos Montes', '3159100')
+    listIbge.set('MG-Santo Antônio do Amparo', '3159902')
+    listIbge.set('MG-Santo Antônio do Aventureiro', '3160009')
+    listIbge.set('MG-Santo Antônio do Grama', '3160108')
+    listIbge.set('MG-Santo Antônio do Itambé', '3160207')
+    listIbge.set('MG-Santo Antônio do Jacinto', '3160306')
+    listIbge.set('MG-Santo Antônio do Monte', '3160405')
+    listIbge.set('MG-Santo Antônio do Retiro', '3160454')
+    listIbge.set('MG-Santo Antônio do Rio Abaixo', '3160504')
+    listIbge.set('MG-Santo Hipólito', '3160603')
+    listIbge.set('MG-Santos Dumont', '3160702')
+    listIbge.set('MG-São Bento Abade', '3160801')
+    listIbge.set('MG-São Brás do Suaçuí', '3160900')
+    listIbge.set('MG-São Domingos das Dores', '3160959')
+    listIbge.set('MG-São Domingos do Prata', '3161007')
+    listIbge.set('MG-São Félix de Minas', '3161056')
+    listIbge.set('MG-São Francisco', '3161106')
+    listIbge.set('MG-São Francisco de Paula', '3161205')
+    listIbge.set('MG-São Francisco de Sales', '3161304')
+    listIbge.set('MG-São Francisco do Glória', '3161403')
+    listIbge.set('MG-São Geraldo', '3161502')
+    listIbge.set('MG-São Geraldo da Piedade', '3161601')
+    listIbge.set('MG-São Geraldo do Baixio', '3161650')
+    listIbge.set('MG-São Gonçalo do Abaeté', '3161700')
+    listIbge.set('MG-São Gonçalo do Pará', '3161809')
+    listIbge.set('MG-São Gonçalo do Rio Abaixo', '3161908')
+    listIbge.set('MG-São Gonçalo do Rio Preto', '3125507')
+    listIbge.set('MG-São Gonçalo do Sapucaí', '3162005')
+    listIbge.set('MG-São Gotardo', '3162104')
+    listIbge.set('MG-São João Batista do Glória', '3162203')
+    listIbge.set('MG-São João da Lagoa', '3162252')
+    listIbge.set('MG-São João da Mata', '3162302')
+    listIbge.set('MG-São João da Ponte', '3162401')
+    listIbge.set('MG-São João das Missões', '3162450')
+    listIbge.set('MG-São João del Rei', '3162500')
+    listIbge.set('MG-São João do Manhuaçu', '3162559')
+    listIbge.set('MG-São João do Manteninha', '3162575')
+    listIbge.set('MG-São João do Oriente', '3162609')
+    listIbge.set('MG-São João do Pacuí', '3162658')
+    listIbge.set('MG-São João do Paraíso', '3162708')
+    listIbge.set('MG-São João Evangelista', '3162807')
+    listIbge.set('MG-São João Nepomuceno', '3162906')
+    listIbge.set('MG-São Joaquim de Bicas', '3162922')
+    listIbge.set('MG-São José da Barra', '3162948')
+    listIbge.set('MG-São José da Lapa', '3162955')
+    listIbge.set('MG-São José da Safira', '3163003')
+    listIbge.set('MG-São José da Varginha', '3163102')
+    listIbge.set('MG-São José do Alegre', '3163201')
+    listIbge.set('MG-São José do Divino', '3163300')
+    listIbge.set('MG-São José do Goiabal', '3163409')
+    listIbge.set('MG-São José do Jacuri', '3163508')
+    listIbge.set('MG-São José do Mantimento', '3163607')
+    listIbge.set('MG-São Lourenço', '3163706')
+    listIbge.set('MG-São Miguel do Anta', '3163805')
+    listIbge.set('MG-São Pedro da União', '3163904')
+    listIbge.set('MG-São Pedro do Suaçuí', '3164100')
+    listIbge.set('MG-São Pedro dos Ferros', '3164001')
+    listIbge.set('MG-São Romão', '3164209')
+    listIbge.set('MG-São Roque de Minas', '3164308')
+    listIbge.set('MG-São Sebastião da Bela Vista', '3164407')
+    listIbge.set('MG-São Sebastião da Vargem Alegre', '3164431')
+    listIbge.set('MG-São Sebastião do Anta', '3164472')
+    listIbge.set('MG-São Sebastião do Maranhão', '3164506')
+    listIbge.set('MG-São Sebastião do Oeste', '3164605')
+    listIbge.set('MG-São Sebastião do Paraíso', '3164704')
+    listIbge.set('MG-São Sebastião do Rio Preto', '3164803')
+    listIbge.set('MG-São Sebastião do Rio Verde', '3164902')
+    listIbge.set('MG-São Tiago', '3165008')
+    listIbge.set('MG-São Tomás de Aquino', '3165107')
+    listIbge.set('MG-São Tomé das Letras', '3165206')
+    listIbge.set('MG-São Vicente de Minas', '3165305')
+    listIbge.set('MG-Sapucaí-Mirim', '3165404')
+    listIbge.set('MG-Sardoá', '3165503')
+    listIbge.set('MG-Sarzedo', '3165537')
+    listIbge.set('MG-Sem-Peixe', '3165560')
+    listIbge.set('MG-Senador Amaral', '3165578')
+    listIbge.set('MG-Senador Cortes', '3165602')
+    listIbge.set('MG-Senador Firmino', '3165701')
+    listIbge.set('MG-Senador José Bento', '3165800')
+    listIbge.set('MG-Senador Modestino Gonçalves', '3165909')
+    listIbge.set('MG-Senhora de Oliveira', '3166006')
+    listIbge.set('MG-Senhora do Porto', '3166105')
+    listIbge.set('MG-Senhora dos Remédios', '3166204')
+    listIbge.set('MG-Sericita', '3166303')
+    listIbge.set('MG-Seritinga', '3166402')
+    listIbge.set('MG-Serra Azul de Minas', '3166501')
+    listIbge.set('MG-Serra da Saudade', '3166600')
+    listIbge.set('MG-Serra do Salitre', '3166808')
+    listIbge.set('MG-Serra dos Aimorés', '3166709')
+    listIbge.set('MG-Serrania', '3166907')
+    listIbge.set('MG-Serranópolis de Minas', '3166956')
+    listIbge.set('MG-Serranos', '3167004')
+    listIbge.set('MG-Serro', '3167103')
+    listIbge.set('MG-Sete Lagoas', '3167202')
+    listIbge.set('MG-Setubinha', '3165552')
+    listIbge.set('MG-Silveirânia', '3167301')
+    listIbge.set('MG-Silvianópolis', '3167400')
+    listIbge.set('MG-Simão Pereira', '3167509')
+    listIbge.set('MG-Simonésia', '3167608')
+    listIbge.set('MG-Sobrália', '3167707')
+    listIbge.set('MG-Soledade de Minas', '3167806')
+    listIbge.set('MG-Tabuleiro', '3167905')
+    listIbge.set('MG-Taiobeiras', '3168002')
+    listIbge.set('MG-Taparuba', '3168051')
+    listIbge.set('MG-Tapira', '3168101')
+    listIbge.set('MG-Tapiraí', '3168200')
+    listIbge.set('MG-Taquaraçu de Minas', '3168309')
+    listIbge.set('MG-Tarumirim', '3168408')
+    listIbge.set('MG-Teixeiras', '3168507')
+    listIbge.set('MG-Teófilo Otoni', '3168606')
+    listIbge.set('MG-Timóteo', '3168705')
+    listIbge.set('MG-Tiradentes', '3168804')
+    listIbge.set('MG-Tiros', '3168903')
+    listIbge.set('MG-Tocantins', '3169000')
+    listIbge.set('MG-Tocos do Moji', '3169059')
+    listIbge.set('MG-Toledo', '3169109')
+    listIbge.set('MG-Tombos', '3169208')
+    listIbge.set('MG-Três Corações', '3169307')
+    listIbge.set('MG-Três Marias', '3169356')
+    listIbge.set('MG-Três Pontas', '3169406')
+    listIbge.set('MG-Tumiritinga', '3169505')
+    listIbge.set('MG-Tupaciguara', '3169604')
+    listIbge.set('MG-Turmalina', '3169703')
+    listIbge.set('MG-Turvolândia', '3169802')
+    listIbge.set('MG-Ubá', '3169901')
+    listIbge.set('MG-Ubaí', '3170008')
+    listIbge.set('MG-Ubaporanga', '3170057')
+    listIbge.set('MG-Uberaba', '3170107')
+    listIbge.set('MG-Uberlândia', '3170206')
+    listIbge.set('MG-Umburatiba', '3170305')
+    listIbge.set('MG-Unaí', '3170404')
+    listIbge.set('MG-União de Minas', '3170438')
+    listIbge.set('MG-Uruana de Minas', '3170479')
+    listIbge.set('MG-Urucânia', '3170503')
+    listIbge.set('MG-Urucuia', '3170529')
+    listIbge.set('MG-Vargem Alegre', '3170578')
+    listIbge.set('MG-Vargem Bonita', '3170602')
+    listIbge.set('MG-Vargem Grande do Rio Pardo', '3170651')
+    listIbge.set('MG-Varginha', '3170701')
+    listIbge.set('MG-Varjão de Minas', '3170750')
+    listIbge.set('MG-Várzea da Palma', '3170800')
+    listIbge.set('MG-Varzelândia', '3170909')
+    listIbge.set('MG-Vazante', '3171006')
+    listIbge.set('MG-Verdelândia', '3171030')
+    listIbge.set('MG-Veredinha', '3171071')
+    listIbge.set('MG-Veríssimo', '3171105')
+    listIbge.set('MG-Vermelho Novo', '3171154')
+    listIbge.set('MG-Vespasiano', '3171204')
+    listIbge.set('MG-Viçosa', '3171303')
+    listIbge.set('MG-Vieiras', '3171402')
+    listIbge.set('MG-Virgem da Lapa', '3171600')
+    listIbge.set('MG-Virgínia', '3171709')
+    listIbge.set('MG-Virginópolis', '3171808')
+    listIbge.set('MG-Virgolândia', '3171907')
+    listIbge.set('MG-Visconde do Rio Branco', '3172004')
+    listIbge.set('MG-Volta Grande', '3172103')
+    listIbge.set('MG-Wenceslau Braz', '3172202')
+    listIbge.set('ES-Afonso Cláudio', '3200102')
+    listIbge.set('ES-Água Doce do Norte', '3200169')
+    listIbge.set('ES-Águia Branca', '3200136')
+    listIbge.set('ES-Alegre', '3200201')
+    listIbge.set('ES-Alfredo Chaves', '3200300')
+    listIbge.set('ES-Alto Rio Novo', '3200359')
+    listIbge.set('ES-Anchieta', '3200409')
+    listIbge.set('ES-Apiacá', '3200508')
+    listIbge.set('ES-Aracruz', '3200607')
+    listIbge.set('ES-Atílio Vivácqua', '3200706')
+    listIbge.set('ES-Baixo Guandu', '3200805')
+    listIbge.set('ES-Barra de São Francisco', '3200904')
+    listIbge.set('ES-Boa Esperança', '3201001')
+    listIbge.set('ES-Bom Jesus do Norte', '3201100')
+    listIbge.set('ES-Brejetuba', '3201159')
+    listIbge.set('ES-Cachoeiro de Itapemirim', '3201209')
+    listIbge.set('ES-Cariacica', '3201308')
+    listIbge.set('ES-Castelo', '3201407')
+    listIbge.set('ES-Colatina', '3201506')
+    listIbge.set('ES-Conceição da Barra', '3201605')
+    listIbge.set('ES-Conceição do Castelo', '3201704')
+    listIbge.set('ES-Divino de São Lourenço', '3201803')
+    listIbge.set('ES-Domingos Martins', '3201902')
+    listIbge.set('ES-Dores do Rio Preto', '3202009')
+    listIbge.set('ES-Ecoporanga', '3202108')
+    listIbge.set('ES-Fundão', '3202207')
+    listIbge.set('ES-Governador Lindenberg', '3202256')
+    listIbge.set('ES-Guaçuí', '3202306')
+    listIbge.set('ES-Guarapari', '3202405')
+    listIbge.set('ES-Ibatiba', '3202454')
+    listIbge.set('ES-Ibiraçu', '3202504')
+    listIbge.set('ES-Ibitirama', '3202553')
+    listIbge.set('ES-Iconha', '3202603')
+    listIbge.set('ES-Irupi', '3202652')
+    listIbge.set('ES-Itaguaçu', '3202702')
+    listIbge.set('ES-Itapemirim', '3202801')
+    listIbge.set('ES-Itarana', '3202900')
+    listIbge.set('ES-Iúna', '3203007')
+    listIbge.set('ES-Jaguaré', '3203056')
+    listIbge.set('ES-Jerônimo Monteiro', '3203106')
+    listIbge.set('ES-João Neiva', '3203130')
+    listIbge.set('ES-Laranja da Terra', '3203163')
+    listIbge.set('ES-Linhares', '3203205')
+    listIbge.set('ES-Mantenópolis', '3203304')
+    listIbge.set('ES-Marataízes', '3203320')
+    listIbge.set('ES-Marechal Floriano', '3203346')
+    listIbge.set('ES-Marilândia', '3203353')
+    listIbge.set('ES-Mimoso do Sul', '3203403')
+    listIbge.set('ES-Montanha', '3203502')
+    listIbge.set('ES-Mucurici', '3203601')
+    listIbge.set('ES-Muniz Freire', '3203700')
+    listIbge.set('ES-Muqui', '3203809')
+    listIbge.set('ES-Nova Venécia', '3203908')
+    listIbge.set('ES-Pancas', '3204005')
+    listIbge.set('ES-Pedro Canário', '3204054')
+    listIbge.set('ES-Pinheiros', '3204104')
+    listIbge.set('ES-Piúma', '3204203')
+    listIbge.set('ES-Ponto Belo', '3204252')
+    listIbge.set('ES-Presidente Kennedy', '3204302')
+    listIbge.set('ES-Rio Bananal', '3204351')
+    listIbge.set('ES-Rio Novo do Sul', '3204401')
+    listIbge.set('ES-Santa Leopoldina', '3204500')
+    listIbge.set('ES-Santa Maria de Jetibá', '3204559')
+    listIbge.set('ES-Santa Teresa', '3204609')
+    listIbge.set('ES-São Domingos do Norte', '3204658')
+    listIbge.set('ES-São Gabriel da Palha', '3204708')
+    listIbge.set('ES-São José do Calçado', '3204807')
+    listIbge.set('ES-São Mateus', '3204906')
+    listIbge.set('ES-São Roque do Canaã', '3204955')
+    listIbge.set('ES-Serra', '3205002')
+    listIbge.set('ES-Sooretama', '3205010')
+    listIbge.set('ES-Vargem Alta', '3205036')
+    listIbge.set('ES-Venda Nova do Imigrante', '3205069')
+    listIbge.set('ES-Viana', '3205101')
+    listIbge.set('ES-Vila Pavão', '3205150')
+    listIbge.set('ES-Vila Valério', '3205176')
+    listIbge.set('ES-Vila Velha', '3205200')
+    listIbge.set('ES-Vitória', '3205309')
+    listIbge.set('RJ-Angra dos Reis', '3300100')
+    listIbge.set('RJ-Aperibé', '3300159')
+    listIbge.set('RJ-Araruama', '3300209')
+    listIbge.set('RJ-Areal', '3300225')
+    listIbge.set('RJ-Armação dos Búzios', '3300233')
+    listIbge.set('RJ-Arraial do Cabo', '3300258')
+    listIbge.set('RJ-Barra do Piraí', '3300308')
+    listIbge.set('RJ-Barra Mansa', '3300407')
+    listIbge.set('RJ-Belford Roxo', '3300456')
+    listIbge.set('RJ-Bom Jardim', '3300506')
+    listIbge.set('RJ-Bom Jesus do Itabapoana', '3300605')
+    listIbge.set('RJ-Cabo Frio', '3300704')
+    listIbge.set('RJ-Cachoeiras de Macacu', '3300803')
+    listIbge.set('RJ-Cambuci', '3300902')
+    listIbge.set('RJ-Campos dos Goytacazes', '3301009')
+    listIbge.set('RJ-Cantagalo', '3301108')
+    listIbge.set('RJ-Carapebus', '3300936')
+    listIbge.set('RJ-Cardoso Moreira', '3301157')
+    listIbge.set('RJ-Carmo', '3301207')
+    listIbge.set('RJ-Casimiro de Abreu', '3301306')
+    listIbge.set('RJ-Comendador Levy Gasparian', '3300951')
+    listIbge.set('RJ-Conceição de Macabu', '3301405')
+    listIbge.set('RJ-Cordeiro', '3301504')
+    listIbge.set('RJ-Duas Barras', '3301603')
+    listIbge.set('RJ-Duque de Caxias', '3301702')
+    listIbge.set('RJ-Engenheiro Paulo de Frontin', '3301801')
+    listIbge.set('RJ-Guapimirim', '3301850')
+    listIbge.set('RJ-Iguaba Grande', '3301876')
+    listIbge.set('RJ-Itaboraí', '3301900')
+    listIbge.set('RJ-Itaguaí', '3302007')
+    listIbge.set('RJ-Italva', '3302056')
+    listIbge.set('RJ-Itaocara', '3302106')
+    listIbge.set('RJ-Itaperuna', '3302205')
+    listIbge.set('RJ-Itatiaia', '3302254')
+    listIbge.set('RJ-Japeri', '3302270')
+    listIbge.set('RJ-Laje do Muriaé', '3302304')
+    listIbge.set('RJ-Macaé', '3302403')
+    listIbge.set('RJ-Macuco', '3302452')
+    listIbge.set('RJ-Magé', '3302502')
+    listIbge.set('RJ-Mangaratiba', '3302601')
+    listIbge.set('RJ-Maricá', '3302700')
+    listIbge.set('RJ-Mendes', '3302809')
+    listIbge.set('RJ-Mesquita', '3302858')
+    listIbge.set('RJ-Miguel Pereira', '3302908')
+    listIbge.set('RJ-Miracema', '3303005')
+    listIbge.set('RJ-Natividade', '3303104')
+    listIbge.set('RJ-Nilópolis', '3303203')
+    listIbge.set('RJ-Niterói', '3303302')
+    listIbge.set('RJ-Nova Friburgo', '3303401')
+    listIbge.set('RJ-Nova Iguaçu', '3303500')
+    listIbge.set('RJ-Paracambi', '3303609')
+    listIbge.set('RJ-Paraíba do Sul', '3303708')
+    listIbge.set('RJ-Paraty', '3303807')
+    listIbge.set('RJ-Paty do Alferes', '3303856')
+    listIbge.set('RJ-Petrópolis', '3303906')
+    listIbge.set('RJ-Pinheiral', '3303955')
+    listIbge.set('RJ-Piraí', '3304003')
+    listIbge.set('RJ-Porciúncula', '3304102')
+    listIbge.set('RJ-Porto Real', '3304110')
+    listIbge.set('RJ-Quatis', '3304128')
+    listIbge.set('RJ-Queimados', '3304144')
+    listIbge.set('RJ-Quissamã', '3304151')
+    listIbge.set('RJ-Resende', '3304201')
+    listIbge.set('RJ-Rio Bonito', '3304300')
+    listIbge.set('RJ-Rio Claro', '3304409')
+    listIbge.set('RJ-Rio das Flores', '3304508')
+    listIbge.set('RJ-Rio das Ostras', '3304524')
+    listIbge.set('RJ-Rio de Janeiro', '3304557')
+    listIbge.set('RJ-Santa Maria Madalena', '3304607')
+    listIbge.set('RJ-Santo Antônio de Pádua', '3304706')
+    listIbge.set('RJ-São Fidélis', '3304805')
+    listIbge.set('RJ-São Francisco de Itabapoana', '3304755')
+    listIbge.set('RJ-São Gonçalo', '3304904')
+    listIbge.set('RJ-São João da Barra', '3305000')
+    listIbge.set('RJ-São João de Meriti', '3305109')
+    listIbge.set('RJ-São José de Ubá', '3305133')
+    listIbge.set('RJ-São José do Vale do Rio Preto', '3305158')
+    listIbge.set('RJ-São Pedro da Aldeia', '3305208')
+    listIbge.set('RJ-São Sebastião do Alto', '3305307')
+    listIbge.set('RJ-Sapucaia', '3305406')
+    listIbge.set('RJ-Saquarema', '3305505')
+    listIbge.set('RJ-Seropédica', '3305554')
+    listIbge.set('RJ-Silva Jardim', '3305604')
+    listIbge.set('RJ-Sumidouro', '3305703')
+    listIbge.set('RJ-Tanguá', '3305752')
+    listIbge.set('RJ-Teresópolis', '3305802')
+    listIbge.set('RJ-Trajano de Moraes', '3305901')
+    listIbge.set('RJ-Três Rios', '3306008')
+    listIbge.set('RJ-Valença', '3306107')
+    listIbge.set('RJ-Varre-Sai', '3306156')
+    listIbge.set('RJ-Vassouras', '3306206')
+    listIbge.set('RJ-Volta Redonda', '3306305')
+    listIbge.set('SP-Adamantina', '3500105')
+    listIbge.set('SP-Adolfo', '3500204')
+    listIbge.set('SP-Aguaí', '3500303')
+    listIbge.set('SP-Águas da Prata', '3500402')
+    listIbge.set('SP-Águas de Lindóia', '3500501')
+    listIbge.set('SP-Águas de Santa Bárbara', '3500550')
+    listIbge.set('SP-Águas de São Pedro', '3500600')
+    listIbge.set('SP-Agudos', '3500709')
+    listIbge.set('SP-Alambari', '3500758')
+    listIbge.set('SP-Alfredo Marcondes', '3500808')
+    listIbge.set('SP-Altair', '3500907')
+    listIbge.set('SP-Altinópolis', '3501004')
+    listIbge.set('SP-Alto Alegre', '3501103')
+    listIbge.set('SP-Alumínio', '3501152')
+    listIbge.set('SP-Álvares Florence', '3501202')
+    listIbge.set('SP-Álvares Machado', '3501301')
+    listIbge.set('SP-Álvaro de Carvalho', '3501400')
+    listIbge.set('SP-Alvinlândia', '3501509')
+    listIbge.set('SP-Americana', '3501608')
+    listIbge.set('SP-Américo Brasiliense', '3501707')
+    listIbge.set('SP-Américo de Campos', '3501806')
+    listIbge.set('SP-Amparo', '3501905')
+    listIbge.set('SP-Analândia', '3502002')
+    listIbge.set('SP-Andradina', '3502101')
+    listIbge.set('SP-Angatuba', '3502200')
+    listIbge.set('SP-Anhembi', '3502309')
+    listIbge.set('SP-Anhumas', '3502408')
+    listIbge.set('SP-Aparecida', '3502507')
+    listIbge.set('SP-Apiaí', '3502705')
+    listIbge.set('SP-Araçariguama', '3502754')
+    listIbge.set('SP-Araçatuba', '3502804')
+    listIbge.set('SP-Araçoiaba da Serra', '3502903')
+    listIbge.set('SP-Aramina', '3503000')
+    listIbge.set('SP-Arandu', '3503109')
+    listIbge.set('SP-Arapeí', '3503158')
+    listIbge.set('SP-Araraquara', '3503208')
+    listIbge.set('SP-Araras', '3503307')
+    listIbge.set('SP-Arco-Íris', '3503356')
+    listIbge.set('SP-Arealva', '3503406')
+    listIbge.set('SP-Areias', '3503505')
+    listIbge.set('SP-Areiópolis', '3503604')
+    listIbge.set('SP-Ariranha', '3503703')
+    listIbge.set('SP-Artur Nogueira', '3503802')
+    listIbge.set('SP-Arujá', '3503901')
+    listIbge.set('SP-Aspásia', '3503950')
+    listIbge.set('SP-Assis', '3504008')
+    listIbge.set('SP-Atibaia', '3504107')
+    listIbge.set('SP-Auriflama', '3504206')
+    listIbge.set('SP-Avaí', '3504305')
+    listIbge.set('SP-Avanhandava', '3504404')
+    listIbge.set('SP-Avaré', '3504503')
+    listIbge.set('SP-Bady Bassitt', '3504602')
+    listIbge.set('SP-Balbinos', '3504701')
+    listIbge.set('SP-Bálsamo', '3504800')
+    listIbge.set('SP-Bananal', '3504909')
+    listIbge.set('SP-Barão de Antonina', '3505005')
+    listIbge.set('SP-Barbosa', '3505104')
+    listIbge.set('SP-Bariri', '3505203')
+    listIbge.set('SP-Barra Bonita', '3505302')
+    listIbge.set('SP-Barra do Chapéu', '3505351')
+    listIbge.set('SP-Barra do Turvo', '3505401')
+    listIbge.set('SP-Barretos', '3505500')
+    listIbge.set('SP-Barrinha', '3505609')
+    listIbge.set('SP-Barueri', '3505708')
+    listIbge.set('SP-Bastos', '3505807')
+    listIbge.set('SP-Batatais', '3505906')
+    listIbge.set('SP-Bauru', '3506003')
+    listIbge.set('SP-Bebedouro', '3506102')
+    listIbge.set('SP-Bento de Abreu', '3506201')
+    listIbge.set('SP-Bernardino de Campos', '3506300')
+    listIbge.set('SP-Bertioga', '3506359')
+    listIbge.set('SP-Bilac', '3506409')
+    listIbge.set('SP-Birigui', '3506508')
+    listIbge.set('SP-Biritiba Mirim', '3506607')
+    listIbge.set('SP-Boa Esperança do Sul', '3506706')
+    listIbge.set('SP-Bocaina', '3506805')
+    listIbge.set('SP-Bofete', '3506904')
+    listIbge.set('SP-Boituva', '3507001')
+    listIbge.set('SP-Bom Jesus dos Perdões', '3507100')
+    listIbge.set('SP-Bom Sucesso de Itararé', '3507159')
+    listIbge.set('SP-Borá', '3507209')
+    listIbge.set('SP-Boracéia', '3507308')
+    listIbge.set('SP-Borborema', '3507407')
+    listIbge.set('SP-Borebi', '3507456')
+    listIbge.set('SP-Botucatu', '3507506')
+    listIbge.set('SP-Bragança Paulista', '3507605')
+    listIbge.set('SP-Braúna', '3507704')
+    listIbge.set('SP-Brejo Alegre', '3507753')
+    listIbge.set('SP-Brodowski', '3507803')
+    listIbge.set('SP-Brotas', '3507902')
+    listIbge.set('SP-Buri', '3508009')
+    listIbge.set('SP-Buritama', '3508108')
+    listIbge.set('SP-Buritizal', '3508207')
+    listIbge.set('SP-Cabrália Paulista', '3508306')
+    listIbge.set('SP-Cabreúva', '3508405')
+    listIbge.set('SP-Caçapava', '3508504')
+    listIbge.set('SP-Cachoeira Paulista', '3508603')
+    listIbge.set('SP-Caconde', '3508702')
+    listIbge.set('SP-Cafelândia', '3508801')
+    listIbge.set('SP-Caiabu', '3508900')
+    listIbge.set('SP-Caieiras', '3509007')
+    listIbge.set('SP-Caiuá', '3509106')
+    listIbge.set('SP-Cajamar', '3509205')
+    listIbge.set('SP-Cajati', '3509254')
+    listIbge.set('SP-Cajobi', '3509304')
+    listIbge.set('SP-Cajuru', '3509403')
+    listIbge.set('SP-Campina do Monte Alegre', '3509452')
+    listIbge.set('SP-Campinas', '3509502')
+    listIbge.set('SP-Campo Limpo Paulista', '3509601')
+    listIbge.set('SP-Campos do Jordão', '3509700')
+    listIbge.set('SP-Campos Novos Paulista', '3509809')
+    listIbge.set('SP-Cananéia', '3509908')
+    listIbge.set('SP-Canas', '3509957')
+    listIbge.set('SP-Cândido Mota', '3510005')
+    listIbge.set('SP-Cândido Rodrigues', '3510104')
+    listIbge.set('SP-Canitar', '3510153')
+    listIbge.set('SP-Capão Bonito', '3510203')
+    listIbge.set('SP-Capela do Alto', '3510302')
+    listIbge.set('SP-Capivari', '3510401')
+    listIbge.set('SP-Caraguatatuba', '3510500')
+    listIbge.set('SP-Carapicuíba', '3510609')
+    listIbge.set('SP-Cardoso', '3510708')
+    listIbge.set('SP-Casa Branca', '3510807')
+    listIbge.set('SP-Cássia dos Coqueiros', '3510906')
+    listIbge.set('SP-Castilho', '3511003')
+    listIbge.set('SP-Catanduva', '3511102')
+    listIbge.set('SP-Catiguá', '3511201')
+    listIbge.set('SP-Cedral', '3511300')
+    listIbge.set('SP-Cerqueira César', '3511409')
+    listIbge.set('SP-Cerquilho', '3511508')
+    listIbge.set('SP-Cesário Lange', '3511607')
+    listIbge.set('SP-Charqueada', '3511706')
+    listIbge.set('SP-Chavantes', '3557204')
+    listIbge.set('SP-Clementina', '3511904')
+    listIbge.set('SP-Colina', '3512001')
+    listIbge.set('SP-Colômbia', '3512100')
+    listIbge.set('SP-Conchal', '3512209')
+    listIbge.set('SP-Conchas', '3512308')
+    listIbge.set('SP-Cordeirópolis', '3512407')
+    listIbge.set('SP-Coroados', '3512506')
+    listIbge.set('SP-Coronel Macedo', '3512605')
+    listIbge.set('SP-Corumbataí', '3512704')
+    listIbge.set('SP-Cosmópolis', '3512803')
+    listIbge.set('SP-Cosmorama', '3512902')
+    listIbge.set('SP-Cotia', '3513009')
+    listIbge.set('SP-Cravinhos', '3513108')
+    listIbge.set('SP-Cristais Paulista', '3513207')
+    listIbge.set('SP-Cruzália', '3513306')
+    listIbge.set('SP-Cruzeiro', '3513405')
+    listIbge.set('SP-Cubatão', '3513504')
+    listIbge.set('SP-Cunha', '3513603')
+    listIbge.set('SP-Descalvado', '3513702')
+    listIbge.set('SP-Diadema', '3513801')
+    listIbge.set('SP-Dirce Reis', '3513850')
+    listIbge.set('SP-Divinolândia', '3513900')
+    listIbge.set('SP-Dobrada', '3514007')
+    listIbge.set('SP-Dois Córregos', '3514106')
+    listIbge.set('SP-Dolcinópolis', '3514205')
+    listIbge.set('SP-Dourado', '3514304')
+    listIbge.set('SP-Dracena', '3514403')
+    listIbge.set('SP-Duartina', '3514502')
+    listIbge.set('SP-Dumont', '3514601')
+    listIbge.set('SP-Echaporã', '3514700')
+    listIbge.set('SP-Eldorado', '3514809')
+    listIbge.set('SP-Elias Fausto', '3514908')
+    listIbge.set('SP-Elisiário', '3514924')
+    listIbge.set('SP-Embaúba', '3514957')
+    listIbge.set('SP-Embu das Artes', '3515004')
+    listIbge.set('SP-Embu-Guaçu', '3515103')
+    listIbge.set('SP-Emilianópolis', '3515129')
+    listIbge.set('SP-Engenheiro Coelho', '3515152')
+    listIbge.set('SP-Espírito Santo do Pinhal', '3515186')
+    listIbge.set('SP-Espírito Santo do Turvo', '3515194')
+    listIbge.set('SP-Estiva Gerbi', '3557303')
+    listIbge.set('SP-Estrela do Norte', '3515301')
+    listIbge.set('SP-Euclides da Cunha Paulista', '3515350')
+    listIbge.set('SP-Fartura', '3515400')
+    listIbge.set('SP-Fernando Prestes', '3515608')
+    listIbge.set('SP-Fernandópolis', '3515509')
+    listIbge.set('SP-Fernão', '3515657')
+    listIbge.set('SP-Ferraz de Vasconcelos', '3515707')
+    listIbge.set('SP-Flora Rica', '3515806')
+    listIbge.set('SP-Floreal', '3515905')
+    listIbge.set('SP-Flórida Paulista', '3516002')
+    listIbge.set('SP-Florínea', '3516101')
+    listIbge.set('SP-Franca', '3516200')
+    listIbge.set('SP-Francisco Morato', '3516309')
+    listIbge.set('SP-Franco da Rocha', '3516408')
+    listIbge.set('SP-Gabriel Monteiro', '3516507')
+    listIbge.set('SP-Gália', '3516606')
+    listIbge.set('SP-Garça', '3516705')
+    listIbge.set('SP-Gastão Vidigal', '3516804')
+    listIbge.set('SP-Gavião Peixoto', '3516853')
+    listIbge.set('SP-General Salgado', '3516903')
+    listIbge.set('SP-Getulina', '3517000')
+    listIbge.set('SP-Glicério', '3517109')
+    listIbge.set('SP-Guaiçara', '3517208')
+    listIbge.set('SP-Guaimbê', '3517307')
+    listIbge.set('SP-Guaíra', '3517406')
+    listIbge.set('SP-Guapiaçu', '3517505')
+    listIbge.set('SP-Guapiara', '3517604')
+    listIbge.set('SP-Guará', '3517703')
+    listIbge.set('SP-Guaraçaí', '3517802')
+    listIbge.set('SP-Guaraci', '3517901')
+    listIbge.set('SP-Guarantã', '3518107')
+    listIbge.set('SP-Guararapes', '3518206')
+    listIbge.set('SP-Guararema', '3518305')
+    listIbge.set('SP-Guaratinguetá', '3518404')
+    listIbge.set('SP-Guareí', '3518503')
+    listIbge.set('SP-Guariba', '3518602')
+    listIbge.set('SP-Guarujá', '3518701')
+    listIbge.set('SP-Guarulhos', '3518800')
+    listIbge.set('SP-Guatapará', '3518859')
+    listIbge.set('SP-Guzolândia', '3518909')
+    listIbge.set('SP-Herculândia', '3519006')
+    listIbge.set('SP-Holambra', '3519055')
+    listIbge.set('SP-Hortolândia', '3519071')
+    listIbge.set('SP-Iacanga', '3519105')
+    listIbge.set('SP-Iacri', '3519204')
+    listIbge.set('SP-Iaras', '3519253')
+    listIbge.set('SP-Ibaté', '3519303')
+    listIbge.set('SP-Ibirá', '3519402')
+    listIbge.set('SP-Ibirarema', '3519501')
+    listIbge.set('SP-Ibitinga', '3519600')
+    listIbge.set('SP-Ibiúna', '3519709')
+    listIbge.set('SP-Icém', '3519808')
+    listIbge.set('SP-Iepê', '3519907')
+    listIbge.set('SP-Igaraçu do Tietê', '3520004')
+    listIbge.set('SP-Igarapava', '3520103')
+    listIbge.set('SP-Igaratá', '3520202')
+    listIbge.set('SP-Iguape', '3520301')
+    listIbge.set('SP-Ilha Comprida', '3520426')
+    listIbge.set('SP-Ilha Solteira', '3520442')
+    listIbge.set('SP-Ilhabela', '3520400')
+    listIbge.set('SP-Indaiatuba', '3520509')
+    listIbge.set('SP-Indiana', '3520608')
+    listIbge.set('SP-Indiaporã', '3520707')
+    listIbge.set('SP-Inúbia Paulista', '3520806')
+    listIbge.set('SP-Ipaussu', '3520905')
+    listIbge.set('SP-Iperó', '3521002')
+    listIbge.set('SP-Ipeúna', '3521101')
+    listIbge.set('SP-Ipiguá', '3521150')
+    listIbge.set('SP-Iporanga', '3521200')
+    listIbge.set('SP-Ipuã', '3521309')
+    listIbge.set('SP-Iracemápolis', '3521408')
+    listIbge.set('SP-Irapuã', '3521507')
+    listIbge.set('SP-Irapuru', '3521606')
+    listIbge.set('SP-Itaberá', '3521705')
+    listIbge.set('SP-Itaí', '3521804')
+    listIbge.set('SP-Itajobi', '3521903')
+    listIbge.set('SP-Itaju', '3522000')
+    listIbge.set('SP-Itanhaém', '3522109')
+    listIbge.set('SP-Itaoca', '3522158')
+    listIbge.set('SP-Itapecerica da Serra', '3522208')
+    listIbge.set('SP-Itapetininga', '3522307')
+    listIbge.set('SP-Itapeva', '3522406')
+    listIbge.set('SP-Itapevi', '3522505')
+    listIbge.set('SP-Itapira', '3522604')
+    listIbge.set('SP-Itapirapuã Paulista', '3522653')
+    listIbge.set('SP-Itápolis', '3522703')
+    listIbge.set('SP-Itaporanga', '3522802')
+    listIbge.set('SP-Itapuí', '3522901')
+    listIbge.set('SP-Itapura', '3523008')
+    listIbge.set('SP-Itaquaquecetuba', '3523107')
+    listIbge.set('SP-Itararé', '3523206')
+    listIbge.set('SP-Itariri', '3523305')
+    listIbge.set('SP-Itatiba', '3523404')
+    listIbge.set('SP-Itatinga', '3523503')
+    listIbge.set('SP-Itirapina', '3523602')
+    listIbge.set('SP-Itirapuã', '3523701')
+    listIbge.set('SP-Itobi', '3523800')
+    listIbge.set('SP-Itu', '3523909')
+    listIbge.set('SP-Itupeva', '3524006')
+    listIbge.set('SP-Ituverava', '3524105')
+    listIbge.set('SP-Jaborandi', '3524204')
+    listIbge.set('SP-Jaboticabal', '3524303')
+    listIbge.set('SP-Jacareí', '3524402')
+    listIbge.set('SP-Jaci', '3524501')
+    listIbge.set('SP-Jacupiranga', '3524600')
+    listIbge.set('SP-Jaguariúna', '3524709')
+    listIbge.set('SP-Jales', '3524808')
+    listIbge.set('SP-Jambeiro', '3524907')
+    listIbge.set('SP-Jandira', '3525003')
+    listIbge.set('SP-Jardinópolis', '3525102')
+    listIbge.set('SP-Jarinu', '3525201')
+    listIbge.set('SP-Jaú', '3525300')
+    listIbge.set('SP-Jeriquara', '3525409')
+    listIbge.set('SP-Joanópolis', '3525508')
+    listIbge.set('SP-João Ramalho', '3525607')
+    listIbge.set('SP-José Bonifácio', '3525706')
+    listIbge.set('SP-Júlio Mesquita', '3525805')
+    listIbge.set('SP-Jumirim', '3525854')
+    listIbge.set('SP-Jundiaí', '3525904')
+    listIbge.set('SP-Junqueirópolis', '3526001')
+    listIbge.set('SP-Juquiá', '3526100')
+    listIbge.set('SP-Juquitiba', '3526209')
+    listIbge.set('SP-Lagoinha', '3526308')
+    listIbge.set('SP-Laranjal Paulista', '3526407')
+    listIbge.set('SP-Lavínia', '3526506')
+    listIbge.set('SP-Lavrinhas', '3526605')
+    listIbge.set('SP-Leme', '3526704')
+    listIbge.set('SP-Lençóis Paulista', '3526803')
+    listIbge.set('SP-Limeira', '3526902')
+    listIbge.set('SP-Lindóia', '3527009')
+    listIbge.set('SP-Lins', '3527108')
+    listIbge.set('SP-Lorena', '3527207')
+    listIbge.set('SP-Lourdes', '3527256')
+    listIbge.set('SP-Louveira', '3527306')
+    listIbge.set('SP-Lucélia', '3527405')
+    listIbge.set('SP-Lucianópolis', '3527504')
+    listIbge.set('SP-Luís Antônio', '3527603')
+    listIbge.set('SP-Luiziânia', '3527702')
+    listIbge.set('SP-Lupércio', '3527801')
+    listIbge.set('SP-Lutécia', '3527900')
+    listIbge.set('SP-Macatuba', '3528007')
+    listIbge.set('SP-Macaubal', '3528106')
+    listIbge.set('SP-Macedônia', '3528205')
+    listIbge.set('SP-Magda', '3528304')
+    listIbge.set('SP-Mairinque', '3528403')
+    listIbge.set('SP-Mairiporã', '3528502')
+    listIbge.set('SP-Manduri', '3528601')
+    listIbge.set('SP-Marabá Paulista', '3528700')
+    listIbge.set('SP-Maracaí', '3528809')
+    listIbge.set('SP-Marapoama', '3528858')
+    listIbge.set('SP-Mariápolis', '3528908')
+    listIbge.set('SP-Marília', '3529005')
+    listIbge.set('SP-Marinópolis', '3529104')
+    listIbge.set('SP-Martinópolis', '3529203')
+    listIbge.set('SP-Matão', '3529302')
+    listIbge.set('SP-Mauá', '3529401')
+    listIbge.set('SP-Mendonça', '3529500')
+    listIbge.set('SP-Meridiano', '3529609')
+    listIbge.set('SP-Mesópolis', '3529658')
+    listIbge.set('SP-Miguelópolis', '3529708')
+    listIbge.set('SP-Mineiros do Tietê', '3529807')
+    listIbge.set('SP-Mira Estrela', '3530003')
+    listIbge.set('SP-Miracatu', '3529906')
+    listIbge.set('SP-Mirandópolis', '3530102')
+    listIbge.set('SP-Mirante do Paranapanema', '3530201')
+    listIbge.set('SP-Mirassol', '3530300')
+    listIbge.set('SP-Mirassolândia', '3530409')
+    listIbge.set('SP-Mococa', '3530508')
+    listIbge.set('SP-Mogi das Cruzes', '3530607')
+    listIbge.set('SP-Mogi Guaçu', '3530706')
+    listIbge.set('SP-Mogi Mirim', '3530805')
+    listIbge.set('SP-Mombuca', '3530904')
+    listIbge.set('SP-Monções', '3531001')
+    listIbge.set('SP-Mongaguá', '3531100')
+    listIbge.set('SP-Monte Alegre do Sul', '3531209')
+    listIbge.set('SP-Monte Alto', '3531308')
+    listIbge.set('SP-Monte Aprazível', '3531407')
+    listIbge.set('SP-Monte Azul Paulista', '3531506')
+    listIbge.set('SP-Monte Castelo', '3531605')
+    listIbge.set('SP-Monte Mor', '3531803')
+    listIbge.set('SP-Monteiro Lobato', '3531704')
+    listIbge.set('SP-Morro Agudo', '3531902')
+    listIbge.set('SP-Morungaba', '3532009')
+    listIbge.set('SP-Motuca', '3532058')
+    listIbge.set('SP-Murutinga do Sul', '3532108')
+    listIbge.set('SP-Nantes', '3532157')
+    listIbge.set('SP-Narandiba', '3532207')
+    listIbge.set('SP-Natividade da Serra', '3532306')
+    listIbge.set('SP-Nazaré Paulista', '3532405')
+    listIbge.set('SP-Neves Paulista', '3532504')
+    listIbge.set('SP-Nhandeara', '3532603')
+    listIbge.set('SP-Nipoã', '3532702')
+    listIbge.set('SP-Nova Aliança', '3532801')
+    listIbge.set('SP-Nova Campina', '3532827')
+    listIbge.set('SP-Nova Canaã Paulista', '3532843')
+    listIbge.set('SP-Nova Castilho', '3532868')
+    listIbge.set('SP-Nova Europa', '3532900')
+    listIbge.set('SP-Nova Granada', '3533007')
+    listIbge.set('SP-Nova Guataporanga', '3533106')
+    listIbge.set('SP-Nova Independência', '3533205')
+    listIbge.set('SP-Nova Luzitânia', '3533304')
+    listIbge.set('SP-Nova Odessa', '3533403')
+    listIbge.set('SP-Novais', '3533254')
+    listIbge.set('SP-Novo Horizonte', '3533502')
+    listIbge.set('SP-Nuporanga', '3533601')
+    listIbge.set('SP-Ocauçu', '3533700')
+    listIbge.set('SP-Óleo', '3533809')
+    listIbge.set('SP-Olímpia', '3533908')
+    listIbge.set('SP-Onda Verde', '3534005')
+    listIbge.set('SP-Oriente', '3534104')
+    listIbge.set('SP-Orindiúva', '3534203')
+    listIbge.set('SP-Orlândia', '3534302')
+    listIbge.set('SP-Osasco', '3534401')
+    listIbge.set('SP-Oscar Bressane', '3534500')
+    listIbge.set('SP-Osvaldo Cruz', '3534609')
+    listIbge.set('SP-Ourinhos', '3534708')
+    listIbge.set('SP-Ouro Verde', '3534807')
+    listIbge.set('SP-Ouroeste', '3534757')
+    listIbge.set('SP-Pacaembu', '3534906')
+    listIbge.set('SP-Palestina', '3535002')
+    listIbge.set('SP-Palmares Paulista', '3535101')
+    listIbge.set('SP-Palmital', '3535309')
+    listIbge.set('SP-Panorama', '3535408')
+    listIbge.set('SP-Paraguaçu Paulista', '3535507')
+    listIbge.set('SP-Paraibuna', '3535606')
+    listIbge.set('SP-Paraíso', '3535705')
+    listIbge.set('SP-Paranapanema', '3535804')
+    listIbge.set('SP-Paranapuã', '3535903')
+    listIbge.set('SP-Parapuã', '3536000')
+    listIbge.set('SP-Pardinho', '3536109')
+    listIbge.set('SP-Pariquera-Açu', '3536208')
+    listIbge.set('SP-Parisi', '3536257')
+    listIbge.set('SP-Patrocínio Paulista', '3536307')
+    listIbge.set('SP-Paulicéia', '3536406')
+    listIbge.set('SP-Paulínia', '3536505')
+    listIbge.set('SP-Paulistânia', '3536570')
+    listIbge.set('SP-Paulo de Faria', '3536604')
+    listIbge.set('SP-Pederneiras', '3536703')
+    listIbge.set('SP-Pedra Bela', '3536802')
+    listIbge.set('SP-Pedranópolis', '3536901')
+    listIbge.set('SP-Pedregulho', '3537008')
+    listIbge.set('SP-Pedreira', '3537107')
+    listIbge.set('SP-Pedrinhas Paulista', '3537156')
+    listIbge.set('SP-Pedro de Toledo', '3537206')
+    listIbge.set('SP-Penápolis', '3537305')
+    listIbge.set('SP-Pereira Barreto', '3537404')
+    listIbge.set('SP-Pereiras', '3537503')
+    listIbge.set('SP-Peruíbe', '3537602')
+    listIbge.set('SP-Piacatu', '3537701')
+    listIbge.set('SP-Piedade', '3537800')
+    listIbge.set('SP-Pilar do Sul', '3537909')
+    listIbge.set('SP-Pindamonhangaba', '3538006')
+    listIbge.set('SP-Pindorama', '3538105')
+    listIbge.set('SP-Pinhalzinho', '3538204')
+    listIbge.set('SP-Piquerobi', '3538303')
+    listIbge.set('SP-Piquete', '3538501')
+    listIbge.set('SP-Piracaia', '3538600')
+    listIbge.set('SP-Piracicaba', '3538709')
+    listIbge.set('SP-Piraju', '3538808')
+    listIbge.set('SP-Pirajuí', '3538907')
+    listIbge.set('SP-Pirangi', '3539004')
+    listIbge.set('SP-Pirapora do Bom Jesus', '3539103')
+    listIbge.set('SP-Pirapozinho', '3539202')
+    listIbge.set('SP-Pirassununga', '3539301')
+    listIbge.set('SP-Piratininga', '3539400')
+    listIbge.set('SP-Pitangueiras', '3539509')
+    listIbge.set('SP-Planalto', '3539608')
+    listIbge.set('SP-Platina', '3539707')
+    listIbge.set('SP-Poá', '3539806')
+    listIbge.set('SP-Poloni', '3539905')
+    listIbge.set('SP-Pompéia', '3540002')
+    listIbge.set('SP-Pongaí', '3540101')
+    listIbge.set('SP-Pontal', '3540200')
+    listIbge.set('SP-Pontalinda', '3540259')
+    listIbge.set('SP-Pontes Gestal', '3540309')
+    listIbge.set('SP-Populina', '3540408')
+    listIbge.set('SP-Porangaba', '3540507')
+    listIbge.set('SP-Porto Feliz', '3540606')
+    listIbge.set('SP-Porto Ferreira', '3540705')
+    listIbge.set('SP-Potim', '3540754')
+    listIbge.set('SP-Potirendaba', '3540804')
+    listIbge.set('SP-Pracinha', '3540853')
+    listIbge.set('SP-Pradópolis', '3540903')
+    listIbge.set('SP-Praia Grande', '3541000')
+    listIbge.set('SP-Pratânia', '3541059')
+    listIbge.set('SP-Presidente Alves', '3541109')
+    listIbge.set('SP-Presidente Bernardes', '3541208')
+    listIbge.set('SP-Presidente Epitácio', '3541307')
+    listIbge.set('SP-Presidente Prudente', '3541406')
+    listIbge.set('SP-Presidente Venceslau', '3541505')
+    listIbge.set('SP-Promissão', '3541604')
+    listIbge.set('SP-Quadra', '3541653')
+    listIbge.set('SP-Quatá', '3541703')
+    listIbge.set('SP-Queiroz', '3541802')
+    listIbge.set('SP-Queluz', '3541901')
+    listIbge.set('SP-Quintana', '3542008')
+    listIbge.set('SP-Rafard', '3542107')
+    listIbge.set('SP-Rancharia', '3542206')
+    listIbge.set('SP-Redenção da Serra', '3542305')
+    listIbge.set('SP-Regente Feijó', '3542404')
+    listIbge.set('SP-Reginópolis', '3542503')
+    listIbge.set('SP-Registro', '3542602')
+    listIbge.set('SP-Restinga', '3542701')
+    listIbge.set('SP-Ribeira', '3542800')
+    listIbge.set('SP-Ribeirão Bonito', '3542909')
+    listIbge.set('SP-Ribeirão Branco', '3543006')
+    listIbge.set('SP-Ribeirão Corrente', '3543105')
+    listIbge.set('SP-Ribeirão do Sul', '3543204')
+    listIbge.set('SP-Ribeirão dos Índios', '3543238')
+    listIbge.set('SP-Ribeirão Grande', '3543253')
+    listIbge.set('SP-Ribeirão Pires', '3543303')
+    listIbge.set('SP-Ribeirão Preto', '3543402')
+    listIbge.set('SP-Rifaina', '3543600')
+    listIbge.set('SP-Rincão', '3543709')
+    listIbge.set('SP-Rinópolis', '3543808')
+    listIbge.set('SP-Rio Claro', '3543907')
+    listIbge.set('SP-Rio das Pedras', '3544004')
+    listIbge.set('SP-Rio Grande da Serra', '3544103')
+    listIbge.set('SP-Riolândia', '3544202')
+    listIbge.set('SP-Riversul', '3543501')
+    listIbge.set('SP-Rosana', '3544251')
+    listIbge.set('SP-Roseira', '3544301')
+    listIbge.set('SP-Rubiácea', '3544400')
+    listIbge.set('SP-Rubinéia', '3544509')
+    listIbge.set('SP-Sabino', '3544608')
+    listIbge.set('SP-Sagres', '3544707')
+    listIbge.set('SP-Sales', '3544806')
+    listIbge.set('SP-Sales Oliveira', '3544905')
+    listIbge.set('SP-Salesópolis', '3545001')
+    listIbge.set('SP-Salmourão', '3545100')
+    listIbge.set('SP-Saltinho', '3545159')
+    listIbge.set('SP-Salto', '3545209')
+    listIbge.set('SP-Salto de Pirapora', '3545308')
+    listIbge.set('SP-Salto Grande', '3545407')
+    listIbge.set('SP-Sandovalina', '3545506')
+    listIbge.set('SP-Santa Adélia', '3545605')
+    listIbge.set('SP-Santa Albertina', '3545704')
+    listIbge.set('SP-Santa Branca', '3546009')
+    listIbge.set('SP-Santa Cruz da Conceição', '3546207')
+    listIbge.set('SP-Santa Cruz da Esperança', '3546256')
+    listIbge.set('SP-Santa Cruz das Palmeiras', '3546306')
+    listIbge.set('SP-Santa Cruz do Rio Pardo', '3546405')
+    listIbge.set('SP-Santa Ernestina', '3546504')
+    listIbge.set('SP-Santa Fé do Sul', '3546603')
+    listIbge.set('SP-Santa Gertrudes', '3546702')
+    listIbge.set('SP-Santa Isabel', '3546801')
+    listIbge.set('SP-Santa Lúcia', '3546900')
+    listIbge.set('SP-Santa Maria da Serra', '3547007')
+    listIbge.set('SP-Santa Mercedes', '3547106')
+    listIbge.set('SP-Santa Rita do Passa Quatro', '3547502')
+    listIbge.set('SP-Santa Rosa de Viterbo', '3547601')
+    listIbge.set('SP-Santa Salete', '3547650')
+    listIbge.set('SP-Santana da Ponte Pensa', '3547205')
+    listIbge.set('SP-Santana de Parnaíba', '3547304')
+    listIbge.set('SP-Santo Anastácio', '3547700')
+    listIbge.set('SP-Santo André', '3547809')
+    listIbge.set('SP-Santo Antônio da Alegria', '3547908')
+    listIbge.set('SP-Santo Antônio de Posse', '3548005')
+    listIbge.set('SP-Santo Antônio do Aracanguá', '3548054')
+    listIbge.set('SP-Santo Antônio do Jardim', '3548104')
+    listIbge.set('SP-Santo Antônio do Pinhal', '3548203')
+    listIbge.set('SP-Santo Expedito', '3548302')
+    listIbge.set('SP-Santópolis do Aguapeí', '3548401')
+    listIbge.set('SP-Santos', '3548500')
+    listIbge.set('SP-São Bento do Sapucaí', '3548609')
+    listIbge.set('SP-São Bernardo do Campo', '3548708')
+    listIbge.set('SP-São Caetano do Sul', '3548807')
+    listIbge.set('SP-São Carlos', '3548906')
+    listIbge.set('SP-São Francisco', '3549003')
+    listIbge.set('SP-São João da Boa Vista', '3549102')
+    listIbge.set('SP-São João das Duas Pontes', '3549201')
+    listIbge.set('SP-São João de Iracema', '3549250')
+    listIbge.set('SP-São Joaquim da Barra', '3549409')
+    listIbge.set('SP-São José da Bela Vista', '3549508')
+    listIbge.set('SP-São José do Barreiro', '3549607')
+    listIbge.set('SP-São José do Rio Pardo', '3549706')
+    listIbge.set('SP-São José do Rio Preto', '3549805')
+    listIbge.set('SP-São José dos Campos', '3549904')
+    listIbge.set('SP-São Lourenço da Serra', '3549953')
+    listIbge.set('SP-São Luiz do Paraitinga', '3550001')
+    listIbge.set('SP-São Manuel', '3550100')
+    listIbge.set('SP-São Miguel Arcanjo', '3550209')
+    listIbge.set('SP-São Paulo', '3550308')
+    listIbge.set('SP-São Pedro', '3550407')
+    listIbge.set('SP-São Pedro do Turvo', '3550506')
+    listIbge.set('SP-São Roque', '3550605')
+    listIbge.set('SP-São Sebastião', '3550704')
+    listIbge.set('SP-São Sebastião da Grama', '3550803')
+    listIbge.set('SP-São Simão', '3550902')
+    listIbge.set('SP-São Vicente', '3551009')
+    listIbge.set('SP-Sarapuí', '3551108')
+    listIbge.set('SP-Sarutaiá', '3551207')
+    listIbge.set('SP-Sebastianópolis do Sul', '3551306')
+    listIbge.set('SP-Serra Azul', '3551405')
+    listIbge.set('SP-Serra Negra', '3551603')
+    listIbge.set('SP-Serrana', '3551504')
+    listIbge.set('SP-Sertãozinho', '3551702')
+    listIbge.set('SP-Sete Barras', '3551801')
+    listIbge.set('SP-Severínia', '3551900')
+    listIbge.set('SP-Silveiras', '3552007')
+    listIbge.set('SP-Socorro', '3552106')
+    listIbge.set('SP-Sorocaba', '3552205')
+    listIbge.set('SP-Sud Mennucci', '3552304')
+    listIbge.set('SP-Sumaré', '3552403')
+    listIbge.set('SP-Suzanápolis', '3552551')
+    listIbge.set('SP-Suzano', '3552502')
+    listIbge.set('SP-Tabapuã', '3552601')
+    listIbge.set('SP-Tabatinga', '3552700')
+    listIbge.set('SP-Taboão da Serra', '3552809')
+    listIbge.set('SP-Taciba', '3552908')
+    listIbge.set('SP-Taguaí', '3553005')
+    listIbge.set('SP-Taiaçu', '3553104')
+    listIbge.set('SP-Taiúva', '3553203')
+    listIbge.set('SP-Tambaú', '3553302')
+    listIbge.set('SP-Tanabi', '3553401')
+    listIbge.set('SP-Tapiraí', '3553500')
+    listIbge.set('SP-Tapiratiba', '3553609')
+    listIbge.set('SP-Taquaral', '3553658')
+    listIbge.set('SP-Taquaritinga', '3553708')
+    listIbge.set('SP-Taquarituba', '3553807')
+    listIbge.set('SP-Taquarivaí', '3553856')
+    listIbge.set('SP-Tarabai', '3553906')
+    listIbge.set('SP-Tarumã', '3553955')
+    listIbge.set('SP-Tatuí', '3554003')
+    listIbge.set('SP-Taubaté', '3554102')
+    listIbge.set('SP-Tejupá', '3554201')
+    listIbge.set('SP-Teodoro Sampaio', '3554300')
+    listIbge.set('SP-Terra Roxa', '3554409')
+    listIbge.set('SP-Tietê', '3554508')
+    listIbge.set('SP-Timburi', '3554607')
+    listIbge.set('SP-Torre de Pedra', '3554656')
+    listIbge.set('SP-Torrinha', '3554706')
+    listIbge.set('SP-Trabiju', '3554755')
+    listIbge.set('SP-Tremembé', '3554805')
+    listIbge.set('SP-Três Fronteiras', '3554904')
+    listIbge.set('SP-Tuiuti', '3554953')
+    listIbge.set('SP-Tupã', '3555000')
+    listIbge.set('SP-Tupi Paulista', '3555109')
+    listIbge.set('SP-Turiúba', '3555208')
+    listIbge.set('SP-Turmalina', '3555307')
+    listIbge.set('SP-Ubarana', '3555356')
+    listIbge.set('SP-Ubatuba', '3555406')
+    listIbge.set('SP-Ubirajara', '3555505')
+    listIbge.set('SP-Uchoa', '3555604')
+    listIbge.set('SP-União Paulista', '3555703')
+    listIbge.set('SP-Urânia', '3555802')
+    listIbge.set('SP-Uru', '3555901')
+    listIbge.set('SP-Urupês', '3556008')
+    listIbge.set('SP-Valentim Gentil', '3556107')
+    listIbge.set('SP-Valinhos', '3556206')
+    listIbge.set('SP-Valparaíso', '3556305')
+    listIbge.set('SP-Vargem', '3556354')
+    listIbge.set('SP-Vargem Grande do Sul', '3556404')
+    listIbge.set('SP-Vargem Grande Paulista', '3556453')
+    listIbge.set('SP-Várzea Paulista', '3556503')
+    listIbge.set('SP-Vera Cruz', '3556602')
+    listIbge.set('SP-Vinhedo', '3556701')
+    listIbge.set('SP-Viradouro', '3556800')
+    listIbge.set('SP-Vista Alegre do Alto', '3556909')
+    listIbge.set('SP-Vitória Brasil', '3556958')
+    listIbge.set('SP-Votorantim', '3557006')
+    listIbge.set('SP-Votuporanga', '3557105')
+    listIbge.set('SP-Zacarias', '3557154')
+    listIbge.set('PR-Abatiá', '4100103')
+    listIbge.set('PR-Adrianópolis', '4100202')
+    listIbge.set('PR-Agudos do Sul', '4100301')
+    listIbge.set('PR-Almirante Tamandaré', '4100400')
+    listIbge.set('PR-Altamira do Paraná', '4100459')
+    listIbge.set('PR-Alto Paraíso', '4128625')
+    listIbge.set('PR-Alto Paraná', '4100608')
+    listIbge.set('PR-Alto Piquiri', '4100707')
+    listIbge.set('PR-Altônia', '4100509')
+    listIbge.set('PR-Alvorada do Sul', '4100806')
+    listIbge.set('PR-Amaporã', '4100905')
+    listIbge.set('PR-Ampére', '4101002')
+    listIbge.set('PR-Anahy', '4101051')
+    listIbge.set('PR-Andirá', '4101101')
+    listIbge.set('PR-Ângulo', '4101150')
+    listIbge.set('PR-Antonina', '4101200')
+    listIbge.set('PR-Antônio Olinto', '4101309')
+    listIbge.set('PR-Apucarana', '4101408')
+    listIbge.set('PR-Arapongas', '4101507')
+    listIbge.set('PR-Arapoti', '4101606')
+    listIbge.set('PR-Arapuã', '4101655')
+    listIbge.set('PR-Araruna', '4101705')
+    listIbge.set('PR-Araucária', '4101804')
+    listIbge.set('PR-Ariranha do Ivaí', '4101853')
+    listIbge.set('PR-Assaí', '4101903')
+    listIbge.set('PR-Assis Chateaubriand', '4102000')
+    listIbge.set('PR-Astorga', '4102109')
+    listIbge.set('PR-Atalaia', '4102208')
+    listIbge.set('PR-Balsa Nova', '4102307')
+    listIbge.set('PR-Bandeirantes', '4102406')
+    listIbge.set('PR-Barbosa Ferraz', '4102505')
+    listIbge.set('PR-Barra do Jacaré', '4102703')
+    listIbge.set('PR-Barracão', '4102604')
+    listIbge.set('PR-Bela Vista da Caroba', '4102752')
+    listIbge.set('PR-Bela Vista do Paraíso', '4102802')
+    listIbge.set('PR-Bituruna', '4102901')
+    listIbge.set('PR-Boa Esperança', '4103008')
+    listIbge.set('PR-Boa Esperança do Iguaçu', '4103024')
+    listIbge.set('PR-Boa Ventura de São Roque', '4103040')
+    listIbge.set('PR-Boa Vista da Aparecida', '4103057')
+    listIbge.set('PR-Bocaiúva do Sul', '4103107')
+    listIbge.set('PR-Bom Jesus do Sul', '4103156')
+    listIbge.set('PR-Bom Sucesso', '4103206')
+    listIbge.set('PR-Bom Sucesso do Sul', '4103222')
+    listIbge.set('PR-Borrazópolis', '4103305')
+    listIbge.set('PR-Braganey', '4103354')
+    listIbge.set('PR-Brasilândia do Sul', '4103370')
+    listIbge.set('PR-Cafeara', '4103404')
+    listIbge.set('PR-Cafelândia', '4103453')
+    listIbge.set('PR-Cafezal do Sul', '4103479')
+    listIbge.set('PR-Califórnia', '4103503')
+    listIbge.set('PR-Cambará', '4103602')
+    listIbge.set('PR-Cambé', '4103701')
+    listIbge.set('PR-Cambira', '4103800')
+    listIbge.set('PR-Campina da Lagoa', '4103909')
+    listIbge.set('PR-Campina do Simão', '4103958')
+    listIbge.set('PR-Campina Grande do Sul', '4104006')
+    listIbge.set('PR-Campo Bonito', '4104055')
+    listIbge.set('PR-Campo do Tenente', '4104105')
+    listIbge.set('PR-Campo Largo', '4104204')
+    listIbge.set('PR-Campo Magro', '4104253')
+    listIbge.set('PR-Campo Mourão', '4104303')
+    listIbge.set('PR-Cândido de Abreu', '4104402')
+    listIbge.set('PR-Candói', '4104428')
+    listIbge.set('PR-Cantagalo', '4104451')
+    listIbge.set('PR-Capanema', '4104501')
+    listIbge.set('PR-Capitão Leônidas Marques', '4104600')
+    listIbge.set('PR-Carambeí', '4104659')
+    listIbge.set('PR-Carlópolis', '4104709')
+    listIbge.set('PR-Cascavel', '4104808')
+    listIbge.set('PR-Castro', '4104907')
+    listIbge.set('PR-Catanduvas', '4105003')
+    listIbge.set('PR-Centenário do Sul', '4105102')
+    listIbge.set('PR-Cerro Azul', '4105201')
+    listIbge.set('PR-Céu Azul', '4105300')
+    listIbge.set('PR-Chopinzinho', '4105409')
+    listIbge.set('PR-Cianorte', '4105508')
+    listIbge.set('PR-Cidade Gaúcha', '4105607')
+    listIbge.set('PR-Clevelândia', '4105706')
+    listIbge.set('PR-Colombo', '4105805')
+    listIbge.set('PR-Colorado', '4105904')
+    listIbge.set('PR-Congonhinhas', '4106001')
+    listIbge.set('PR-Conselheiro Mairinck', '4106100')
+    listIbge.set('PR-Contenda', '4106209')
+    listIbge.set('PR-Corbélia', '4106308')
+    listIbge.set('PR-Cornélio Procópio', '4106407')
+    listIbge.set('PR-Coronel Domingos Soares', '4106456')
+    listIbge.set('PR-Coronel Vivida', '4106506')
+    listIbge.set('PR-Corumbataí do Sul', '4106555')
+    listIbge.set('PR-Cruz Machado', '4106803')
+    listIbge.set('PR-Cruzeiro do Iguaçu', '4106571')
+    listIbge.set('PR-Cruzeiro do Oeste', '4106605')
+    listIbge.set('PR-Cruzeiro do Sul', '4106704')
+    listIbge.set('PR-Cruzmaltina', '4106852')
+    listIbge.set('PR-Curitiba', '4106902')
+    listIbge.set('PR-Curiúva', '4107009')
+    listIbge.set('PR-Diamante do Norte', '4107108')
+    listIbge.set('PR-Diamante do Sul', '4107124')
+    listIbge.set('PR-Dois Vizinhos', '4107207')
+    listIbge.set('PR-Douradina', '4107256')
+    listIbge.set('PR-Doutor Camargo', '4107306')
+    listIbge.set('PR-Doutor Ulysses', '4128633')
+    listIbge.set('PR-Enéas Marques', '4107405')
+    listIbge.set('PR-Engenheiro Beltrão', '4107504')
+    listIbge.set('PR-Entre Rios do Oeste', '4107538')
+    listIbge.set('PR-Esperança Nova', '4107520')
+    listIbge.set('PR-Espigão Alto do Iguaçu', '4107546')
+    listIbge.set('PR-Farol', '4107553')
+    listIbge.set('PR-Faxinal', '4107603')
+    listIbge.set('PR-Fazenda Rio Grande', '4107652')
+    listIbge.set('PR-Fênix', '4107702')
+    listIbge.set('PR-Fernandes Pinheiro', '4107736')
+    listIbge.set('PR-Figueira', '4107751')
+    listIbge.set('PR-Flor da Serra do Sul', '4107850')
+    listIbge.set('PR-Floraí', '4107801')
+    listIbge.set('PR-Floresta', '4107900')
+    listIbge.set('PR-Florestópolis', '4108007')
+    listIbge.set('PR-Flórida', '4108106')
+    listIbge.set('PR-Formosa do Oeste', '4108205')
+    listIbge.set('PR-Foz do Iguaçu', '4108304')
+    listIbge.set('PR-Foz do Jordão', '4108452')
+    listIbge.set('PR-Francisco Alves', '4108320')
+    listIbge.set('PR-Francisco Beltrão', '4108403')
+    listIbge.set('PR-General Carneiro', '4108502')
+    listIbge.set('PR-Godoy Moreira', '4108551')
+    listIbge.set('PR-Goioerê', '4108601')
+    listIbge.set('PR-Goioxim', '4108650')
+    listIbge.set('PR-Grandes Rios', '4108700')
+    listIbge.set('PR-Guaíra', '4108809')
+    listIbge.set('PR-Guairaçá', '4108908')
+    listIbge.set('PR-Guamiranga', '4108957')
+    listIbge.set('PR-Guapirama', '4109005')
+    listIbge.set('PR-Guaporema', '4109104')
+    listIbge.set('PR-Guaraci', '4109203')
+    listIbge.set('PR-Guaraniaçu', '4109302')
+    listIbge.set('PR-Guarapuava', '4109401')
+    listIbge.set('PR-Guaraqueçaba', '4109500')
+    listIbge.set('PR-Guaratuba', '4109609')
+    listIbge.set('PR-Honório Serpa', '4109658')
+    listIbge.set('PR-Ibaiti', '4109708')
+    listIbge.set('PR-Ibema', '4109757')
+    listIbge.set('PR-Ibiporã', '4109807')
+    listIbge.set('PR-Icaraíma', '4109906')
+    listIbge.set('PR-Iguaraçu', '4110003')
+    listIbge.set('PR-Iguatu', '4110052')
+    listIbge.set('PR-Imbaú', '4110078')
+    listIbge.set('PR-Imbituva', '4110102')
+    listIbge.set('PR-Inácio Martins', '4110201')
+    listIbge.set('PR-Inajá', '4110300')
+    listIbge.set('PR-Indianópolis', '4110409')
+    listIbge.set('PR-Ipiranga', '4110508')
+    listIbge.set('PR-Iporã', '4110607')
+    listIbge.set('PR-Iracema do Oeste', '4110656')
+    listIbge.set('PR-Irati', '4110706')
+    listIbge.set('PR-Iretama', '4110805')
+    listIbge.set('PR-Itaguajé', '4110904')
+    listIbge.set('PR-Itaipulândia', '4110953')
+    listIbge.set('PR-Itambaracá', '4111001')
+    listIbge.set('PR-Itambé', '4111100')
+    listIbge.set('PR-Itaperuçu', '4111258')
+    listIbge.set('PR-Itaúna do Sul', '4111308')
+    listIbge.set('PR-Ivaí', '4111407')
+    listIbge.set('PR-Ivaiporã', '4111506')
+    listIbge.set('PR-Ivaté', '4111555')
+    listIbge.set('PR-Ivatuba', '4111605')
+    listIbge.set('PR-Jaboti', '4111704')
+    listIbge.set('PR-Jacarezinho', '4111803')
+    listIbge.set('PR-Jaguapitã', '4111902')
+    listIbge.set('PR-Jaguariaíva', '4112009')
+    listIbge.set('PR-Jandaia do Sul', '4112108')
+    listIbge.set('PR-Janiópolis', '4112207')
+    listIbge.set('PR-Japira', '4112306')
+    listIbge.set('PR-Japurá', '4112405')
+    listIbge.set('PR-Jardim Alegre', '4112504')
+    listIbge.set('PR-Jardim Olinda', '4112603')
+    listIbge.set('PR-Jataizinho', '4112702')
+    listIbge.set('PR-Jesuítas', '4112751')
+    listIbge.set('PR-Joaquim Távora', '4112801')
+    listIbge.set('PR-Jundiaí do Sul', '4112900')
+    listIbge.set('PR-Juranda', '4112959')
+    listIbge.set('PR-Jussara', '4113007')
+    listIbge.set('PR-Kaloré', '4113106')
+    listIbge.set('PR-Lapa', '4113205')
+    listIbge.set('PR-Laranjal', '4113254')
+    listIbge.set('PR-Laranjeiras do Sul', '4113304')
+    listIbge.set('PR-Leópolis', '4113403')
+    listIbge.set('PR-Lidianópolis', '4113429')
+    listIbge.set('PR-Lindoeste', '4113452')
+    listIbge.set('PR-Loanda', '4113502')
+    listIbge.set('PR-Lobato', '4113601')
+    listIbge.set('PR-Londrina', '4113700')
+    listIbge.set('PR-Luiziana', '4113734')
+    listIbge.set('PR-Lunardelli', '4113759')
+    listIbge.set('PR-Lupionópolis', '4113809')
+    listIbge.set('PR-Mallet', '4113908')
+    listIbge.set('PR-Mamborê', '4114005')
+    listIbge.set('PR-Mandaguaçu', '4114104')
+    listIbge.set('PR-Mandaguari', '4114203')
+    listIbge.set('PR-Mandirituba', '4114302')
+    listIbge.set('PR-Manfrinópolis', '4114351')
+    listIbge.set('PR-Mangueirinha', '4114401')
+    listIbge.set('PR-Manoel Ribas', '4114500')
+    listIbge.set('PR-Marechal Cândido Rondon', '4114609')
+    listIbge.set('PR-Maria Helena', '4114708')
+    listIbge.set('PR-Marialva', '4114807')
+    listIbge.set('PR-Marilândia do Sul', '4114906')
+    listIbge.set('PR-Marilena', '4115002')
+    listIbge.set('PR-Mariluz', '4115101')
+    listIbge.set('PR-Maringá', '4115200')
+    listIbge.set('PR-Mariópolis', '4115309')
+    listIbge.set('PR-Maripá', '4115358')
+    listIbge.set('PR-Marmeleiro', '4115408')
+    listIbge.set('PR-Marquinho', '4115457')
+    listIbge.set('PR-Marumbi', '4115507')
+    listIbge.set('PR-Matelândia', '4115606')
+    listIbge.set('PR-Matinhos', '4115705')
+    listIbge.set('PR-Mato Rico', '4115739')
+    listIbge.set('PR-Mauá da Serra', '4115754')
+    listIbge.set('PR-Medianeira', '4115804')
+    listIbge.set('PR-Mercedes', '4115853')
+    listIbge.set('PR-Mirador', '4115903')
+    listIbge.set('PR-Miraselva', '4116000')
+    listIbge.set('PR-Missal', '4116059')
+    listIbge.set('PR-Moreira Sales', '4116109')
+    listIbge.set('PR-Morretes', '4116208')
+    listIbge.set('PR-Munhoz de Melo', '4116307')
+    listIbge.set('PR-Nossa Senhora das Graças', '4116406')
+    listIbge.set('PR-Nova Aliança do Ivaí', '4116505')
+    listIbge.set('PR-Nova América da Colina', '4116604')
+    listIbge.set('PR-Nova Aurora', '4116703')
+    listIbge.set('PR-Nova Cantu', '4116802')
+    listIbge.set('PR-Nova Esperança', '4116901')
+    listIbge.set('PR-Nova Esperança do Sudoeste', '4116950')
+    listIbge.set('PR-Nova Fátima', '4117008')
+    listIbge.set('PR-Nova Laranjeiras', '4117057')
+    listIbge.set('PR-Nova Londrina', '4117107')
+    listIbge.set('PR-Nova Olímpia', '4117206')
+    listIbge.set('PR-Nova Prata do Iguaçu', '4117255')
+    listIbge.set('PR-Nova Santa Bárbara', '4117214')
+    listIbge.set('PR-Nova Santa Rosa', '4117222')
+    listIbge.set('PR-Nova Tebas', '4117271')
+    listIbge.set('PR-Novo Itacolomi', '4117297')
+    listIbge.set('PR-Ortigueira', '4117305')
+    listIbge.set('PR-Ourizona', '4117404')
+    listIbge.set('PR-Ouro Verde do Oeste', '4117453')
+    listIbge.set('PR-Paiçandu', '4117503')
+    listIbge.set('PR-Palmas', '4117602')
+    listIbge.set('PR-Palmeira', '4117701')
+    listIbge.set('PR-Palmital', '4117800')
+    listIbge.set('PR-Palotina', '4117909')
+    listIbge.set('PR-Paraíso do Norte', '4118006')
+    listIbge.set('PR-Paranacity', '4118105')
+    listIbge.set('PR-Paranaguá', '4118204')
+    listIbge.set('PR-Paranapoema', '4118303')
+    listIbge.set('PR-Paranavaí', '4118402')
+    listIbge.set('PR-Pato Bragado', '4118451')
+    listIbge.set('PR-Pato Branco', '4118501')
+    listIbge.set('PR-Paula Freitas', '4118600')
+    listIbge.set('PR-Paulo Frontin', '4118709')
+    listIbge.set('PR-Peabiru', '4118808')
+    listIbge.set('PR-Perobal', '4118857')
+    listIbge.set('PR-Pérola', '4118907')
+    listIbge.set('PR-Piên', '4119103')
+    listIbge.set('PR-Pinhais', '4119152')
+    listIbge.set('PR-Pinhal de São Bento', '4119251')
+    listIbge.set('PR-Pinhalão', '4119202')
+    listIbge.set('PR-Pinhão', '4119301')
+    listIbge.set('PR-Piraí do Sul', '4119400')
+    listIbge.set('PR-Piraquara', '4119509')
+    listIbge.set('PR-Pitanga', '4119608')
+    listIbge.set('PR-Pitangueiras', '4119657')
+    listIbge.set('PR-Planaltina do Paraná', '4119707')
+    listIbge.set('PR-Planalto', '4119806')
+    listIbge.set('PR-Ponta Grossa', '4119905')
+    listIbge.set('PR-Pontal do Paraná', '4119954')
+    listIbge.set('PR-Porecatu', '4120002')
+    listIbge.set('PR-Porto Amazonas', '4120101')
+    listIbge.set('PR-Porto Barreiro', '4120150')
+    listIbge.set('PR-Porto Rico', '4120200')
+    listIbge.set('PR-Porto Vitória', '4120309')
+    listIbge.set('PR-Prado Ferreira', '4120333')
+    listIbge.set('PR-Pranchita', '4120358')
+    listIbge.set('PR-Presidente Castelo Branco', '4120408')
+    listIbge.set('PR-Primeiro de Maio', '4120507')
+    listIbge.set('PR-Prudentópolis', '4120606')
+    listIbge.set('PR-Quarto Centenário', '4120655')
+    listIbge.set('PR-Quatiguá', '4120705')
+    listIbge.set('PR-Quatro Barras', '4120804')
+    listIbge.set('PR-Quatro Pontes', '4120853')
+    listIbge.set('PR-Quedas do Iguaçu', '4120903')
+    listIbge.set('PR-Querência do Norte', '4121000')
+    listIbge.set('PR-Quinta do Sol', '4121109')
+    listIbge.set('PR-Quitandinha', '4121208')
+    listIbge.set('PR-Ramilândia', '4121257')
+    listIbge.set('PR-Rancho Alegre', '4121307')
+    listIbge.set('PR-Realeza', '4121406')
+    listIbge.set('PR-Rebouças', '4121505')
+    listIbge.set('PR-Renascença', '4121604')
+    listIbge.set('PR-Reserva', '4121703')
+    listIbge.set('PR-Reserva do Iguaçu', '4121752')
+    listIbge.set('PR-Ribeirão Claro', '4121802')
+    listIbge.set('PR-Ribeirão do Pinhal', '4121901')
+    listIbge.set('PR-Rio Azul', '4122008')
+    listIbge.set('PR-Rio Bom', '4122107')
+    listIbge.set('PR-Rio Bonito do Iguaçu', '4122156')
+    listIbge.set('PR-Rio Branco do Ivaí', '4122172')
+    listIbge.set('PR-Rio Branco do Sul', '4122206')
+    listIbge.set('PR-Rio Negro', '4122305')
+    listIbge.set('PR-Rolândia', '4122404')
+    listIbge.set('PR-Roncador', '4122503')
+    listIbge.set('PR-Rondon', '4122602')
+    listIbge.set('PR-Rosário do Ivaí', '4122651')
+    listIbge.set('PR-Sabáudia', '4122701')
+    listIbge.set('PR-Salgado Filho', '4122800')
+    listIbge.set('PR-Salto do Itararé', '4122909')
+    listIbge.set('PR-Salto do Lontra', '4123006')
+    listIbge.set('PR-Santa Amélia', '4123105')
+    listIbge.set('PR-Santa Cecília do Pavão', '4123204')
+    listIbge.set('PR-Santa Cruz de Monte Castelo', '4123303')
+    listIbge.set('PR-Santa Fé', '4123402')
+    listIbge.set('PR-Santa Helena', '4123501')
+    listIbge.set('PR-Santa Inês', '4123600')
+    listIbge.set('PR-Santa Isabel do Ivaí', '4123709')
+    listIbge.set('PR-Santa Izabel do Oeste', '4123808')
+    listIbge.set('PR-Santa Lúcia', '4123824')
+    listIbge.set('PR-Santa Maria do Oeste', '4123857')
+    listIbge.set('PR-Santa Mariana', '4123907')
+    listIbge.set('PR-Santa Mônica', '4123956')
+    listIbge.set('PR-Santa Tereza do Oeste', '4124020')
+    listIbge.set('PR-Santa Terezinha de Itaipu', '4124053')
+    listIbge.set('PR-Santana do Itararé', '4124004')
+    listIbge.set('PR-Santo Antônio da Platina', '4124103')
+    listIbge.set('PR-Santo Antônio do Caiuá', '4124202')
+    listIbge.set('PR-Santo Antônio do Paraíso', '4124301')
+    listIbge.set('PR-Santo Antônio do Sudoeste', '4124400')
+    listIbge.set('PR-Santo Inácio', '4124509')
+    listIbge.set('PR-São Carlos do Ivaí', '4124608')
+    listIbge.set('PR-São Jerônimo da Serra', '4124707')
+    listIbge.set('PR-São João', '4124806')
+    listIbge.set('PR-São João do Caiuá', '4124905')
+    listIbge.set('PR-São João do Ivaí', '4125001')
+    listIbge.set('PR-São João do Triunfo', '4125100')
+    listIbge.set('PR-São Jorge do Ivaí', '4125308')
+    listIbge.set('PR-São Jorge do Patrocínio', '4125357')
+    listIbge.set('PR-São José da Boa Vista', '4125407')
+    listIbge.set('PR-São José das Palmeiras', '4125456')
+    listIbge.set('PR-São José dos Pinhais', '4125506')
+    listIbge.set('PR-São Manoel do Paraná', '4125555')
+    listIbge.set('PR-São Mateus do Sul', '4125605')
+    listIbge.set('PR-São Miguel do Iguaçu', '4125704')
+    listIbge.set('PR-São Pedro do Iguaçu', '4125753')
+    listIbge.set('PR-São Pedro do Ivaí', '4125803')
+    listIbge.set('PR-São Pedro do Paraná', '4125902')
+    listIbge.set('PR-São Sebastião da Amoreira', '4126009')
+    listIbge.set('PR-São Tomé', '4126108')
+    listIbge.set('PR-Sapopema', '4126207')
+    listIbge.set('PR-Sarandi', '4126256')
+    listIbge.set('PR-Saudade do Iguaçu', '4126272')
+    listIbge.set('PR-Sengés', '4126306')
+    listIbge.set('PR-Serranópolis do Iguaçu', '4126355')
+    listIbge.set('PR-Sertaneja', '4126405')
+    listIbge.set('PR-Sertanópolis', '4126504')
+    listIbge.set('PR-Siqueira Campos', '4126603')
+    listIbge.set('PR-Sulina', '4126652')
+    listIbge.set('PR-Tamarana', '4126678')
+    listIbge.set('PR-Tamboara', '4126702')
+    listIbge.set('PR-Tapejara', '4126801')
+    listIbge.set('PR-Tapira', '4126900')
+    listIbge.set('PR-Teixeira Soares', '4127007')
+    listIbge.set('PR-Telêmaco Borba', '4127106')
+    listIbge.set('PR-Terra Boa', '4127205')
+    listIbge.set('PR-Terra Rica', '4127304')
+    listIbge.set('PR-Terra Roxa', '4127403')
+    listIbge.set('PR-Tibagi', '4127502')
+    listIbge.set('PR-Tijucas do Sul', '4127601')
+    listIbge.set('PR-Toledo', '4127700')
+    listIbge.set('PR-Tomazina', '4127809')
+    listIbge.set('PR-Três Barras do Paraná', '4127858')
+    listIbge.set('PR-Tunas do Paraná', '4127882')
+    listIbge.set('PR-Tuneiras do Oeste', '4127908')
+    listIbge.set('PR-Tupãssi', '4127957')
+    listIbge.set('PR-Turvo', '4127965')
+    listIbge.set('PR-Ubiratã', '4128005')
+    listIbge.set('PR-Umuarama', '4128104')
+    listIbge.set('PR-União da Vitória', '4128203')
+    listIbge.set('PR-Uniflor', '4128302')
+    listIbge.set('PR-Uraí', '4128401')
+    listIbge.set('PR-Ventania', '4128534')
+    listIbge.set('PR-Vera Cruz do Oeste', '4128559')
+    listIbge.set('PR-Verê', '4128609')
+    listIbge.set('PR-Virmond', '4128658')
+    listIbge.set('PR-Vitorino', '4128708')
+    listIbge.set('PR-Wenceslau Braz', '4128500')
+    listIbge.set('PR-Xambrê', '4128807')
+    listIbge.set('SC-Abdon Batista', '4200051')
+    listIbge.set('SC-Abelardo Luz', '4200101')
+    listIbge.set('SC-Agrolândia', '4200200')
+    listIbge.set('SC-Agronômica', '4200309')
+    listIbge.set('SC-Água Doce', '4200408')
+    listIbge.set('SC-Águas de Chapecó', '4200507')
+    listIbge.set('SC-Águas Frias', '4200556')
+    listIbge.set('SC-Águas Mornas', '4200606')
+    listIbge.set('SC-Alfredo Wagner', '4200705')
+    listIbge.set('SC-Alto Bela Vista', '4200754')
+    listIbge.set('SC-Anchieta', '4200804')
+    listIbge.set('SC-Angelina', '4200903')
+    listIbge.set('SC-Anita Garibaldi', '4201000')
+    listIbge.set('SC-Anitápolis', '4201109')
+    listIbge.set('SC-Antônio Carlos', '4201208')
+    listIbge.set('SC-Apiúna', '4201257')
+    listIbge.set('SC-Arabutã', '4201273')
+    listIbge.set('SC-Araquari', '4201307')
+    listIbge.set('SC-Araranguá', '4201406')
+    listIbge.set('SC-Armazém', '4201505')
+    listIbge.set('SC-Arroio Trinta', '4201604')
+    listIbge.set('SC-Arvoredo', '4201653')
+    listIbge.set('SC-Ascurra', '4201703')
+    listIbge.set('SC-Atalanta', '4201802')
+    listIbge.set('SC-Aurora', '4201901')
+    listIbge.set('SC-Balneário Arroio do Silva', '4201950')
+    listIbge.set('SC-Balneário Barra do Sul', '4202057')
+    listIbge.set('SC-Balneário Camboriú', '4202008')
+    listIbge.set('SC-Balneário Gaivota', '4202073')
+    listIbge.set('SC-Balneário Piçarras', '4212809')
+    listIbge.set('SC-Balneário Rincão', '4220000')
+    listIbge.set('SC-Bandeirante', '4202081')
+    listIbge.set('SC-Barra Bonita', '4202099')
+    listIbge.set('SC-Barra Velha', '4202107')
+    listIbge.set('SC-Bela Vista do Toldo', '4202131')
+    listIbge.set('SC-Belmonte', '4202156')
+    listIbge.set('SC-Benedito Novo', '4202206')
+    listIbge.set('SC-Biguaçu', '4202305')
+    listIbge.set('SC-Blumenau', '4202404')
+    listIbge.set('SC-Bocaina do Sul', '4202438')
+    listIbge.set('SC-Bom Jardim da Serra', '4202503')
+    listIbge.set('SC-Bom Jesus', '4202537')
+    listIbge.set('SC-Bom Jesus do Oeste', '4202578')
+    listIbge.set('SC-Bom Retiro', '4202602')
+    listIbge.set('SC-Bombinhas', '4202453')
+    listIbge.set('SC-Botuverá', '4202701')
+    listIbge.set('SC-Braço do Norte', '4202800')
+    listIbge.set('SC-Braço do Trombudo', '4202859')
+    listIbge.set('SC-Brunópolis', '4202875')
+    listIbge.set('SC-Brusque', '4202909')
+    listIbge.set('SC-Caçador', '4203006')
+    listIbge.set('SC-Caibi', '4203105')
+    listIbge.set('SC-Calmon', '4203154')
+    listIbge.set('SC-Camboriú', '4203204')
+    listIbge.set('SC-Campo Alegre', '4203303')
+    listIbge.set('SC-Campo Belo do Sul', '4203402')
+    listIbge.set('SC-Campo Erê', '4203501')
+    listIbge.set('SC-Campos Novos', '4203600')
+    listIbge.set('SC-Canelinha', '4203709')
+    listIbge.set('SC-Canoinhas', '4203808')
+    listIbge.set('SC-Capão Alto', '4203253')
+    listIbge.set('SC-Capinzal', '4203907')
+    listIbge.set('SC-Capivari de Baixo', '4203956')
+    listIbge.set('SC-Catanduvas', '4204004')
+    listIbge.set('SC-Caxambu do Sul', '4204103')
+    listIbge.set('SC-Celso Ramos', '4204152')
+    listIbge.set('SC-Cerro Negro', '4204178')
+    listIbge.set('SC-Chapadão do Lageado', '4204194')
+    listIbge.set('SC-Chapecó', '4204202')
+    listIbge.set('SC-Cocal do Sul', '4204251')
+    listIbge.set('SC-Concórdia', '4204301')
+    listIbge.set('SC-Cordilheira Alta', '4204350')
+    listIbge.set('SC-Coronel Freitas', '4204400')
+    listIbge.set('SC-Coronel Martins', '4204459')
+    listIbge.set('SC-Correia Pinto', '4204558')
+    listIbge.set('SC-Corupá', '4204509')
+    listIbge.set('SC-Criciúma', '4204608')
+    listIbge.set('SC-Cunha Porã', '4204707')
+    listIbge.set('SC-Cunhataí', '4204756')
+    listIbge.set('SC-Curitibanos', '4204806')
+    listIbge.set('SC-Descanso', '4204905')
+    listIbge.set('SC-Dionísio Cerqueira', '4205001')
+    listIbge.set('SC-Dona Emma', '4205100')
+    listIbge.set('SC-Doutor Pedrinho', '4205159')
+    listIbge.set('SC-Entre Rios', '4205175')
+    listIbge.set('SC-Ermo', '4205191')
+    listIbge.set('SC-Erval Velho', '4205209')
+    listIbge.set('SC-Faxinal dos Guedes', '4205308')
+    listIbge.set('SC-Flor do Sertão', '4205357')
+    listIbge.set('SC-Florianópolis', '4205407')
+    listIbge.set('SC-Formosa do Sul', '4205431')
+    listIbge.set('SC-Forquilhinha', '4205456')
+    listIbge.set('SC-Fraiburgo', '4205506')
+    listIbge.set('SC-Frei Rogério', '4205555')
+    listIbge.set('SC-Galvão', '4205605')
+    listIbge.set('SC-Garopaba', '4205704')
+    listIbge.set('SC-Garuva', '4205803')
+    listIbge.set('SC-Gaspar', '4205902')
+    listIbge.set('SC-Governador Celso Ramos', '4206009')
+    listIbge.set('SC-Grão-Pará', '4206108')
+    listIbge.set('SC-Gravatal', '4206207')
+    listIbge.set('SC-Guabiruba', '4206306')
+    listIbge.set('SC-Guaraciaba', '4206405')
+    listIbge.set('SC-Guaramirim', '4206504')
+    listIbge.set('SC-Guarujá do Sul', '4206603')
+    listIbge.set('SC-Guatambú', '4206652')
+    listIbge.set('SC-Ibiam', '4206751')
+    listIbge.set('SC-Ibicaré', '4206801')
+    listIbge.set('SC-Ibirama', '4206900')
+    listIbge.set('SC-Içara', '4207007')
+    listIbge.set('SC-Ilhota', '4207106')
+    listIbge.set('SC-Imaruí', '4207205')
+    listIbge.set('SC-Imbituba', '4207304')
+    listIbge.set('SC-Imbuia', '4207403')
+    listIbge.set('SC-Indaial', '4207502')
+    listIbge.set('SC-Iomerê', '4207577')
+    listIbge.set('SC-Ipira', '4207601')
+    listIbge.set('SC-Iporã do Oeste', '4207650')
+    listIbge.set('SC-Ipuaçu', '4207684')
+    listIbge.set('SC-Ipumirim', '4207700')
+    listIbge.set('SC-Iraceminha', '4207759')
+    listIbge.set('SC-Irani', '4207809')
+    listIbge.set('SC-Irati', '4207858')
+    listIbge.set('SC-Irineópolis', '4207908')
+    listIbge.set('SC-Itá', '4208005')
+    listIbge.set('SC-Itaiópolis', '4208104')
+    listIbge.set('SC-Itajaí', '4208203')
+    listIbge.set('SC-Itapema', '4208302')
+    listIbge.set('SC-Itapiranga', '4208401')
+    listIbge.set('SC-Itapoá', '4208450')
+    listIbge.set('SC-Ituporanga', '4208500')
+    listIbge.set('SC-Jaborá', '4208609')
+    listIbge.set('SC-Jacinto Machado', '4208708')
+    listIbge.set('SC-Jaguaruna', '4208807')
+    listIbge.set('SC-Jaraguá do Sul', '4208906')
+    listIbge.set('SC-Jardinópolis', '4208955')
+    listIbge.set('SC-Joaçaba', '4209003')
+    listIbge.set('SC-Joinville', '4209102')
+    listIbge.set('SC-José Boiteux', '4209151')
+    listIbge.set('SC-Jupiá', '4209177')
+    listIbge.set('SC-Lacerdópolis', '4209201')
+    listIbge.set('SC-Lages', '4209300')
+    listIbge.set('SC-Laguna', '4209409')
+    listIbge.set('SC-Lajeado Grande', '4209458')
+    listIbge.set('SC-Laurentino', '4209508')
+    listIbge.set('SC-Lauro Müller', '4209607')
+    listIbge.set('SC-Lebon Régis', '4209706')
+    listIbge.set('SC-Leoberto Leal', '4209805')
+    listIbge.set('SC-Lindóia do Sul', '4209854')
+    listIbge.set('SC-Lontras', '4209904')
+    listIbge.set('SC-Luiz Alves', '4210001')
+    listIbge.set('SC-Luzerna', '4210035')
+    listIbge.set('SC-Macieira', '4210050')
+    listIbge.set('SC-Mafra', '4210100')
+    listIbge.set('SC-Major Gercino', '4210209')
+    listIbge.set('SC-Major Vieira', '4210308')
+    listIbge.set('SC-Maracajá', '4210407')
+    listIbge.set('SC-Maravilha', '4210506')
+    listIbge.set('SC-Marema', '4210555')
+    listIbge.set('SC-Massaranduba', '4210605')
+    listIbge.set('SC-Matos Costa', '4210704')
+    listIbge.set('SC-Meleiro', '4210803')
+    listIbge.set('SC-Mirim Doce', '4210852')
+    listIbge.set('SC-Modelo', '4210902')
+    listIbge.set('SC-Mondaí', '4211009')
+    listIbge.set('SC-Monte Carlo', '4211058')
+    listIbge.set('SC-Monte Castelo', '4211108')
+    listIbge.set('SC-Morro da Fumaça', '4211207')
+    listIbge.set('SC-Morro Grande', '4211256')
+    listIbge.set('SC-Navegantes', '4211306')
+    listIbge.set('SC-Nova Erechim', '4211405')
+    listIbge.set('SC-Nova Itaberaba', '4211454')
+    listIbge.set('SC-Nova Trento', '4211504')
+    listIbge.set('SC-Nova Veneza', '4211603')
+    listIbge.set('SC-Novo Horizonte', '4211652')
+    listIbge.set('SC-Orleans', '4211702')
+    listIbge.set('SC-Otacílio Costa', '4211751')
+    listIbge.set('SC-Ouro', '4211801')
+    listIbge.set('SC-Ouro Verde', '4211850')
+    listIbge.set('SC-Paial', '4211876')
+    listIbge.set('SC-Painel', '4211892')
+    listIbge.set('SC-Palhoça', '4211900')
+    listIbge.set('SC-Palma Sola', '4212007')
+    listIbge.set('SC-Palmeira', '4212056')
+    listIbge.set('SC-Palmitos', '4212106')
+    listIbge.set('SC-Papanduva', '4212205')
+    listIbge.set('SC-Paraíso', '4212239')
+    listIbge.set('SC-Passo de Torres', '4212254')
+    listIbge.set('SC-Passos Maia', '4212270')
+    listIbge.set('SC-Paulo Lopes', '4212304')
+    listIbge.set('SC-Pedras Grandes', '4212403')
+    listIbge.set('SC-Penha', '4212502')
+    listIbge.set('SC-Peritiba', '4212601')
+    listIbge.set('SC-Pescaria Brava', '4212650')
+    listIbge.set('SC-Petrolândia', '4212700')
+    listIbge.set('SC-Pinhalzinho', '4212908')
+    listIbge.set('SC-Pinheiro Preto', '4213005')
+    listIbge.set('SC-Piratuba', '4213104')
+    listIbge.set('SC-Planalto Alegre', '4213153')
+    listIbge.set('SC-Pomerode', '4213203')
+    listIbge.set('SC-Ponte Alta', '4213302')
+    listIbge.set('SC-Ponte Alta do Norte', '4213351')
+    listIbge.set('SC-Ponte Serrada', '4213401')
+    listIbge.set('SC-Porto Belo', '4213500')
+    listIbge.set('SC-Porto União', '4213609')
+    listIbge.set('SC-Pouso Redondo', '4213708')
+    listIbge.set('SC-Praia Grande', '4213807')
+    listIbge.set('SC-Presidente Castello Branco', '4213906')
+    listIbge.set('SC-Presidente Getúlio', '4214003')
+    listIbge.set('SC-Presidente Nereu', '4214102')
+    listIbge.set('SC-Princesa', '4214151')
+    listIbge.set('SC-Quilombo', '4214201')
+    listIbge.set('SC-Rancho Queimado', '4214300')
+    listIbge.set('SC-Rio das Antas', '4214409')
+    listIbge.set('SC-Rio do Campo', '4214508')
+    listIbge.set('SC-Rio do Oeste', '4214607')
+    listIbge.set('SC-Rio do Sul', '4214805')
+    listIbge.set('SC-Rio dos Cedros', '4214706')
+    listIbge.set('SC-Rio Fortuna', '4214904')
+    listIbge.set('SC-Rio Negrinho', '4215000')
+    listIbge.set('SC-Rio Rufino', '4215059')
+    listIbge.set('SC-Riqueza', '4215075')
+    listIbge.set('SC-Rodeio', '4215109')
+    listIbge.set('SC-Romelândia', '4215208')
+    listIbge.set('SC-Salete', '4215307')
+    listIbge.set('SC-Saltinho', '4215356')
+    listIbge.set('SC-Salto Veloso', '4215406')
+    listIbge.set('SC-Sangão', '4215455')
+    listIbge.set('SC-Santa Cecília', '4215505')
+    listIbge.set('SC-Santa Helena', '4215554')
+    listIbge.set('SC-Santa Rosa de Lima', '4215604')
+    listIbge.set('SC-Santa Rosa do Sul', '4215653')
+    listIbge.set('SC-Santa Terezinha', '4215679')
+    listIbge.set('SC-Santa Terezinha do Progresso', '4215687')
+    listIbge.set('SC-Santiago do Sul', '4215695')
+    listIbge.set('SC-Santo Amaro da Imperatriz', '4215703')
+    listIbge.set('SC-São Bento do Sul', '4215802')
+    listIbge.set('SC-São Bernardino', '4215752')
+    listIbge.set('SC-São Bonifácio', '4215901')
+    listIbge.set('SC-São Carlos', '4216008')
+    listIbge.set('SC-São Cristóvão do Sul', '4216057')
+    listIbge.set('SC-São Domingos', '4216107')
+    listIbge.set('SC-São Francisco do Sul', '4216206')
+    listIbge.set('SC-São João Batista', '4216305')
+    listIbge.set('SC-São João do Itaperiú', '4216354')
+    listIbge.set('SC-São João do Oeste', '4216255')
+    listIbge.set('SC-São João do Sul', '4216404')
+    listIbge.set('SC-São Joaquim', '4216503')
+    listIbge.set('SC-São José', '4216602')
+    listIbge.set('SC-São José do Cedro', '4216701')
+    listIbge.set('SC-São José do Cerrito', '4216800')
+    listIbge.set('SC-São Lourenço do Oeste', '4216909')
+    listIbge.set('SC-São Ludgero', '4217006')
+    listIbge.set('SC-São Martinho', '4217105')
+    listIbge.set('SC-São Miguel da Boa Vista', '4217154')
+    listIbge.set('SC-São Miguel do Oeste', '4217204')
+    listIbge.set('SC-São Pedro de Alcântara', '4217253')
+    listIbge.set('SC-Saudades', '4217303')
+    listIbge.set('SC-Schroeder', '4217402')
+    listIbge.set('SC-Seara', '4217501')
+    listIbge.set('SC-Serra Alta', '4217550')
+    listIbge.set('SC-Siderópolis', '4217600')
+    listIbge.set('SC-Sombrio', '4217709')
+    listIbge.set('SC-Sul Brasil', '4217758')
+    listIbge.set('SC-Taió', '4217808')
+    listIbge.set('SC-Tangará', '4217907')
+    listIbge.set('SC-Tigrinhos', '4217956')
+    listIbge.set('SC-Tijucas', '4218004')
+    listIbge.set('SC-Timbé do Sul', '4218103')
+    listIbge.set('SC-Timbó', '4218202')
+    listIbge.set('SC-Timbó Grande', '4218251')
+    listIbge.set('SC-Três Barras', '4218301')
+    listIbge.set('SC-Treviso', '4218350')
+    listIbge.set('SC-Treze de Maio', '4218400')
+    listIbge.set('SC-Treze Tílias', '4218509')
+    listIbge.set('SC-Trombudo Central', '4218608')
+    listIbge.set('SC-Tubarão', '4218707')
+    listIbge.set('SC-Tunápolis', '4218756')
+    listIbge.set('SC-Turvo', '4218806')
+    listIbge.set('SC-União do Oeste', '4218855')
+    listIbge.set('SC-Urubici', '4218905')
+    listIbge.set('SC-Urupema', '4218954')
+    listIbge.set('SC-Urussanga', '4219002')
+    listIbge.set('SC-Vargeão', '4219101')
+    listIbge.set('SC-Vargem', '4219150')
+    listIbge.set('SC-Vargem Bonita', '4219176')
+    listIbge.set('SC-Vidal Ramos', '4219200')
+    listIbge.set('SC-Videira', '4219309')
+    listIbge.set('SC-Vitor Meireles', '4219358')
+    listIbge.set('SC-Witmarsum', '4219408')
+    listIbge.set('SC-Xanxerê', '4219507')
+    listIbge.set('SC-Xavantina', '4219606')
+    listIbge.set('SC-Xaxim', '4219705')
+    listIbge.set('SC-Zortéa', '4219853')
+    listIbge.set('RS-Aceguá', '4300034')
+    listIbge.set('RS-Água Santa', '4300059')
+    listIbge.set('RS-Agudo', '4300109')
+    listIbge.set('RS-Ajuricaba', '4300208')
+    listIbge.set('RS-Alecrim', '4300307')
+    listIbge.set('RS-Alegrete', '4300406')
+    listIbge.set('RS-Alegria', '4300455')
+    listIbge.set('RS-Almirante Tamandaré do Sul', '4300471')
+    listIbge.set('RS-Alpestre', '4300505')
+    listIbge.set('RS-Alto Alegre', '4300554')
+    listIbge.set('RS-Alto Feliz', '4300570')
+    listIbge.set('RS-Alvorada', '4300604')
+    listIbge.set('RS-Amaral Ferrador', '4300638')
+    listIbge.set('RS-Ametista do Sul', '4300646')
+    listIbge.set('RS-André da Rocha', '4300661')
+    listIbge.set('RS-Anta Gorda', '4300703')
+    listIbge.set('RS-Antônio Prado', '4300802')
+    listIbge.set('RS-Arambaré', '4300851')
+    listIbge.set('RS-Araricá', '4300877')
+    listIbge.set('RS-Aratiba', '4300901')
+    listIbge.set('RS-Arroio do Meio', '4301008')
+    listIbge.set('RS-Arroio do Padre', '4301073')
+    listIbge.set('RS-Arroio do Sal', '4301057')
+    listIbge.set('RS-Arroio do Tigre', '4301206')
+    listIbge.set('RS-Arroio dos Ratos', '4301107')
+    listIbge.set('RS-Arroio Grande', '4301305')
+    listIbge.set('RS-Arvorezinha', '4301404')
+    listIbge.set('RS-Augusto Pestana', '4301503')
+    listIbge.set('RS-Áurea', '4301552')
+    listIbge.set('RS-Bagé', '4301602')
+    listIbge.set('RS-Balneário Pinhal', '4301636')
+    listIbge.set('RS-Barão', '4301651')
+    listIbge.set('RS-Barão de Cotegipe', '4301701')
+    listIbge.set('RS-Barão do Triunfo', '4301750')
+    listIbge.set('RS-Barra do Guarita', '4301859')
+    listIbge.set('RS-Barra do Quaraí', '4301875')
+    listIbge.set('RS-Barra do Ribeiro', '4301909')
+    listIbge.set('RS-Barra do Rio Azul', '4301925')
+    listIbge.set('RS-Barra Funda', '4301958')
+    listIbge.set('RS-Barracão', '4301800')
+    listIbge.set('RS-Barros Cassal', '4302006')
+    listIbge.set('RS-Benjamin Constant do Sul', '4302055')
+    listIbge.set('RS-Bento Gonçalves', '4302105')
+    listIbge.set('RS-Boa Vista das Missões', '4302154')
+    listIbge.set('RS-Boa Vista do Buricá', '4302204')
+    listIbge.set('RS-Boa Vista do Cadeado', '4302220')
+    listIbge.set('RS-Boa Vista do Incra', '4302238')
+    listIbge.set('RS-Boa Vista do Sul', '4302253')
+    listIbge.set('RS-Bom Jesus', '4302303')
+    listIbge.set('RS-Bom Princípio', '4302352')
+    listIbge.set('RS-Bom Progresso', '4302378')
+    listIbge.set('RS-Bom Retiro do Sul', '4302402')
+    listIbge.set('RS-Boqueirão do Leão', '4302451')
+    listIbge.set('RS-Bossoroca', '4302501')
+    listIbge.set('RS-Bozano', '4302584')
+    listIbge.set('RS-Braga', '4302600')
+    listIbge.set('RS-Brochier', '4302659')
+    listIbge.set('RS-Butiá', '4302709')
+    listIbge.set('RS-Caçapava do Sul', '4302808')
+    listIbge.set('RS-Cacequi', '4302907')
+    listIbge.set('RS-Cachoeira do Sul', '4303004')
+    listIbge.set('RS-Cachoeirinha', '4303103')
+    listIbge.set('RS-Cacique Doble', '4303202')
+    listIbge.set('RS-Caibaté', '4303301')
+    listIbge.set('RS-Caiçara', '4303400')
+    listIbge.set('RS-Camaquã', '4303509')
+    listIbge.set('RS-Camargo', '4303558')
+    listIbge.set('RS-Cambará do Sul', '4303608')
+    listIbge.set('RS-Campestre da Serra', '4303673')
+    listIbge.set('RS-Campina das Missões', '4303707')
+    listIbge.set('RS-Campinas do Sul', '4303806')
+    listIbge.set('RS-Campo Bom', '4303905')
+    listIbge.set('RS-Campo Novo', '4304002')
+    listIbge.set('RS-Campos Borges', '4304101')
+    listIbge.set('RS-Candelária', '4304200')
+    listIbge.set('RS-Cândido Godói', '4304309')
+    listIbge.set('RS-Candiota', '4304358')
+    listIbge.set('RS-Canela', '4304408')
+    listIbge.set('RS-Canguçu', '4304507')
+    listIbge.set('RS-Canoas', '4304606')
+    listIbge.set('RS-Canudos do Vale', '4304614')
+    listIbge.set('RS-Capão Bonito do Sul', '4304622')
+    listIbge.set('RS-Capão da Canoa', '4304630')
+    listIbge.set('RS-Capão do Cipó', '4304655')
+    listIbge.set('RS-Capão do Leão', '4304663')
+    listIbge.set('RS-Capela de Santana', '4304689')
+    listIbge.set('RS-Capitão', '4304697')
+    listIbge.set('RS-Capivari do Sul', '4304671')
+    listIbge.set('RS-Caraá', '4304713')
+    listIbge.set('RS-Carazinho', '4304705')
+    listIbge.set('RS-Carlos Barbosa', '4304804')
+    listIbge.set('RS-Carlos Gomes', '4304853')
+    listIbge.set('RS-Casca', '4304903')
+    listIbge.set('RS-Caseiros', '4304952')
+    listIbge.set('RS-Catuípe', '4305009')
+    listIbge.set('RS-Caxias do Sul', '4305108')
+    listIbge.set('RS-Centenário', '4305116')
+    listIbge.set('RS-Cerrito', '4305124')
+    listIbge.set('RS-Cerro Branco', '4305132')
+    listIbge.set('RS-Cerro Grande', '4305157')
+    listIbge.set('RS-Cerro Grande do Sul', '4305173')
+    listIbge.set('RS-Cerro Largo', '4305207')
+    listIbge.set('RS-Chapada', '4305306')
+    listIbge.set('RS-Charqueadas', '4305355')
+    listIbge.set('RS-Charrua', '4305371')
+    listIbge.set('RS-Chiapetta', '4305405')
+    listIbge.set('RS-Chuí', '4305439')
+    listIbge.set('RS-Chuvisca', '4305447')
+    listIbge.set('RS-Cidreira', '4305454')
+    listIbge.set('RS-Ciríaco', '4305504')
+    listIbge.set('RS-Colinas', '4305587')
+    listIbge.set('RS-Colorado', '4305603')
+    listIbge.set('RS-Condor', '4305702')
+    listIbge.set('RS-Constantina', '4305801')
+    listIbge.set('RS-Coqueiro Baixo', '4305835')
+    listIbge.set('RS-Coqueiros do Sul', '4305850')
+    listIbge.set('RS-Coronel Barros', '4305871')
+    listIbge.set('RS-Coronel Bicaco', '4305900')
+    listIbge.set('RS-Coronel Pilar', '4305934')
+    listIbge.set('RS-Cotiporã', '4305959')
+    listIbge.set('RS-Coxilha', '4305975')
+    listIbge.set('RS-Crissiumal', '4306007')
+    listIbge.set('RS-Cristal', '4306056')
+    listIbge.set('RS-Cristal do Sul', '4306072')
+    listIbge.set('RS-Cruz Alta', '4306106')
+    listIbge.set('RS-Cruzaltense', '4306130')
+    listIbge.set('RS-Cruzeiro do Sul', '4306205')
+    listIbge.set('RS-David Canabarro', '4306304')
+    listIbge.set('RS-Derrubadas', '4306320')
+    listIbge.set('RS-Dezesseis de Novembro', '4306353')
+    listIbge.set('RS-Dilermando de Aguiar', '4306379')
+    listIbge.set('RS-Dois Irmãos', '4306403')
+    listIbge.set('RS-Dois Irmãos das Missões', '4306429')
+    listIbge.set('RS-Dois Lajeados', '4306452')
+    listIbge.set('RS-Dom Feliciano', '4306502')
+    listIbge.set('RS-Dom Pedrito', '4306601')
+    listIbge.set('RS-Dom Pedro de Alcântara', '4306551')
+    listIbge.set('RS-Dona Francisca', '4306700')
+    listIbge.set('RS-Doutor Maurício Cardoso', '4306734')
+    listIbge.set('RS-Doutor Ricardo', '4306759')
+    listIbge.set('RS-Eldorado do Sul', '4306767')
+    listIbge.set('RS-Encantado', '4306809')
+    listIbge.set('RS-Encruzilhada do Sul', '4306908')
+    listIbge.set('RS-Engenho Velho', '4306924')
+    listIbge.set('RS-Entre Rios do Sul', '4306957')
+    listIbge.set('RS-Entre-Ijuís', '4306932')
+    listIbge.set('RS-Erebango', '4306973')
+    listIbge.set('RS-Erechim', '4307005')
+    listIbge.set('RS-Ernestina', '4307054')
+    listIbge.set('RS-Erval Grande', '4307203')
+    listIbge.set('RS-Erval Seco', '4307302')
+    listIbge.set('RS-Esmeralda', '4307401')
+    listIbge.set('RS-Esperança do Sul', '4307450')
+    listIbge.set('RS-Espumoso', '4307500')
+    listIbge.set('RS-Estação', '4307559')
+    listIbge.set('RS-Estância Velha', '4307609')
+    listIbge.set('RS-Esteio', '4307708')
+    listIbge.set('RS-Estrela', '4307807')
+    listIbge.set('RS-Estrela Velha', '4307815')
+    listIbge.set('RS-Eugênio de Castro', '4307831')
+    listIbge.set('RS-Fagundes Varela', '4307864')
+    listIbge.set('RS-Farroupilha', '4307906')
+    listIbge.set('RS-Faxinal do Soturno', '4308003')
+    listIbge.set('RS-Faxinalzinho', '4308052')
+    listIbge.set('RS-Fazenda Vilanova', '4308078')
+    listIbge.set('RS-Feliz', '4308102')
+    listIbge.set('RS-Flores da Cunha', '4308201')
+    listIbge.set('RS-Floriano Peixoto', '4308250')
+    listIbge.set('RS-Fontoura Xavier', '4308300')
+    listIbge.set('RS-Formigueiro', '4308409')
+    listIbge.set('RS-Forquetinha', '4308433')
+    listIbge.set('RS-Fortaleza dos Valos', '4308458')
+    listIbge.set('RS-Frederico Westphalen', '4308508')
+    listIbge.set('RS-Garibaldi', '4308607')
+    listIbge.set('RS-Garruchos', '4308656')
+    listIbge.set('RS-Gaurama', '4308706')
+    listIbge.set('RS-General Câmara', '4308805')
+    listIbge.set('RS-Gentil', '4308854')
+    listIbge.set('RS-Getúlio Vargas', '4308904')
+    listIbge.set('RS-Giruá', '4309001')
+    listIbge.set('RS-Glorinha', '4309050')
+    listIbge.set('RS-Gramado', '4309100')
+    listIbge.set('RS-Gramado dos Loureiros', '4309126')
+    listIbge.set('RS-Gramado Xavier', '4309159')
+    listIbge.set('RS-Gravataí', '4309209')
+    listIbge.set('RS-Guabiju', '4309258')
+    listIbge.set('RS-Guaíba', '4309308')
+    listIbge.set('RS-Guaporé', '4309407')
+    listIbge.set('RS-Guarani das Missões', '4309506')
+    listIbge.set('RS-Harmonia', '4309555')
+    listIbge.set('RS-Herval', '4307104')
+    listIbge.set('RS-Herveiras', '4309571')
+    listIbge.set('RS-Horizontina', '4309605')
+    listIbge.set('RS-Hulha Negra', '4309654')
+    listIbge.set('RS-Humaitá', '4309704')
+    listIbge.set('RS-Ibarama', '4309753')
+    listIbge.set('RS-Ibiaçá', '4309803')
+    listIbge.set('RS-Ibiraiaras', '4309902')
+    listIbge.set('RS-Ibirapuitã', '4309951')
+    listIbge.set('RS-Ibirubá', '4310009')
+    listIbge.set('RS-Igrejinha', '4310108')
+    listIbge.set('RS-Ijuí', '4310207')
+    listIbge.set('RS-Ilópolis', '4310306')
+    listIbge.set('RS-Imbé', '4310330')
+    listIbge.set('RS-Imigrante', '4310363')
+    listIbge.set('RS-Independência', '4310405')
+    listIbge.set('RS-Inhacorá', '4310413')
+    listIbge.set('RS-Ipê', '4310439')
+    listIbge.set('RS-Ipiranga do Sul', '4310462')
+    listIbge.set('RS-Iraí', '4310504')
+    listIbge.set('RS-Itaara', '4310538')
+    listIbge.set('RS-Itacurubi', '4310553')
+    listIbge.set('RS-Itapuca', '4310579')
+    listIbge.set('RS-Itaqui', '4310603')
+    listIbge.set('RS-Itati', '4310652')
+    listIbge.set('RS-Itatiba do Sul', '4310702')
+    listIbge.set('RS-Ivorá', '4310751')
+    listIbge.set('RS-Ivoti', '4310801')
+    listIbge.set('RS-Jaboticaba', '4310850')
+    listIbge.set('RS-Jacuizinho', '4310876')
+    listIbge.set('RS-Jacutinga', '4310900')
+    listIbge.set('RS-Jaguarão', '4311007')
+    listIbge.set('RS-Jaguari', '4311106')
+    listIbge.set('RS-Jaquirana', '4311122')
+    listIbge.set('RS-Jari', '4311130')
+    listIbge.set('RS-Jóia', '4311155')
+    listIbge.set('RS-Júlio de Castilhos', '4311205')
+    listIbge.set('RS-Lagoa Bonita do Sul', '4311239')
+    listIbge.set('RS-Lagoa dos Três Cantos', '4311270')
+    listIbge.set('RS-Lagoa Vermelha', '4311304')
+    listIbge.set('RS-Lagoão', '4311254')
+    listIbge.set('RS-Lajeado', '4311403')
+    listIbge.set('RS-Lajeado do Bugre', '4311429')
+    listIbge.set('RS-Lavras do Sul', '4311502')
+    listIbge.set('RS-Liberato Salzano', '4311601')
+    listIbge.set('RS-Lindolfo Collor', '4311627')
+    listIbge.set('RS-Linha Nova', '4311643')
+    listIbge.set('RS-Maçambará', '4311718')
+    listIbge.set('RS-Machadinho', '4311700')
+    listIbge.set('RS-Mampituba', '4311734')
+    listIbge.set('RS-Manoel Viana', '4311759')
+    listIbge.set('RS-Maquiné', '4311775')
+    listIbge.set('RS-Maratá', '4311791')
+    listIbge.set('RS-Marau', '4311809')
+    listIbge.set('RS-Marcelino Ramos', '4311908')
+    listIbge.set('RS-Mariana Pimentel', '4311981')
+    listIbge.set('RS-Mariano Moro', '4312005')
+    listIbge.set('RS-Marques de Souza', '4312054')
+    listIbge.set('RS-Mata', '4312104')
+    listIbge.set('RS-Mato Castelhano', '4312138')
+    listIbge.set('RS-Mato Leitão', '4312153')
+    listIbge.set('RS-Mato Queimado', '4312179')
+    listIbge.set('RS-Maximiliano de Almeida', '4312203')
+    listIbge.set('RS-Minas do Leão', '4312252')
+    listIbge.set('RS-Miraguaí', '4312302')
+    listIbge.set('RS-Montauri', '4312351')
+    listIbge.set('RS-Monte Alegre dos Campos', '4312377')
+    listIbge.set('RS-Monte Belo do Sul', '4312385')
+    listIbge.set('RS-Montenegro', '4312401')
+    listIbge.set('RS-Mormaço', '4312427')
+    listIbge.set('RS-Morrinhos do Sul', '4312443')
+    listIbge.set('RS-Morro Redondo', '4312450')
+    listIbge.set('RS-Morro Reuter', '4312476')
+    listIbge.set('RS-Mostardas', '4312500')
+    listIbge.set('RS-Muçum', '4312609')
+    listIbge.set('RS-Muitos Capões', '4312617')
+    listIbge.set('RS-Muliterno', '4312625')
+    listIbge.set('RS-Não-Me-Toque', '4312658')
+    listIbge.set('RS-Nicolau Vergueiro', '4312674')
+    listIbge.set('RS-Nonoai', '4312708')
+    listIbge.set('RS-Nova Alvorada', '4312757')
+    listIbge.set('RS-Nova Araçá', '4312807')
+    listIbge.set('RS-Nova Bassano', '4312906')
+    listIbge.set('RS-Nova Boa Vista', '4312955')
+    listIbge.set('RS-Nova Bréscia', '4313003')
+    listIbge.set('RS-Nova Candelária', '4313011')
+    listIbge.set('RS-Nova Esperança do Sul', '4313037')
+    listIbge.set('RS-Nova Hartz', '4313060')
+    listIbge.set('RS-Nova Pádua', '4313086')
+    listIbge.set('RS-Nova Palma', '4313102')
+    listIbge.set('RS-Nova Petrópolis', '4313201')
+    listIbge.set('RS-Nova Prata', '4313300')
+    listIbge.set('RS-Nova Ramada', '4313334')
+    listIbge.set('RS-Nova Roma do Sul', '4313359')
+    listIbge.set('RS-Nova Santa Rita', '4313375')
+    listIbge.set('RS-Novo Barreiro', '4313490')
+    listIbge.set('RS-Novo Cabrais', '4313391')
+    listIbge.set('RS-Novo Hamburgo', '4313409')
+    listIbge.set('RS-Novo Machado', '4313425')
+    listIbge.set('RS-Novo Tiradentes', '4313441')
+    listIbge.set('RS-Novo Xingu', '4313466')
+    listIbge.set('RS-Osório', '4313508')
+    listIbge.set('RS-Paim Filho', '4313607')
+    listIbge.set('RS-Palmares do Sul', '4313656')
+    listIbge.set('RS-Palmeira das Missões', '4313706')
+    listIbge.set('RS-Palmitinho', '4313805')
+    listIbge.set('RS-Panambi', '4313904')
+    listIbge.set('RS-Pantano Grande', '4313953')
+    listIbge.set('RS-Paraí', '4314001')
+    listIbge.set('RS-Paraíso do Sul', '4314027')
+    listIbge.set('RS-Pareci Novo', '4314035')
+    listIbge.set('RS-Parobé', '4314050')
+    listIbge.set('RS-Passa Sete', '4314068')
+    listIbge.set('RS-Passo do Sobrado', '4314076')
+    listIbge.set('RS-Passo Fundo', '4314100')
+    listIbge.set('RS-Paulo Bento', '4314134')
+    listIbge.set('RS-Paverama', '4314159')
+    listIbge.set('RS-Pedras Altas', '4314175')
+    listIbge.set('RS-Pedro Osório', '4314209')
+    listIbge.set('RS-Pejuçara', '4314308')
+    listIbge.set('RS-Pelotas', '4314407')
+    listIbge.set('RS-Picada Café', '4314423')
+    listIbge.set('RS-Pinhal', '4314456')
+    listIbge.set('RS-Pinhal da Serra', '4314464')
+    listIbge.set('RS-Pinhal Grande', '4314472')
+    listIbge.set('RS-Pinheirinho do Vale', '4314498')
+    listIbge.set('RS-Pinheiro Machado', '4314506')
+    listIbge.set('RS-Pinto Bandeira', '4314548')
+    listIbge.set('RS-Pirapó', '4314555')
+    listIbge.set('RS-Piratini', '4314605')
+    listIbge.set('RS-Planalto', '4314704')
+    listIbge.set('RS-Poço das Antas', '4314753')
+    listIbge.set('RS-Pontão', '4314779')
+    listIbge.set('RS-Ponte Preta', '4314787')
+    listIbge.set('RS-Portão', '4314803')
+    listIbge.set('RS-Porto Alegre', '4314902')
+    listIbge.set('RS-Porto Lucena', '4315008')
+    listIbge.set('RS-Porto Mauá', '4315057')
+    listIbge.set('RS-Porto Vera Cruz', '4315073')
+    listIbge.set('RS-Porto Xavier', '4315107')
+    listIbge.set('RS-Pouso Novo', '4315131')
+    listIbge.set('RS-Presidente Lucena', '4315149')
+    listIbge.set('RS-Progresso', '4315156')
+    listIbge.set('RS-Protásio Alves', '4315172')
+    listIbge.set('RS-Putinga', '4315206')
+    listIbge.set('RS-Quaraí', '4315305')
+    listIbge.set('RS-Quatro Irmãos', '4315313')
+    listIbge.set('RS-Quevedos', '4315321')
+    listIbge.set('RS-Quinze de Novembro', '4315354')
+    listIbge.set('RS-Redentora', '4315404')
+    listIbge.set('RS-Relvado', '4315453')
+    listIbge.set('RS-Restinga Sêca', '4315503')
+    listIbge.set('RS-Rio dos Índios', '4315552')
+    listIbge.set('RS-Rio Grande', '4315602')
+    listIbge.set('RS-Rio Pardo', '4315701')
+    listIbge.set('RS-Riozinho', '4315750')
+    listIbge.set('RS-Roca Sales', '4315800')
+    listIbge.set('RS-Rodeio Bonito', '4315909')
+    listIbge.set('RS-Rolador', '4315958')
+    listIbge.set('RS-Rolante', '4316006')
+    listIbge.set('RS-Ronda Alta', '4316105')
+    listIbge.set('RS-Rondinha', '4316204')
+    listIbge.set('RS-Roque Gonzales', '4316303')
+    listIbge.set('RS-Rosário do Sul', '4316402')
+    listIbge.set('RS-Sagrada Família', '4316428')
+    listIbge.set('RS-Saldanha Marinho', '4316436')
+    listIbge.set('RS-Salto do Jacuí', '4316451')
+    listIbge.set('RS-Salvador das Missões', '4316477')
+    listIbge.set('RS-Salvador do Sul', '4316501')
+    listIbge.set('RS-Sananduva', '4316600')
+    listIbge.set('RS-Santa Bárbara do Sul', '4316709')
+    listIbge.set('RS-Santa Cecília do Sul', '4316733')
+    listIbge.set('RS-Santa Clara do Sul', '4316758')
+    listIbge.set('RS-Santa Cruz do Sul', '4316808')
+    listIbge.set('RS-Santa Margarida do Sul', '4316972')
+    listIbge.set('RS-Santa Maria', '4316907')
+    listIbge.set('RS-Santa Maria do Herval', '4316956')
+    listIbge.set('RS-Santa Rosa', '4317202')
+    listIbge.set('RS-Santa Tereza', '4317251')
+    listIbge.set('RS-Santa Vitória do Palmar', '4317301')
+    listIbge.set('RS-Santana da Boa Vista', '4317004')
+    listIbge.set('RS-Santiago', '4317400')
+    listIbge.set('RS-Santo Ângelo', '4317509')
+    listIbge.set('RS-Santo Antônio da Patrulha', '4317608')
+    listIbge.set('RS-Santo Antônio das Missões', '4317707')
+    listIbge.set('RS-Santo Antônio do Palma', '4317558')
+    listIbge.set('RS-Santo Antônio do Planalto', '4317756')
+    listIbge.set('RS-Santo Augusto', '4317806')
+    listIbge.set('RS-Santo Cristo', '4317905')
+    listIbge.set('RS-Santo Expedito do Sul', '4317954')
+    listIbge.set('RS-São Borja', '4318002')
+    listIbge.set('RS-São Domingos do Sul', '4318051')
+    listIbge.set('RS-São Francisco de Assis', '4318101')
+    listIbge.set('RS-São Francisco de Paula', '4318200')
+    listIbge.set('RS-São Gabriel', '4318309')
+    listIbge.set('RS-São Jerônimo', '4318408')
+    listIbge.set('RS-São João da Urtiga', '4318424')
+    listIbge.set('RS-São João do Polêsine', '4318432')
+    listIbge.set('RS-São Jorge', '4318440')
+    listIbge.set('RS-São José das Missões', '4318457')
+    listIbge.set('RS-São José do Herval', '4318465')
+    listIbge.set('RS-São José do Hortêncio', '4318481')
+    listIbge.set('RS-São José do Inhacorá', '4318499')
+    listIbge.set('RS-São José do Norte', '4318507')
+    listIbge.set('RS-São José do Ouro', '4318606')
+    listIbge.set('RS-São José do Sul', '4318614')
+    listIbge.set('RS-São José dos Ausentes', '4318622')
+    listIbge.set('RS-São Leopoldo', '4318705')
+    listIbge.set('RS-São Lourenço do Sul', '4318804')
+    listIbge.set('RS-São Luiz Gonzaga', '4318903')
+    listIbge.set('RS-São Marcos', '4319000')
+    listIbge.set('RS-São Martinho', '4319109')
+    listIbge.set('RS-São Martinho da Serra', '4319125')
+    listIbge.set('RS-São Miguel das Missões', '4319158')
+    listIbge.set('RS-São Nicolau', '4319208')
+    listIbge.set('RS-São Paulo das Missões', '4319307')
+    listIbge.set('RS-São Pedro da Serra', '4319356')
+    listIbge.set('RS-São Pedro das Missões', '4319364')
+    listIbge.set('RS-São Pedro do Butiá', '4319372')
+    listIbge.set('RS-São Pedro do Sul', '4319406')
+    listIbge.set('RS-São Sebastião do Caí', '4319505')
+    listIbge.set('RS-São Sepé', '4319604')
+    listIbge.set('RS-São Valentim', '4319703')
+    listIbge.set('RS-São Valentim do Sul', '4319711')
+    listIbge.set('RS-São Valério do Sul', '4319737')
+    listIbge.set('RS-São Vendelino', '4319752')
+    listIbge.set('RS-São Vicente do Sul', '4319802')
+    listIbge.set('RS-Sapiranga', '4319901')
+    listIbge.set('RS-Sapucaia do Sul', '4320008')
+    listIbge.set('RS-Sarandi', '4320107')
+    listIbge.set('RS-Seberi', '4320206')
+    listIbge.set('RS-Sede Nova', '4320230')
+    listIbge.set('RS-Segredo', '4320263')
+    listIbge.set('RS-Selbach', '4320305')
+    listIbge.set('RS-Senador Salgado Filho', '4320321')
+    listIbge.set('RS-Sentinela do Sul', '4320354')
+    listIbge.set('RS-Serafina Corrêa', '4320404')
+    listIbge.set('RS-Sério', '4320453')
+    listIbge.set('RS-Sertão', '4320503')
+    listIbge.set('RS-Sertão Santana', '4320552')
+    listIbge.set('RS-Sete de Setembro', '4320578')
+    listIbge.set('RS-Severiano de Almeida', '4320602')
+    listIbge.set('RS-Silveira Martins', '4320651')
+    listIbge.set('RS-Sinimbu', '4320677')
+    listIbge.set('RS-Sobradinho', '4320701')
+    listIbge.set('RS-Soledade', '4320800')
+    listIbge.set('RS-Tabaí', '4320859')
+    listIbge.set('RS-Tapejara', '4320909')
+    listIbge.set('RS-Tapera', '4321006')
+    listIbge.set('RS-Tapes', '4321105')
+    listIbge.set('RS-Taquara', '4321204')
+    listIbge.set('RS-Taquari', '4321303')
+    listIbge.set('RS-Taquaruçu do Sul', '4321329')
+    listIbge.set('RS-Tavares', '4321352')
+    listIbge.set('RS-Tenente Portela', '4321402')
+    listIbge.set('RS-Terra de Areia', '4321436')
+    listIbge.set('RS-Teutônia', '4321451')
+    listIbge.set('RS-Tio Hugo', '4321469')
+    listIbge.set('RS-Tiradentes do Sul', '4321477')
+    listIbge.set('RS-Toropi', '4321493')
+    listIbge.set('RS-Torres', '4321501')
+    listIbge.set('RS-Tramandaí', '4321600')
+    listIbge.set('RS-Travesseiro', '4321626')
+    listIbge.set('RS-Três Arroios', '4321634')
+    listIbge.set('RS-Três Cachoeiras', '4321667')
+    listIbge.set('RS-Três Coroas', '4321709')
+    listIbge.set('RS-Três de Maio', '4321808')
+    listIbge.set('RS-Três Forquilhas', '4321832')
+    listIbge.set('RS-Três Palmeiras', '4321857')
+    listIbge.set('RS-Três Passos', '4321907')
+    listIbge.set('RS-Trindade do Sul', '4321956')
+    listIbge.set('RS-Triunfo', '4322004')
+    listIbge.set('RS-Tucunduva', '4322103')
+    listIbge.set('RS-Tunas', '4322152')
+    listIbge.set('RS-Tupanci do Sul', '4322186')
+    listIbge.set('RS-Tupanciretã', '4322202')
+    listIbge.set('RS-Tupandi', '4322251')
+    listIbge.set('RS-Tuparendi', '4322301')
+    listIbge.set('RS-Turuçu', '4322327')
+    listIbge.set('RS-Ubiretama', '4322343')
+    listIbge.set('RS-União da Serra', '4322350')
+    listIbge.set('RS-Unistalda', '4322376')
+    listIbge.set('RS-Uruguaiana', '4322400')
+    listIbge.set('RS-Vacaria', '4322509')
+    listIbge.set('RS-Vale do Sol', '4322533')
+    listIbge.set('RS-Vale Real', '4322541')
+    listIbge.set('RS-Vale Verde', '4322525')
+    listIbge.set('RS-Vanini', '4322558')
+    listIbge.set('RS-Venâncio Aires', '4322608')
+    listIbge.set('RS-Vera Cruz', '4322707')
+    listIbge.set('RS-Veranópolis', '4322806')
+    listIbge.set('RS-Vespasiano Corrêa', '4322855')
+    listIbge.set('RS-Viadutos', '4322905')
+    listIbge.set('RS-Viamão', '4323002')
+    listIbge.set('RS-Vicente Dutra', '4323101')
+    listIbge.set('RS-Victor Graeff', '4323200')
+    listIbge.set('RS-Vila Flores', '4323309')
+    listIbge.set('RS-Vila Lângaro', '4323358')
+    listIbge.set('RS-Vila Maria', '4323408')
+    listIbge.set('RS-Vila Nova do Sul', '4323457')
+    listIbge.set('RS-Vista Alegre', '4323507')
+    listIbge.set('RS-Vista Alegre do Prata', '4323606')
+    listIbge.set('RS-Vista Gaúcha', '4323705')
+    listIbge.set('RS-Vitória das Missões', '4323754')
+    listIbge.set('RS-Westfália', '4323770')
+    listIbge.set('RS-Xangri-lá', '4323804')
+    listIbge.set('MS-Água Clara', '5000203')
+    listIbge.set('MS-Alcinópolis', '5000252')
+    listIbge.set('MS-Amambai', '5000609')
+    listIbge.set('MS-Anastácio', '5000708')
+    listIbge.set('MS-Anaurilândia', '5000807')
+    listIbge.set('MS-Angélica', '5000856')
+    listIbge.set('MS-Antônio João', '5000906')
+    listIbge.set('MS-Aparecida do Taboado', '5001003')
+    listIbge.set('MS-Aquidauana', '5001102')
+    listIbge.set('MS-Aral Moreira', '5001243')
+    listIbge.set('MS-Bandeirantes', '5001508')
+    listIbge.set('MS-Bataguassu', '5001904')
+    listIbge.set('MS-Batayporã', '5002001')
+    listIbge.set('MS-Bela Vista', '5002100')
+    listIbge.set('MS-Bodoquena', '5002159')
+    listIbge.set('MS-Bonito', '5002209')
+    listIbge.set('MS-Brasilândia', '5002308')
+    listIbge.set('MS-Caarapó', '5002407')
+    listIbge.set('MS-Camapuã', '5002605')
+    listIbge.set('MS-Campo Grande', '5002704')
+    listIbge.set('MS-Caracol', '5002803')
+    listIbge.set('MS-Cassilândia', '5002902')
+    listIbge.set('MS-Chapadão do Sul', '5002951')
+    listIbge.set('MS-Corguinho', '5003108')
+    listIbge.set('MS-Coronel Sapucaia', '5003157')
+    listIbge.set('MS-Corumbá', '5003207')
+    listIbge.set('MS-Costa Rica', '5003256')
+    listIbge.set('MS-Coxim', '5003306')
+    listIbge.set('MS-Deodápolis', '5003454')
+    listIbge.set('MS-Dois Irmãos do Buriti', '5003488')
+    listIbge.set('MS-Douradina', '5003504')
+    listIbge.set('MS-Dourados', '5003702')
+    listIbge.set('MS-Eldorado', '5003751')
+    listIbge.set('MS-Fátima do Sul', '5003801')
+    listIbge.set('MS-Figueirão', '5003900')
+    listIbge.set('MS-Glória de Dourados', '5004007')
+    listIbge.set('MS-Guia Lopes da Laguna', '5004106')
+    listIbge.set('MS-Iguatemi', '5004304')
+    listIbge.set('MS-Inocência', '5004403')
+    listIbge.set('MS-Itaporã', '5004502')
+    listIbge.set('MS-Itaquiraí', '5004601')
+    listIbge.set('MS-Ivinhema', '5004700')
+    listIbge.set('MS-Japorã', '5004809')
+    listIbge.set('MS-Jaraguari', '5004908')
+    listIbge.set('MS-Jardim', '5005004')
+    listIbge.set('MS-Jateí', '5005103')
+    listIbge.set('MS-Juti', '5005152')
+    listIbge.set('MS-Ladário', '5005202')
+    listIbge.set('MS-Laguna Carapã', '5005251')
+    listIbge.set('MS-Maracaju', '5005400')
+    listIbge.set('MS-Miranda', '5005608')
+    listIbge.set('MS-Mundo Novo', '5005681')
+    listIbge.set('MS-Naviraí', '5005707')
+    listIbge.set('MS-Nioaque', '5005806')
+    listIbge.set('MS-Nova Alvorada do Sul', '5006002')
+    listIbge.set('MS-Nova Andradina', '5006200')
+    listIbge.set('MS-Novo Horizonte do Sul', '5006259')
+    listIbge.set('MS-Paraíso das Águas', '5006275')
+    listIbge.set('MS-Paranaíba', '5006309')
+    listIbge.set('MS-Paranhos', '5006358')
+    listIbge.set('MS-Pedro Gomes', '5006408')
+    listIbge.set('MS-Ponta Porã', '5006606')
+    listIbge.set('MS-Porto Murtinho', '5006903')
+    listIbge.set('MS-Ribas do Rio Pardo', '5007109')
+    listIbge.set('MS-Rio Brilhante', '5007208')
+    listIbge.set('MS-Rio Negro', '5007307')
+    listIbge.set('MS-Rio Verde de Mato Grosso', '5007406')
+    listIbge.set('MS-Rochedo', '5007505')
+    listIbge.set('MS-Santa Rita do Pardo', '5007554')
+    listIbge.set('MS-São Gabriel do Oeste', '5007695')
+    listIbge.set('MS-Selvíria', '5007802')
+    listIbge.set('MS-Sete Quedas', '5007703')
+    listIbge.set('MS-Sidrolândia', '5007901')
+    listIbge.set('MS-Sonora', '5007935')
+    listIbge.set('MS-Tacuru', '5007950')
+    listIbge.set('MS-Taquarussu', '5007976')
+    listIbge.set('MS-Terenos', '5008008')
+    listIbge.set('MS-Três Lagoas', '5008305')
+    listIbge.set('MS-Vicentina', '5008404')
+    listIbge.set('MT-Acorizal', '5100102')
+    listIbge.set('MT-Água Boa', '5100201')
+    listIbge.set('MT-Alta Floresta', '5100250')
+    listIbge.set('MT-Alto Araguaia', '5100300')
+    listIbge.set('MT-Alto Boa Vista', '5100359')
+    listIbge.set('MT-Alto Garças', '5100409')
+    listIbge.set('MT-Alto Paraguai', '5100508')
+    listIbge.set('MT-Alto Taquari', '5100607')
+    listIbge.set('MT-Apiacás', '5100805')
+    listIbge.set('MT-Araguaiana', '5101001')
+    listIbge.set('MT-Araguainha', '5101209')
+    listIbge.set('MT-Araputanga', '5101258')
+    listIbge.set('MT-Arenápolis', '5101308')
+    listIbge.set('MT-Aripuanã', '5101407')
+    listIbge.set('MT-Barão de Melgaço', '5101605')
+    listIbge.set('MT-Barra do Bugres', '5101704')
+    listIbge.set('MT-Barra do Garças', '5101803')
+    listIbge.set('MT-Bom Jesus do Araguaia', '5101852')
+    listIbge.set('MT-Brasnorte', '5101902')
+    listIbge.set('MT-Cáceres', '5102504')
+    listIbge.set('MT-Campinápolis', '5102603')
+    listIbge.set('MT-Campo Novo do Parecis', '5102637')
+    listIbge.set('MT-Campo Verde', '5102678')
+    listIbge.set('MT-Campos de Júlio', '5102686')
+    listIbge.set('MT-Canabrava do Norte', '5102694')
+    listIbge.set('MT-Canarana', '5102702')
+    listIbge.set('MT-Carlinda', '5102793')
+    listIbge.set('MT-Castanheira', '5102850')
+    listIbge.set('MT-Chapada dos Guimarães', '5103007')
+    listIbge.set('MT-Cláudia', '5103056')
+    listIbge.set('MT-Cocalinho', '5103106')
+    listIbge.set('MT-Colíder', '5103205')
+    listIbge.set('MT-Colniza', '5103254')
+    listIbge.set('MT-Comodoro', '5103304')
+    listIbge.set('MT-Confresa', '5103353')
+    listIbge.set('MT-Cotriguaçu', '5103379')
+    listIbge.set('MT-Cuiabá', '5103403')
+    listIbge.set('MT-Curvelândia', '5103437')
+    listIbge.set('MT-Denise', '5103452')
+    listIbge.set('MT-Diamantino', '5103502')
+    listIbge.set('MT-Dom Aquino', '5103601')
+    listIbge.set('MT-Feliz Natal', '5103700')
+    listIbge.set('MT-Gaúcha do Norte', '5103858')
+    listIbge.set('MT-General Carneiro', '5103908')
+    listIbge.set('MT-Guarantã do Norte', '5104104')
+    listIbge.set('MT-Guiratinga', '5104203')
+    listIbge.set('MT-Indiavaí', '5104500')
+    listIbge.set('MT-Ipiranga do Norte', '5104526')
+    listIbge.set('MT-Itanhangá', '5104542')
+    listIbge.set('MT-Itaúba', '5104559')
+    listIbge.set('MT-Itiquira', '5104609')
+    listIbge.set('MT-Jaciara', '5104807')
+    listIbge.set('MT-Jangada', '5104906')
+    listIbge.set('MT-Jauru', '5105002')
+    listIbge.set('MT-Juara', '5105101')
+    listIbge.set('MT-Juína', '5105150')
+    listIbge.set('MT-Juruena', '5105176')
+    listIbge.set('MT-Juscimeira', '5105200')
+    listIbge.set('MT-Lucas do Rio Verde', '5105259')
+    listIbge.set('MT-Luciara', '5105309')
+    listIbge.set('MT-Marcelândia', '5105580')
+    listIbge.set('MT-Matupá', '5105606')
+    listIbge.set('MT-Nobres', '5105903')
+    listIbge.set('MT-Nortelândia', '5106000')
+    listIbge.set('MT-Nossa Senhora do Livramento', '5106109')
+    listIbge.set('MT-Nova Bandeirantes', '5106158')
+    listIbge.set('MT-Nova Brasilândia', '5106208')
+    listIbge.set('MT-Nova Canaã do Norte', '5106216')
+    listIbge.set('MT-Nova Guarita', '5108808')
+    listIbge.set('MT-Nova Lacerda', '5106182')
+    listIbge.set('MT-Nova Marilândia', '5108857')
+    listIbge.set('MT-Nova Maringá', '5108907')
+    listIbge.set('MT-Nova Monte Verde', '5108956')
+    listIbge.set('MT-Nova Mutum', '5106224')
+    listIbge.set('MT-Nova Nazaré', '5106174')
+    listIbge.set('MT-Nova Olímpia', '5106232')
+    listIbge.set('MT-Nova Santa Helena', '5106190')
+    listIbge.set('MT-Nova Ubiratã', '5106240')
+    listIbge.set('MT-Nova Xavantina', '5106257')
+    listIbge.set('MT-Novo Horizonte do Norte', '5106273')
+    listIbge.set('MT-Novo Mundo', '5106265')
+    listIbge.set('MT-Novo Santo Antônio', '5106315')
+    listIbge.set('MT-Novo São Joaquim', '5106281')
+    listIbge.set('MT-Paranaíta', '5106299')
+    listIbge.set('MT-Paranatinga', '5106307')
+    listIbge.set('MT-Pedra Preta', '5106372')
+    listIbge.set('MT-Peixoto de Azevedo', '5106422')
+    listIbge.set('MT-Planalto da Serra', '5106455')
+    listIbge.set('MT-Poconé', '5106505')
+    listIbge.set('MT-Pontal do Araguaia', '5106653')
+    listIbge.set('MT-Ponte Branca', '5106703')
+    listIbge.set('MT-Pontes e Lacerda', '5106752')
+    listIbge.set('MT-Porto Alegre do Norte', '5106778')
+    listIbge.set('MT-Porto dos Gaúchos', '5106802')
+    listIbge.set('MT-Porto Esperidião', '5106828')
+    listIbge.set('MT-Porto Estrela', '5106851')
+    listIbge.set('MT-Poxoréu', '5107008')
+    listIbge.set('MT-Primavera do Leste', '5107040')
+    listIbge.set('MT-Querência', '5107065')
+    listIbge.set('MT-Reserva do Cabaçal', '5107156')
+    listIbge.set('MT-Ribeirão Cascalheira', '5107180')
+    listIbge.set('MT-Ribeirãozinho', '5107198')
+    listIbge.set('MT-Rio Branco', '5107206')
+    listIbge.set('MT-Rondolândia', '5107578')
+    listIbge.set('MT-Rondonópolis', '5107602')
+    listIbge.set('MT-Rosário Oeste', '5107701')
+    listIbge.set('MT-Salto do Céu', '5107750')
+    listIbge.set('MT-Santa Carmem', '5107248')
+    listIbge.set('MT-Santa Cruz do Xingu', '5107743')
+    listIbge.set('MT-Santa Rita do Trivelato', '5107768')
+    listIbge.set('MT-Santa Terezinha', '5107776')
+    listIbge.set('MT-Santo Afonso', '5107263')
+    listIbge.set('MT-Santo Antônio do Leste', '5107792')
+    listIbge.set('MT-Santo Antônio do Leverger', '5107800')
+    listIbge.set('MT-São Félix do Araguaia', '5107859')
+    listIbge.set('MT-São José do Povo', '5107297')
+    listIbge.set('MT-São José do Rio Claro', '5107305')
+    listIbge.set('MT-São José do Xingu', '5107354')
+    listIbge.set('MT-São José dos Quatro Marcos', '5107107')
+    listIbge.set('MT-São Pedro da Cipa', '5107404')
+    listIbge.set('MT-Sapezal', '5107875')
+    listIbge.set('MT-Serra Nova Dourada', '5107883')
+    listIbge.set('MT-Sinop', '5107909')
+    listIbge.set('MT-Sorriso', '5107925')
+    listIbge.set('MT-Tabaporã', '5107941')
+    listIbge.set('MT-Tangará da Serra', '5107958')
+    listIbge.set('MT-Tapurah', '5108006')
+    listIbge.set('MT-Terra Nova do Norte', '5108055')
+    listIbge.set('MT-Tesouro', '5108105')
+    listIbge.set('MT-Torixoréu', '5108204')
+    listIbge.set('MT-União do Sul', '5108303')
+    listIbge.set('MT-Vale de São Domingos', '5108352')
+    listIbge.set('MT-Várzea Grande', '5108402')
+    listIbge.set('MT-Vera', '5108501')
+    listIbge.set('MT-Vila Bela da Santíssima Trindade', '5105507')
+    listIbge.set('MT-Vila Rica', '5108600')
+    listIbge.set('GO-Abadia de Goiás', '5200050')
+    listIbge.set('GO-Abadiânia', '5200100')
+    listIbge.set('GO-Acreúna', '5200134')
+    listIbge.set('GO-Adelândia', '5200159')
+    listIbge.set('GO-Água Fria de Goiás', '5200175')
+    listIbge.set('GO-Água Limpa', '5200209')
+    listIbge.set('GO-Águas Lindas de Goiás', '5200258')
+    listIbge.set('GO-Alexânia', '5200308')
+    listIbge.set('GO-Aloândia', '5200506')
+    listIbge.set('GO-Alto Horizonte', '5200555')
+    listIbge.set('GO-Alto Paraíso de Goiás', '5200605')
+    listIbge.set('GO-Alvorada do Norte', '5200803')
+    listIbge.set('GO-Amaralina', '5200829')
+    listIbge.set('GO-Americano do Brasil', '5200852')
+    listIbge.set('GO-Amorinópolis', '5200902')
+    listIbge.set('GO-Anápolis', '5201108')
+    listIbge.set('GO-Anhanguera', '5201207')
+    listIbge.set('GO-Anicuns', '5201306')
+    listIbge.set('GO-Aparecida de Goiânia', '5201405')
+    listIbge.set('GO-Aparecida do Rio Doce', '5201454')
+    listIbge.set('GO-Aporé', '5201504')
+    listIbge.set('GO-Araçu', '5201603')
+    listIbge.set('GO-Aragarças', '5201702')
+    listIbge.set('GO-Aragoiânia', '5201801')
+    listIbge.set('GO-Araguapaz', '5202155')
+    listIbge.set('GO-Arenópolis', '5202353')
+    listIbge.set('GO-Aruanã', '5202502')
+    listIbge.set('GO-Aurilândia', '5202601')
+    listIbge.set('GO-Avelinópolis', '5202809')
+    listIbge.set('GO-Baliza', '5203104')
+    listIbge.set('GO-Barro Alto', '5203203')
+    listIbge.set('GO-Bela Vista de Goiás', '5203302')
+    listIbge.set('GO-Bom Jardim de Goiás', '5203401')
+    listIbge.set('GO-Bom Jesus de Goiás', '5203500')
+    listIbge.set('GO-Bonfinópolis', '5203559')
+    listIbge.set('GO-Bonópolis', '5203575')
+    listIbge.set('GO-Brazabrantes', '5203609')
+    listIbge.set('GO-Britânia', '5203807')
+    listIbge.set('GO-Buriti Alegre', '5203906')
+    listIbge.set('GO-Buriti de Goiás', '5203939')
+    listIbge.set('GO-Buritinópolis', '5203962')
+    listIbge.set('GO-Cabeceiras', '5204003')
+    listIbge.set('GO-Cachoeira Alta', '5204102')
+    listIbge.set('GO-Cachoeira de Goiás', '5204201')
+    listIbge.set('GO-Cachoeira Dourada', '5204250')
+    listIbge.set('GO-Caçu', '5204300')
+    listIbge.set('GO-Caiapônia', '5204409')
+    listIbge.set('GO-Caldas Novas', '5204508')
+    listIbge.set('GO-Caldazinha', '5204557')
+    listIbge.set('GO-Campestre de Goiás', '5204607')
+    listIbge.set('GO-Campinaçu', '5204656')
+    listIbge.set('GO-Campinorte', '5204706')
+    listIbge.set('GO-Campo Alegre de Goiás', '5204805')
+    listIbge.set('GO-Campo Limpo de Goiás', '5204854')
+    listIbge.set('GO-Campos Belos', '5204904')
+    listIbge.set('GO-Campos Verdes', '5204953')
+    listIbge.set('GO-Carmo do Rio Verde', '5205000')
+    listIbge.set('GO-Castelândia', '5205059')
+    listIbge.set('GO-Catalão', '5205109')
+    listIbge.set('GO-Caturaí', '5205208')
+    listIbge.set('GO-Cavalcante', '5205307')
+    listIbge.set('GO-Ceres', '5205406')
+    listIbge.set('GO-Cezarina', '5205455')
+    listIbge.set('GO-Chapadão do Céu', '5205471')
+    listIbge.set('GO-Cidade Ocidental', '5205497')
+    listIbge.set('GO-Cocalzinho de Goiás', '5205513')
+    listIbge.set('GO-Colinas do Sul', '5205521')
+    listIbge.set('GO-Córrego do Ouro', '5205703')
+    listIbge.set('GO-Corumbá de Goiás', '5205802')
+    listIbge.set('GO-Corumbaíba', '5205901')
+    listIbge.set('GO-Cristalina', '5206206')
+    listIbge.set('GO-Cristianópolis', '5206305')
+    listIbge.set('GO-Crixás', '5206404')
+    listIbge.set('GO-Cromínia', '5206503')
+    listIbge.set('GO-Cumari', '5206602')
+    listIbge.set('GO-Damianópolis', '5206701')
+    listIbge.set('GO-Damolândia', '5206800')
+    listIbge.set('GO-Davinópolis', '5206909')
+    listIbge.set('GO-Diorama', '5207105')
+    listIbge.set('GO-Divinópolis de Goiás', '5208301')
+    listIbge.set('GO-Doverlândia', '5207253')
+    listIbge.set('GO-Edealina', '5207352')
+    listIbge.set('GO-Edéia', '5207402')
+    listIbge.set('GO-Estrela do Norte', '5207501')
+    listIbge.set('GO-Faina', '5207535')
+    listIbge.set('GO-Fazenda Nova', '5207600')
+    listIbge.set('GO-Firminópolis', '5207808')
+    listIbge.set('GO-Flores de Goiás', '5207907')
+    listIbge.set('GO-Formosa', '5208004')
+    listIbge.set('GO-Formoso', '5208103')
+    listIbge.set('GO-Gameleira de Goiás', '5208152')
+    listIbge.set('GO-Goianápolis', '5208400')
+    listIbge.set('GO-Goiandira', '5208509')
+    listIbge.set('GO-Goianésia', '5208608')
+    listIbge.set('GO-Goiânia', '5208707')
+    listIbge.set('GO-Goianira', '5208806')
+    listIbge.set('GO-Goiás', '5208905')
+    listIbge.set('GO-Goiatuba', '5209101')
+    listIbge.set('GO-Gouvelândia', '5209150')
+    listIbge.set('GO-Guapó', '5209200')
+    listIbge.set('GO-Guaraíta', '5209291')
+    listIbge.set('GO-Guarani de Goiás', '5209408')
+    listIbge.set('GO-Guarinos', '5209457')
+    listIbge.set('GO-Heitoraí', '5209606')
+    listIbge.set('GO-Hidrolândia', '5209705')
+    listIbge.set('GO-Hidrolina', '5209804')
+    listIbge.set('GO-Iaciara', '5209903')
+    listIbge.set('GO-Inaciolândia', '5209937')
+    listIbge.set('GO-Indiara', '5209952')
+    listIbge.set('GO-Inhumas', '5210000')
+    listIbge.set('GO-Ipameri', '5210109')
+    listIbge.set('GO-Ipiranga de Goiás', '5210158')
+    listIbge.set('GO-Iporá', '5210208')
+    listIbge.set('GO-Israelândia', '5210307')
+    listIbge.set('GO-Itaberaí', '5210406')
+    listIbge.set('GO-Itaguari', '5210562')
+    listIbge.set('GO-Itaguaru', '5210604')
+    listIbge.set('GO-Itajá', '5210802')
+    listIbge.set('GO-Itapaci', '5210901')
+    listIbge.set('GO-Itapirapuã', '5211008')
+    listIbge.set('GO-Itapuranga', '5211206')
+    listIbge.set('GO-Itarumã', '5211305')
+    listIbge.set('GO-Itauçu', '5211404')
+    listIbge.set('GO-Itumbiara', '5211503')
+    listIbge.set('GO-Ivolândia', '5211602')
+    listIbge.set('GO-Jandaia', '5211701')
+    listIbge.set('GO-Jaraguá', '5211800')
+    listIbge.set('GO-Jataí', '5211909')
+    listIbge.set('GO-Jaupaci', '5212006')
+    listIbge.set('GO-Jesúpolis', '5212055')
+    listIbge.set('GO-Joviânia', '5212105')
+    listIbge.set('GO-Jussara', '5212204')
+    listIbge.set('GO-Lagoa Santa', '5212253')
+    listIbge.set('GO-Leopoldo de Bulhões', '5212303')
+    listIbge.set('GO-Luziânia', '5212501')
+    listIbge.set('GO-Mairipotaba', '5212600')
+    listIbge.set('GO-Mambaí', '5212709')
+    listIbge.set('GO-Mara Rosa', '5212808')
+    listIbge.set('GO-Marzagão', '5212907')
+    listIbge.set('GO-Matrinchã', '5212956')
+    listIbge.set('GO-Maurilândia', '5213004')
+    listIbge.set('GO-Mimoso de Goiás', '5213053')
+    listIbge.set('GO-Minaçu', '5213087')
+    listIbge.set('GO-Mineiros', '5213103')
+    listIbge.set('GO-Moiporá', '5213400')
+    listIbge.set('GO-Monte Alegre de Goiás', '5213509')
+    listIbge.set('GO-Montes Claros de Goiás', '5213707')
+    listIbge.set('GO-Montividiu', '5213756')
+    listIbge.set('GO-Montividiu do Norte', '5213772')
+    listIbge.set('GO-Morrinhos', '5213806')
+    listIbge.set('GO-Morro Agudo de Goiás', '5213855')
+    listIbge.set('GO-Mossâmedes', '5213905')
+    listIbge.set('GO-Mozarlândia', '5214002')
+    listIbge.set('GO-Mundo Novo', '5214051')
+    listIbge.set('GO-Mutunópolis', '5214101')
+    listIbge.set('GO-Nazário', '5214408')
+    listIbge.set('GO-Nerópolis', '5214507')
+    listIbge.set('GO-Niquelândia', '5214606')
+    listIbge.set('GO-Nova América', '5214705')
+    listIbge.set('GO-Nova Aurora', '5214804')
+    listIbge.set('GO-Nova Crixás', '5214838')
+    listIbge.set('GO-Nova Glória', '5214861')
+    listIbge.set('GO-Nova Iguaçu de Goiás', '5214879')
+    listIbge.set('GO-Nova Roma', '5214903')
+    listIbge.set('GO-Nova Veneza', '5215009')
+    listIbge.set('GO-Novo Brasil', '5215207')
+    listIbge.set('GO-Novo Gama', '5215231')
+    listIbge.set('GO-Novo Planalto', '5215256')
+    listIbge.set('GO-Orizona', '5215306')
+    listIbge.set('GO-Ouro Verde de Goiás', '5215405')
+    listIbge.set('GO-Ouvidor', '5215504')
+    listIbge.set('GO-Padre Bernardo', '5215603')
+    listIbge.set('GO-Palestina de Goiás', '5215652')
+    listIbge.set('GO-Palmeiras de Goiás', '5215702')
+    listIbge.set('GO-Palmelo', '5215801')
+    listIbge.set('GO-Palminópolis', '5215900')
+    listIbge.set('GO-Panamá', '5216007')
+    listIbge.set('GO-Paranaiguara', '5216304')
+    listIbge.set('GO-Paraúna', '5216403')
+    listIbge.set('GO-Perolândia', '5216452')
+    listIbge.set('GO-Petrolina de Goiás', '5216809')
+    listIbge.set('GO-Pilar de Goiás', '5216908')
+    listIbge.set('GO-Piracanjuba', '5217104')
+    listIbge.set('GO-Piranhas', '5217203')
+    listIbge.set('GO-Pirenópolis', '5217302')
+    listIbge.set('GO-Pires do Rio', '5217401')
+    listIbge.set('GO-Planaltina', '5217609')
+    listIbge.set('GO-Pontalina', '5217708')
+    listIbge.set('GO-Porangatu', '5218003')
+    listIbge.set('GO-Porteirão', '5218052')
+    listIbge.set('GO-Portelândia', '5218102')
+    listIbge.set('GO-Posse', '5218300')
+    listIbge.set('GO-Professor Jamil', '5218391')
+    listIbge.set('GO-Quirinópolis', '5218508')
+    listIbge.set('GO-Rialma', '5218607')
+    listIbge.set('GO-Rianápolis', '5218706')
+    listIbge.set('GO-Rio Quente', '5218789')
+    listIbge.set('GO-Rio Verde', '5218805')
+    listIbge.set('GO-Rubiataba', '5218904')
+    listIbge.set('GO-Sanclerlândia', '5219001')
+    listIbge.set('GO-Santa Bárbara de Goiás', '5219100')
+    listIbge.set('GO-Santa Cruz de Goiás', '5219209')
+    listIbge.set('GO-Santa Fé de Goiás', '5219258')
+    listIbge.set('GO-Santa Helena de Goiás', '5219308')
+    listIbge.set('GO-Santa Isabel', '5219357')
+    listIbge.set('GO-Santa Rita do Araguaia', '5219407')
+    listIbge.set('GO-Santa Rita do Novo Destino', '5219456')
+    listIbge.set('GO-Santa Rosa de Goiás', '5219506')
+    listIbge.set('GO-Santa Tereza de Goiás', '5219605')
+    listIbge.set('GO-Santa Terezinha de Goiás', '5219704')
+    listIbge.set('GO-Santo Antônio da Barra', '5219712')
+    listIbge.set('GO-Santo Antônio de Goiás', '5219738')
+    listIbge.set('GO-Santo Antônio do Descoberto', '5219753')
+    listIbge.set('GO-São Domingos', '5219803')
+    listIbge.set('GO-São Francisco de Goiás', '5219902')
+    listIbge.set('GO-São João da Paraúna', '5220058')
+    listIbge.set('GO-São Luís de Montes Belos', '5220108')
+    listIbge.set('GO-São Luiz do Norte', '5220157')
+    listIbge.set('GO-São Miguel do Araguaia', '5220207')
+    listIbge.set('GO-São Miguel do Passa Quatro', '5220264')
+    listIbge.set('GO-São Patrício', '5220280')
+    listIbge.set('GO-São Simão', '5220405')
+    listIbge.set('GO-Senador Canedo', '5220454')
+    listIbge.set('GO-Serranópolis', '5220504')
+    listIbge.set('GO-Silvânia', '5220603')
+    listIbge.set('GO-Simolândia', '5220686')
+    listIbge.set('GO-Taquaral de Goiás', '5221007')
+    listIbge.set('GO-Teresina de Goiás', '5221080')
+    listIbge.set('GO-Terezópolis de Goiás', '5221197')
+    listIbge.set('GO-Três Ranchos', '5221304')
+    listIbge.set('GO-Trindade', '5221403')
+    listIbge.set('GO-Trombas', '5221452')
+    listIbge.set('GO-Turvânia', '5221502')
+    listIbge.set('GO-Turvelândia', '5221551')
+    listIbge.set('GO-Uirapuru', '5221577')
+    listIbge.set('GO-Uruaçu', '5221601')
+    listIbge.set('GO-Uruana', '5221700')
+    listIbge.set('GO-Urutaí', '5221809')
+    listIbge.set('GO-Valparaíso de Goiás', '5221858')
+    listIbge.set('GO-Varjão', '5221908')
+    listIbge.set('GO-Vianópolis', '5222005')
+    listIbge.set('GO-Vicentinópolis', '5222054')
+    listIbge.set('GO-Vila Boa', '5222203')
+    listIbge.set('GO-Vila Propício', '5222302')
+    listIbge.set('DF-Brasília', '5300108')
+    listIbge.set("RO-Alta Floresta D'Oeste", '1100015')
+    listIbge.set("RO-Alvorada D'Oeste", '1100346')
+    listIbge.set("RO-Espigão D'Oeste", '1100098')
+    listIbge.set("RO-Machadinho D'Oeste", '1100130')
+    listIbge.set("RO-Nova Brasilândia D'Oeste", '1100148')
+    listIbge.set("RO-Santa Luzia D'Oeste", '1100296')
+    listIbge.set("RO-São Felipe D'Oeste", '1101484')
+    listIbge.set("PA-Pau D'Arco", '1505551')
+    listIbge.set("TO-Pau D'Arco", '1716307')
+    listIbge.set("MA-Olho d'Água das Cunhãs", '2107407')
+    listIbge.set("PI-Barra D'Alcântara", '2201176')
+    listIbge.set("PI-Olho D'Água do Piauí", '2207108')
+    listIbge.set("PI-Pau D'Arco do Piauí", '2207793')
+    listIbge.set("RN-Lagoa d'Anta", '2406205')
+    listIbge.set("RN-Olho d'Água do Borges", '2408409')
+    listIbge.set("PB-Mãe d'Água", '2508703')
+    listIbge.set("PB-Olho d'Água", '2510402')
+    listIbge.set("AL-Olho d'Água das Flores", '2705705')
+    listIbge.set("AL-Olho d'Água do Casado", '2705804')
+    listIbge.set("AL-Olho d'Água Grande", '2705903')
+    listIbge.set("AL-Tanque d'Arca", '2709004')
+    listIbge.set("SE-Itaporanga d'Ajuda", '2803203')
+    listIbge.set("BA-Dias d'Ávila", '2910057')
+    listIbge.set("MG-Olhos-d'Água", '3145455')
+    listIbge.set("MG-Pingo-d'Água", '3150539')
+    listIbge.set("SP-Aparecida d'Oeste", '3502606')
+    listIbge.set("SP-Estrela d'Oeste", '3515202')
+    listIbge.set("SP-Guarani d'Oeste", '3518008')
+    listIbge.set("SP-Palmeira d'Oeste", '3535200')
+    listIbge.set("SP-Santa Bárbara d'Oeste", '3545803')
+    listIbge.set("SP-Santa Clara d'Oeste", '3546108')
+    listIbge.set("SP-Santa Rita d'Oeste", '3547403')
+    listIbge.set("SP-São João do Pau d'Alho", '3549300')
+    listIbge.set("PR-Diamante D'Oeste", '4107157')
+    listIbge.set("PR-Itapejara d'Oeste", '4111209')
+    listIbge.set("PR-Pérola d'Oeste", '4119004')
+    listIbge.set("PR-Rancho Alegre D'Oeste", '4121356')
+    listIbge.set("PR-São Jorge d'Oeste", '4125209')
+    listIbge.set("SC-Herval d'Oeste", '4206702')
+    listIbge.set("RS-Sant'Ana do Livramento", '4317103')
+    listIbge.set("MT-Conquista D'Oeste", '5103361')
+    listIbge.set("MT-Figueirópolis D'Oeste", '5103809')
+    listIbge.set("MT-Glória D'Oeste", '5103957')
+    listIbge.set("MT-Lambari D'Oeste", '5105234')
+    listIbge.set("MT-Mirassol d'Oeste", '5105622')
+    listIbge.set("GO-São João d'Aliança", '5220009')
+    listIbge.set("GO-Sítio d'Abadia", '5220702')
 
-    var result_cep = response.data.results[0].address_components["0"].long_name;
-    var result_bairro = response.data.results[0].address_components["2"].long_name;
-    var result_logradouro = response.data.results[0].address_components["1"].long_name;
-    var result_localidade = response.data.results[0].address_components["3"].long_name;
-    var result_uf = response.data.results[0].address_components["4"].long_name;
-    var result_ibge = listIbge.get(response.data.results[0].address_components["4"].short_name + '-'+result_localidade);
-    const { cep, bairro, localidade, logradouro, uf, ibge } = {cep:result_cep, bairro: result_bairro, localidade:result_localidade, logradouro:result_logradouro, uf:result_uf, ibge:result_ibge}
+    const result_cep =
+      response.data.results[0].address_components['0'].long_name
+    const result_bairro =
+      response.data.results[0].address_components['2'].long_name
+    const result_logradouro =
+      response.data.results[0].address_components['1'].long_name
+    const result_localidade =
+      response.data.results[0].address_components['3'].long_name
+    const result_uf =
+      response.data.results[0].address_components['4'].long_name
+    const result_ibge = listIbge.get(
+      response.data.results[0].address_components['4'].short_name +
+        '-' +
+        result_localidade
+    )
+    const { cep, bairro, localidade, logradouro, uf, ibge } = {
+      cep: result_cep,
+      bairro: result_bairro,
+      localidade: result_localidade,
+      logradouro: result_logradouro,
+      uf: result_uf,
+      ibge: result_ibge
+    }
 
     return res.status(200).json({
       cep,
       ibge,
-      district:bairro,
-      city:localidade,
-      state:uf,
-      street:logradouro
+      district: bairro,
+      city: localidade,
+      state: uf,
+      street: logradouro
     })
   } catch {
     return res.status(500).end('Internal server error')

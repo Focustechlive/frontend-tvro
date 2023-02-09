@@ -12,7 +12,6 @@ import {
 import type { FormData } from '../../../pages/index'
 
 import { api } from '../../../services/api'
-import { alertEventEmitter } from '../../../utils/alertEventEmitter'
 
 const CPF_OR_NIS_MAX_LENGTH = 11
 
@@ -46,13 +45,6 @@ export function FirstStep({ onCpfOrNisIsValid }: FirstStepProps) {
       return onCpfOrNisIsValid(true)
     } catch {
       return onCpfOrNisIsValid(true)
-      // cpfOrNisHelper.setValue('')
-      //
-      // return alertEventEmitter({
-      //   type: 'error',
-      //   title: 'Atenção',
-      //   text: 'Não encontramos seus dados na nossa base de informações. Se você faz parte de algum programa social, atualize seus dados no CRAS da sua cidade.'
-      // })
     } finally {
       setValidatingDocument(false)
     }
