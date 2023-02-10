@@ -8,8 +8,8 @@ export default async function handler(
   let token: any
   try {
     const params = new URLSearchParams()
-    params.append('username', 'weverson')
-    params.append('password', 'abc123')
+    params.append('username', process.env.DATASINTESE_USERNAME as string)
+    params.append('password', process.env.DATASINTESE_PASSWORD as string)
     params.append('expires_in', '84600')
     params.append('grant_type', 'password')
     const response = await axios.post(
