@@ -5597,7 +5597,7 @@ export default async function handler(
     const result_logradouro =
       response.data.results[0].address_components['1'].types[0] === 'route'
         ? response.data.results[0].address_components['1'].long_name
-        : ' '
+        : 'N/a'
     const result_localidade =
       response.data.results[0].address_components['1'].types[0] === 'route'
         ? response.data.results[0].address_components['3'].long_name
