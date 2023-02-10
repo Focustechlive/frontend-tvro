@@ -82,7 +82,7 @@ export function FirstStep({ onCpfOrNisIsValid }: FirstStepProps) {
         <Field
           as={Input}
           name="cpfOrNis"
-          placeholder="Informe CPF ou NIS do responsável familiar"
+          placeholder="Informe CPF ou NIS do responsável familiar 2"
           maxLength={CPF_OR_NIS_MAX_LENGTH}
           onChange={handleCpfOrNisChange}
         />
