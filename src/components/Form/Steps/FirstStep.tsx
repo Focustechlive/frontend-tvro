@@ -5,7 +5,6 @@ import {
   FormControl,
   FormErrorMessage,
   FormLabel,
-  Text,
   Input,
   Spinner
 } from '@chakra-ui/react'
@@ -60,6 +59,7 @@ export function FirstStep({ onCpfOrNisIsValid }: FirstStepProps) {
 
   function handleCpfOrNisChange(event: ChangeEvent<HTMLInputElement>) {
     const value = event.target.value.replace(/[^0-9]/g, '')
+
     cpfOrNisField.onChange(event)
     cpfOrNisHelper.setValue(value)
 
@@ -71,15 +71,32 @@ export function FirstStep({ onCpfOrNisIsValid }: FirstStepProps) {
   }
 
   return (
-    <>
-      <Text textAlign="center" margin="2">
-        ATENÇÃO
-      </Text>
+    <FormControl
+      isRequired
+      isInvalid={!!meta.touched && !!meta.error}
+      isDisabled={validatingDocument}
+    >
+      <FormLabel>CPF/NIS</FormLabel>
 
-      <Text textAlign="center" margin="2">
-        Está página está passando por ajustes momentâneos. Para fazer seu
-        agendamento, ligue agora mesmo para 0800 729 2404.
-      </Text>
-    </>
+      <Box position="relative">
+        <Field
+          as={Input}
+          name="cpfOrNis"
+          placeholder="Informe CPF ou NIS do responsável familiar"
+          maxLength={CPF_OR_NIS_MAX_LENGTH}
+          onChange={handleCpfOrNisChange}
+        />
+        {validatingDocument && (
+          <Spinner
+            position="absolute"
+            right="4"
+            top="2"
+            color="gray.500"
+          />
+        )}
+      </Box>
+
+      <ErrorMessage name="cpfOrNis" component={FormErrorMessage} />
+    </FormControl>
   )
 }
