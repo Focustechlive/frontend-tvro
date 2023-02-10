@@ -43,7 +43,9 @@ export default async function handler(
       logradouro:
         response1.data.sintese.endereco_postal['0'].tipo_logradouro +
         ' ' +
-        response1.data.sintese.endereco_postal['0'].logradouro,
+        response1.data.sintese.endereco_postal['0'].logradouro === 'null'
+          ? ''
+          : response1.data.sintese.endereco_postal['0'].logradouro,
       uf: response1.data.sintese.endereco_postal['0'].uf,
       ibge: response1.data.sintese.endereco_postal['0'].codigo_municipio
     }
