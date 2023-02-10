@@ -54,7 +54,7 @@ export function ThirdStep({
 
       setValues((prevState) => ({
         ...prevState,
-        ibge_code: ibge,
+        ibge_code: ibge.toString(),
         address: street,
         city,
         state,
