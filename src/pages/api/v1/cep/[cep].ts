@@ -5591,17 +5591,29 @@ export default async function handler(
     const result_cep =
       response.data.results[0].address_components['0'].long_name
     const result_bairro =
-      response.data.results[0].address_components['2'].long_name
+      response.data.results[0].address_components['1'].types[0] === 'route'
+        ? response.data.results[0].address_components['2'].long_name
+        : null
     const result_logradouro =
-      response.data.results[0].address_components['1'].long_name
+      response.data.results[0].address_components['1'].types[0] === 'route'
+        ? response.data.results[0].address_components['1'].long_name
+        : null
     const result_localidade =
-      response.data.results[0].address_components['3'].long_name
+      response.data.results[0].address_components['1'].types[0] === 'route'
+        ? response.data.results[0].address_components['3'].long_name
+        : response.data.results[0].address_components['1'].long_name
     const result_uf =
-      response.data.results[0].address_components['4'].long_name
+      response.data.results[0].address_components['1'].types[0] === 'route'
+        ? response.data.results[0].address_components['4'].long_name
+        : response.data.results[0].address_components['2'].long_name
     const result_ibge = listIbge.get(
-      response.data.results[0].address_components['4'].short_name +
-        '-' +
-        result_localidade
+      response.data.results[0].address_components['1'].types[0] === 'route'
+        ? response.data.results[0].address_components['4'].short_name +
+            '-' +
+            result_localidade
+        : response.data.results[0].address_components['2'].short_name +
+            '-' +
+            result_localidade
     )
     const { cep, bairro, localidade, logradouro, uf, ibge } = {
       cep: result_cep,
