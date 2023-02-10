@@ -44,10 +44,13 @@ export function ThirdStep({
   async function checkIfZipCodeExists(value: string) {
     try {
       setSearchingZipCode(true)
-
-      const { data } = await api.get(`/cep/${value}`)
-
-      const { district, city, state, street, ibge } = data
+      let data: any
+      try {
+        data = await api.get(`/cep2/${value}`)
+      } catch {
+        data = await api.get(`/cep/${value}`)
+      }
+      const { district, city, state, street, ibge } = data.data
 
       setValues((prevState) => ({
         ...prevState,
