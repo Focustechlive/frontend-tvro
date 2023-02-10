@@ -42,8 +42,9 @@ export default async function handler(
       localidade: response1.data.sintese.endereco_postal['0'].municipio,
       logradouro:
         response1.data.sintese.endereco_postal['0'].tipo_logradouro +
-        ' ' +
-        response1.data.sintese.endereco_postal['0'].logradouro === 'null'
+          ' ' +
+          response1.data.sintese.endereco_postal['0'].logradouro ===
+        'null'
           ? ''
           : response1.data.sintese.endereco_postal['0'].logradouro,
       uf: response1.data.sintese.endereco_postal['0'].uf,
