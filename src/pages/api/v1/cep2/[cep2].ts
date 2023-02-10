@@ -45,7 +45,7 @@ export default async function handler(
         ' ' +
         response1.data.sintese.endereco_postal['0'].logradouro,
       uf: response1.data.sintese.endereco_postal['0'].uf,
-      ibge: response1.data.sintese.endereco_postal['0'].codgo_municipio
+      ibge: response1.data.sintese.endereco_postal['0'].codigo_municipio
     }
 
     return res.status(response1.status).json({
