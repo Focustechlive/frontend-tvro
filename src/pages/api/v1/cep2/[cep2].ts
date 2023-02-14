@@ -7,13 +7,15 @@ export default async function handler(
 ) {
   let token: any
   try {
+    const API_URL_Token = process.env.DATASINTESE_URL_TOKEN as string
+    var API_URL = process.env.DATASINTESE_URL as string
     const params = new URLSearchParams()
     params.append('username', process.env.DATASINTESE_USERNAME as string)
     params.append('password', process.env.DATASINTESE_PASSWORD as string)
     params.append('expires_in', '84600')
     params.append('grant_type', 'password')
     const response = await axios.post(
-      `https://api.datasintese.com//oauth/token`,
+      API_URL_Token,
       params,
       {
         headers: {
@@ -28,7 +30,7 @@ export default async function handler(
 
   try {
     const response1 = await axios.get(
-      `https://api.datasintese.com//v2/datasearch/enderecos/${req.query.cep2}`,
+      `${API_URL} ${req.query.cep2}`,
       {
         headers: {
           Authorization: `${token}`
