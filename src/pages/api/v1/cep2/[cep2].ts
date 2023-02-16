@@ -22,8 +22,9 @@ export default async function handler(
   }
 
   try {
-    const API_URL = process.env.DATASINTESE_URL as string
-    const response1 = await axios.get(`${API_URL} ${req.query.cep2}`, {
+    let API_URL = process.env.DATASINTESE_URL as string
+    API_URL = API_URL + req.query.cep2
+    const response1 = await axios.get(API_URL, {
       headers: { Authorization: `${token}` }
     })
 
