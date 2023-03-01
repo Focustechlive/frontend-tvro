@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import { useField, useFormikContext } from 'formik'
 import {
   Box,
@@ -13,11 +13,11 @@ import {
   RadioGroup,
   Text
 } from '@chakra-ui/react'
+import AsyncSelect from 'react-select/async'
 
 import type { FormData } from '../../../pages/index'
 
 import { api } from '../../../services/api'
-
 import { alertEventEmitter } from '../../../utils/alertEventEmitter'
 
 export function FourthStep() {
@@ -32,6 +32,8 @@ export function FourthStep() {
   const [antennaField] = useField('antenna')
   const [, , userWatchChannelsHelper] = useField('user_watch_channels')
   const [, , workingAntennaHelper] = useField('working_antenna')
+  const [, dateMeta] = useField('date')
+  let [dateList]: any = useState([{ label: 'Sem Data', value: 1 }])
 
   async function handleAntennaChange(
     event: ChangeEvent<HTMLInputElement>
@@ -99,12 +101,25 @@ export function FourthStep() {
       ibge_code
     }
 
-    await api.post('/contacts', contact)
+    const nrCpf = {
+      cpf
+    }
 
+    const response = await api.post(`/tickets/findContacts`,nrCpf)
+
+    if (response.data.length === 0) {
+      await api.post('/contacts', contact)
+    }
     await api.post('/tickets/digital-antenna', ticket)
 
     resetForm()
     setValues(initialValues)
+  }
+
+  async function callApi() {
+    const { ibge_code } = values
+    dateList = await api.get(`/date/${ibge_code}`)
+    return dateList.data
   }
 
   async function handleAntennaQuestionsChange(
@@ -164,7 +179,6 @@ export function FourthStep() {
       have_whatsapp,
       agree_to_be_contacted
     }
-
     const ticket = {
       name,
       phone,
@@ -175,12 +189,27 @@ export function FourthStep() {
       working_antenna: value
     }
 
-    await api.post('/contacts', contact)
+
+    const nrCpf = {
+      cpf
+    }
+
+    const response = await api.post(`/tickets/findContacts`,nrCpf)
+
+    if (response.data.length === 0) {
+      await api.post('/contacts', contact)
+    }
 
     await api.post('/tickets/disabled-antenna', ticket)
 
     resetForm()
     setValues(initialValues)
+  }
+
+  async function handleChange(
+    event: ChangeEvent<HTMLInputElement>
+  ) {
+    const { value } = event.target
   }
 
   return (
@@ -372,12 +401,25 @@ export function FourthStep() {
               </HStack>
             </RadioGroup>
           </FormControl>
-
-          {showSubmitButton && (
-            <Button type="submit" isLoading={isSubmitting}>
-              Registrar
-            </Button>
-          )}
+          <FormControl
+            isRequired
+            isInvalid={!!dateMeta.touched && !!dateMeta.error}
+          >
+            <FormLabel>Selecione o dia da instalação a sua TV?</FormLabel>
+            <div className="App">
+              <AsyncSelect
+                defaultOptions
+                cacheOptions
+                loadOptions={callApi}
+                onChange={handleChange}
+              />
+            </div>
+            {showSubmitButton && (
+              <Button type="submit" isLoading={isSubmitting}>
+                Consultar Datas
+              </Button>
+            )}
+          </FormControl>
         </>
       )}
     </>

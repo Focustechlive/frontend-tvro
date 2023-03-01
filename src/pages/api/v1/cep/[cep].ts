@@ -5604,8 +5604,8 @@ export default async function handler(
         : response.data.results[0].address_components['1'].long_name
     const result_uf =
       response.data.results[0].address_components['1'].types[0] === 'route'
-        ? response.data.results[0].address_components['4'].long_name
-        : response.data.results[0].address_components['2'].long_name
+        ? response.data.results[0].address_components['4'].short_name
+        : response.data.results[0].address_components['2'].short_name
     const result_ibge = listIbge.get(
       response.data.results[0].address_components['1'].types[0] === 'route'
         ? response.data.results[0].address_components['4'].short_name +

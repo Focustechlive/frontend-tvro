@@ -61,6 +61,7 @@ export function ThirdStep({
         district
       }))
 
+      const response2 = await api.get(`/date/${ibge}`)
       const response = await api.get(`/served-cities/${ibge}`)
 
       if (response.data.served === true) {
