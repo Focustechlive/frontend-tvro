@@ -6,12 +6,12 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'POST') {
-    const { name, phone, email, antenna, zipcode, ibge_code } = req.body
+    const { name, mobile, email, antenna, zipcode, ibge_code } = req.body
 
     const ticket = {
       description: 'Antena é DIGITAL',
       name,
-      phone: phone.replace(/\D/g, ''),
+      phone: mobile.replace(/\D/g, ''),
       email: email || null,
       priority: 1,
       status: 5,

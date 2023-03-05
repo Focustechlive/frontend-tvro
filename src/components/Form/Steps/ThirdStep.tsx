@@ -70,7 +70,7 @@ export function ThirdStep({
 
       const {
         name,
-        phone,
+        mobile,
         cpf,
         email,
         have_whatsapp,
@@ -81,7 +81,7 @@ export function ThirdStep({
 
       const contact = {
         name,
-        phone,
+        mobile,
         cpf,
         family_code,
         district,
@@ -97,7 +97,7 @@ export function ThirdStep({
 
       const ticket = {
         name,
-        phone,
+        mobile,
         email
       }
 

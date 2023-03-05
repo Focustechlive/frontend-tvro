@@ -6,12 +6,12 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'GET') {
-    const { phone } = req.query
+    const { mobile } = req.query
 
-    if (phone) {
+    if (mobile) {
       try {
         const response = await axios.get(
-          `https://sigaantenado.freshdesk.com/api/v2/search/contacts?query="phone:${phone}"`,
+          `https://sigaantenado.freshdesk.com/api/v2/search/contacts?query="mobile:${mobile}"`,
           {
             auth: {
               username: process.env.FRESHDESK_USERNAME as string,
@@ -52,7 +52,7 @@ export default async function handler(
   if (req.method === 'POST') {
     const {
       name,
-      phone,
+      mobile,
       email,
       cpf,
       family_code,
@@ -72,10 +72,7 @@ export default async function handler(
 
     try {
       const { data } = await axios.get(
-        `https://sigaantenado.freshdesk.com/api/v2/search/contacts?query="phone:${phone.replace(
-          /\D/g,
-          ''
-        )}"`,
+        `https://sigaantenado.freshdesk.com/api/v2/search/contacts?query="cpf:'${cpf}'"`,
         {
           auth: {
             username: process.env.FRESHDESK_USERNAME as string,
@@ -86,7 +83,8 @@ export default async function handler(
 
       const contact = {
         name,
-        phone: phone.replace(/\D/g, ''),
+        mobile: mobile.replace(/\D/g, ''),
+        phone: mobile.replace(/\D/g, ''),
         email: email || null,
         address,
         custom_fields: {

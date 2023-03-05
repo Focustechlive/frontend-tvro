@@ -6,13 +6,13 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'POST') {
-    const { name, phone, email } = req.body
+    const { name, mobile, email } = req.body
 
     const ticket = {
       description: 'Cidade não atendida',
       name,
       email: email || null,
-      phone: phone.replace(/\D/g, ''),
+      phone: mobile.replace(/\D/g, ''),
       priority: 1,
       status: 5,
       subject: 'Cidade não atendida',

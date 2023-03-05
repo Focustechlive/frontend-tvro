@@ -8,7 +8,7 @@ export default async function handler(
   if (req.method === 'POST') {
     const {
       name,
-      phone,
+      mobile,
       email,
       zipcode,
       ibge_code,
@@ -19,7 +19,7 @@ export default async function handler(
     const ticket = {
       description: 'Solicita Agendamento - Parabolica desativada',
       name,
-      phone: phone.replace(/\D/g, ''),
+      phone: mobile.replace(/\D/g, ''),
       email: email || null,
       priority: 1,
       status: 5,

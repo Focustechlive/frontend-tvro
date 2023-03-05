@@ -14,7 +14,7 @@ export function Form() {
   const { values } = useFormikContext<FormData>()
 
   const [, cpfOrNisMeta] = useField('cpfOrNis')
-  const [, phoneMeta] = useField('phone')
+  const [, phoneMeta] = useField('mobile')
   const [, emailMeta] = useField('email')
   const [, zipCodeMeta] = useField('zipcode')
   const [, districtMeta] = useField('district')

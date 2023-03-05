@@ -16,7 +16,7 @@ import { formatPhone } from '../../../utils/formatPhone'
 import { alertEventEmitter } from '../../../utils/alertEventEmitter'
 
 export function SecondStep() {
-  const [phoneField, phoneMeta, phoneHelper] = useField('phone')
+  const [phoneField, phoneMeta, phoneHelper] = useField('mobile')
   const [, emailMeta] = useField('email')
   const [, haveWhatsappMeta] = useField('have_whatsapp')
   const [, agreeToBeContactedMeta] = useField('agree_to_be_contacted')
@@ -60,13 +60,13 @@ export function SecondStep() {
 
             <Field
               as={Input}
-              name="phone"
+              name="mobile"
               placeholder="(11) 00000 0000"
               maxLength={15}
               onChange={handlePhoneChange}
             />
 
-            <ErrorMessage name="phone" component={FormErrorMessage} />
+            <ErrorMessage name="mobile" component={FormErrorMessage} />
           </FormControl>
         </GridItem>
 

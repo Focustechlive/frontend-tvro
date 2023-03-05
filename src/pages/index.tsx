@@ -18,7 +18,7 @@ const FormSchema = yup.object().shape({
     .min(11, 'CPF ou NIS inválido')
     .max(11, 'CPF ou NIS inválido')
     .required('CPF ou NIS é obrigátorio'),
-  phone: yup
+  mobile: yup
     .string()
     .min(14, 'Telefone inválido')
     .max(15, 'Telefone inválido')
@@ -44,11 +44,12 @@ const FormSchema = yup.object().shape({
 })
 
 export type FormData = {
+  id: string
   name: string
   cpfOrNis: string
   cpf: string
   nis: string
-  phone: string
+  mobile: string
   email: string
   have_whatsapp: string
   agree_to_be_contacted: string
@@ -66,6 +67,8 @@ export type FormData = {
   user_watch_channels: string
   working_antenna: string
   antenna: string
+  group_id: string
+  date: string
 }
 
 export default function Home() {
@@ -80,11 +83,12 @@ export default function Home() {
           <FormHeader />
           <Formik
             initialValues={{
+              id: '',
               name: '',
               cpfOrNis: '',
               cpf: '',
               nis: '',
-              phone: '',
+              mobile: '',
               email: '',
               have_whatsapp: '',
               agree_to_be_contacted: '',
@@ -101,13 +105,16 @@ export default function Home() {
               reference_point: '',
               antenna: '',
               user_watch_channels: '',
+              group_id: '',
+              date: '',
               working_antenna: ''
             }}
             validationSchema={FormSchema}
             onSubmit={async (values, actions) => {
               const {
+                id,
                 name,
-                phone,
+                mobile,
                 email,
                 cpf,
                 family_code,
@@ -128,8 +135,9 @@ export default function Home() {
               } = values
 
               const contact = {
+                id,
                 name,
-                phone,
+                mobile,
                 email,
                 cpf,
                 family_code,
@@ -150,7 +158,7 @@ export default function Home() {
 
               const ticket = {
                 name,
-                phone,
+                mobile,
                 email,
                 zipcode,
                 ibge_code,

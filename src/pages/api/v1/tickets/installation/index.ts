@@ -8,7 +8,7 @@ export default async function handler(
   if (req.method === 'POST') {
     const {
       name,
-      phone,
+      mobile,
       email,
       zipcode,
       ibge_code,
@@ -20,7 +20,7 @@ export default async function handler(
       description: 'Solicitação de agendamento',
       name,
       email: email || null,
-      phone: phone.replace(/\D/g, ''),
+      phone: mobile.replace(/\D/g, ''),
       priority: 2,
       status: 2,
       subject: 'Solicitação de agendamento',

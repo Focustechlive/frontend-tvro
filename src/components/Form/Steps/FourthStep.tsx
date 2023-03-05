@@ -54,7 +54,7 @@ export function FourthStep() {
 
     const {
       name,
-      phone,
+      mobile,
       cpf,
       email,
       have_whatsapp,
@@ -74,7 +74,7 @@ export function FourthStep() {
 
     const contact = {
       name,
-      phone,
+      mobile,
       email,
       cpf,
       family_code,
@@ -94,7 +94,7 @@ export function FourthStep() {
 
     const ticket = {
       name,
-      phone,
+      mobile,
       email,
       zipcode,
       antenna: value,
@@ -105,13 +105,9 @@ export function FourthStep() {
       cpf
     }
 
-    const response = await api.post(`/tickets/findContacts`,nrCpf)
-
-    if (response.data.length === 0) {
-      await api.post('/contacts', contact)
-    }
+    contact.email = email === '' ? `${cpf}@sigaantenado.com.br` : email
+    await api.post('/contacts', contact)
     await api.post('/tickets/digital-antenna', ticket)
-
     resetForm()
     setValues(initialValues)
   }
@@ -142,7 +138,7 @@ export function FourthStep() {
 
     const {
       name,
-      phone,
+      mobile,
       cpf,
       email,
       have_whatsapp,
@@ -162,7 +158,7 @@ export function FourthStep() {
 
     const contact = {
       name,
-      phone,
+      mobile,
       email,
       cpf,
       family_code,
@@ -181,35 +177,106 @@ export function FourthStep() {
     }
     const ticket = {
       name,
-      phone,
+      mobile,
       email,
       zip_code: zipcode,
       ibge_code,
       user_watch_channels: canTheUserWatchChannels ? 'Sim' : 'Não',
       working_antenna: value
     }
-
-
-    const nrCpf = {
-      cpf
-    }
-
-    const response = await api.post(`/tickets/findContacts`,nrCpf)
-
-    if (response.data.length === 0) {
-      await api.post('/contacts', contact)
-    }
-
+    contact.email = email === '' ? `${cpf}@sigaantenado.com.br` : email
+    await api.post('/contacts', contact)
     await api.post('/tickets/disabled-antenna', ticket)
-
     resetForm()
     setValues(initialValues)
   }
 
-  async function handleChange(
-    event: ChangeEvent<HTMLInputElement>
-  ) {
-    const { value } = event.target
+  async function handleChange(newValue: any) {
+    const value2 = newValue.value
+    const label2 = newValue.label
+    const body = {
+      date: label2,
+      ibge_code: values.ibge_code,
+      group_id: value2
+    }
+    await api.post(`/tickets/addDate`, body)
+
+    const {
+      id,
+      name,
+      mobile,
+      cpf,
+      email,
+      have_whatsapp,
+      agree_to_be_contacted,
+      family_code,
+      district,
+      city,
+      state,
+      zipcode,
+      ibge_code,
+      address,
+      address_number,
+      address_complement,
+      reference_point
+    } = values
+
+    const contact = {
+      id,
+      name,
+      mobile,
+      email,
+      cpf,
+      family_code,
+      district,
+      city,
+      state,
+      address,
+      zip_code: zipcode,
+      ibge_code,
+      house_number: address_number,
+      complement: address_complement,
+      reference_point,
+      same_zip_code: values.cadunico_zipcode,
+      have_whatsapp,
+      agree_to_be_contacted
+    }
+    const ticket = {
+      name,
+      mobile,
+      email,
+      zip_code: zipcode,
+      ibge_code,
+      user_watch_channels: values.user_watch_channels,
+      working_antenna: values.working_antenna
+    }
+
+    contact.email = email === '' ? `${cpf}@sigaantenado.com.br` : email
+    const response2 = await api.post('/contacts', contact)
+    contact.id = response2.data.id
+
+    await api.post('/tickets/disabled-antenna', ticket)
+
+    const body2 = {
+      name: values.name,
+      mobile: values.mobile,
+      cpf: values.cpf,
+      address: values.address,
+      address_number: values.address_number,
+      group_id: value2,
+      contact_id: contact.id,
+      date: label2,
+      ibge_code: values.ibge_code,
+      cep: values.zipcode,
+      district: values.district,
+      address_complement: values.address_complement,
+      state: values.state,
+      city: values.city,
+      family_code: contact.family_code,
+      reference_point: values.reference_point
+    }
+
+    await api.post('/tickets/os', body2)
   }
 
   return (
@@ -400,11 +467,6 @@ export function FourthStep() {
                 </Radio>
               </HStack>
             </RadioGroup>
-          </FormControl>
-          <FormControl
-            isRequired
-            isInvalid={!!dateMeta.touched && !!dateMeta.error}
-          >
             <FormLabel>Selecione o dia da instalação a sua TV?</FormLabel>
             <div className="App">
               <AsyncSelect
@@ -414,9 +476,14 @@ export function FourthStep() {
                 onChange={handleChange}
               />
             </div>
+          </FormControl>
+          <FormControl
+            isRequired
+            isInvalid={!!dateMeta.touched && !!dateMeta.error}
+          >
             {showSubmitButton && (
               <Button type="submit" isLoading={isSubmitting}>
-                Consultar Datas
+                Registrar
               </Button>
             )}
           </FormControl>

@@ -45,7 +45,13 @@ export function FirstStep({ onCpfOrNisIsValid }: FirstStepProps) {
 
       return onCpfOrNisIsValid(true)
     } catch {
-      return onCpfOrNisIsValid(true)
+      cpfOrNisHelper.setValue('')
+
+      return alertEventEmitter({
+        type: 'error',
+        title: 'Atenção',
+        text: 'Não encontramos seus dados na nossa base de informações. Se você faz parte de algum programa social, atualize seus dados no CRAS da sua cidade.'
+      })
     } finally {
       setValidatingDocument(false)
     }
