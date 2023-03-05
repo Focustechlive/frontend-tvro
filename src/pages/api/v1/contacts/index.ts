@@ -97,7 +97,6 @@ export default async function handler(
           estado: state,
           ponto_de_referencia: reference_point,
           cep: zip_code,
-          cep_igual_ao_do_cadunico: 'Sim',
           codigo_ibge: ibge_code.toString(),
           celular_tem_whatsapp: have_whatsapp,
           concorda_em_ser_contatado_por_esse_nmero_ou_email:
