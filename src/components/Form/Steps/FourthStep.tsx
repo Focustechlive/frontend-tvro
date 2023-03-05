@@ -282,7 +282,7 @@ export function FourthStep() {
       return alertEventEmitter({
         type: 'error',
         title: 'Atenção',
-        text: 'Dados na nossa base de informações divirgênte. Se você faz parte de algum programa social, atualize seus dados no CRAS da sua cidade.'
+        text: 'Dados na nossa base de informações divergente. Se você faz parte de algum programa social, atualize seus dados no CRAS da sua cidade.'
       })
     }
   }
