@@ -250,33 +250,41 @@ export function FourthStep() {
       user_watch_channels: values.user_watch_channels,
       working_antenna: values.working_antenna
     }
+    try {
+      contact.email = email === '' ? `${cpf}@sigaantenado.com.br` : email
+      const response2 = await api.post('/contacts', contact)
+      contact.id = response2.data.id
 
-    contact.email = email === '' ? `${cpf}@sigaantenado.com.br` : email
-    const response2 = await api.post('/contacts', contact)
-    contact.id = response2.data.id
+      await api.post('/tickets/disabled-antenna', ticket)
 
-    await api.post('/tickets/disabled-antenna', ticket)
+      const body2 = {
+        name: values.name,
+        mobile: values.mobile,
+        cpf: values.cpf,
+        address: values.address,
+        address_number: values.address_number,
+        group_id: value2,
+        contact_id: contact.id,
+        date: label2,
+        ibge_code: values.ibge_code,
+        cep: values.zipcode,
+        district: values.district,
+        address_complement: values.address_complement,
+        state: values.state,
+        city: values.city,
+        family_code: contact.family_code,
+        reference_point: values.reference_point
+      }
 
-    const body2 = {
-      name: values.name,
-      mobile: values.mobile,
-      cpf: values.cpf,
-      address: values.address,
-      address_number: values.address_number,
-      group_id: value2,
-      contact_id: contact.id,
-      date: label2,
-      ibge_code: values.ibge_code,
-      cep: values.zipcode,
-      district: values.district,
-      address_complement: values.address_complement,
-      state: values.state,
-      city: values.city,
-      family_code: contact.family_code,
-      reference_point: values.reference_point
+      await api.post('/tickets/os', body2)
+    }catch {
+      dateMeta.error = "erro"
+      return alertEventEmitter({
+        type: 'error',
+        title: 'Atenção',
+        text: 'Dados na nossa base de informações divirgênte. Se você faz parte de algum programa social, atualize seus dados no CRAS da sua cidade.'
+      })
     }
-
-    await api.post('/tickets/os', body2)
   }
 
   return (
