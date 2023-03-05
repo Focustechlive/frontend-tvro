@@ -277,8 +277,8 @@ export function FourthStep() {
       }
 
       await api.post('/tickets/os', body2)
-    }catch {
-      dateMeta.error = "erro"
+    } catch {
+      dateMeta.error = 'erro'
       return alertEventEmitter({
         type: 'error',
         title: 'Atenção',
