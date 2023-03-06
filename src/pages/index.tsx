@@ -131,7 +131,9 @@ export default function Home() {
                 have_whatsapp,
                 agree_to_be_contacted,
                 user_watch_channels,
-                working_antenna
+                working_antenna,
+                date,
+                group_id
               } = values
 
               const contact = {
@@ -166,10 +168,42 @@ export default function Home() {
                 working_antenna
               }
 
+              const addDate = {
+                date,
+                ibge_code,
+                group_id
+              }
+
               try {
-                await api.post('/contacts', contact)
+                contact.email =
+                  email === '' ? `${cpf}@sigaantenado.com.br` : email
+                await api.post(`/tickets/addDate`, addDate)
+
+                const response2 = await api.post('/contacts', contact)
+                contact.id = response2.data.id
 
                 await api.post('/tickets/installation', ticket)
+
+                const os = {
+                  name: contact.name,
+                  mobile: contact.mobile,
+                  cpf: contact.cpf,
+                  address: contact.address,
+                  address_number: contact.house_number,
+                  group_id: addDate.date,
+                  contact_id: contact.id,
+                  date: addDate.group_id,
+                  ibge_code: contact.ibge_code,
+                  cep: contact.zip_code,
+                  district: contact.district,
+                  address_complement: contact.complement,
+                  state: contact.state,
+                  city: contact.city,
+                  family_code: contact.family_code,
+                  reference_point: contact.reference_point
+                }
+
+                await api.post('/tickets/os', os)
 
                 actions.resetForm()
 
