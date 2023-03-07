@@ -34,6 +34,8 @@ export function FourthStep() {
   const [, , workingAntennaHelper] = useField('working_antenna')
   const [, dateMeta] = useField('date')
   let [dateList]: any = useState([{ label: 'Sem Data', value: 1 }])
+  const [inputValue, setValue] = useState('')
+  const [selectedValue, setSelectedValue] = useState(null)
 
   async function handleAntennaChange(
     event: ChangeEvent<HTMLInputElement>
@@ -191,11 +193,16 @@ export function FourthStep() {
     setValues(initialValues)
   }
 
-  async function handleChange(newValue: any) {
+  function handleChange(newValue: any) {
     const value2 = newValue.value
     const label2 = newValue.label
     values.date = label2
     values.group_id = value2
+    setSelectedValue(newValue)
+  }
+
+  function handleInputChange(value: any) {
+    setValue(value)
   }
 
   return (
@@ -392,7 +399,11 @@ export function FourthStep() {
                 defaultOptions
                 cacheOptions
                 loadOptions={callApi}
+                onInputChange={handleInputChange}
                 onChange={handleChange}
+                closeMenuOnSelect={true}
+                blurInputOnSelect={true}
+                hideSelectedOptions={true}
               />
             </div>
           </FormControl>
