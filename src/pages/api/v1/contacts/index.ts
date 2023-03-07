@@ -84,7 +84,6 @@ export default async function handler(
       const contact = {
         name,
         mobile: mobile.replace(/\D/g, ''),
-        phone: mobile.replace(/\D/g, ''),
         email: email || null,
         address,
         custom_fields: {
