@@ -38,7 +38,7 @@ export default async function handler(
       cf_fsm_contact_name: name,
       cf_fsm_phone_number: mobile,
       cf_fsm_service_location: `${address} ${address_number}`,
-      cf_fsm_appointment_start_time: `${date}T12:00-00Z`,
+      cf_fsm_appointment_start_time: moment(`${date}T12:00-00Z`).toISOString(),
       cf_fsm_appointment_end_time: `${date}T21:00-00Z`,
       cf_grupoid: parseInt(group_id),
       cf_data_da_visita: `${date}T12:00-00Z`,
