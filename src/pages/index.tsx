@@ -181,8 +181,13 @@ export default function Home() {
 
                 const response2 = await api.post('/contacts', contact)
                 contact.id = response2.data.id
-
-                await api.post('/tickets/installation', ticket)
+                ticket.email =
+                  email === '' ? `${cpf}@sigaantenado.com.br` : email
+                const response3 = await api.post(
+                  '/tickets/installation',
+                  ticket
+                )
+                console.log(response3)
 
                 const os = {
                   name: contact.name,
