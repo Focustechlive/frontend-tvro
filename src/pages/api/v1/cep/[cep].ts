@@ -7,7 +7,7 @@ export default async function handler(
 ) {
   try {
     const response = await axios.get(
-      `https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAlwz-hyJH2G5o_iNrThjWKX3CyqZatA5A&address=zipcode=${req.query.cep}`
+      `https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAn0y5hNG_nsp9juoMuHn04vvenswvP6GY&address=zipcode=${req.query.cep}`
     )
 
     if (response.data.erro) {
