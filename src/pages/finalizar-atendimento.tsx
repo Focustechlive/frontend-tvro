@@ -30,9 +30,9 @@ export default function FinalizarAtendimento() {
           __html: `
             function initFreshChat() {
               window.fcWidget.init({
-                token: "71760711-ffb7-4517-891b-bc33d9854c0f",
-                host: "https://sigaantenado.freshchat.com",
-                open: true
+              token: "71760711-ffb7-4517-891b-bc33d9854c0f",
+              host: "https://sigaantenado.freshchat.com",
+              widgetUuid: "69696d3d-d094-4235-b24c-08a0694b8417"
               });
             }
             function initialize(i,t){var e;i.getElementById(t)?

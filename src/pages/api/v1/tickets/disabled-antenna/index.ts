@@ -38,7 +38,7 @@ export default async function handler(
 
     try {
       const response = await axios.post(
-        'https://sigaantenado.freshdesk.com/api/v2/tickets',
+        'https://sigaantenadosandbox.freshdesk.com/api/v2/tickets',
         ticket,
         {
           auth: {

@@ -11,7 +11,7 @@ export default async function handler(
 
   try {
     const response = await axios.get(
-      `https://sigaantenado.freshdesk.com/api/v2/custom_objects/schemas/163989/records?ibge=${ibge}`,
+      `https://sigaantenadosandbox.freshdesk.com/api/v2/custom_objects/schemas/163989/records?ibge=${ibge}`,
       {
         auth: {
           username: process.env.FRESHDESK_USERNAME as string,

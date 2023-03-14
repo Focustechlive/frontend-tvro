@@ -11,7 +11,7 @@ export default async function handler(
     if (phone) {
       try {
         const response = await axios.get(
-          `https://sigaantenado.freshdesk.com/api/v2/search/contacts?query="phone:${phone}"`,
+          `https://sigaantenadosandbox.freshdesk.com/api/v2/search/contacts?query="phone:${phone}"`,
           {
             auth: {
               username: process.env.FRESHDESK_USERNAME as string,
@@ -32,7 +32,7 @@ export default async function handler(
 
     try {
       const response = await axios.get(
-        'https://sigaantenado.freshdesk.com/api/v2/contacts',
+        'https://sigaantenadosandbox.freshdesk.com/api/v2/contacts',
         {
           auth: {
             username: process.env.FRESHDESK_USERNAME as string,
@@ -72,7 +72,7 @@ export default async function handler(
 
     try {
       const { data } = await axios.get(
-        `https://sigaantenado.freshdesk.com/api/v2/search/contacts?query="phone:${phone.replace(
+        `https://sigaantenadosandbox.freshdesk.com/api/v2/search/contacts?query="phone:${phone.replace(
           /\D/g,
           ''
         )}"`,
@@ -111,7 +111,7 @@ export default async function handler(
         const contactId = data.results[0].id
 
         const response = await axios.put(
-          `https://sigaantenado.freshdesk.com/api/v2/contacts/${contactId}`,
+          `https://sigaantenadosandbox.freshdesk.com/api/v2/contacts/${contactId}`,
           contact,
           {
             auth: {
@@ -125,7 +125,7 @@ export default async function handler(
       }
 
       const response = await axios.post(
-        'https://sigaantenado.freshdesk.com/api/v2/contacts',
+        'https://sigaantenadosandbox.freshdesk.com/api/v2/contacts',
         contact,
         {
           auth: {
